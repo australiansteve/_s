@@ -210,7 +210,6 @@ function hamburger_cat_woocommerce_header_cart() {
 	<?php
 }
 
-
 function austeve_woocommerce_before_single_product() {
 	?>
 	<div class="grid-x grid-margin-x">

@@ -134,6 +134,7 @@ function hamburger_cat_scripts() {
 
 	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array( 'jquery'), HAMBURGER_CAT_VERSION, true );
 
+	wp_enqueue_script( 'hamburger-cat-navigation', get_template_directory_uri() . '/js/navigation.js', array(), HAMBURGER_CAT_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
