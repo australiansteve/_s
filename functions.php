@@ -177,3 +177,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load ACF Theme files
+ */
+if ( class_exists('ACF') ) {
+	require get_template_directory() . '/inc/theme-settings.php';
+}
