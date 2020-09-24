@@ -1,3 +1,20 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
+
+	section {
+		position: relative;
+
+		.section-background {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: -1;
+		}
+
+		.section-content {
+			height: 100%;
+		}
+	}
 }

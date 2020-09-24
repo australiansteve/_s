@@ -412,6 +412,17 @@ big {
 --------------------------------------------- */
 body {
   background: #fff; }
+  body section {
+    position: relative; }
+    body section .section-background {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1; }
+    body section .section-content {
+      height: 100%; }
 
 hr {
   background-color: #ccc;
