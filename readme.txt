@@ -1,6 +1,6 @@
 === Hamburger_Cat ===
 
-Contributors: automattic
+Contributors: automattic, australiansteve
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
@@ -26,7 +26,7 @@ Hi. I'm a starter theme called Hamburger_Cat, or underscores, if you like. I'm a
 
 = Does this theme support any plugins? =
 
-_s includes support for WooCommerce and for Infinite Scroll in Jetpack.
+Hamburger Cat includes support for WooCommerce.
 
 == Changelog ==
 
