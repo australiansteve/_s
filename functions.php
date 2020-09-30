@@ -51,6 +51,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'hamburger-cat' ),
+				'menu-2' => esc_html__( 'Secondary', 'hamburger-cat' ),
 			)
 		);
 
@@ -140,10 +141,13 @@ add_action( 'widgets_init', 'hamburger_cat_widgets_init' );
  * Enqueue scripts and styles.
  */
 function hamburger_cat_scripts() {
+	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
+
 	wp_enqueue_style( 'hamburger-cat-style', get_stylesheet_uri(), array(), HAMBURGER_CAT_VERSION );
 	wp_style_add_data( 'hamburger-cat-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array(), HAMBURGER_CAT_VERSION, true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
