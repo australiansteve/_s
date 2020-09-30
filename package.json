@@ -44,7 +44,7 @@
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "build": "webpack",
     "build:prod": "webpack --mode production",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
+    "bundle": "dir-archiver --src . --dest ../hamburger-cat.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
   },
   "dependencies": {
     "foundation-sites": "^6.6.3",
