@@ -1,0 +1,36 @@
+nav {
+
+	.accordion-menu {
+
+		.fas {
+			position: absolute;
+			right: $global-menu-h-padding;
+			transition: opacity 0.5s;
+		}
+
+		li[aria-expanded="false"] {
+
+			.fa-bars {
+				opacity: 1;
+			}
+
+			.fa-caret-up {
+				opacity: 0;
+			}
+		}
+	}
+
+	.accordion-menu {
+
+		li[aria-expanded="true"] {
+
+			.fa-bars {
+				opacity: 0;
+			}
+
+			.fa-caret-up {
+				opacity: 1;
+			}
+		}
+	}
+}
