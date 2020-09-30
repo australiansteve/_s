@@ -29,6 +29,6 @@ if ($sectionVAlignment != 'left') {
 <section id="<?php echo str_replace('_', '-', $sectionId);?>" class="<?php echo $sectionClasses;?>" style="<?php echo ($explicitHeight) ? 'height:'.$explicitHeight: '';?>">
 	<div class="section-background <?php echo $backgroundClasses;?>" style="<?php echo implode("; ", $backgroundCssValue);?>"></div>
 	<div class="section-content" style="color: <?php echo $contentTextColor;?>;">
-
+		<div class="grid-container">
 		<div class="grid-y align-<?php echo $sectionVAlignment;?>" style="height: 100%">
 			<div class="cell text-<?php echo $sectionHAlignment;?>">
