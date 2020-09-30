@@ -4751,9 +4751,6 @@ a.thumbnail {
 .clearfix::after {
   clear: both; }
 
-a {
-  display: flex; }
-
 /* Accessibility
 --------------------------------------------- */
 /* Text meant only for screen readers. */
@@ -4803,6 +4800,9 @@ body section {
     z-index: -1; }
   body section .section-content {
     height: 100%; }
+
+a {
+  display: inline-block; }
 
 nav .accordion-menu .fas {
   position: absolute;
