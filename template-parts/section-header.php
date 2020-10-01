@@ -1,6 +1,5 @@
 <?php
-$contentHtml = $section['content_html'];
-$contentTextColor = $section['content_text_color'];
+$contentTextColor = $section['section_text_color'];
 $backgroundColor = $section['background_color'];
 $backgroundImage = $section['background_image'];
 $backgroundImageUrl = wp_get_attachment_image_src($backgroundImage, 'full');

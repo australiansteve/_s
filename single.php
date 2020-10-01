@@ -10,30 +10,51 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<?php
+	while ( have_posts() ) :
+		the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+		$section = get_field('landing');
+		if ($section) {
+			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+			?>	
+			<div class="grid-container">
+				<div class="grid-x">
+					<div class="cell">
+						
+						<?php get_template_part( 'template-parts/content', get_post_type() ); ?>		
+						<div class="grid-x navigation">
+							<div class="cell small-6 text-right medium-5 medium-order-1">
+								<?php echo get_previous_post_link(
+									'%link',
+									'<i class="fas fa-2x fa-chevron-left"></i> <span class="nav-title screen-reader-text">%title</span>'
+								); ?>
+							</div>
+							<div class="cell small-6 text-left medium-5 medium-order-3">
+								<?php echo get_next_post_link(
+									'%link',
+									'<i class="fas fa-2x fa-chevron-right"></i> <span class="nav-title screen-reader-text">%title</span>'
+								); ?>
+							</div>
+							<div class="cell text-center medium-2 medium-order-2">
+								<a class="button" href="<?php echo get_post_type_archive_link(get_post_type());?>"><?php echo get_post_type_object(get_post_type())->labels->all_items;?></a>
+							</div>
+						</div>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'hamburger-cat' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'hamburger-cat' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+					</div>
+				</div>
+			</div>
+			<?php
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+		}
 
 		endwhile; // End of the loop.
 		?>
 
 	</main><!-- #main -->
 
-<?php
-get_footer();
+	<?php
+	get_footer();

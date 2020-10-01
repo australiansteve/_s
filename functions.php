@@ -102,6 +102,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 			)
 		);
 
+		add_image_size( 'rect-large', 1100, 700, true );
 		add_image_size( 'square-large', 700, 700, true );
 	}
 endif;
@@ -170,3 +171,14 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( class_exists('ACF') ) {
 	require get_template_directory() . '/inc/theme-settings.php';
 }
+
+/**
+ * Redirect Team Members archive page to the about page section
+ */
+function austeve_redirect_cpt_archive() {
+    if( is_post_type_archive( 'austeve-team-members' ) ) {
+        wp_redirect( home_url( 'about#meet-the-team' ), 301 );
+        exit();
+    }
+}
+add_action( 'template_redirect', 'austeve_redirect_cpt_archive' );

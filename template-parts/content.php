@@ -29,8 +29,6 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php hamburger_cat_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content(

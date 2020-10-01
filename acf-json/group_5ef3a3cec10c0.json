@@ -22,56 +22,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5f6c8d67ad960",
-            "label": "Content",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5f6c8d8bad961",
-            "label": "Content",
-            "name": "content_html",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_5f6c8ee5caaae",
-            "label": "Text Color",
-            "name": "content_text_color",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#000000"
-        },
-        {
             "key": "field_5f6c8aa2f55e8",
             "label": "Background",
             "name": "",
@@ -294,6 +244,21 @@
             "button_label": "Add Height",
             "min": 1,
             "max": 1
+        },
+        {
+            "key": "field_5f6c8ee5caaae",
+            "label": "Text Color",
+            "name": "section_text_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#000000"
         }
     ],
     "location": [
@@ -313,5 +278,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1600962815
+    "modified": 1601567182
 }

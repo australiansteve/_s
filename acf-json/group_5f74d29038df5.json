@@ -92,10 +92,10 @@
             "button_label": "Add Team Member",
             "sub_fields": [
                 {
-                    "key": "field_5f74d9a5f056a",
-                    "label": "Name",
-                    "name": "name",
-                    "type": "text",
+                    "key": "field_5f76024d822ce",
+                    "label": "Team Member",
+                    "name": "team_member",
+                    "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -104,54 +104,14 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5f74d9abf056b",
-                    "label": "Position",
-                    "name": "position",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5f74d9b1f056c",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
+                    "post_type": [
+                        "austeve-team-members"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 0,
                     "return_format": "id",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": 700,
-                    "min_height": 700,
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
+                    "ui": 1
                 }
             ]
         }
@@ -173,5 +133,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1601494961
+    "modified": 1601569399
 }

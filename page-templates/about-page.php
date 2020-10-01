@@ -16,7 +16,8 @@ get_header();
 	while ( have_posts() ) :
 		the_post();
 
-		$section = get_field('landing');
+		$sectionId = 'landing';
+		$section = get_field($sectionId);
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>	
@@ -36,7 +37,8 @@ get_header();
 
 			}
 
-			$section = get_field('video');
+		$sectionId = 'video';
+			$section = get_field($sectionId);
 			if ($section) {
 
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
@@ -57,7 +59,8 @@ get_header();
 
 			}
 
-			$section = get_field('meet_the_team');
+		$sectionId = 'meet_the_team';
+			$section = get_field($sectionId);
 			if ($section) {
 
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
@@ -71,19 +74,16 @@ get_header();
 							<div class="grid-x small-up-1 medium-up-2" id="team-members-grid">
 								<?php
 								foreach($section['team_members'] as $teamMember) {
+									$tmId = $teamMember['team_member'];
 									?>
-									<div class="cell">
+									<div class="cell team-member">
+										<a href="<?php echo get_the_permalink($tmId);?>">
 									<?php
-									$image = $teamMember['image'];
-									$size = 'square-large';
-									
-									if( $image ) {
-										echo wp_get_attachment_image( $image, $size );
-									}
-
-									echo "<div class='name'>".$teamMember['name']."</div>";
-									echo "<div class='position'>".$teamMember['position']."</div>";
+									echo get_the_post_thumbnail($tmId, 'square-large');
+									echo "<div class='name'>".get_the_title($tmId)."</div>";
+									echo "<div class='position'>".get_field('position', $tmId)."</div>";
 									?>
+									</a>
 								</div>
 								<?php
 								}
@@ -97,7 +97,8 @@ get_header();
 
 			}
 
-			$section = get_field('contact');
+		$sectionId = 'contact';
+			$section = get_field($sectionId);
 			if ($section) {
 
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 

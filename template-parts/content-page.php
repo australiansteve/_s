@@ -18,11 +18,9 @@
 		<?php 
 
 		$allFields = get_fields();
-		//error_log("Post fields: ".print_r($allFields, true));
 
 		foreach($allFields as $sectionId => $section) {
 			if (array_key_exists('is_page_section', $section)) {
-				$contentHtml = $section['content_html'];
 				$contentTextColor = $section['content_text_color'];
 				$backgroundColor = $section['background_color'];
 				$backgroundImage = $section['background_image'];
@@ -36,7 +34,7 @@
 
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 
-				echo $contentHtml;
+				the_content();
 
 				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 

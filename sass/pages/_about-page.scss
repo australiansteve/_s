@@ -1,0 +1,24 @@
+.page-template-about-page {
+
+	#meet-the-team {
+
+		#team-members-grid {
+
+			.team-member {
+				padding: 2rem 1rem;
+				text-align: center;
+				text-transform: uppercase;
+				transition: padding 0.5s;
+
+				.name {
+					margin-top: 1rem;
+				}
+
+			}
+
+			.team-member:hover {
+				padding: 1.5rem 0.5rem;
+			}
+		}
+	}
+}
