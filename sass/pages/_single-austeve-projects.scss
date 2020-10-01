@@ -1,0 +1,36 @@
+.single-austeve-projects {
+
+	#project-scroll {
+		overflow-x: hidden;
+		white-space: nowrap;
+	}
+
+	.project {
+		position: relative;
+		display: inline-block;
+		width: 100%;
+		padding: 0 1rem;
+		-webkit-transition: margin 2s;
+		transition: margin 2s;
+	}
+
+	.hide-overflow {
+		position: relative;
+
+		.project-nav {
+			position: absolute;
+			bottom: calc(50% - 16px);
+			z-index: 10;
+			cursor: pointer;
+			color: $light-gray;
+		}
+
+		.previous {
+			left: 1rem;
+		}
+
+		.next {
+			right: 1rem;
+		}
+	}
+}

@@ -26,8 +26,30 @@ get_header();
 						
 						<?php get_template_part( 'template-parts/content', get_post_type() ); ?>		
 						
+						<div class="hide-overflow">
+							<table>
+								<tbody style="border:none">
+									<tr id="project-scroll">
+										<?php 
+										$images = get_field('images');
+										$size = 'full';
+										if( $images ): ?>
+											<?php foreach( $images as $image_id ): ?>
+												<td class="project">
+													<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+												</td>
+											<?php endforeach; ?>
+										<?php endif; ?>
+									</tr>
+									<div class="project-nav next"><i class="fas fa-2x fa-chevron-circle-right"></i></div><div class="project-nav previous"><i class="fas fa-2x fa-chevron-circle-left"></i></div>
+								</tbody>
+							</table>
+						</div>
+
+						<?php get_template_part( 'template-parts/javascript-single', get_post_type() ); ?>	
+
 						<?php get_template_part( 'template-parts/nav', get_post_type() ); ?>		
-						
+
 					</div>
 				</div>
 			</div>

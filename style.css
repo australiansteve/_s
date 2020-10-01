@@ -4804,6 +4804,9 @@ body section {
 a {
   display: inline-block; }
 
+.hide-overflow {
+  overflow: hidden; }
+
 nav .accordion-menu .fas {
   position: absolute;
   right: 1rem;
@@ -4831,3 +4834,28 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
 
 .page-template-about-page #meet-the-team #team-members-grid .team-member:hover {
   padding: 1.5rem 0.5rem; }
+
+.single-austeve-projects #project-scroll {
+  overflow-x: hidden;
+  white-space: nowrap; }
+
+.single-austeve-projects .project {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0 1rem;
+  -webkit-transition: margin 2s;
+  transition: margin 2s; }
+
+.single-austeve-projects .hide-overflow {
+  position: relative; }
+  .single-austeve-projects .hide-overflow .project-nav {
+    position: absolute;
+    top: calc(50% - 16px);
+    z-index: 10;
+    cursor: pointer;
+    color: #e6e6e6; }
+  .single-austeve-projects .hide-overflow .previous {
+    left: 1rem; }
+  .single-austeve-projects .hide-overflow .next {
+    right: 1rem; }
