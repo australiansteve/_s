@@ -4807,6 +4807,24 @@ a {
 .hide-overflow {
   overflow: hidden; }
 
+footer #footer {
+  padding-top: 2rem; }
+  footer #footer img {
+    margin-bottom: 1rem; }
+  footer #footer ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0 0 1rem 0; }
+    footer #footer ul li {
+      display: inline-block;
+      margin-right: 0.5rem; }
+    footer #footer ul li:nth-last-of-type(1) {
+      margin-right: 0; }
+  footer #footer a {
+    color: inherit; }
+  footer #footer a:hover {
+    color: inherit; }
+
 nav .accordion-menu .fas {
   position: absolute;
   right: 1rem;
@@ -4851,7 +4869,7 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
   position: relative; }
   .single-austeve-projects .hide-overflow .project-nav {
     position: absolute;
-    top: calc(50% - 16px);
+    bottom: calc(50% - 16px);
     z-index: 10;
     cursor: pointer;
     color: #e6e6e6; }

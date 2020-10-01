@@ -51,7 +51,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'hamburger-cat' ),
-				'menu-2' => esc_html__( 'Secondary', 'hamburger-cat' ),
+				'social-media' => esc_html__( 'Social Media', 'hamburger-cat' )
 			)
 		);
 
@@ -102,6 +102,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 			)
 		);
 
+		add_image_size( 'rect-small', 290, 160, true );
 		add_image_size( 'rect-large', 1100, 700, true );
 		add_image_size( 'square-large', 700, 700, true );
 	}
@@ -133,9 +134,9 @@ function hamburger_cat_scripts() {
 
 	wp_enqueue_script( 
 		'hammer-js',
-        get_stylesheet_directory_uri() . "/dist/hammer.min.js",
-        array('jquery')
-    );
+		get_stylesheet_directory_uri() . "/dist/hammer.min.js",
+		array('jquery')
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -181,9 +182,25 @@ if ( class_exists('ACF') ) {
  * Redirect Team Members archive page to the about page section
  */
 function austeve_redirect_cpt_archive() {
-    if( is_post_type_archive( 'austeve-team-members' ) ) {
-        wp_redirect( home_url( 'about#meet-the-team' ), 301 );
-        exit();
-    }
+	if( is_post_type_archive( 'austeve-team-members' ) ) {
+		wp_redirect( home_url( 'about#meet-the-team' ), 301 );
+		exit();
+	}
 }
 add_action( 'template_redirect', 'austeve_redirect_cpt_archive' );
+
+add_filter('wp_nav_menu_objects', function( $items, $args ) {
+	// loop
+	foreach( $items as &$item ) {
+		// vars
+		$icon = get_field('icon', $item);
+		// replace title with icon
+		if( $icon ) {
+			$title = $item->title;
+			$item->title = '<i class="fab fa-'.$icon.'" title="'.$title.'"></i>';	
+		}
+	}
+
+	// return
+	return $items;
+}, 10, 2);

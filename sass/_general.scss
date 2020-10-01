@@ -25,3 +25,39 @@ a {
 .hide-overflow {
 	overflow: hidden;
 }
+
+footer {
+
+	#footer {
+		padding-top: 2rem;
+
+		img {
+			margin-bottom: 1rem;
+		}
+
+		ul {
+			list-style: none;
+			display: inline-block;
+			margin: 0 0 1rem 0;
+
+			li {
+				display: inline-block;
+				margin-right: 0.5rem;
+			}
+
+			li:nth-last-of-type(1) {
+				margin-right: 0;
+			}
+		}
+
+		a {
+			color: inherit;
+		}
+
+		a:hover {
+			color: inherit;
+		}
+
+	}
+
+}
