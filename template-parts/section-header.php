@@ -1,4 +1,15 @@
 <?php
+$contentHtml = $section['content_html'];
+$contentTextColor = $section['content_text_color'];
+$backgroundColor = $section['background_color'];
+$backgroundImage = $section['background_image'];
+$backgroundImageUrl = wp_get_attachment_image_src($backgroundImage, 'full');
+$backgroundCssValue = array();
+$backgroundClasses = $section['background_classes'];
+$sectionClasses = $section['section_classes'];
+$sectionHAlignment = $section['section_horizontal_alignment'];
+$sectionVAlignment = $section['section_vertical_alignment'];
+$sectionHeight = $section['section_height'];
 
 if ($backgroundImage) {
 	$backgroundCssValue[] = "background-image: url(".$backgroundImageUrl[0].")";
