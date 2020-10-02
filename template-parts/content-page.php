@@ -34,6 +34,8 @@
 
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 
+				the_title('<header><h1 class="page-title">', '</h1></header>');
+
 				the_content();
 
 				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 

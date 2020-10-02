@@ -4807,23 +4807,27 @@ a {
 .hide-overflow {
   overflow: hidden; }
 
+header a {
+  color: inherit; }
+
+header a:hover {
+  color: inherit; }
+
 footer #footer {
   padding-top: 2rem; }
   footer #footer img {
     margin-bottom: 1rem; }
-  footer #footer ul {
-    list-style: none;
-    display: inline-block;
-    margin: 0 0 1rem 0; }
-    footer #footer ul li {
-      display: inline-block;
-      margin-right: 0.5rem; }
-    footer #footer ul li:nth-last-of-type(1) {
-      margin-right: 0; }
   footer #footer a {
     color: inherit; }
   footer #footer a:hover {
     color: inherit; }
+
+#projects #project-category-content-container {
+  position: relative; }
+  #projects #project-category-content-container .project-category-content {
+    position: absolute; }
+  #projects #project-category-content-container .project-category-content:not(.active) {
+    opacity: 0; }
 
 nav .accordion-menu .fas {
   position: absolute;
@@ -4841,6 +4845,21 @@ nav .accordion-menu li[aria-expanded="true"] .fa-bars {
 
 nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
   opacity: 1; }
+
+nav #primary-menu {
+  display: inline-block; }
+  nav #primary-menu li {
+    display: inline-block; }
+
+ul.social-menu {
+  list-style: none;
+  display: inline-block;
+  margin: 0 0 1rem 0; }
+  ul.social-menu li {
+    display: inline-block;
+    margin-right: 0.5rem; }
+  ul.social-menu li:nth-last-of-type(1) {
+    margin-right: 0; }
 
 .page-template-about-page #meet-the-team #team-members-grid .team-member {
   padding: 2rem 1rem;

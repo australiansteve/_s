@@ -33,4 +33,27 @@ nav {
 			}
 		}
 	}
+
+	#primary-menu {
+		display: inline-block;
+
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+ul.social-menu {
+	list-style: none;
+	display: inline-block;
+	margin: 0 0 1rem 0;
+
+	li {
+		display: inline-block;
+		margin-right: 0.5rem;
+	}
+
+	li:nth-last-of-type(1) {
+		margin-right: 0;
+	}
 }

@@ -17,7 +17,7 @@ get_header();
 		the_post();
 
 		$sectionId = 'landing';
-		$section = get_field($sectionId;);
+		$section = get_field($sectionId);
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>	
@@ -26,90 +26,196 @@ get_header();
 					<div class="cell">
 						<?php 
 						$image = $section['logo'];
-							$size = 'rect-large'; 
-							
-							if( $image ) {
-								echo wp_get_attachment_image( $image, $size );
+						$size = 'rect-large'; 
+
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}
+						?>
+					</div>
+				</div>
+				<div class="grid-x">
+					<div class="cell">
+						<?php 
+						echo $section['intro_text'];
+						?>
+						<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
+					</div>
+				</div>
+			</div>
+			<?php
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+
+		}
+
+		$sectionId = 'video';
+		$section = get_field($sectionId);
+		if ($section) {
+
+			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+			?>	
+			<div class="grid-container">
+
+				<?php 
+				if ($section['video_url']) :
+					?>
+					<video playsInline preload="none" src="<?php echo $section['video_url']; ?>">
+						Your browser doesn't support HTML5 video tag.
+					</video>
+					<?php
+				endif; ?>
+				<div class="grid-x">
+					<div class="cell">
+						<?php 
+						echo $section['intro_text'];
+						?>
+						<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
+					</div>
+				</div>
+			</div>
+			<?php
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+
+		}
+
+		$sectionId = 'projects';
+		$section = get_field($sectionId);
+		if ($section) {
+
+			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+			?>	
+			<div class="grid-container">
+				<div class="grid-x">
+					<div class="cell">
+						<?php
+						$categories = $section['project_categories'];
+						//echo "There are ".count($categories)." categories";
+						?>
+						<div class="grid-x small-up-2 medium-up-<?php echo count($categories);?> text-center" id="project-category-grid">
+							<?php
+							foreach($categories as $category) {
+								$cat = get_term($category['category'], 'project-category');
+								//echo print_r($category, true);
+								echo "<div class='cell'><a href='#project-category-".$cat->slug."' data-project-category='".$cat->slug."'>". $cat->name ."</a></div>";
 							}
 							?>
 						</div>
-					</div>
-					<div class="grid-x">
-						<div class="cell">
-							<?php 
-							echo $section['intro_text'];
-							?>
-							<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
+
+						<div id="project-category-content-container">
+							<?php
+							$counter = 0;
+							foreach($categories as $category) {
+								$cat = get_term($category['category'], 'project-category');
+								$counter++;
+								?>
+								<div class="grid-x project-category-content <?php echo ($counter == 1) ? 'active' : '';?>" id="project-category-<?php echo $cat->slug; ?>">
+									<div class="cell">
+										<div class="description">
+											<?php echo $category['description']; ?>
+										</div>
+										<div class="grid-x project-grid" id="project-category-<?php echo $cat->slug; ?>-grid">
+											<?php
+
+											// WP_Query arguments
+											$args = array(
+												'post_type'              => array( 'austeve-projects' ),
+												'post_status'            => array( 'publish' ),
+												'posts_per_page'            => '-1',
+												'tax_query'				=> array(
+													array(
+														'taxonomy'         => 'project-category',
+														'terms'            => $cat->slug,
+														'field'            => 'slug',
+														'operator'         => 'IN',
+													),
+												)
+											);
+
+											// The Query
+											$query = new WP_Query( $args );
+
+											if ( $query->have_posts() ) {
+												while ( $query->have_posts() ) {
+													$query->the_post();
+													?>
+													<div class="cell medium-6">
+														<a href="<?php the_permalink();?>">
+															<div class="image">
+																<?php
+																echo the_post_thumbnail('square-large');
+																?>
+															</div>
+															<div class="title text-center">
+																<?php the_title('<h3>', '</h3>');?>
+															</div>
+														</a>
+													</div>
+													<?php
+
+												}
+											} else {
+												echo "No ".$cat->name." projects";
+											}
+
+											wp_reset_postdata();
+											?>
+										</div>
+									</div>
+								</div>
+								<?php
+							}
+							?>	
 						</div>
+						<script type="text/javascript">
+							function changeProjectCategory(event) {
+								event.preventDefault();
+								var category = jQuery(event.target).data('project-category');
+
+								if (category) {
+									jQuery(".project-category-content").css("opacity", "0").removeClass('active');
+									jQuery("#project-category-" + category).css("opacity", "1").addClass('active');
+									resizeContainer();
+								}
+							}
+							jQuery(document).on("click", "#project-category-grid a", changeProjectCategory);
+
+							var resizeContainer = _.throttle(function() {
+								//console.log("Resize project category content container");
+								var activeHeight =  jQuery(".project-category-content.active").height();
+								jQuery("#project-category-content-container").height(activeHeight);
+							}, 500);
+
+							jQuery(document).ready(function() {
+								resizeContainer();
+								console.log(window.location.hash);
+							});
+							jQuery(window).on('resize', resizeContainer);
+						</script>
 					</div>
 				</div>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+			</div>
+			<?php
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 
-			}
+		}
 
-			$section = get_field('video');
-			if ($section) {
+		$sectionId = 'contact';
+		$section = get_field($sectionId);
+		if ($section) {
 
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>	
-				<div class="grid-container">
-					
-					<?php 
-					if ($section['video_url']) :
-						?>
-						<video playsInline preload="none" src="<?php echo $section['video_url']; ?>">
-							  Your browser doesn't support HTML5 video tag.
-						</video>
-						<?php
-					endif; ?>
-					<div class="grid-x">
-						<div class="cell">
-							<?php 
-							echo $section['intro_text'];
-							?>
-							<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
-						</div>
+			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+			?>	
+			<div class="grid-container">
+				<div class="grid-x">
+					<div class="cell">
+						<?php echo do_shortcode("[ninja_forms id='".$section['ninja_form_id']."']");?>
 					</div>
 				</div>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+			</div>
+			<?php
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 
-			}
-
-			$section = get_field('projects');
-			if ($section) {
-
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>	
-				<div class="grid-container">
-					<div class="grid-x">
-						<div class="cell">
-							
-						</div>
-					</div>
-				</div>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-
-			}
-
-			$section = get_field('contact');
-			if ($section) {
-
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>	
-				<div class="grid-container">
-					<div class="grid-x">
-						<div class="cell">
-							<?php echo do_shortcode("[ninja_forms id='".$section['ninja_form_id']."']");?>
-						</div>
-					</div>
-				</div>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-
-			}
+		}
 
 		endwhile; // End of the loop.
 		?>

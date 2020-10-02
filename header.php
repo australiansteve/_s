@@ -26,63 +26,82 @@
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hamburger-cat' ); ?></a>
 
 		<header id="masthead" class="site-header">
-			<div class="grid-container">
-				<div class="site-branding">
-					<?php
-					the_custom_logo();
-					if ( is_front_page() && is_home() ) :
-						?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php
-				else :
-					?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-				endif;
-				$hamburger_cat_description = get_bloginfo( 'description', 'display' );
-				if ( $hamburger_cat_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo $hamburger_cat_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-				<?php endif; ?>
-			</div><!-- .site-branding -->
 
-			<nav id="site-navigation" class="main-navigation">
-				<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
-					<li>
-						<a href="#"><span>Menu</span> <i class="fas fa-bars"></i><i class="fas fa-caret-up"></i></a>
-						<ul class="menu vertical nested">
+				<?php
+				$sectionId = 'header';
+				$section = get_field($sectionId, 'option');
+				if ($section) {
+					error_log("Footer section: ".print_r($section, true));
+					include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+?>
+			<div class="grid-container">
+				<div class="grid-x">
+					<div class="cell medium-3 large-2">
+						<div class="site-branding">
+							<?php
+							the_custom_logo();
+							?>
+						</div><!-- .site-branding -->
+					</div>
+					<div class="cell medium-6 large-8 medium-text-center">
+
+						<nav id="site-navigation" class="main-navigation">
+							<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
+								<li>
+									<a href="#"><span>Menu</span> <i class="fas fa-bars"></i><i class="fas fa-caret-up"></i></a>
+									<ul class="menu vertical nested">
+										<?php
+										wp_nav_menu(
+											array(
+												'theme_location'	=> 'menu-1',
+												'container'		=> false,
+												'items_wrap' => '%3$s'
+											)
+										);
+
+										wp_nav_menu(
+											array(
+												'theme_location'	=> 'social-media',
+												'container'		=> false,
+												'items_wrap' => '%3$s'
+											)
+										);
+										?>
+									</ul>
+								</li>
+
+							</ul>
+
 							<?php
 							wp_nav_menu(
 								array(
 									'theme_location'	=> 'menu-1',
-									'container'		=> false,
-									'items_wrap' => '%3$s'
+									'menu_id'		=> 'primary-menu',
+									'menu_class'	=> 'horizontal menu show-for-medium',
+									'container'		=> false
 								)
 							);
+							?>
+						</nav><!-- #site-navigation -->
 
-							wp_nav_menu(
+					</div>
+
+					<div class="cell medium-3 large-2 show-for-medium text-right">
+						<ul class="social-menu">
+							<?php wp_nav_menu(
 								array(
-									'theme_location'	=> 'menu-2',
+									'theme_location'	=> 'social-media',
 									'container'		=> false,
 									'items_wrap' => '%3$s'
 								)
 							);
 							?>
 						</ul>
-					</li>
-
-				</ul>
+					</div>
+				</div><!-- .grid-container -->
 
 				<?php
-				wp_nav_menu(
-					array(
-						'theme_location'	=> 'menu-1',
-						'menu_id'		=> 'primary-menu',
-						'menu_class'	=> 'horizontal menu show-for-medium',
-						'container'		=> false
-					)
-				);
+					include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+				}
 				?>
-			</nav><!-- #site-navigation -->
-		</div><!-- .grid-container -->
-	</header><!-- #masthead -->
+			</header><!-- #masthead -->
