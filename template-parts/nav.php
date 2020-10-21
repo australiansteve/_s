@@ -11,7 +11,10 @@
 			'<i class="fas fa-2x fa-chevron-right"></i> <span class="nav-title screen-reader-text">%title</span>'
 		); ?>
 	</div>
+	<?php
+	$returnTo = isset($_GET["returnto"]) ? "#".$_GET["returnto"] : "";
+	?>
 	<div class="cell text-center medium-2 medium-order-2">
-		<a class="button" href="<?php echo get_post_type_archive_link(get_post_type());?>"><?php echo get_post_type_object(get_post_type())->labels->all_items;?></a>
+		<a class="button" href="<?php echo get_post_type_archive_link(get_post_type()); echo $returnTo;?>"><?php echo get_post_type_object(get_post_type())->labels->all_items;?></a>
 	</div>
 </div>

@@ -191,7 +191,7 @@ function austeve_redirect_cpt_archive() {
 		exit();
 	}
 	if( is_post_type_archive( 'austeve-projects' ) ) {
-		wp_redirect( home_url( '#projects' ), 301 );
+		error_log("Request URI: ". $_SERVER["REQUEST_URI"]);
 		exit();
 	}
 }

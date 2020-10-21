@@ -66,9 +66,6 @@ get_header();
 				endif; ?>
 				<div class="grid-x">
 					<div class="cell">
-						<?php 
-						echo $section['intro_text'];
-						?>
 						<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
 					</div>
 				</div>
@@ -139,7 +136,7 @@ get_header();
 													$query->the_post();
 													?>
 													<div class="cell medium-6">
-														<a href="<?php the_permalink();?>">
+														<a class="project-link" href="<?php the_permalink();?>?returnto=project-category-<?php echo $cat->slug;?>">
 															<div class="image">
 																<?php
 																echo the_post_thumbnail('square-large');
@@ -167,20 +164,29 @@ get_header();
 							?>	
 						</div>
 						<script type="text/javascript">
-							function changeProjectCategory(event) {
-								event.preventDefault();
-								var category = jQuery(event.target).data('project-category');
-
+							function changeProjectCategory(category) {
+								console.log("changeProjectCategory: " + category);
 								if (category) {
+									if (category.indexOf("project-category") == 0) {
+										category = category.substring(17);
+										console.log("Stripped - new category: " + category);
+									}
 									jQuery(".project-category-content").css("opacity", "0").removeClass('active');
 									jQuery("#project-category-" + category).css("opacity", "1").addClass('active');
-									resizeContainer();
+									resizeContainer();									
 								}
 							}
-							jQuery(document).on("click", "#project-category-grid a", changeProjectCategory);
+
+							function clickProjectCategoryLink(event) {
+								event.preventDefault();
+								var category = jQuery(event.target).data('project-category');
+								changeProjectCategory(category);
+								var newHistoryLocation = window.location.toString().substr(0, window.location.toString().indexOf("#")) + "#project-category-" + category;
+								history.pushState({page: 1}, "", newHistoryLocation);
+							}
+							jQuery(document).on("click", "#project-category-grid a", clickProjectCategoryLink);
 
 							var resizeContainer = _.throttle(function() {
-								//console.log("Resize project category content container");
 								var activeHeight =  jQuery(".project-category-content.active").height();
 								jQuery("#project-category-content-container").height(activeHeight);
 							}, 500);
@@ -190,6 +196,19 @@ get_header();
 								console.log(window.location.hash);
 							});
 							jQuery(window).on('resize', resizeContainer);
+
+							window.onpopstate = function(event) {
+								if (String(document.location).indexOf("#") > 0) {
+									var hash = String(document.location).substring(String(document.location).indexOf("#") + 1);
+									console.log("Pop hash: " + hash);
+									changeProjectCategory(hash)
+								}
+								else {
+									/* Default to first category */
+									changeProjectCategory(jQuery("#project-category-grid a").first().data('project-category'));
+								}
+							}
+
 						</script>
 					</div>
 				</div>

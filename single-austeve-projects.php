@@ -16,7 +16,8 @@ get_header();
 	while ( have_posts() ) :
 		the_post();
 
-		$section = get_field('landing');
+		$sectionId = 'landing';
+		$section = get_field($sectionId);
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>	

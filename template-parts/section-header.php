@@ -23,7 +23,7 @@ if ($backgroundColor) {
 $explicitHeight = null;
 if ($sectionVAlignment != 'left') {
 	if (is_array($sectionHeight)) {
-		error_log("sectionHeight: ".print_r($sectionHeight, true));
+		//error_log("sectionHeight: ".print_r($sectionHeight, true));
 		foreach ($sectionHeight as $height) :
 			error_log("height: ".print_r($height, true));
 			if ($height['acf_fc_layout'] == 'explicit_value') :

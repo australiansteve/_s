@@ -18,7 +18,6 @@
 				$sectionId = 'footer';
 				$section = get_field($sectionId, 'option');
 				if ($section) {
-					error_log("Footer section: ".print_r($section, true));
 					include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 					?>	
 					<div class="grid-container">
