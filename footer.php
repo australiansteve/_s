@@ -45,7 +45,7 @@
 									<?php
 									wp_nav_menu(
 										array(
-											'theme_location'	=> 'menu-2',
+											'theme_location'	=> 'social-media',
 											'container'		=> false,
 											'items_wrap' => '%3$s'
 										)

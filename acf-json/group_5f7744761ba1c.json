@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5f9ace79e25ca",
+            "label": "Section Title",
+            "name": "section_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Pinnacle Projects",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5f7744a4fada0",
             "label": "Project Categories",
             "name": "project_categories",
@@ -98,5 +117,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1601652223
+    "modified": 1603980946
 }

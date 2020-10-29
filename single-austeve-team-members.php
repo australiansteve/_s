@@ -16,7 +16,7 @@ get_header();
 	while ( have_posts() ) :
 		the_post();
 
-		$section = get_field('landing');
+		$section = get_field('team_member_landing', 'option');
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>	

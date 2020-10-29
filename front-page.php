@@ -35,7 +35,7 @@ get_header();
 					</div>
 				</div>
 				<div class="grid-x">
-					<div class="cell">
+					<div class="cell intro-text">
 						<?php 
 						echo $section['intro_text'];
 						?>
@@ -50,7 +50,7 @@ get_header();
 
 		$sectionId = 'video';
 		$section = get_field($sectionId);
-		if ($section) {
+		if ($section && $section['video_url']) {
 
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>	
@@ -59,12 +59,30 @@ get_header();
 				<?php 
 				if ($section['video_url']) :
 					?>
-					<video playsInline preload="none" src="<?php echo $section['video_url']; ?>">
+					<video playsInline preload="none" controls width="100%" src="<?php echo $section['video_url']; ?>" poster="<?php echo wp_get_attachment_image_src($section['placeholder_image'], 'full')[0];?>">
 						Your browser doesn't support HTML5 video tag.
 					</video>
 					<?php
 				endif; ?>
-				<div class="grid-x">
+				<div class="grid-x video-overlay" id="video-controls">
+					<div class="cell">
+						<div class="button play-button"><i class="fas fa-play fa-2x"></i></div>
+
+						<script type="text/javascript">
+							function playVideo() {
+								var video = document.querySelector("section#video video");
+								video.play();
+
+								//fade out overlay then move to back
+								jQuery("#video-controls").css('opacity', '0');
+								setTimeout(function() {jQuery("#video-controls").css('z-index', '-1');}, 5000);
+							}
+							jQuery(document).on("click", ".play-button", playVideo);
+
+						</script>
+					</div>
+				</div>
+				<div class="grid-x video-overlay" id="video-overlay-2">
 					<div class="cell">
 						<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
 					</div>
@@ -80,136 +98,143 @@ get_header();
 		if ($section) {
 
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-			?>	
+			?>
 			<div class="grid-container">
-				<div class="grid-x">
-					<div class="cell">
-						<?php
-						$categories = $section['project_categories'];
+				<div class="white-content-container">
+					<div class="grid-x">
+						<div class="cell">
+							<?php
+							$categories = $section['project_categories'];
 						//echo "There are ".count($categories)." categories";
-						?>
-						<div class="grid-x small-up-2 medium-up-<?php echo count($categories);?> text-center" id="project-category-grid">
-							<?php
-							foreach($categories as $category) {
-								$cat = get_term($category['category'], 'project-category');
-								//echo print_r($category, true);
-								echo "<div class='cell'><a href='#project-category-".$cat->slug."' data-project-category='".$cat->slug."'>". $cat->name ."</a></div>";
-							}
 							?>
-						</div>
-
-						<div id="project-category-content-container">
-							<?php
-							$counter = 0;
-							foreach($categories as $category) {
-								$cat = get_term($category['category'], 'project-category');
-								$counter++;
+							<div class="grid-x small-up-2 medium-up-<?php echo count($categories);?> text-center" id="project-category-grid">
+								<?php
+								foreach($categories as $category) {
+									$cat = get_term($category['category'], 'project-category');
+								//echo print_r($category, true);
+									echo "<div class='cell'><a href='#project-category-".$cat->slug."' data-project-category='".$cat->slug."'>". $cat->name ."</a></div>";
+								}
 								?>
-								<div class="grid-x project-category-content <?php echo ($counter == 1) ? 'active' : '';?>" id="project-category-<?php echo $cat->slug; ?>">
-									<div class="cell">
-										<div class="description">
-											<?php echo $category['description']; ?>
-										</div>
-										<div class="grid-x project-grid" id="project-category-<?php echo $cat->slug; ?>-grid">
-											<?php
+							</div>
 
-											// WP_Query arguments
-											$args = array(
-												'post_type'              => array( 'austeve-projects' ),
-												'post_status'            => array( 'publish' ),
-												'posts_per_page'            => '-1',
-												'tax_query'				=> array(
-													array(
-														'taxonomy'         => 'project-category',
-														'terms'            => $cat->slug,
-														'field'            => 'slug',
-														'operator'         => 'IN',
-													),
-												)
-											);
-
-											// The Query
-											$query = new WP_Query( $args );
-
-											if ( $query->have_posts() ) {
-												while ( $query->have_posts() ) {
-													$query->the_post();
-													?>
-													<div class="cell medium-6">
-														<a class="project-link" href="<?php the_permalink();?>?returnto=project-category-<?php echo $cat->slug;?>">
-															<div class="image">
-																<?php
-																echo the_post_thumbnail('square-large');
-																?>
-															</div>
-															<div class="title text-center">
-																<?php the_title('<h3>', '</h3>');?>
-															</div>
-														</a>
-													</div>
+							<div id="project-category-content-container">
+								<?php
+								$counter = 0;
+								foreach($categories as $category) {
+									$cat = get_term($category['category'], 'project-category');
+									$counter++;
+									?>
+									<div class="project-category-content <?php echo ($counter == 1) ? 'active' : '';?>" id="project-category-<?php echo $cat->slug; ?>">
+										<div class="grid-x">
+											<div class="cell text-center">
+												<div class="description">
+													<?php echo $category['description']; ?>
+												</div>
+												<div class="grid-x project-grid" id="project-category-<?php echo $cat->slug; ?>-grid">
 													<?php
 
-												}
-											} else {
-												echo "No ".$cat->name." projects";
-											}
+													// WP_Query arguments
+													$args = array(
+														'post_type'              => array( 'austeve-projects' ),
+														'post_status'            => array( 'publish' ),
+														'posts_per_page'            => '-1',
+														'tax_query'				=> array(
+															array(
+																'taxonomy'         => 'project-category',
+																'terms'            => $cat->slug,
+																'field'            => 'slug',
+																'operator'         => 'IN',
+															),
+														)
+													);
 
-											wp_reset_postdata();
-											?>
+													// The Query
+													$query = new WP_Query( $args );
+
+													if ( $query->have_posts() ) {
+														while ( $query->have_posts() ) {
+															$query->the_post();
+															?>
+															<div class="cell medium-6">
+																<a class="project-link" href="<?php the_permalink();?>?returnto=project-category-<?php echo $cat->slug;?>">
+																	<div class="image">
+																		<?php
+																		echo the_post_thumbnail('square-large');
+																		?>
+																	</div>
+																	<div class="title text-center">
+																		<?php the_title('<h3>', '</h3>');?>
+																	</div>
+																</a>
+															</div>
+															<?php
+
+														}
+													} else {
+														echo "No ".$cat->name." projects";
+													}
+
+													wp_reset_postdata();
+													?>
+												</div>
+											</div>
 										</div>
 									</div>
-								</div>
-								<?php
-							}
-							?>	
-						</div>
-						<script type="text/javascript">
-							function changeProjectCategory(category) {
-								console.log("changeProjectCategory: " + category);
-								if (category) {
-									if (category.indexOf("project-category") == 0) {
-										category = category.substring(17);
-										console.log("Stripped - new category: " + category);
+									<?php
+								}
+								?>	
+							</div>
+							<script type="text/javascript">
+								function changeProjectCategory(category) {
+									console.log("changeProjectCategory: " + category);
+									if (category) {
+										if (category.indexOf("project-category") == 0) {
+											category = category.substring(17);
+											console.log("Stripped - new category: " + category);
+										}
+										jQuery(".project-category-content").css("opacity", "0").removeClass('active');
+										jQuery("#project-category-" + category).css("opacity", "1").addClass('active');
+										resizeContainer();									
 									}
-									jQuery(".project-category-content").css("opacity", "0").removeClass('active');
-									jQuery("#project-category-" + category).css("opacity", "1").addClass('active');
-									resizeContainer();									
 								}
-							}
 
-							function clickProjectCategoryLink(event) {
-								event.preventDefault();
-								var category = jQuery(event.target).data('project-category');
-								changeProjectCategory(category);
-								var newHistoryLocation = window.location.toString().substr(0, window.location.toString().indexOf("#")) + "#project-category-" + category;
-								history.pushState({page: 1}, "", newHistoryLocation);
-							}
-							jQuery(document).on("click", "#project-category-grid a", clickProjectCategoryLink);
+								function clickProjectCategoryLink(event) {
+									event.preventDefault();
+									var category = jQuery(event.target).data('project-category');
+									changeProjectCategory(category);
+									var newHistoryLocation = window.location.toString().substr(0, window.location.toString().indexOf("#")) + "#project-category-" + category;
+									jQuery("#project-category-grid a").removeClass('active');
+									jQuery(this).addClass('active');
 
-							var resizeContainer = _.throttle(function() {
-								var activeHeight =  jQuery(".project-category-content.active").height();
-								jQuery("#project-category-content-container").height(activeHeight);
-							}, 500);
-
-							jQuery(document).ready(function() {
-								resizeContainer();
-								console.log(window.location.hash);
-							});
-							jQuery(window).on('resize', resizeContainer);
-
-							window.onpopstate = function(event) {
-								if (String(document.location).indexOf("#") > 0) {
-									var hash = String(document.location).substring(String(document.location).indexOf("#") + 1);
-									console.log("Pop hash: " + hash);
-									changeProjectCategory(hash)
+									history.pushState({page: 1}, "", newHistoryLocation);
 								}
-								else {
-									/* Default to first category */
-									changeProjectCategory(jQuery("#project-category-grid a").first().data('project-category'));
-								}
-							}
+								jQuery(document).on("click", "#project-category-grid a", clickProjectCategoryLink);
 
-						</script>
+								var resizeContainer = _.throttle(function() {
+									var activeHeight =  jQuery(".project-category-content.active").height();
+									jQuery("#project-category-content-container").height(activeHeight);
+								}, 500);
+
+								jQuery(document).ready(function() {
+									resizeContainer();
+									console.log(window.location.hash);
+								});
+								jQuery(window).on('resize', resizeContainer);
+
+								window.onpopstate = function(event) {
+									if (String(document.location).indexOf("#") > 0) {
+										var hash = String(document.location).substring(String(document.location).indexOf("#") + 1);
+										console.log("Pop hash: " + hash);
+										changeProjectCategory(hash)
+									}
+									else {
+										/* Default to first category */
+										changeProjectCategory(jQuery("#project-category-grid a").first().data('project-category'));
+									}
+								}
+
+							</script>
+						</div>
 					</div>
 				</div>
 			</div>

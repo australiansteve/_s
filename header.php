@@ -27,19 +27,26 @@
 
 		<header id="masthead" class="site-header">
 
-				<?php
-				$sectionId = 'header';
-				$section = get_field($sectionId, 'option');
-				if ($section) {
-					include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+			<?php
+			$sectionId = 'header';
+			$section = get_field($sectionId, 'option');
+			if ($section) {
+				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+				$showLogo = is_front_page() ? 'show-for-medium' : '';
 ?>
 			<div class="grid-container">
 				<div class="grid-x">
 					<div class="cell medium-3 large-2">
-						<div class="site-branding">
-							<?php
-							the_custom_logo();
+						<div class="site-branding <?php echo $showLogo;?>">
+							<a href="/" alt="Home" title="<?php echo get_bloginfo('name');?>">
+							<?php 
+							$image = $section['logo'];
+							$size = 'custom-logo';
+							if( $image ) {
+								echo wp_get_attachment_image( $image, $size );
+							}
 							?>
+						</a>
 						</div><!-- .site-branding -->
 					</div>
 					<div class="cell medium-6 large-8 medium-text-center">

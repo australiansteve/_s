@@ -31,7 +31,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "utilities/accessibility";
 
 /* Hamburger Cat style */
+@import "fonts";
 @import "general";
+@import "header";
 @import "menus";
+@import "pages/front-page";
 @import "pages/about-page";
 @import "pages/single-austeve-projects";
+@import "pages/single-austeve-team-members";
