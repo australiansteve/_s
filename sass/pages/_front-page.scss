@@ -40,11 +40,9 @@
 				transition: opacity 5s;
 			}
 
-			#video-overlay-2 {
-				bottom: 20%;
-				top: auto;
+			#find-out-more {
+				margin-top: 0.5rem;
 			}
-
 		}
 	}
 
@@ -103,10 +101,6 @@
 
 		section#contact {
 
-			.nf-form-cont {
-				max-width: 80%;
-				margin: auto;
-			}
 		}
 	}
 }
@@ -156,4 +150,7 @@
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
+	.home section#landing .section-background {
+		background-size: cover;
+	}
 }

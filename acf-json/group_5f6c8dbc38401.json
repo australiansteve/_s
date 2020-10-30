@@ -59,20 +59,6 @@
                 "operator": "==",
                 "value": "post"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "austeve-team-members"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "austeve-projects"
-            }
         ]
     ],
     "menu_order": 5,
@@ -83,5 +69,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601570977
+    "modified": 1603997890
 }

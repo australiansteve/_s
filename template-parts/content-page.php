@@ -33,11 +33,15 @@
 				$sectionHeight = $section['section_height'];
 
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-
+?>
+		<div class="white-content-container">
+<?php
 				the_title('<header><h1 class="page-title">', '</h1></header>');
 
 				the_content();
-
+?>
+</div>
+<?php
 				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 
 			}

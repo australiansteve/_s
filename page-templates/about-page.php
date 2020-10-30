@@ -22,13 +22,20 @@ get_header();
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>	
 			<div class="grid-container">
-				<div class="grid-x">
+				<div class="white-content-container">
 					<div class="grid-x">
-						<div class="cell">
-							<?php 
-							echo $section['intro_text'];
-							?>
-							<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
+						<div class="grid-x">
+							<div class="cell">
+
+					<div class="page-title">
+						<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+					</div>
+					
+								<?php 
+								echo $section['intro_text'];
+								?>
+								<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -37,7 +44,7 @@ get_header();
 
 			}
 
-		$sectionId = 'video';
+			$sectionId = 'video';
 			$section = get_field($sectionId);
 			if ($section) {
 
@@ -49,7 +56,7 @@ get_header();
 					if ($section['video_url']) :
 						?>
 						<video playsInline preload="none" src="<?php echo $section['video_url']; ?>">
-							  Your browser doesn't support HTML5 video tag.
+							Your browser doesn't support HTML5 video tag.
 						</video>
 						<?php
 					endif; ?>
@@ -59,7 +66,7 @@ get_header();
 
 			}
 
-		$sectionId = 'meet_the_team';
+			$sectionId = 'meet_the_team';
 			$section = get_field($sectionId);
 			if ($section) {
 
@@ -78,14 +85,14 @@ get_header();
 									?>
 									<div class="cell team-member">
 										<a href="<?php echo get_the_permalink($tmId);?>">
+											<?php
+											echo get_the_post_thumbnail($tmId, 'square-large');
+											echo "<div class='name'>".get_the_title($tmId)."</div>";
+											echo "<div class='position'>".get_field('position', $tmId)."</div>";
+											?>
+										</a>
+									</div>
 									<?php
-									echo get_the_post_thumbnail($tmId, 'square-large');
-									echo "<div class='name'>".get_the_title($tmId)."</div>";
-									echo "<div class='position'>".get_field('position', $tmId)."</div>";
-									?>
-									</a>
-								</div>
-								<?php
 								}
 								?>
 							</div>
@@ -97,7 +104,7 @@ get_header();
 
 			}
 
-		$sectionId = 'contact';
+			$sectionId = 'contact';
 			$section = get_field($sectionId);
 			if ($section) {
 

@@ -1,6 +1,12 @@
 header {
 	text-transform: uppercase;
 
+	#header .section-background {
+		background-image:
+			linear-gradient(rgba(255, 255, 255, 0.75) 0, rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0) 100%),
+			url(/wp-content/themes/hamburger-cat/media/section-title-background.jpg);
+	}
+
 	#header .section-content {
 		padding: 0;
 	}
@@ -12,6 +18,7 @@ header {
 	a:hover {
 		color: inherit;
 	}
+
 }
 
 /* Small only */
@@ -22,6 +29,7 @@ header {
 		.section-content {
 			padding: 0.5rem 0;
 		}
+
 	}
 }
 
@@ -44,6 +52,7 @@ header {
 			.social-menu {
 				padding-top: 1rem;
 			}
+
 		}
 	}
 }

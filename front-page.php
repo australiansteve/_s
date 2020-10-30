@@ -56,33 +56,9 @@ get_header();
 			?>	
 			<div class="grid-container">
 
-				<?php 
-				if ($section['video_url']) :
-					?>
-					<video playsInline preload="none" controls width="100%" src="<?php echo $section['video_url']; ?>" poster="<?php echo wp_get_attachment_image_src($section['placeholder_image'], 'full')[0];?>">
-						Your browser doesn't support HTML5 video tag.
-					</video>
-					<?php
-				endif; ?>
-				<div class="grid-x video-overlay" id="video-controls">
-					<div class="cell">
-						<div class="button play-button"><i class="fas fa-play fa-2x"></i></div>
+				<?php include(locate_template( 'template-parts/about-video.php', false, false)); ?>
 
-						<script type="text/javascript">
-							function playVideo() {
-								var video = document.querySelector("section#video video");
-								video.play();
-
-								//fade out overlay then move to back
-								jQuery("#video-controls").css('opacity', '0');
-								setTimeout(function() {jQuery("#video-controls").css('z-index', '-1');}, 5000);
-							}
-							jQuery(document).on("click", ".play-button", playVideo);
-
-						</script>
-					</div>
-				</div>
-				<div class="grid-x video-overlay" id="video-overlay-2">
+				<div class="grid-x" id="find-out-more">
 					<div class="cell">
 						<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
 					</div>
@@ -101,11 +77,13 @@ get_header();
 			?>
 			<div class="grid-container">
 				<div class="white-content-container">
+
 					<div class="grid-x">
-						<div class="cell">
+						<div class="cell text-center">
+							<h2><?php echo $section['section_title'];?></h2>
 							<?php
 							$categories = $section['project_categories'];
-						//echo "There are ".count($categories)." categories";
+							//echo "There are ".count($categories)." categories";
 							?>
 							<div class="grid-x small-up-2 medium-up-<?php echo count($categories);?> text-center" id="project-category-grid">
 								<?php
@@ -192,8 +170,8 @@ get_header();
 											category = category.substring(17);
 											console.log("Stripped - new category: " + category);
 										}
-										jQuery(".project-category-content").css("opacity", "0").removeClass('active');
-										jQuery("#project-category-" + category).css("opacity", "1").addClass('active');
+										jQuery(".project-category-content").css({"opacity": "0", "z-index": "-1"}).removeClass('active');
+										jQuery("#project-category-" + category).css({"opacity": "1", "z-index": "1"}).addClass('active');
 										resizeContainer();									
 									}
 								}

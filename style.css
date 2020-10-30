@@ -4826,11 +4826,8 @@ body section {
     background-size: contain; }
   body section .bg-no-repeat {
     background-repeat: no-repeat; }
-  body section .section-title {
-    color: #e50026;
-    padding: 1rem 0;
-    text-transform: uppercase;
-    background-image: url(/wp-content/themes/hamburger-cat/media/section-title-background.jpg); }
+  body section .bg-repeat-x-only {
+    background-repeat: repeat-x; }
   body section .section-content {
     height: 100%;
     padding: 1rem 0; }
@@ -4838,14 +4835,33 @@ body section {
     text-transform: uppercase; }
   body section .white-content-container {
     background: #fefefe;
-    margin-top: -2rem;
     padding: 1rem; }
+
+.navigation {
+  margin-top: 1rem; }
+  .navigation a[rel="next"] {
+    margin-left: 1rem;
+    margin-top: 0.35rem;
+    margin-bottom: 1rem; }
+  .navigation a[rel="prev"] {
+    margin-right: 1rem;
+    margin-top: 0.35rem;
+    margin-bottom: 1rem; }
+
+h1,
+h2 {
+  text-transform: uppercase;
+  color: #e50026; }
 
 a {
   display: inline-block; }
 
 .hide-overflow {
   overflow: hidden; }
+
+.nf-form-cont {
+  max-width: 80%;
+  margin: auto; }
 
 footer #footer {
   padding-top: 2rem; }
@@ -4865,20 +4881,18 @@ footer #footer {
 #projects #project-category-content-container {
   position: relative; }
   #projects #project-category-content-container .project-category-content {
-    position: absolute; }
+    position: absolute;
+    min-width: 100%; }
   #projects #project-category-content-container .project-category-content:not(.active) {
     opacity: 0; }
 
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
-  body section .section-title {
-    padding: 2rem 0; }
   body section .section-content {
     padding: 2rem 0; }
   body section .white-content-container {
     background: #fefefe;
-    margin-top: -4rem;
     padding: 2rem; }
   footer #footer span {
     display: inline-block;
@@ -4894,12 +4908,10 @@ footer #footer {
 /* XLarge and up (>1600px) */
 /* XLarge only */
 /* XXLarge and up (>1920px) */
-@media screen and (min-width: 120em) {
-  body main section .section-background {
-    background-size: cover; } }
-
 header {
   text-transform: uppercase; }
+  header #header .section-background {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75) 0, rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0) 100%), url(/wp-content/themes/hamburger-cat/media/section-title-background.jpg); }
   header #header .section-content {
     padding: 0; }
   header a {
@@ -4996,9 +5008,8 @@ ul.social-menu {
     right: 40%;
     text-align: center;
     transition: opacity 5s; }
-  .home section#video .grid-container #video-overlay-2 {
-    bottom: 20%;
-    top: auto; }
+  .home section#video .grid-container #find-out-more {
+    margin-top: 0.5rem; }
 
 .home section#projects #project-category-grid {
   text-transform: uppercase;
@@ -5023,9 +5034,6 @@ ul.social-menu {
     margin-right: auto; }
   .home section#projects #project-category-content-container {
     max-width: 90%;
-    margin: auto; }
-  .home section#contact .nf-form-cont {
-    max-width: 80%;
     margin: auto; } }
 
 /* Medium only */
@@ -5041,6 +5049,10 @@ ul.social-menu {
 /* XLarge and up (>1600px) */
 /* XLarge only */
 /* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+  .home section#landing .section-background {
+    background-size: cover; } }
+
 .page-template-about-page #meet-the-team #team-members-grid .team-member {
   padding: 2rem 1rem;
   text-align: center;
@@ -5073,22 +5085,20 @@ ul.social-menu {
     cursor: pointer;
     color: #e6e6e6; }
   .single-austeve-projects .hide-overflow .previous {
-    left: 1rem; }
+    left: 1.5rem; }
   .single-austeve-projects .hide-overflow .next {
-    right: 1rem; }
-
-.single-austeve-team-members main article {
-  background: #fefefe;
-  padding: 0.5rem;
-  margin: 1rem 0; }
+    right: 1.5rem; }
 
 /* Small only */
 /* Medium and up (640px) */
-@media screen and (min-width: 40em) {
-  .single-austeve-team-members main article {
-    padding: 2rem;
-    margin: 2rem 0; } }
-
+/* Medium only */
+/* Large and up (>1024px) */
+/* Large only */
+/* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
+/* Small only */
+/* Medium and up (640px) */
 /* Medium only */
 /* Large and up (>1024px) */
 /* Large only */

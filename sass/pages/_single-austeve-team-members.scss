@@ -1,13 +1,5 @@
 .single-austeve-team-members {
 
-	main {
-
-		article {
-			background: $white;
-			padding: 0.5rem;
-			margin: 1rem 0;
-		}
-	}
 }
 
 /* Small only */
@@ -18,16 +10,6 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	.single-austeve-team-members {
-
-		main {
-
-			article {
-				padding: 2rem;
-				margin: 2rem 0;
-			}
-		}
-	}
 }
 
 /* Medium only */

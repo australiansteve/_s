@@ -16,17 +16,20 @@ get_header();
 	while ( have_posts() ) :
 		the_post();
 
-		$section = get_field('team_member_landing', 'option');
+		$sectionId = 'team_member_landing';
+		$section = get_field($sectionId, 'option');
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>	
 			<div class="grid-container">
-				<div class="grid-x">
-					<div class="cell medium-text-center">
-						
-						<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
-						<?php get_template_part( 'template-parts/nav', get_post_type() ); ?>		
-						
+				<div class="white-content-container">
+					<div class="grid-x">
+						<div class="cell medium-text-center">
+							
+							<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+							<?php get_template_part( 'template-parts/nav', get_post_type() ); ?>		
+							
+						</div>
 					</div>
 				</div>
 			</div>
