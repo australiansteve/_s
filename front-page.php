@@ -108,7 +108,7 @@ get_header();
 												<div class="description">
 													<?php echo $category['description']; ?>
 												</div>
-												<div class="grid-x project-grid" id="project-category-<?php echo $cat->slug; ?>-grid">
+												<div class="grid-x grid-margin-x project-grid" id="project-category-<?php echo $cat->slug; ?>-grid">
 													<?php
 
 													// WP_Query arguments
@@ -137,11 +137,18 @@ get_header();
 																<a class="project-link" href="<?php the_permalink();?>?returnto=project-category-<?php echo $cat->slug;?>">
 																	<div class="image">
 																		<?php
-																		echo the_post_thumbnail('square-large');
+																		$projectImages = get_field('images');
+																		if (count($projectImages) > 0):
+																			echo wp_get_attachment_image( $projectImages[0], 'square-large' );
+																		elseif (has_post_thumbnail()):
+																			echo the_post_thumbnail('square-large');
+																		else :
+																			echo "<img src='https://dummyimage.com/700x700/061027/fff'/>";
+																		endif;
 																		?>
 																	</div>
 																	<div class="title text-center">
-																		<?php the_title('<h3>', '</h3>');?>
+																		<?php the_title('<h4>', '</h4>');?>
 																	</div>
 																</a>
 															</div>

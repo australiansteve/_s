@@ -40,26 +40,74 @@
 			)
 		);
 		?>
-		<div class="image-gallery">
-			<div class="hide-overflow">
-				<table>
-					<tbody style="border:none">
-						<tr id="project-scroll">
-							<?php 
-							$images = get_field('images');
-							$size = 'full';
-							if( $images ): ?>
-								<?php foreach( $images as $image_id ): ?>
-									<td class="project">
-										<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-									</td>
-								<?php endforeach; ?>
-							<?php endif; ?>
-						</tr>
-						<div class="project-nav next"><i class="fas fa-2x fa-chevron-circle-right"></i></div><div class="project-nav previous"><i class="fas fa-2x fa-chevron-circle-left"></i></div>
-					</tbody>
-				</table>
+		<div class="image-gallery-container">
+			<div class="grid-x grid-margin-x small-up-2 align-center" id="image-gallery">
+				<?php 
+				$images = get_field('images');
+				$size = 'square-large';
+				$imageCounter = 1;
+				if( $images ): ?>
+					<?php foreach( $images as $image_id ): ?>
+						<div class="cell project">
+							<div class="container" href="#" data-open="imageModal" title="<?php echo get_post($image_id)->post_excerpt;?>" data-imageid="<?php echo $image_id;?>" data-fullimage="<?php echo wp_get_attachment_url($image_id);?>" data-imagecounter="<?php echo $imageCounter++;?>"><?php echo wp_get_attachment_image( $image_id, $size ); ?></div>
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</div>
+
+			<div class="reveal" id="imageModal" data-reveal>
+				<div class="grid-y align-center" style="height: 100%">
+					<div class="cell text-center">
+						<div class="container">
+							<div class="image">
+								<img src=""/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="close-button" data-close aria-label="Close Accessible Modal" type="button">
+					<span aria-hidden="true"><i class="fas fa-times"></i></span>
+				</button>
+				<button class="next-button modal-button" aria-label="Next image" type="button">
+					<span aria-hidden="true"><i class="fas fa-2x fa-chevron-right"></i></span>
+				</button>
+				<button class="previous-button modal-button" aria-label="Previous image" type="button">
+					<span aria-hidden="true"><i class="fas fa-2x fa-chevron-left"></i></span>
+				</button>
+
+			</div>
+
+			<script type="text/javascript">
+
+				function setNextPreviousButton(selector, imageNumber) {
+					if (jQuery("#image-gallery .project:nth-of-type(" + imageNumber + ")").length) {
+						jQuery(selector).attr('data-image', imageNumber);
+						jQuery(selector).css('display', 'block');
+
+					}
+					else {
+						jQuery(selector).css('display', 'none');
+					}
+				}
+
+				jQuery(document).ready(function() {
+
+					jQuery(document).on('click', '.modal-button', function(event) {
+						var imageContainer = jQuery("#image-gallery .project:nth-of-type(" + this.dataset.image + ") .container");
+						jQuery(imageContainer).trigger('click');
+					});
+
+					jQuery(document).on('click', '[data-open]', function(event) {
+						jQuery("#imageModal img").attr('src', this.dataset.fullimage);
+
+						var previousImage = parseInt(this.dataset.imagecounter, 10) - 1;
+						setNextPreviousButton("#imageModal .previous-button", previousImage);
+
+						var nextImage = parseInt(this.dataset.imagecounter, 10) + 1;
+						setNextPreviousButton("#imageModal .next-button", nextImage);
+					});
+				});
+			</script>
 		</div>
 
 		<?php get_template_part( 'template-parts/javascript-single', get_post_type() ); ?>	

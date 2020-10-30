@@ -134,7 +134,7 @@ function hamburger_cat_scripts() {
 		'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js'
 	);
 
-	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array(), HAMBURGER_CAT_VERSION, true );
+	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array('jquery'), HAMBURGER_CAT_VERSION, true );
 
 	wp_enqueue_script( 
 		'hammer-js',
@@ -188,10 +188,6 @@ if ( class_exists('ACF') ) {
 function austeve_redirect_cpt_archive() {
 	if( is_post_type_archive( 'austeve-team-members' ) ) {
 		wp_redirect( home_url( 'about#meet-the-team' ), 301 );
-		exit();
-	}
-	if( is_post_type_archive( 'austeve-projects' ) ) {
-		error_log("Request URI: ". $_SERVER["REQUEST_URI"]);
 		exit();
 	}
 }

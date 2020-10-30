@@ -15,11 +15,11 @@ endif; ?>
 				var video = document.querySelector("section#video video");
 				video.play();
 
-								jQuery("#video-controls").css('opacity', '0');
-								setTimeout(function() {jQuery("#video-controls").css('z-index', '-1');}, 5000);
-							}
-							jQuery(document).on("click", ".play-button", playVideo);
+				jQuery("#video-controls").css('opacity', '0');
+				setTimeout(function() {jQuery("#video-controls").css('z-index', '-1');}, 5000);
+			}
+			jQuery(document).on("click", ".play-button", playVideo);
 
-						</script>
-					</div>
-				</div>
+		</script>
+	</div>
+</div>

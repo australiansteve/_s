@@ -1,0 +1,89 @@
+.reveal {
+	margin: auto;
+	width: 96vw;
+	height: 98vh;
+	background: rgba(255, 255, 255, 0.9);
+
+	.container {
+
+		background: rgba(255, 255, 255, 1);
+		width: fit-content;
+		margin: auto;
+
+		img {
+			max-height: 100vh;
+			max-width: calc(min(98vw, 98%)); /* Enclose in calc to esc sass compile errors for min function. REF: https://github.com/sass/node-sass/issues/2815#issuecomment-575926329 */
+		}
+	}
+
+	button.next-button {
+		position: absolute;
+		right: 0;
+		top: auto;
+		bottom: 50%;
+		cursor: pointer;
+	}
+
+	button.previous-button {
+		position: absolute;
+		left: 0;
+		top: auto;
+		bottom: 50%;
+		cursor: pointer;
+	}
+}
+
+.reveal:focus {
+	outline: none;
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.reveal {
+
+		.container {
+
+			img {
+				max-height: 90vh;
+				max-width: 90vw;
+			}
+		}
+	}
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

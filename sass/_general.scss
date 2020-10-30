@@ -120,10 +120,17 @@ footer {
 		.project-category-content {
 			position: absolute;
 			min-width: 100%;
+			z-index: 1;
+
+			.title {
+				margin-bottom: 1rem;
+			}
 		}
+
 
 		.project-category-content:not(.active) {
 			opacity: 0;
+			z-index: -1;
 		}
 	}
 }
@@ -166,6 +173,19 @@ footer {
 
 			.social-menu {
 				font-size: 2em;
+			}
+		}
+	}
+
+	#projects {
+
+		#project-category-content-container {
+
+			.project-category-content {
+
+				.title {
+					margin-bottom: 2rem;
+				}
 			}
 		}
 	}
