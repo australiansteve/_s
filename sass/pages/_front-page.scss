@@ -7,10 +7,11 @@
 		}
 
 		.intro-text {
-			padding: 2rem 0;
+			padding: 4rem 0;
+			text-transform: uppercase;
 
 			.button {
-				margin-top: 2rem;
+				margin-top: 3rem;
 			}
 		}
 	}
@@ -36,13 +37,18 @@
 		section#landing {
 
 			img {
-				max-width: 70%;
+				max-width: 60%;
 			}
 
 			.intro-text {
 				max-width: 60%;
 				margin-left: auto;
 				margin-right: auto;
+				margin-top: 3rem;
+
+				p:nth-last-of-type(1) {
+					margin-bottom: 3rem;
+				}
 			}
 		}
 

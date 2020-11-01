@@ -31,6 +31,7 @@ body {
 
 		.button {
 			text-transform: uppercase;
+			font-size: 1.2em;
 		}
 
 		.white-content-container {
@@ -75,6 +76,13 @@ a {
 	margin: auto;
 }
 
+.no-max-width {
+
+	.grid-container {
+		max-width: none !important;
+	}
+}
+
 footer {
 
 	#footer {
@@ -115,7 +123,6 @@ footer {
 #video {
 
 	.section-content {
-		padding: 0;
 	}
 
 	.grid-container {
@@ -129,8 +136,8 @@ footer {
 
 		.video-overlay {
 			position: absolute;
-			top: 40%;
-			bottom: 20%;
+			top: 20%;
+			bottom: auto;
 			left: 40%;
 			right: 40%;
 			text-align: center;
@@ -239,6 +246,16 @@ footer {
 			}
 		}
 	}
+
+	#video {
+
+		.grid-container {
+
+			.video-overlay {
+				top: 30%;
+			}
+		}
+	}
 }
 
 /* Medium only */
@@ -249,6 +266,19 @@ footer {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	#video {
+
+		.grid-container {
+
+			.play-button {
+				padding: 24px;
+			}
+
+			.video-overlay {
+				top: 40%;
+			}
+		}
+	}
 }
 
 /* Large only */
@@ -268,5 +298,19 @@ footer {
 
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
+
+	#video {
+
+		.grid-container {
+
+			.video-overlay {
+				top: 40%;
+			}
+		}
+	}
+}
+
+/* Way bigger (>2600px) */
+@media screen and (min-width: 2600px) {
 
 }

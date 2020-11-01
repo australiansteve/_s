@@ -53,9 +53,7 @@ get_header();
 		if ($section && $section['video_url']) {
 
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-			?>	
-			<div class="grid-container">
-
+			?>
 				<?php include(locate_template( 'template-parts/about-video.php', false, false)); ?>
 
 				<div class="grid-x" id="find-out-more">
@@ -63,7 +61,6 @@ get_header();
 						<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
 					</div>
 				</div>
-			</div>
 			<?php
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 
