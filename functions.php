@@ -208,3 +208,17 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 	// return
 	return $items;
 }, 10, 2);
+
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	} elseif ( is_category() ) {
+		$title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+		$title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	}
+ 
+	return $title;
+});

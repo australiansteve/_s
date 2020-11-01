@@ -27,10 +27,10 @@ get_header();
 						<div class="grid-x">
 							<div class="cell">
 
-					<div class="page-title">
-						<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-					</div>
-					
+								<div class="page-title">
+									<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+								</div>
+
 								<?php 
 								echo $section['intro_text'];
 								?>
@@ -49,18 +49,10 @@ get_header();
 			if ($section) {
 
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>	
-				<div class="grid-container">
-					
-					<?php 
-					if ($section['video_url']) :
-						?>
-						<video playsInline preload="none" src="<?php echo $section['video_url']; ?>">
-							Your browser doesn't support HTML5 video tag.
-						</video>
-						<?php
-					endif; ?>
-				</div>
+				?>
+
+				<?php include(locate_template( 'template-parts/about-video.php', false, false)); ?>
+
 				<?php
 				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 
@@ -73,28 +65,35 @@ get_header();
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 				?>	
 				<div class="grid-container">
-					<div class="grid-x">
-						<div class="cell">
-							<h2><?php echo $section['title']; ?></h2>
-							<?php echo $section['intro_text']; ?>
+					<div class="white-content-container">
+						<div class="grid-x">
+							<div class="cell">
+								<h2><?php echo $section['title']; ?></h2>
+								<?php echo $section['intro_text']; ?>
 
-							<div class="grid-x small-up-1 medium-up-2" id="team-members-grid">
-								<?php
-								foreach($section['team_members'] as $teamMember) {
-									$tmId = $teamMember['team_member'];
-									?>
-									<div class="cell team-member">
-										<a href="<?php echo get_the_permalink($tmId);?>">
-											<?php
-											echo get_the_post_thumbnail($tmId, 'square-large');
-											echo "<div class='name'>".get_the_title($tmId)."</div>";
-											echo "<div class='position'>".get_field('position', $tmId)."</div>";
-											?>
-										</a>
-									</div>
+								<div class="grid-x small-up-1 medium-up-2" id="team-members-grid">
 									<?php
-								}
-								?>
+									foreach($section['team_members'] as $teamMember) {
+										$tmId = $teamMember['team_member'];
+										?>
+										<div class="cell team-member">
+											<a href="<?php echo get_the_permalink($tmId);?>">
+												<?php
+												if (has_post_thumbnail($tmId)) :
+													echo get_the_post_thumbnail($tmId, 'square-large');
+												else :
+													$tmImage = get_field('image', $tmId);
+													echo wp_get_attachment_image( $tmImage, 'square-large' );
+												endif;
+												echo "<div class='name'>".get_the_title($tmId)."</div>";
+												echo "<div class='position'>".get_field('position', $tmId)."</div>";
+												?>
+											</a>
+										</div>
+										<?php
+									}
+									?>
+								</div>
 							</div>
 						</div>
 					</div>

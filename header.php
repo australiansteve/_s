@@ -93,7 +93,7 @@
 						</div>
 
 						<div class="cell medium-3 large-2 show-for-medium text-right">
-							<ul class="social-menu">
+							<ul class="social-menu menu">
 								<?php wp_nav_menu(
 									array(
 										'theme_location'	=> 'social-media',

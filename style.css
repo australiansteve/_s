@@ -4878,6 +4878,35 @@ footer #footer {
   footer #footer span {
     display: block; }
 
+#video .section-content {
+  padding: 0; }
+
+#video .grid-container {
+  position: relative;
+  padding: 0 !important; }
+  #video .grid-container .play-button {
+    border-radius: 50%;
+    padding: 15px 14px 15px 16px; }
+  #video .grid-container .video-overlay {
+    position: absolute;
+    top: 40%;
+    bottom: 20%;
+    left: 40%;
+    right: 40%;
+    text-align: center;
+    transition: opacity 5s; }
+  #video .grid-container #find-out-more {
+    margin-top: 0.5rem; }
+
+#projects #project-category-grid {
+  text-transform: uppercase;
+  padding: 1rem 0; }
+  #projects #project-category-grid a {
+    margin-bottom: 0.5rem; }
+  #projects #project-category-grid a.active {
+    color: #e50026;
+    text-decoration: underline; }
+
 #projects #project-category-content-container {
   position: relative; }
   #projects #project-category-content-container .project-category-content {
@@ -4889,6 +4918,9 @@ footer #footer {
   #projects #project-category-content-container .project-category-content:not(.active) {
     opacity: 0;
     z-index: -1; }
+
+:focus {
+  outline: none !important; }
 
 /* Small only */
 /* Medium and up (640px) */
@@ -4917,7 +4949,7 @@ footer #footer {
 header {
   text-transform: uppercase; }
   header #header .section-background {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.75) 0, rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0) 100%), url(/wp-content/themes/hamburger-cat/media/section-title-background.png); }
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5) 0, rgba(255, 255, 255, 0.5) 100%, rgba(255, 255, 255, 0) 100%), url(/wp-content/themes/hamburger-cat/media/section-title-background.png); }
   header #header .section-content {
     padding: 0; }
   header a {
@@ -4937,7 +4969,14 @@ header {
     width: auto; }
   header .section-content .main-navigation,
   header .section-content .social-menu {
-    padding-top: 1rem; } }
+    padding-top: 1rem; }
+  header .section-content .menu li {
+    padding-left: 0;
+    padding-right: 0; }
+  header .section-content .menu.social-menu a {
+    padding-left: 0.5rem;
+    padding-right: 0;
+    color: #e50026; } }
 
 /* Custom menu font sizes for smaller medium screens */
 @media screen and (min-width: 40em) and (max-width: 840px) {
@@ -5038,35 +5077,6 @@ ul.social-menu {
   padding: 2rem 0; }
   .home section#landing .intro-text .button {
     margin-top: 2rem; }
-
-.home section#video .section-content {
-  padding: 0; }
-
-.home section#video .grid-container {
-  position: relative;
-  padding: 0 !important; }
-  .home section#video .grid-container .play-button {
-    border-radius: 50%;
-    padding: 15px 14px 15px 16px; }
-  .home section#video .grid-container .video-overlay {
-    position: absolute;
-    top: 40%;
-    bottom: 20%;
-    left: 40%;
-    right: 40%;
-    text-align: center;
-    transition: opacity 5s; }
-  .home section#video .grid-container #find-out-more {
-    margin-top: 0.5rem; }
-
-.home section#projects #project-category-grid {
-  text-transform: uppercase;
-  padding: 1rem 0; }
-  .home section#projects #project-category-grid a {
-    margin-bottom: 0.5rem; }
-  .home section#projects #project-category-grid a.active {
-    color: #e50026;
-    text-decoration: underline; }
 
 .home section#projects .description {
   margin-bottom: 2rem; }
