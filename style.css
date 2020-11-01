@@ -5108,6 +5108,12 @@ ul.social-menu {
 /* XLarge and up (>1600px) */
 /* XLarge only */
 /* XXLarge and up (>1920px) */
+.archive article .title,
+.search article .title {
+  text-transform: uppercase;
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+
 .home section#landing .section-background {
   background-position: right center; }
 

@@ -11,9 +11,11 @@
 
 				// WP_Query arguments
 				$args = array(
-					'post_type'              => array( 'austeve-projects' ),
-					'post_status'            => array( 'publish' ),
-					'posts_per_page'            => '-1',
+					'post_type'				=> array( 'austeve-projects' ),
+					'post_status'			=> array( 'publish' ),
+					'posts_per_page'		=> '-1',
+					'orderby' 				=> 'menu_order', 
+					'order' 				=> 'ASC', 
 					'tax_query'				=> array(
 						array(
 							'taxonomy'         => 'project-category',
@@ -41,7 +43,7 @@
 									elseif (has_post_thumbnail()):
 										echo the_post_thumbnail('square-large');
 									else :
-										echo "<img src='https://dummyimage.com/700x700/061027/fff'/>";
+										echo wp_get_attachment_image( get_field('general_image', 'option'), 'square-large' );;
 									endif;
 									?>
 								</div>

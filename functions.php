@@ -219,6 +219,5 @@ add_filter( 'get_the_archive_title', function ($title) {
 	} elseif ( is_author() ) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>' ;
 	}
- 
 	return $title;
 });
