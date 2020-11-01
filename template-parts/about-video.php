@@ -11,14 +11,19 @@ endif; ?>
 		<div class="button play-button"><i class="fas fa-play fa-2x"></i></div>
 
 		<script type="text/javascript">
-			function playVideo() {
-				var video = document.querySelector("section#video video");
-				video.play();
-
+			function hideControls() {
 				jQuery("#video-controls").css('opacity', '0');
 				setTimeout(function() {jQuery("#video-controls").css('z-index', '-1');}, 5000);
 			}
+			function playVideo() {
+				var video = document.querySelector("section#video video");
+				video.play();
+				hideControls();
+			}
 			jQuery(document).on("click", ".play-button", playVideo);
+
+			var video = document.querySelector("section#video video");
+			video.addEventListener("play", hideControls);
 
 		</script>
 	</div>

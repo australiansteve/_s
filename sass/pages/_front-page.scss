@@ -7,8 +7,13 @@
 		}
 
 		.intro-text {
-			padding: 4rem 0;
+			padding: 4rem 1rem;
 			text-transform: uppercase;
+			background: rgba(255, 255, 255, 0.7);
+
+			p {
+				font-size: 1.1em;
+			}
 
 			.button {
 				margin-top: 3rem;

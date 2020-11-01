@@ -16,6 +16,10 @@ body {
 			background-size: contain;
 		}
 
+		.bg-cover {
+			background-size: cover;
+		}
+
 		.bg-no-repeat {
 			background-repeat: no-repeat;
 		}
@@ -152,7 +156,7 @@ footer {
 
 		.video-overlay {
 			position: absolute;
-			top: 20%;
+			top: 22%;
 			bottom: auto;
 			left: 40%;
 			right: 40%;
@@ -331,6 +335,16 @@ footer {
 
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
+
+	body {
+
+		section {
+
+			.bg-contain-xx-large {
+				background-size: contain;
+			}
+		}
+	}
 
 	#video {
 

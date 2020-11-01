@@ -4824,6 +4824,8 @@ body section {
     z-index: -1; }
   body section .bg-contain {
     background-size: contain; }
+  body section .bg-cover {
+    background-size: cover; }
   body section .bg-no-repeat {
     background-repeat: no-repeat; }
   body section .bg-repeat-x-only {
@@ -4903,7 +4905,7 @@ footer #footer {
     padding: 15px 14px 15px 16px; }
   #video .grid-container .video-overlay {
     position: absolute;
-    top: 20%;
+    top: 22%;
     bottom: auto;
     left: 40%;
     right: 40%;
@@ -4976,6 +4978,8 @@ footer #footer {
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
+  body section .bg-contain-xx-large {
+    background-size: contain; }
   #video .grid-container .video-overlay {
     top: 40%; } }
 
@@ -5030,7 +5034,7 @@ header {
 /* XLarge and up (>1600px) */
 /* XLarge only */
 /* XXLarge and up (>1920px) */
-nav .accordion-menu .fas {
+nav .accordion-menu .is-accordion-submenu-parent > a .fas {
   position: absolute;
   right: 1rem;
   transition: opacity 0.5s; }
@@ -5118,8 +5122,11 @@ ul.social-menu {
   background-position: right center; }
 
 .home section#landing .intro-text {
-  padding: 4rem 0;
-  text-transform: uppercase; }
+  padding: 4rem 1rem;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.7); }
+  .home section#landing .intro-text p {
+    font-size: 1.1em; }
   .home section#landing .intro-text .button {
     margin-top: 3rem; }
 
