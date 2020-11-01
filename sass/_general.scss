@@ -76,6 +76,22 @@ a {
 	margin: auto;
 }
 
+body .nf-field input[type="button"] {
+	background: $red;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+body .nf-field input[type="button"]:hover {
+	background: scale-color($button-background, $lightness: -15%);
+	color: $white;
+}
+
+body .nf-field-label label {
+	font-weight: 400;
+}
+
 .no-max-width {
 
 	.grid-container {
@@ -170,13 +186,19 @@ footer {
 	#project-category-content-container {
 		position: relative;
 
+		.project-category-description {
+			margin: 2rem 0;
+		}
+
 		.project-category-content {
 			position: absolute;
 			min-width: 100%;
 			z-index: 1;
 
 			.title {
-				margin-bottom: 1rem;
+				text-transform: uppercase;
+				margin-top: 1rem;
+				margin-bottom: 2rem;
 			}
 		}
 
@@ -238,10 +260,17 @@ footer {
 
 		#project-category-content-container {
 
+
+			.project-category-description {
+				margin: 2rem 0 4rem 0;
+
+			}
+
 			.project-category-content {
 
 				.title {
-					margin-bottom: 2rem;
+					margin-top: 1rem;
+					margin-bottom: 3rem;
 				}
 			}
 		}

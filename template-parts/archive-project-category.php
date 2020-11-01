@@ -1,5 +1,10 @@
 <div class="project-category-content <?php echo ($counter == 1) ? 'active' : '';?>" id="project-category-<?php echo $cat->slug; ?>">
 	<div class="grid-x">
+		<div class="cell project-category-description">
+			<?php echo $cat->description; ?>
+		</div>
+	</div>
+	<div class="grid-x">
 		<div class="cell text-center">
 			<div class="grid-x grid-margin-x project-grid" id="project-category-<?php echo $cat->slug; ?>-grid">
 				<?php
@@ -41,7 +46,7 @@
 									?>
 								</div>
 								<div class="title text-center">
-									<?php the_title('<h4>', '</h4>');?>
+									<?php the_title();?>
 								</div>
 							</a>
 						</div>
