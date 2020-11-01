@@ -71,7 +71,7 @@ get_header();
 								<h2><?php echo $section['title']; ?></h2>
 								<?php echo $section['intro_text']; ?>
 
-								<div class="grid-x small-up-1 medium-up-2" id="team-members-grid">
+								<div class="grid-x small-up-1 medium-up-2 align-center" id="team-members-grid">
 									<?php
 									foreach($section['team_members'] as $teamMember) {
 										$tmId = $teamMember['team_member'];

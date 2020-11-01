@@ -16,6 +16,14 @@
 		}
 	}
 
+	button {
+		color: #8a8a8a;
+	}
+
+	button:hover {
+		color: #0a0a0a;
+	}
+
 	button.next-button {
 		position: absolute;
 		right: 0;

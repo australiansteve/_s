@@ -5075,6 +5075,10 @@ ul.social-menu {
       max-height: 100vh;
       max-width: calc(min(98vw, 98%));
       /* Enclose in calc to esc sass compile errors for min function. REF: https://github.com/sass/node-sass/issues/2815#issuecomment-575926329 */ }
+  .reveal button {
+    color: #8a8a8a; }
+  .reveal button:hover {
+    color: #0a0a0a; }
   .reveal button.next-button {
     position: absolute;
     right: 0;
@@ -5164,6 +5168,9 @@ ul.social-menu {
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
+.single-austeve-projects .project:hover {
+  cursor: pointer; }
+
 /* Small only */
 /* Medium and up (640px) */
 /* Medium only */
@@ -5172,8 +5179,21 @@ ul.social-menu {
 /* XLarge and up (>1600px) */
 /* XLarge only */
 /* XXLarge and up (>1920px) */
+.single-austeve-team-members .position {
+  font-size: 1.3em;
+  margin-bottom: 1rem; }
+
+.single-austeve-team-members .image {
+  margin: 3rem auto; }
+
 /* Small only */
 /* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  .single-austeve-team-members .position {
+    margin-bottom: 2rem; }
+  .single-austeve-team-members .image {
+    margin: 4rem auto; } }
+
 /* Medium only */
 /* Large and up (>1024px) */
 /* Large only */

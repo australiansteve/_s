@@ -1,5 +1,13 @@
 .single-austeve-team-members {
 
+	.position {
+		font-size: 1.3em;
+		margin-bottom: 1rem;
+	}
+
+	.image {
+		margin: 3rem auto;
+	}
 }
 
 /* Small only */
@@ -10,6 +18,16 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	.single-austeve-team-members {
+
+		.position {
+			margin-bottom: 2rem;
+		}
+
+		.image {
+			margin: 4rem auto;
+		}
+	}
 }
 
 /* Medium only */
