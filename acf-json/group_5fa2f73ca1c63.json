@@ -1,10 +1,10 @@
 {
-    "key": "group_5f6c8dbc38401",
-    "title": "Default Page Layout",
+    "key": "group_5fa2f73ca1c63",
+    "title": "Front page - Playlist",
     "fields": [
         {
-            "key": "field_5f6c8dc310216",
-            "label": "Landing",
+            "key": "field_5fa2f73ca701a",
+            "label": "Playlist",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -15,14 +15,14 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8dce10217",
-            "label": "Landing",
-            "name": "landing",
-            "type": "clone",
+            "key": "field_5fa2f73ca703b",
+            "label": "Embed Code",
+            "name": "embed_code",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -31,19 +31,17 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_5ef3a3cec10c0"
-            ],
-            "display": "group",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
-            "key": "field_5f6c907db3ac4",
-            "label": "Body",
-            "name": "",
-            "type": "tab",
+            "key": "field_5fa2f73ca71d8",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -52,14 +50,17 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
-            "key": "field_5f6c909db3ac5",
-            "label": "Body",
-            "name": "body",
-            "type": "clone",
+            "key": "field_5fa2f78fa9106",
+            "label": "Button Link",
+            "name": "button_link",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -68,36 +69,29 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "group_5ef3a3cec10c0"
-            ],
-            "display": "group",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
         [
             {
-                "param": "page_template",
-                "operator": "==",
-                "value": "default"
-            },
-            {
                 "param": "page_type",
-                "operator": "!=",
+                "operator": "==",
                 "value": "front_page"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 82,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
-    "modified": 1604515382
+    "modified": 1604515741
 }

@@ -38,25 +38,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8d8bad961",
-            "label": "Content",
-            "name": "content_html",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_5f6c8ee5caaae",
             "label": "Text Color",
             "name": "content_text_color",
@@ -69,7 +50,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#000000"
+            "default_value": "#ffffff"
         },
         {
             "key": "field_5f6c8aa2f55e8",
@@ -100,7 +81,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#ffffff"
+            "default_value": "#000000"
         },
         {
             "key": "field_5ef3a3f0d6682",
@@ -313,5 +294,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1604511003
+    "modified": 1604518322
 }

@@ -169,8 +169,8 @@ if ( class_exists('ACF') ) {
 	require get_template_directory() . '/inc/theme-settings.php';
 }
 
-
 add_image_size( 'header-image-size', 1920, 1080, true );
+add_image_size( 'large-square', 640, 640, true );
 
 
 /* Finds and replace PRAM colours when saving embed fields */
@@ -228,3 +228,16 @@ function austeve_update_soundcloud_colors( $value, $post_id, $field  ) {
 }
 
 add_filter('acf/update_value/name=soundcloud_embed_code', 'austeve_update_soundcloud_colors', 10, 3);
+
+
+/**
+ * Redirect Team Members archive page to the about page section
+ */
+function austeve_redirect_cpt_archive() {
+	if( !is_admin() && !is_front_page() ) {
+		wp_redirect( home_url( '' ), 301 );
+		exit();
+	}
+}
+add_action( 'template_redirect', 'austeve_redirect_cpt_archive' );
+

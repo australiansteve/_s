@@ -45,10 +45,6 @@
 						}
 						?>
 					</div>
-
-					<div id="introduction">
-						<?php the_field('header_introduction', 'option'); ?>
-					</div>
 				</div>
 			</div>
 		</header><!-- #masthead -->

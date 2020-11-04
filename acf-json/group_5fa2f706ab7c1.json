@@ -1,11 +1,46 @@
 {
-    "key": "group_5bce64ed28d41",
-    "title": "Footer fields",
+    "key": "group_5fa2f706ab7c1",
+    "title": "Front page - Artist Bio",
     "fields": [
         {
-            "key": "field_5bce64fbcc690",
-            "label": "Left",
-            "name": "footer_left",
+            "key": "field_5fa2f706b2068",
+            "label": "Artist Bio",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5fa2f706b2072",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fa2f706b2082",
+            "label": "Text",
+            "name": "text",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -22,47 +57,9 @@
             "delay": 0
         },
         {
-            "key": "field_5bce652bc8a2f",
-            "label": "Center",
-            "name": "footer_center",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_5bce653cc8a30",
-            "label": "Right",
-            "name": "footer_right",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_5fa2f845706dc",
-            "label": "Banner Image",
-            "name": "banner_image",
+            "key": "field_5fa2f706b207b",
+            "label": "Image",
+            "name": "image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -75,8 +72,8 @@
             "return_format": "id",
             "preview_size": "medium",
             "library": "all",
-            "min_width": 1920,
-            "min_height": 540,
+            "min_width": 500,
+            "min_height": 500,
             "min_size": "",
             "max_width": "",
             "max_height": "",
@@ -87,19 +84,19 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "page_type",
                 "operator": "==",
-                "value": "acf-options-footer-settings"
+                "value": "front_page"
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 81,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
-    "modified": 1604515934
+    "modified": 1604515656
 }
