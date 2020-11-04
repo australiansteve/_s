@@ -170,7 +170,7 @@ if ( class_exists('ACF') ) {
 }
 
 
-add_image_size( 'header-image-size', 2048, 1462 );
+add_image_size( 'header-image-size', 1920, 1080, true );
 
 
 /* Finds and replace PRAM colours when saving embed fields */
