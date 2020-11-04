@@ -1,0 +1,30 @@
+#header {
+	text-align: center;
+
+	#introduction {
+		margin: 6rem 1rem;
+		font-size: 1.25rem;
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#header {
+
+		#introduction {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	#header {
+
+		#introduction {
+			font-size: 2rem;
+		}
+	}
+}

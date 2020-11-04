@@ -1,0 +1,24 @@
+#colophon {
+	background: $pink-color;
+	color: $dark-color;
+	max-width: 1200px;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+
+	a {
+		color: $dark-color;
+	}
+
+	a:hover {
+		color: $light-color;
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	#colophon {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

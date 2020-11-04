@@ -1,0 +1,21 @@
+.portfolio-artist {
+	text-align: left;
+	border-bottom: 3px solid #e80e8b;
+	padding-bottom: 2rem;
+	padding-top: 2rem;
+
+	.artist-bandcamp {
+		background: #303030;
+		line-height: 1;
+	}
+
+	.artist-additional-link {
+
+		margin-bottom: 1rem;
+
+		.thumbnail {
+			max-width: 200px;
+			margin-bottom: 0;
+		}
+	}
+}

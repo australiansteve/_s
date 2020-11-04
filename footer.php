@@ -11,14 +11,25 @@
 
 ?>
 
+		
 		<footer id="colophon" class="site-footer">
-			<div class="grid-container">
-				<div class="grid-x site-info">
-					<div class="cell text-center medium-text-right">
-						<a href="https://weavercrawford.com" target="_blank"><i class="far fa-copyright"></i> Weaver Crawford Creative <?php echo date("Y"); ?></a>
-					</div>
-				</div><!-- .site-info -->
-			</div>
+
+			<div class="grid-x grid-margin-x">
+
+				<div class="cell small-12 medium-4 footer-left text-center medium-text-left">
+					<?php the_field('footer_left', 'option'); ?>
+				</div>
+
+				<div class="cell small-12 medium-4 footer-left text-center">
+					<?php the_field('footer_center', 'option'); ?>
+				</div>
+
+				<div class="cell small-12 medium-4 footer-left text-center medium-text-right">
+					<?php the_field('footer_right', 'option'); ?>
+				</div>
+
+			</div><!-- .column.row -->
+
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 

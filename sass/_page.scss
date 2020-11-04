@@ -1,0 +1,65 @@
+body {
+	text-align: center;
+	background: $black;
+	color: $light-color;
+}
+
+#page {
+
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	a {
+		color: $primary-color;
+	}
+
+	button,
+	.button {
+		background: $primary-color;
+		color: $dark-color;
+		display: inline-block;
+		vertical-align: top;
+		padding: 7px 14px;
+		margin: 5px auto 0 auto;
+		border: none;
+		text-decoration: none;
+		font-size: 13px;
+		line-height: 1.5;
+		-moz-border-radius: 4px;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		.fab {
+			margin-right: 7px;
+		}
+	}
+
+	#soundcloud-embed,
+	#instagram-feed {
+		max-width: 90%;
+		margin: 3rem auto;
+
+		.button {
+			margin-top: 2.5rem;
+		}
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#page {
+		max-width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
