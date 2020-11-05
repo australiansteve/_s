@@ -50,8 +50,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'hamburger-cat' ),
-				'menu-2' => esc_html__( 'Secondary', 'hamburger-cat' ),
+				'primary-menu' => esc_html__( 'Primary', 'hamburger-cat' ),
+				'social-menu' => esc_html__( 'Social Media', 'hamburger-cat' ),
 			)
 		);
 

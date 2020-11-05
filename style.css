@@ -4820,3 +4820,11 @@ nav .accordion-menu li[aria-expanded="true"] .fa-bars {
 
 nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
   opacity: 1; }
+
+nav ul#primary-menu {
+  display: block;
+  list-style: none;
+  width: 100%;
+  margin: 0; }
+  nav ul#primary-menu li {
+    display: inline-block; }
