@@ -1,9 +1,9 @@
 {
-    "key": "group_5f6c8dbc38401",
-    "title": "Default Page Layout",
+    "key": "group_5fa42b4b69f47",
+    "title": "Home Page Layout",
     "fields": [
         {
-            "key": "field_5f6c8dc310216",
+            "key": "field_5fa42b4b6ed35",
             "label": "Landing",
             "name": "",
             "type": "tab",
@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8dce10217",
+            "key": "field_5fa42b4b6ed40",
             "label": "Landing",
             "name": "landing",
             "type": "clone",
@@ -40,7 +40,7 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5f6c907db3ac4",
+            "key": "field_5fa42b4b6ed49",
             "label": "Body",
             "name": "",
             "type": "tab",
@@ -56,7 +56,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c909db3ac5",
+            "key": "field_5fa42b4b6ed4f",
             "label": "Body",
             "name": "body",
             "type": "clone",
@@ -80,25 +80,13 @@
     "location": [
         [
             {
-                "param": "page_template",
-                "operator": "==",
-                "value": "default"
-            },
-            {
                 "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "front_page"
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 1,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -106,5 +94,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604596775
+    "modified": 1604594552
 }
