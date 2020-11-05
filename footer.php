@@ -11,7 +11,8 @@
 
 ?>
 
-		
+		</div><!-- #page -->
+
 		<footer id="colophon" class="site-footer">
 
 			<div class="grid-x">
@@ -26,22 +27,21 @@
 
 				<div class="cell">
 					<?php
-						$image = get_field('banner_image', 'option');
-						$size = 'full';
+					$image = get_field('banner_image', 'option');
+					$size = 'full';
 
-						if( $image ) {
+					if( $image ) {
 
-							echo wp_get_attachment_image($image, $size); 
-							
-						}
-						?>
+						echo wp_get_attachment_image($image, $size); 
+						
+					}
+					?>
 				</div>
 			</div> 
 
 		</footer><!-- #colophon -->
-	</div><!-- #page -->
 
-<?php wp_footer(); ?>
+		<?php wp_footer(); ?>
 
-</body>
+	</body>
 </html>

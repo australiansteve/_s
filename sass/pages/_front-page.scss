@@ -18,6 +18,24 @@
 		}
 	}
 
+	#instagram-feed {
+		/* stylelint-disable */
+		#sb_instagram #sbi_load .sbi_load_btn,
+		#sb_instagram .sbi_follow_btn a,
+		#sb_instagram .sbi_follow_btn .fa,
+		#sb_instagram .sbi_follow_btn svg {
+			font-size: inherit;
+		}
+
+		#sb_instagram #sbi_load .sbi_load_btn,
+		#sb_instagram .sbi_follow_btn a {
+			padding-left: 1rem;
+			padding-right: 1rem;
+			border-radius: 0;
+		}
+		/* stylelint-enable */
+	}
+
 	#contact {
 
 		#ninja-form-container {
@@ -42,6 +60,8 @@
 				color: $black;
 				background-color: $white;
 				border: 1px solid $black;
+				height: auto;
+				font-weight: 200;
 			}
 		}
 	}
@@ -57,6 +77,15 @@
 			#featured-song-description {
 				padding-top: 1rem;
 			}
+		}
+
+		#instagram-feed {
+			/* stylelint-disable */
+			#sbi_images {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+			/* stylelint-enable */
 		}
 	}
 }
@@ -82,6 +111,19 @@
 			#playlist-button {
 				margin-top: 2rem;
 			}
+		}
+
+		#instagram-feed {
+			/* stylelint-disable */
+			#sb_instagram #sbi_load .sbi_follow_btn {
+				margin-right: 2rem;
+			}
+
+			#sb_instagram #sbi_load .sbi_load_btn,
+			#sb_instagram .sbi_follow_btn a {
+				padding: 1rem 2rem;
+			}
+			/* stylelint-enable */
 		}
 
 		#contact {

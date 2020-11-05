@@ -1,9 +1,6 @@
-body #colophon {
+#colophon {
 	background: $black;
 	color: $white;
-	max-width: 1200px;
-	margin-left: -0.5rem;
-	margin-right: -0.5rem;
 	margin-top: 2rem;
 
 	p {
@@ -26,7 +23,7 @@ body #colophon {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	body #colophon {
+	#colophon {
 
 		p {
 			font-size: 0.7em;
@@ -47,9 +44,7 @@ body #colophon {
 /* Specifically larger than the max-width */
 @media screen and (min-width: 1200px) {
 
-	body #colophon {
-		margin-left: auto;
-		margin-right: auto;
+	#colophon {
 
 		p {
 			font-size: 0.5em;

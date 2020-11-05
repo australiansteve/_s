@@ -4849,7 +4849,8 @@ button,
   color: #000;
   display: inline-block;
   font-size: 0.9em;
-  text-decoration: none; }
+  text-decoration: none;
+  font-weight: 200; }
 
 button:hover,
 .button:hover {
@@ -4892,7 +4893,7 @@ a {
   body p,
   body a,
   body span {
-    font-size: 38px; }
+    font-size: 30px; }
   body h2 {
     margin-bottom: 4rem; } }
 
@@ -4937,6 +4938,20 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
 .home #playlist #playlist-button {
   margin-top: 1rem; }
 
+.home #instagram-feed {
+  /* stylelint-disable */
+  /* stylelint-enable */ }
+  .home #instagram-feed #sb_instagram #sbi_load .sbi_load_btn,
+  .home #instagram-feed #sb_instagram .sbi_follow_btn a,
+  .home #instagram-feed #sb_instagram .sbi_follow_btn .fa,
+  .home #instagram-feed #sb_instagram .sbi_follow_btn svg {
+    font-size: inherit; }
+  .home #instagram-feed #sb_instagram #sbi_load .sbi_load_btn,
+  .home #instagram-feed #sb_instagram .sbi_follow_btn a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0; }
+
 .home #contact #ninja-form-container {
   background: #fff;
   color: #000;
@@ -4952,12 +4967,20 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
     padding-right: 2rem;
     color: #000;
     background-color: #fff;
-    border: 1px solid #000; }
+    border: 1px solid #000;
+    height: auto;
+    font-weight: 200; }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   .home #featured-song #featured-song-description {
-    padding-top: 1rem; } }
+    padding-top: 1rem; }
+  .home #instagram-feed {
+    /* stylelint-disable */
+    /* stylelint-enable */ }
+    .home #instagram-feed #sbi_images {
+      padding-left: 0 !important;
+      padding-right: 0 !important; } }
 
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
@@ -4965,6 +4988,14 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
     padding-bottom: 2rem; }
   .home #playlist #playlist-button {
     margin-top: 2rem; }
+  .home #instagram-feed {
+    /* stylelint-disable */
+    /* stylelint-enable */ }
+    .home #instagram-feed #sb_instagram #sbi_load .sbi_follow_btn {
+      margin-right: 2rem; }
+    .home #instagram-feed #sb_instagram #sbi_load .sbi_load_btn,
+    .home #instagram-feed #sb_instagram .sbi_follow_btn a {
+      padding: 1rem 2rem; }
   .home #contact #ninja-form-container .nf-form-cont {
     max-width: 80%;
     margin: auto; } }
@@ -4997,36 +5028,30 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
       max-width: 200px;
       margin-bottom: 0; }
 
-body #colophon {
+#colophon {
   background: #000;
   color: #fff;
-  max-width: 1200px;
-  margin-left: -0.5rem;
-  margin-right: -0.5rem;
   margin-top: 2rem; }
-  body #colophon p {
+  #colophon p {
     font-size: 0.8em;
     margin-bottom: 0.2rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem; }
-    body #colophon p a {
+    #colophon p a {
       font-size: inherit; }
 
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
-  body #colophon p {
+  #colophon p {
     font-size: 0.7em; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
 /* Specifically larger than the max-width */
 @media screen and (min-width: 1200px) {
-  body #colophon {
-    margin-left: auto;
-    margin-right: auto; }
-    body #colophon p {
-      font-size: 0.5em; } }
+  #colophon p {
+    font-size: 0.5em; } }
 
 /* Large only */
 /* XLarge and up (>1600px) */
