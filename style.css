@@ -4950,7 +4950,18 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
   .home #instagram-feed #sb_instagram .sbi_follow_btn a {
     padding-left: 1rem;
     padding-right: 1rem;
-    border-radius: 0; }
+    border-radius: 0;
+    background: #fff;
+    color: #000;
+    font-weight: 200; }
+  .home #instagram-feed #sb_instagram #sbi_load .sbi_load_btn:hover,
+  .home #instagram-feed #sb_instagram .sbi_follow_btn a:hover,
+  .home #instagram-feed #sb_instagram #sbi_load .sbi_load_btn:active,
+  .home #instagram-feed #sb_instagram .sbi_follow_btn a:active,
+  .home #instagram-feed #sb_instagram #sbi_load .sbi_load_btn:focus,
+  .home #instagram-feed #sb_instagram .sbi_follow_btn a:focus {
+    background: #dbdbdb;
+    box-shadow: none; }
 
 .home #contact #ninja-form-container {
   background: #fff;

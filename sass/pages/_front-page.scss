@@ -32,6 +32,21 @@
 			padding-left: 1rem;
 			padding-right: 1rem;
 			border-radius: 0;
+
+			background: $white;
+			color: $dark-color;
+			font-weight: 200;
+
+		}
+
+		#sb_instagram #sbi_load .sbi_load_btn:hover,
+		#sb_instagram .sbi_follow_btn a:hover,
+		#sb_instagram #sbi_load .sbi_load_btn:active,
+		#sb_instagram .sbi_follow_btn a:active,
+		#sb_instagram #sbi_load .sbi_load_btn:focus,
+		#sb_instagram .sbi_follow_btn a:focus {
+			background: scale-color($white, $lightness: -14%);
+			box-shadow: none;
 		}
 		/* stylelint-enable */
 	}
