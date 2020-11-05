@@ -28,7 +28,23 @@
 		<header id="masthead" class="site-header">
 			<div class="grid-x grid-x-margin" id="header">
 				<div class="cell small-12">
-					<div id="header-image">
+					<div id="header-image-small" class="hide-for-medium">
+						<?php
+						$image = get_field('header_image_small', 'option');
+						$size = 'header-image-size-small'; 
+
+						if( $image ) {
+
+							$headerImage = wp_get_attachment_image( $image, $size );
+
+							?>
+							<img src="<?php echo $image['sizes']['header-image-size'];?>" width="<?php echo $image['sizes']['header-image-size-width'];?>" height="<?php echo $image['sizes']['header-image-size-height'];?>"/>
+							<?php
+
+						}
+						?>
+					</div>
+					<div id="header-image" class="show-for-medium">
 						<?php
 						$image = get_field('header_image', 'option');
 						$size = 'header-image-size'; // (thumbnail, medium, large, full or custom size)

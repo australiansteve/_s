@@ -1,0 +1,170 @@
+.home {
+
+	#featured-song {
+
+		#featured-song-embed {
+			padding-top: 1rem;
+		}
+	}
+
+	#artist-bio {
+
+		#artist-bio-text {
+			padding-bottom: 1rem;
+		}
+	}
+
+	#playlist {
+
+		#playlist-button {
+			margin-top: 1rem;
+		}
+	}
+
+	#contact {
+
+		#ninja-form-container {
+			background: $white;
+			color: $black;
+			padding: 3rem 0.5rem;
+
+
+			.nf-field-label label {
+				font-weight: 200;
+			}
+
+			.nf-error-msg,
+			.ninja-forms-req-symbol {
+				color: $black;
+			}
+
+			.nf-form-content input[type="button"] {
+				font-size: 0.9em;
+				padding-left: 2rem;
+				padding-right: 2rem;
+				color: $black;
+				background-color: $white;
+				border: 1px solid $black;
+			}
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+	.home {
+
+		#featured-song {
+
+			#featured-song-description {
+				padding-top: 1rem;
+			}
+		}
+	}
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.home {
+
+		#featured-song {
+
+			#featured-song-embed {
+				padding-top: 2rem;
+			}
+
+			.embed-width-match {
+
+			}
+		}
+
+		#artist-bio {
+
+			#artist-bio-text {
+				padding-bottom: 2rem;
+			}
+		}
+
+		#playlist {
+
+			#playlist-button {
+				margin-top: 2rem;
+			}
+		}
+
+		#contact {
+
+			#ninja-form-container {
+
+				.nf-form-cont {
+					max-width: 80%;
+					margin: auto;
+				}
+			}
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+	.home {
+
+		#featured-song {
+
+			#featured-song-embed {
+				padding-top: 4rem;
+			}
+		}
+
+		#artist-bio {
+
+			#artist-bio-text {
+				padding-bottom: 4rem;
+			}
+		}
+
+		#playlist {
+
+			#playlist-button {
+				margin-top: 4rem;
+			}
+		}
+
+		#contact {
+
+			#ninja-form-container {
+				padding: 6rem 2rem;
+
+			}
+
+		}
+	}
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

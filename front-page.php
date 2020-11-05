@@ -9,6 +9,14 @@ get_header();
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 		}
 
+		$sectionId = 'upcoming_dates';
+		$section = get_field($sectionId);
+		if ($section) {
+			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+			include( locate_template( 'template-parts/front-page-'.$sectionId.'.php', false, false ) );
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+		}
+
 		$sectionId = 'artist_bio';
 		$section = get_field($sectionId);
 		if ($section) {
@@ -37,7 +45,7 @@ get_header();
 		$section = get_field($sectionId);
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-			include( locate_template( 'template-parts/front-page-shortcode.php', false, false ) );
+			include( locate_template( 'template-parts/front-page-'.$sectionId.'.php', false, false ) );
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 		}
 

@@ -19,6 +19,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 */
 
+// Fonts
+@import "fonts";
+
 // Foundation override file
 @import "foundation/settings";
 
@@ -34,6 +37,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "general";
 @import "menus";
 @import "header";
-@import "page";
+@import "pages/front-page";
 @import "portfolio";
 @import "footer";

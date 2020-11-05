@@ -16,19 +16,27 @@
 
 			<div class="grid-x grid-margin-x">
 
-				<div class="cell small-12 medium-4 footer-left text-center medium-text-left">
-					<?php the_field('footer_left', 'option'); ?>
-				</div>
-
-				<div class="cell small-12 medium-4 footer-left text-center">
+				<div class="cell small-12">
 					<?php the_field('footer_center', 'option'); ?>
 				</div>
 
-				<div class="cell small-12 medium-4 footer-left text-center medium-text-right">
-					<?php the_field('footer_right', 'option'); ?>
-				</div>
-
 			</div><!-- .column.row -->
+
+			<div class="grid-x grid-margin-x">
+
+				<div class="cell">
+					<?php
+						$image = get_field('banner_image', 'option');
+						$size = 'full';
+
+						if( $image ) {
+
+							echo wp_get_attachment_image($image, $size); 
+							
+						}
+						?>
+				</div>
+			</div> 
 
 		</footer><!-- #colophon -->
 	</div><!-- #page -->

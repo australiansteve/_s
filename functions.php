@@ -124,6 +124,7 @@ function hamburger_cat_scripts() {
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_stylesheet_uri(), array(), HAMBURGER_CAT_VERSION );
+
 	wp_style_add_data( 'hamburger-cat-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array(), HAMBURGER_CAT_VERSION, true );
@@ -184,7 +185,7 @@ function austeve_update_bandcamp_colors( $value, $post_id, $field  ) {
 	{
 		$endBgCol = strpos($value, '/', $startBgCol);
 		$newValue = substr ($value , 0, $startBgCol);
-		$newValue .= 'bgcol=333333';
+		$newValue .= 'bgcol=000000';
 		$newValue .= substr ($value, $endBgCol);
 		$value = $newValue;
 	}
@@ -194,7 +195,7 @@ function austeve_update_bandcamp_colors( $value, $post_id, $field  ) {
 	{
 		$endLinkCol = strpos($value, '/', $startLinkCol);
 		$newValue = substr ($value , 0, $startLinkCol);
-		$newValue .= 'linkcol=e80e8b';
+		$newValue .= 'linkcol=ffffff';
 		$newValue .= substr ($value, $endLinkCol);
 		$value = $newValue;
 	}

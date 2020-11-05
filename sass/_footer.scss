@@ -1,24 +1,78 @@
-#colophon {
-	background: $pink-color;
-	color: $dark-color;
+body #colophon {
+	background: $black;
+	color: $white;
 	max-width: 1200px;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
+	margin-left: -0.5rem;
+	margin-right: -0.5rem;
+	margin-top: 2rem;
 
-	a {
-		color: $dark-color;
-	}
+	p {
+		font-size: 0.8em;
+		margin-bottom: 0.2rem;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 
-	a:hover {
-		color: $light-color;
+		a {
+			font-size: inherit;
+		}
 	}
 }
 
-/* Large and up */
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	body #colophon {
+
+		p {
+			font-size: 0.7em;
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
-	#colophon {
+}
+
+/* Specifically larger than the max-width */
+@media screen and (min-width: 1200px) {
+
+	body #colophon {
 		margin-left: auto;
 		margin-right: auto;
+
+		p {
+			font-size: 0.5em;
+		}
 	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
 }

@@ -3,47 +3,9 @@
     "title": "Footer fields",
     "fields": [
         {
-            "key": "field_5bce64fbcc690",
-            "label": "Left",
-            "name": "footer_left",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_5bce652bc8a2f",
-            "label": "Center",
+            "label": "Text",
             "name": "footer_center",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_5bce653cc8a30",
-            "label": "Right",
-            "name": "footer_right",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -101,5 +63,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604515934
+    "modified": 1604545730
 }
