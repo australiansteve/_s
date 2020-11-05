@@ -42,7 +42,7 @@
             "label": "Image",
             "name": "image",
             "type": "image",
-            "instructions": "",
+            "instructions": "Use an image here only if you choose to not include artwork from the embeddable source",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -60,6 +60,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5bcfc819b4f37",
+            "label": "Embed code",
+            "name": "soundcloud_embed_code",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5fa2f4fce7791",
@@ -117,25 +136,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_5bcfc819b4f37",
-            "label": "Soundcloud playlist embed code",
-            "name": "soundcloud_embed_code",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -155,5 +155,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1604517666
+    "modified": 1604586144
 }

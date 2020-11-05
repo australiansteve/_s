@@ -4931,9 +4931,6 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
   #header #introduction {
     font-size: 2rem; } }
 
-.home #featured-song #featured-song-embed {
-  padding-top: 1rem; }
-
 .home #artist-bio #artist-bio-text {
   padding-bottom: 1rem; }
 
@@ -4964,8 +4961,6 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
 
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
-  .home #featured-song #featured-song-embed {
-    padding-top: 2rem; }
   .home #artist-bio #artist-bio-text {
     padding-bottom: 2rem; }
   .home #playlist #playlist-button {
@@ -4979,8 +4974,6 @@ nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
 /* Large only */
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
-  .home #featured-song #featured-song-embed {
-    padding-top: 4rem; }
   .home #artist-bio #artist-bio-text {
     padding-bottom: 4rem; }
   .home #playlist #playlist-button {
