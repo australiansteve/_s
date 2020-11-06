@@ -1,9 +1,9 @@
 {
-    "key": "group_5f6c8dbc38401",
-    "title": "Default Page Layout",
+    "key": "group_5fa57051b7fbe",
+    "title": "Blog Page Layout",
     "fields": [
         {
-            "key": "field_5f6c8dc310216",
+            "key": "field_5fa57051bf00e",
             "label": "Landing",
             "name": "",
             "type": "tab",
@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8dce10217",
+            "key": "field_5fa57051bf019",
             "label": "Landing",
             "name": "landing",
             "type": "clone",
@@ -32,6 +32,7 @@
                 "id": ""
             },
             "clone": [
+                "group_5fa56ab427823",
                 "group_5ef3a3cec10c0"
             ],
             "display": "group",
@@ -40,7 +41,7 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5f6c907db3ac4",
+            "key": "field_5fa57051bf020",
             "label": "Body",
             "name": "",
             "type": "tab",
@@ -56,7 +57,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c909db3ac5",
+            "key": "field_5fa57051bf02a",
             "label": "Body",
             "name": "body",
             "type": "clone",
@@ -69,6 +70,7 @@
                 "id": ""
             },
             "clone": [
+                "group_5fa56b1cd5733",
                 "group_5ef3a3cec10c0"
             ],
             "display": "group",
@@ -80,30 +82,13 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "page_type",
                 "operator": "==",
-                "value": "default"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
                 "value": "posts_page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 5,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -111,5 +96,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604678992
+    "modified": 1604677793
 }

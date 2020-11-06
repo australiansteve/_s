@@ -1,9 +1,9 @@
 {
-    "key": "group_5f6c8dbc38401",
-    "title": "Default Page Layout",
+    "key": "group_5fa56eb636837",
+    "title": "Training Page Layout",
     "fields": [
         {
-            "key": "field_5f6c8dc310216",
+            "key": "field_5fa56eb63b9ec",
             "label": "Landing",
             "name": "",
             "type": "tab",
@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8dce10217",
+            "key": "field_5fa56eb63ba02",
             "label": "Landing",
             "name": "landing",
             "type": "clone",
@@ -32,6 +32,7 @@
                 "id": ""
             },
             "clone": [
+                "group_5fa569139d45e",
                 "group_5ef3a3cec10c0"
             ],
             "display": "group",
@@ -40,8 +41,8 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5f6c907db3ac4",
-            "label": "Body",
+            "key": "field_5fa56eb63ba0b",
+            "label": "Courses",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -56,9 +57,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c909db3ac5",
-            "label": "Body",
-            "name": "body",
+            "key": "field_5fa56eb63ba12",
+            "label": "Courses",
+            "name": "courses",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -69,6 +70,7 @@
                 "id": ""
             },
             "clone": [
+                "group_5fa56933aaeb3",
                 "group_5ef3a3cec10c0"
             ],
             "display": "group",
@@ -82,28 +84,11 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "posts_page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
+                "value": "page-templates\/training-page.php"
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 3,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -111,5 +96,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604678992
+    "modified": 1604678294
 }

@@ -1,9 +1,9 @@
 {
-    "key": "group_5f6c8dbc38401",
-    "title": "Default Page Layout",
+    "key": "group_5fa56fb264084",
+    "title": "Living Lab Page Layout",
     "fields": [
         {
-            "key": "field_5f6c8dc310216",
+            "key": "field_5fa56fb26a697",
             "label": "Landing",
             "name": "",
             "type": "tab",
@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8dce10217",
+            "key": "field_5fa56fb26a6a3",
             "label": "Landing",
             "name": "landing",
             "type": "clone",
@@ -32,6 +32,7 @@
                 "id": ""
             },
             "clone": [
+                "group_5fa5696c56635",
                 "group_5ef3a3cec10c0"
             ],
             "display": "group",
@@ -40,8 +41,8 @@
             "prefix_name": 1
         },
         {
-            "key": "field_5f6c907db3ac4",
-            "label": "Body",
+            "key": "field_5fa56fb26a6a9",
+            "label": "Intro",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -56,9 +57,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c909db3ac5",
-            "label": "Body",
-            "name": "body",
+            "key": "field_5fa56fb26a6b4",
+            "label": "Intro",
+            "name": "intro",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -69,6 +70,45 @@
                 "id": ""
             },
             "clone": [
+                "group_5fa5698fea788",
+                "group_5ef3a3cec10c0"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
+        },
+        {
+            "key": "field_5fa56fb26a6bb",
+            "label": "Excursions",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5fa56fb26a6c3",
+            "label": "Excursions",
+            "name": "excursions",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5fa569bd53bb4",
                 "group_5ef3a3cec10c0"
             ],
             "display": "group",
@@ -82,28 +122,11 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "posts_page"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
+                "value": "page-templates\/living-lab-page.php"
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 4,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -111,5 +134,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604678992
+    "modified": 1604678316
 }
