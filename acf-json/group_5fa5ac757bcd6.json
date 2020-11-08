@@ -1,0 +1,262 @@
+{
+    "key": "group_5fa5ac757bcd6",
+    "title": "Course Customization",
+    "fields": [
+        {
+            "key": "field_5fa5ac84aca92",
+            "label": "Course Type",
+            "name": "course_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "buynow": "Buy Now",
+                "contact": "Contact for information",
+                "webinar": "Webinar"
+            },
+            "default_value": "webinar",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5fa5acf0aca93",
+            "label": "Price",
+            "name": "price",
+            "type": "text",
+            "instructions": "Optional price for the course. Remember to state currency. This price is not used for the actual purchase price, it is purely for visual purposes",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fa5b0472b258",
+            "label": "Icon",
+            "name": "icon",
+            "type": "image",
+            "instructions": "Layered over the featured image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5fa7360e36769",
+            "label": "Product",
+            "name": "product",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "buynow"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_5fa5ad05aca94",
+            "label": "Skillport Course ID",
+            "name": "skillport_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "buynow"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fa5ad9faca96",
+            "label": "Skillport Course Link",
+            "name": "skillport_course_link",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "buynow"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fa5ad94aca95",
+            "label": "Registration Link",
+            "name": "registration_link",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "webinar"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fa5add5aca97",
+            "label": "Register Interest Form ID",
+            "name": "register_interest_form_id",
+            "type": "number",
+            "instructions": "This is displayed only when a registration link is not provided. Use the Ninja Form ID to display this contact form & receive notification of interest",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "webinar"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
+            "key": "field_5fa5adf9aca98",
+            "label": "Contact For Information Form ID",
+            "name": "contact_for_info_form_id",
+            "type": "number",
+            "instructions": "Ninja Form ID",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "contact"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "austeve-courses"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1604793929
+}
