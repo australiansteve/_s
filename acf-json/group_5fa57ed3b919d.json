@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "preview_size": "medium",
             "library": "all",
             "min_width": "",
@@ -25,18 +25,37 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5fa98eba883ed",
+            "label": "Menu Text",
+            "name": "header_menu_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Menu",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "options_page",
                 "operator": "==",
-                "value": "post"
+                "value": "acf-options-header-settings"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 10,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -44,5 +63,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604681453
+    "modified": 1604947661
 }

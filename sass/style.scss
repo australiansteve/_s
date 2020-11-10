@@ -18,6 +18,8 @@ Hamburger Cat is based on Underscores https://underscores.me/, (C) 2012-2020 Aut
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 */
+//Fonts
+@import "fonts";
 
 // Foundation override file
 @import "foundation/settings";
@@ -33,3 +35,5 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /* Hamburger Cat style */
 @import "general";
 @import "menus";
+@import "header";
+@import "footer";

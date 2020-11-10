@@ -1,0 +1,41 @@
+footer {
+	background: $primary-color;
+	color: $white;
+	font-family: "Proxima Nova";
+	font-weight: 200;
+
+	a,
+	a:visited {
+		color: $white;
+	}
+
+	a:hover,
+	a:active,
+	a:focus {
+		color: $light-gray;
+	}
+
+	.container {
+		padding: 1rem 0;
+
+		.footer-title {
+			border-bottom: 1px solid $light-gray;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+
+		.partner-logo {
+			padding: 1rem 0;
+
+			img {
+				margin-right: 1rem;
+				vertical-align: top;
+			}
+
+			span {
+				font-weight: 200;
+				font-style: italic;
+			}
+		}
+	}
+}

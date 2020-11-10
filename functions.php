@@ -52,6 +52,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 			array(
 				'primary-menu' => esc_html__( 'Primary', 'hamburger-cat' ),
 				'social-menu' => esc_html__( 'Social Media', 'hamburger-cat' ),
+				'language-menu' => esc_html__( 'Language Switcher', 'hamburger-cat' ),
+				'footer-menu' => esc_html__( 'Footer', 'hamburger-cat' ),
 			)
 		);
 
@@ -101,6 +103,9 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		add_image_size( 'header-logo', 405, 130, true );
+		add_image_size( 'footer-logo', 275, 145, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -168,3 +173,27 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( class_exists('ACF') ) {
 	require get_template_directory() . '/inc/theme-settings.php';
 }
+
+/* Scoial media menu item icons */
+add_filter('wp_nav_menu_objects', function( $items, $args ) {
+	// loop
+	foreach( $items as &$item ) {
+		// vars
+		$icon = get_field('icon', $item);
+		// replace title with icon
+		if( $icon ) {
+			$title = $item->title;
+			$item->title = '<i class="fab fa-'.$icon.'" title="'.$title.'"></i>';	
+		}
+	}
+
+	// return
+	return $items;
+}, 10, 2);
+
+add_filter('nav_menu_css_class', function( $classes, $item, $args ) {
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}, 1, 3);
