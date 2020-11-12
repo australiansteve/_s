@@ -1,10 +1,10 @@
 {
-    "key": "group_5fa5652917e64",
-    "title": "Front Page - Courses",
+    "key": "group_5faae9cb4c7bd",
+    "title": "Front Page - Call To Action",
     "fields": [
         {
-            "key": "field_5fa565291ce96",
-            "label": "Courses",
+            "key": "field_5faae9cb543d6",
+            "label": "Call To Action",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -19,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5fa565291ceab",
+            "key": "field_5faae9cb54405",
             "label": "Title",
             "name": "title",
             "type": "text",
@@ -31,17 +31,17 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Why Choose",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
-            "key": "field_5faaf13b41881",
-            "label": "Introductory Text",
-            "name": "introductory_text",
-            "type": "textarea",
+            "key": "field_5faae9cb54556",
+            "label": "Text",
+            "name": "text",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -51,15 +51,15 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "wpautop"
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
-            "key": "field_5fa5655a6e809",
-            "label": "Search Label",
-            "name": "search_label",
+            "key": "field_5faae9cb54595",
+            "label": "Button 1 Text",
+            "name": "button_1_text",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -69,18 +69,18 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Search",
+            "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
         },
         {
-            "key": "field_5fa5658dbb221",
-            "label": "Individual Course Button Text",
-            "name": "course_button_text",
+            "key": "field_5faae9cb545d2",
+            "label": "Button 1 Link",
+            "name": "button_1_link",
             "type": "text",
-            "instructions": "'More Information' in mockup",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -88,7 +88,45 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "More Information",
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5faae9cb545e0",
+            "label": "Button 2 Text",
+            "name": "button_2_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5faae9cb545e6",
+            "label": "Button 2 Link",
+            "name": "button_2_link",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -104,7 +142,7 @@
             }
         ]
     ],
-    "menu_order": 21,
+    "menu_order": 20,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -112,5 +150,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1605038434
+    "modified": 1605036553
 }

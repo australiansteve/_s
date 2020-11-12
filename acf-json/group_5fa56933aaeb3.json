@@ -57,11 +57,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5fa56933bc057",
-            "label": "Individual Course Button Text",
-            "name": "course_button_text",
+            "key": "field_5fad906a98881",
+            "label": "Filter By Category Label",
+            "name": "filter_by_category_label",
             "type": "text",
-            "instructions": "'More Information' in mockup",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -69,7 +69,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "More Information",
+            "default_value": "Filter by Category:",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -93,5 +93,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1604675914
+    "modified": 1605210244
 }

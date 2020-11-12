@@ -1,10 +1,10 @@
 {
-    "key": "group_5fa5652917e64",
-    "title": "Front Page - Courses",
+    "key": "group_5faadac54db18",
+    "title": "General Site Text",
     "fields": [
         {
-            "key": "field_5fa565291ce96",
-            "label": "Courses",
+            "key": "field_5faadac554f4d",
+            "label": "General Text",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -15,72 +15,15 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
+            "placement": "top",
             "endpoint": 0
         },
         {
-            "key": "field_5fa565291ceab",
-            "label": "Title",
-            "name": "title",
+            "key": "field_5faadb01b676e",
+            "label": "Course More Information Button",
+            "name": "course_more_information_button",
             "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5faaf13b41881",
-            "label": "Introductory Text",
-            "name": "introductory_text",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 4,
-            "new_lines": "wpautop"
-        },
-        {
-            "key": "field_5fa5655a6e809",
-            "label": "Search Label",
-            "name": "search_label",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Search",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5fa5658dbb221",
-            "label": "Individual Course Button Text",
-            "name": "course_button_text",
-            "type": "text",
-            "instructions": "'More Information' in mockup",
+            "instructions": "Displayed on the button whenever there is a list of courses shown",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -89,6 +32,44 @@
                 "id": ""
             },
             "default_value": "More Information",
+            "placeholder": "More Information",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fad8e91c6939",
+            "label": "Search In Progress",
+            "name": "search_in_progress",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Searching...",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fad8ea905605",
+            "label": "Search Return Zero Results",
+            "name": "search_returned_zero_results",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Search returned no results. Please try again using broader search terms",
             "placeholder": "",
             "prepend": "",
             "append": "",
@@ -98,19 +79,19 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "options_page",
                 "operator": "==",
-                "value": "post"
+                "value": "theme-general-settings"
             }
         ]
     ],
-    "menu_order": 21,
+    "menu_order": 10,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": false,
+    "active": true,
     "description": "",
-    "modified": 1605038434
+    "modified": 1605209832
 }

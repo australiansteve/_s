@@ -49,10 +49,10 @@
         },
         {
             "key": "field_5fa5b0472b258",
-            "label": "Icon",
-            "name": "icon",
-            "type": "image",
-            "instructions": "Layered over the featured image",
+            "label": "Icons",
+            "name": "icons",
+            "type": "gallery",
+            "instructions": "Layered over the featured image. Icons should have transparent backgrounds",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -60,9 +60,12 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "preview_size": "medium",
+            "insert": "append",
             "library": "all",
+            "min": "",
+            "max": "",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -258,5 +261,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1604793929
+    "modified": 1605034048
 }
