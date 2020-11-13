@@ -10,11 +10,22 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		Contact!
+	<?php
 
-	</main><!-- #main -->
+	$sectionId = 'landing';
+	$section = get_field($sectionId);
+	if ($section) {
+		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+		?>
+		<h1 class="page-title"><?php the_title();?></h1>
+		<?php
+		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+	}
+	?>
+
+</main><!-- #main -->
 
 <?php
 get_footer();

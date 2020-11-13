@@ -10,14 +10,108 @@ body {
 			left: 0;
 			right: 0;
 			z-index: -1;
+			background-size: cover;
+			background-position: 50%;
 		}
 
 		.section-content {
 			height: 100%;
+
+			> .grid-container {
+				height: 100%;
+			}
 		}
+	}
+
+	section.half-height {
+		height: 50vh;
+	}
+
+	section.full-height {
+		height: 100vh;
+	}
+
+	section.full-height-minus-header {
+
+		/* Set dynamically */
+		height: 100vh;
+		transition: height 1s linear;
+	}
+
+	section.minimum-full-height {
+		min-height: 100vh;
+	}
+
+	h1.page-title {
+		color: $primary-color;
+		padding: 2rem 1rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		background: $sky-95;
+		margin: 2rem 0;
+	}
+
+	.grid-y.align-right h1.page-title {
+		margin-bottom: 0;
 	}
 }
 
 a {
 	display: inline-block;
+}
+
+.button {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.button.active {
+	background: $gale;
+	color: $navy;
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	body {
+
+		h1.page-title {
+			padding: 3rem 1rem;
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
 }

@@ -20,12 +20,11 @@ get_header();
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>
-			<header class="page-header">
+			<div class="page-header">
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
-			</header><!-- .page-header -->
+			</div><!-- .page-header -->
 			<?php
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 		}
@@ -36,6 +35,9 @@ get_header();
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			
+			?>
+			<div class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3 <?php echo get_post_type();?>" data-equalizer data-equalize-by-row="true">
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -45,10 +47,12 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/archive', get_post_type() );
 
 			endwhile;
-
+			?>
+		</div>
+		<?php
 			the_posts_navigation();
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 		}

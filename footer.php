@@ -74,13 +74,11 @@
 								'container'		=> false
 							)
 						);
-
 						$subscriptionFormId = get_field('footer_4_subscription_form_id', 'options');
 						if ($subscriptionFormId) {
 							echo do_shortcode("[ninja_form id='".$subscriptionFormId."']");
 						}
 						?>
-
 					</div>
 				</div>
 			</div>
@@ -97,18 +95,21 @@
 						echo wp_get_attachment_image( $image, $size );
 					}
 					?>
-
-					<?php 
-					wp_nav_menu(
-						array(
-							'theme_location'	=> 'footer-menu',
-							'menu_id'		=> 'footer-menu',
-							'menu_class'	=> 'horizontal menu',
-							'container'		=> false
-						)
-					);
-					?>
-					<a href="https://weavercrawford.com" target="_blank"><i class="far fa-copyright"></i> Weaver Crawford Creative <?php echo date("Y"); ?></a>
+					<div class="footer-menu">
+						<?php 
+						wp_nav_menu(
+							array(
+								'theme_location'	=> 'footer-menu',
+								'menu_id'		=> 'footer-menu',
+								'menu_class'	=> 'horizontal menu',
+								'container'		=> false
+							)
+						);
+						?>
+					</div>
+					<div class="wcc">
+						<a href="https://weavercrawford.com" target="_blank"><i class="far fa-copyright"></i> Weaver Crawford Creative <?php echo date("Y"); ?></a>
+					</div>
 				</div>
 			</div>
 		</div><!-- .site-info -->

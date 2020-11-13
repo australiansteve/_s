@@ -65,24 +65,34 @@
 // 1. Global
 // ---------
 
+/* Aquila custom colors */
+$aquila-blue: #1226aa;
+$navy: #152d51;
+$sky: #dce5ef;
+$gale: #f2f1f1;
+$cloud : #fff;
+
+$aquila-blue-70: rgba(18, 38, 170, 0.7);
+$sky-95: rgba(220, 229, 239, 0.95);
+
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-	primary: #010132,
-	secondary: #767676,
+	primary: $navy,
+	secondary: $navy,
 	success: #3adb76,
 	warning: #ffae00,
 	alert: #cc4b37,
 );
-$light-gray: #f5efe7;
+$light-gray: $gale;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
-$white: #fefefe;
+$white: $cloud;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+$body-font-family: raleway, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -140,7 +150,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: audrey, $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: consolas, "Liberation Mono", courier, monospace;

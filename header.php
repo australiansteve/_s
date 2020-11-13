@@ -39,7 +39,6 @@
 						?>
 					</div>
 					<div class="cell medium-8">
-
 						<div class="medium-text-right">
 							<nav id="site-navigation" class="main-navigation">
 								<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>

@@ -1,8 +1,8 @@
 header {
 	background-color: $primary-color;
 	color: $white;
-	text-decoration: uppercase;
-	font-family: "Proxima Nova";
+	text-transform: uppercase;
+	font-family: Audrey;
 	font-weight: 700;
 
 	#logo {
@@ -11,6 +11,8 @@ header {
 
 	a {
 		color: $white;
+		text-transform: uppercase;
+		font-family: Audrey;
 	}
 
 }

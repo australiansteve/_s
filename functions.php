@@ -106,6 +106,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 
 		add_image_size( 'header-logo', 405, 130, true );
 		add_image_size( 'footer-logo', 275, 145, true );
+		add_image_size( 'archive-square', 600, 600, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -126,12 +127,17 @@ add_action( 'after_setup_theme', 'hamburger_cat_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function hamburger_cat_scripts() {
+
+	wp_enqueue_script('lodash-js',
+		'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js'
+	);
+
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_stylesheet_uri(), array(), HAMBURGER_CAT_VERSION );
 	wp_style_add_data( 'hamburger-cat-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array(), HAMBURGER_CAT_VERSION, true );
+	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array( ), HAMBURGER_CAT_VERSION, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -197,3 +203,86 @@ add_filter('nav_menu_css_class', function( $classes, $item, $args ) {
     }
     return $classes;
 }, 1, 3);
+
+
+function austeve_courses_pagesize( $query ) {
+    if ( ! is_admin() && (is_post_type_archive( 'austeve-courses' ) || (is_array($query->get('post_type')) && in_array('austeve-courses', $query->get('post_type'))))) {
+        // Display 50 posts for 'austeve-courses'
+        $query->set( 'posts_per_page', 50 );
+
+        error_log("Course Query : ".print_r($query, true));
+		
+		$queries = null;
+		parse_str($_SERVER['QUERY_STRING'], $queries);
+
+		error_log("Course Filter : ".print_r($queries, true));
+
+		if(array_key_exists('search', $queries)) {
+			$query->set('s', $queries['search']);
+		}
+
+		if (array_key_exists('category', $queries)) {
+
+		 	$query->set('tax_query', array(
+				array(
+					'taxonomy'         => 'course-category',
+					'terms'            => $queries['category'],
+					'field'            => 'slug',
+					'operator'         => 'IN',
+				)
+			));
+		}
+
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'austeve_courses_pagesize', 1, 1 );
+
+function austeve_get_courses() {
+
+	$nonce = $_REQUEST['security'];
+	if (wp_verify_nonce( $nonce, 'get-courses')) {
+		error_log("AJAX SEARCH");
+		$category = isset($_REQUEST['category']) ? $_REQUEST['category'] : null;
+		$search = isset($_REQUEST['s']) ? $_REQUEST['s']: null;
+
+		$args = array(
+			'post_type' => array('austeve-courses'),
+			'post_status' => array('publish'),
+			'order' => 'ASC',
+			'orderby' => 'menu_order',
+		);
+
+		if ($category) {
+			$args['tax_query'] = array(
+				array(
+					'taxonomy'         => 'course-category',
+					'terms'            => $category,
+					'field'            => 'slug',
+					'operator'         => 'IN',
+				)
+			);
+		}
+
+		if ($search) {
+			$args['s'] = $search;
+		}
+
+		error_log("AJAX args: ".print_r($args, true));
+		$ajaxposts = new WP_Query( $args );
+
+		if ( $ajaxposts->have_posts()) {
+			while ( $ajaxposts->have_posts() ) {
+				$ajaxposts->the_post();
+				include( locate_template('template-parts/archive-austeve-courses.php', false, false ));
+			}
+		}
+
+		wp_reset_query();
+	}
+
+	exit;
+}
+
+add_action('wp_ajax_austeve_get_courses', 'austeve_get_courses');
+add_action('wp_ajax_nopriv_austeve_get_courses', 'austeve_get_courses');

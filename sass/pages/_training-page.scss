@@ -1,0 +1,138 @@
+.page-template-training-page,
+.post-type-archive-austeve-courses {
+
+	.intro-box {
+		background: $sky-95;
+		padding: 0 0.5rem 0.5rem 0.5rem;
+	}
+
+	#search-filters {
+
+		label[label-for="s"] {
+			margin-bottom: -0.75rem;
+		}
+
+		#s {
+			max-width: 80%;
+			display: inline-block;
+		}
+
+		#submit-s {
+			margin-top: 0.9em;
+			padding: 0.65rem;
+			height: auto;
+			margin-left: -0.25rem;
+		}
+
+		#course-category-grid {
+
+			.button {
+				margin-right: 1rem;
+			}
+
+			.button:nth-last-of-type(1) {
+				margin-right: 0;
+			}
+		}
+
+		.course-category-filter {
+
+			i {
+				margin-left: 0.5rem;
+			}
+		}
+
+		.course-category-filter:not(.active) {
+
+			i {
+				display: none;
+			}
+		}
+	}
+
+	.austeve-courses {
+		margin: 2rem -0.625rem;
+
+		.course-image {
+			margin-bottom: 1rem;
+			position: relative;
+
+			.icons {
+				position: absolute;
+				right: 0.5rem;
+				top: 0.5rem;
+
+				img {
+					float: right;
+					max-width: 75px;
+					margin-left: 0.5rem;
+				}
+			}
+		}
+
+		.course-title {
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $aquila-blue;
+			font-size: 1.25em;
+		}
+
+		.course-more-information {
+			margin-top: 1rem;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.page-template-training-page,
+	.post-type-archive-austeve-courses {
+
+		.austeve-courses {
+			margin: 2rem -0.9375rem;
+		}
+
+		#search-filters {
+
+			#s {
+				max-width: 50%;
+			}
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

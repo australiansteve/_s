@@ -1,7 +1,6 @@
 footer {
 	background: $primary-color;
 	color: $white;
-	font-family: "Proxima Nova";
 	font-weight: 200;
 
 	a,
@@ -20,6 +19,7 @@ footer {
 
 		.footer-title {
 			border-bottom: 1px solid $light-gray;
+			font-family: Audrey;
 			text-transform: uppercase;
 			font-weight: 700;
 		}
@@ -38,4 +38,50 @@ footer {
 			}
 		}
 	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	footer {
+
+		.container {
+			padding: 1rem 0.5rem;
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
 }
