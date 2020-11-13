@@ -20,10 +20,10 @@
         },
         {
             "key": "field_5faadb01b676e",
-            "label": "Course More Information Button",
-            "name": "course_more_information_button",
+            "label": "More Information Button",
+            "name": "more_information_button",
             "type": "text",
-            "instructions": "Displayed on the button whenever there is a list of courses shown",
+            "instructions": "Displayed on the button whenever there is a list of items shown",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -93,5 +93,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605209832
+    "modified": 1605229389
 }

@@ -1,11 +1,6 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -14,7 +9,6 @@
 
 get_header();
 ?>
-
 
 <main id="primary" class="site-main">
 
@@ -26,11 +20,11 @@ get_header();
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>
-			<header class="page-header">
-				<h1 class="page-title"><?php
-				echo get_the_title( get_option('page_for_posts') );
-				?></h1>
-			</header><!-- .page-header -->
+			<div class="page-header">
+				<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				?>
+			</div><!-- .page-header -->
 			<?php
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 		}
@@ -40,19 +34,25 @@ get_header();
 		$section = get_field($sectionId, 'options');
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-
+			
+			?>
+			<div id="post-grid" class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3 <?php echo get_post_type();?>" data-equalizer data-equalize-by-row="true">
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
+
 				/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				echo get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/archive', get_post_type() );
 
 			endwhile;
-
+			?>
+		</div>
+		<?php
 			the_posts_navigation();
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 		}

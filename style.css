@@ -4977,6 +4977,40 @@ header {
 /* XLarge and up (>1600px) */
 /* XLarge only */
 /* XXLarge and up (>1920px) */
+.blog #post-grid,
+.archive #post-grid,
+.page-template-training-page #post-grid {
+  margin: 2rem -0.625rem; }
+  .blog #post-grid .post-image,
+  .archive #post-grid .post-image,
+  .page-template-training-page #post-grid .post-image {
+    margin-bottom: 1rem; }
+  .blog #post-grid .post-title,
+  .archive #post-grid .post-title,
+  .page-template-training-page #post-grid .post-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1226aa;
+    font-size: 1.25em; }
+  .blog #post-grid .post-more-information,
+  .archive #post-grid .post-more-information,
+  .page-template-training-page #post-grid .post-more-information {
+    margin-top: 1rem; }
+
+/* Small only */
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  .blog #post-grid,
+  .archive #post-grid,
+  .page-template-training-page #post-grid {
+    margin: 2rem -0.9375rem; } }
+
+/* Medium only */
+/* Large and up (>1024px) */
+/* Large only */
+/* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
 .page-template-training-page .intro-box,
 .post-type-archive-austeve-courses .intro-box {
   background: rgba(220, 229, 239, 0.95);
@@ -5014,43 +5048,22 @@ header {
 .post-type-archive-austeve-courses #search-filters .course-category-filter:not(.active) i {
   display: none; }
 
-.page-template-training-page .austeve-courses,
-.post-type-archive-austeve-courses .austeve-courses {
-  margin: 2rem -0.625rem; }
-  .page-template-training-page .austeve-courses .course-image,
-  .post-type-archive-austeve-courses .austeve-courses .course-image {
-    margin-bottom: 1rem;
-    position: relative; }
-    .page-template-training-page .austeve-courses .course-image .icons,
-    .post-type-archive-austeve-courses .austeve-courses .course-image .icons {
-      position: absolute;
-      right: 0.5rem;
-      top: 0.5rem; }
-      .page-template-training-page .austeve-courses .course-image .icons img,
-      .post-type-archive-austeve-courses .austeve-courses .course-image .icons img {
-        float: right;
-        max-width: 75px;
-        margin-left: 0.5rem; }
-  .page-template-training-page .austeve-courses .course-title,
-  .post-type-archive-austeve-courses .austeve-courses .course-title {
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #1226aa;
-    font-size: 1.25em; }
-  .page-template-training-page .austeve-courses .course-more-information,
-  .post-type-archive-austeve-courses .austeve-courses .course-more-information {
-    margin-top: 1rem; }
+.page-template-training-page #post-grid .post-image,
+.post-type-archive-austeve-courses #post-grid .post-image {
+  position: relative; }
+  .page-template-training-page #post-grid .post-image .icons,
+  .post-type-archive-austeve-courses #post-grid .post-image .icons {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem; }
+    .page-template-training-page #post-grid .post-image .icons img,
+    .post-type-archive-austeve-courses #post-grid .post-image .icons img {
+      float: right;
+      max-width: 75px;
+      margin-left: 0.5rem; }
 
 /* Small only */
 /* Medium and up (640px) */
-@media screen and (min-width: 40em) {
-  .page-template-training-page .austeve-courses,
-  .post-type-archive-austeve-courses .austeve-courses {
-    margin: 2rem -0.9375rem; }
-  .page-template-training-page #search-filters #s,
-  .post-type-archive-austeve-courses #search-filters #s {
-    max-width: 50%; } }
-
 /* Medium only */
 /* Large and up (>1024px) */
 /* Large only */

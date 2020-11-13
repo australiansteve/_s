@@ -50,11 +50,9 @@
 		}
 	}
 
-	.austeve-courses {
-		margin: 2rem -0.625rem;
+	#post-grid {
 
-		.course-image {
-			margin-bottom: 1rem;
+		.post-image {
 			position: relative;
 
 			.icons {
@@ -69,17 +67,6 @@
 				}
 			}
 		}
-
-		.course-title {
-			font-weight: 700;
-			text-transform: uppercase;
-			color: $aquila-blue;
-			font-size: 1.25em;
-		}
-
-		.course-more-information {
-			margin-top: 1rem;
-		}
 	}
 }
 
@@ -91,20 +78,6 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	.page-template-training-page,
-	.post-type-archive-austeve-courses {
-
-		.austeve-courses {
-			margin: 2rem -0.9375rem;
-		}
-
-		#search-filters {
-
-			#s {
-				max-width: 50%;
-			}
-		}
-	}
 }
 
 /* Medium only */
