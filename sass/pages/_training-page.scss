@@ -52,18 +52,21 @@
 
 	#post-grid {
 
-		.post-image {
-			position: relative;
+		article {
 
-			.icons {
-				position: absolute;
-				right: 0.5rem;
-				top: 0.5rem;
+			.post-image {
+				position: relative;
 
-				img {
-					float: right;
-					max-width: 75px;
-					margin-left: 0.5rem;
+				.icons {
+					position: absolute;
+					right: 0.5rem;
+					top: 0.5rem;
+
+					img {
+						float: right;
+						max-width: 75px;
+						margin-left: 0.5rem;
+					}
 				}
 			}
 		}

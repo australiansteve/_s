@@ -6,19 +6,23 @@
 	#post-grid {
 		margin: 2rem -0.625rem;
 
-		.post-image {
-			margin-bottom: 1rem;
-		}
+		article {
+			margin-bottom: 2rem;
 
-		.post-title {
-			font-weight: 700;
-			text-transform: uppercase;
-			color: $aquila-blue;
-			font-size: 1.25em;
-		}
+			.post-image {
+				margin-bottom: 1rem;
+			}
 
-		.post-more-information {
-			margin-top: 1rem;
+			.post-title {
+				font-weight: 700;
+				text-transform: uppercase;
+				color: $aquila-blue;
+				font-size: 1.25em;
+			}
+
+			.button {
+				font-size: 0.9em;
+			}
 		}
 	}
 }

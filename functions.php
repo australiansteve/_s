@@ -239,6 +239,20 @@ function austeve_courses_pagesize( $query ) {
 }
 add_action( 'pre_get_posts', 'austeve_courses_pagesize', 1, 1 );
 
+
+function austeve_team_members_pagesize( $query ) {
+    if ( ! is_admin() && (is_post_type_archive( 'austeve-team-members' ) || (is_array($query->get('post_type')) && in_array('austeve-team-members', $query->get('post_type'))))) {
+        // Display 50 posts for 'austeve-team-members'
+        $query->set( 'posts_per_page', 50 );
+        $query->set( 'orderby', 'menu_order' );
+        $query->set( 'order', 'ASC' );
+
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'austeve_team_members_pagesize', 1, 1 );
+
+
 function austeve_get_courses() {
 
 	$nonce = $_REQUEST['security'];
