@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class="cell">
+<div class="cell text-center">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<div class="post-image"><?php the_post_thumbnail('archive-square');?></div>
 		<div class="post-title" data-equalizer-watch><?php the_title();?></div>

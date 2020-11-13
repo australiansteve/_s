@@ -1,7 +1,48 @@
 {
     "key": "group_5faadac54db18",
-    "title": "General Site Text",
+    "title": "General Site Customization",
     "fields": [
+        {
+            "key": "field_5fadff5f39eea",
+            "label": "Site Defaults",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5fadff6c39eeb",
+            "label": "Default Background Image",
+            "name": "default_background_image",
+            "type": "image",
+            "instructions": "Used as the default background image for pages\/posts\/team members\/courses unless another background image is specified in the settings of that page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "default_value": ""
+        },
         {
             "key": "field_5faadac554f4d",
             "label": "General Text",
@@ -93,5 +134,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605229389
+    "modified": 1605238701
 }

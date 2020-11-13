@@ -106,6 +106,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 
 		add_image_size( 'header-logo', 405, 130, true );
 		add_image_size( 'footer-logo', 275, 145, true );
+		add_image_size( 'featured-image', 750, 600, true );
 		add_image_size( 'archive-square', 600, 600, true );
 	}
 endif;
@@ -286,3 +287,13 @@ function austeve_get_courses() {
 
 add_action('wp_ajax_austeve_get_courses', 'austeve_get_courses');
 add_action('wp_ajax_nopriv_austeve_get_courses', 'austeve_get_courses');
+
+add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field');
+	function add_default_value_to_image_field($field) {
+		acf_render_field_setting( $field, array(
+			'label'			=> 'Default Image',
+			'instructions'		=> 'Appears when creating a new post',
+			'type'			=> 'image',
+			'name'			=> 'default_value',
+		));
+	}

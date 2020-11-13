@@ -1,7 +1,7 @@
 <?php
 $contentTextColor = $section['content_text_color'];
 $backgroundColor = $section['background_color'];
-$backgroundImage = $section['background_image'];
+$backgroundImage = ($section['background_image'] > 0) ? $section['background_image'] : ($sectionId == 'landing' ? get_field('default_background_image', 'options') : null );
 $backgroundImageUrl = wp_get_attachment_image_src($backgroundImage, 'full');
 $backgroundCssValue = array();
 $backgroundClasses = $section['background_classes'];

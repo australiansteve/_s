@@ -1,26 +1,11 @@
-.blog,
-.archive,
-.page-template-training-page,
-.page-template-about-page {
+.single,
+.single-austeve-team-members,
+.single-austeve-courses {
 
-	#post-grid {
-		margin: 2rem -0.625rem;
-
-		.post-image {
-			margin-bottom: 1rem;
-		}
-
-		.post-title {
-			font-weight: 700;
-			text-transform: uppercase;
-			color: $aquila-blue;
-			font-size: 1.25em;
-		}
-
-		.post-more-information {
-			margin-top: 1rem;
-		}
+	.wp-post-image {
+		margin-top: 2rem;
 	}
+
 }
 
 /* Small only */
@@ -31,15 +16,18 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	.blog,
-	.archive,
-	.page-template-training-page,
-	.page-template-about-page {
+	.single,
+	.single-austeve-team-members,
+	.single-austeve-courses {
 
-		#post-grid {
-			margin: 2rem -0.9375rem;
+		.single-container {
+			min-height: 550px;
+
+			.wp-post-image {
+				float: left;
+				max-width: 50%;
+			}
 		}
-
 	}
 }
 

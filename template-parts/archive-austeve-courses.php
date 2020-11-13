@@ -1,4 +1,4 @@
-<div class="cell">
+<div class="cell text-center">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<div class="post-image">

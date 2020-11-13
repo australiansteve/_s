@@ -10,37 +10,27 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php
+	<?php
 
-		while ( have_posts() ) :
-			the_post();
+	while ( have_posts() ) :
+		the_post();
 
-			$sectionId = 'landing';
-			$section = get_field($sectionId);
-			if ($section) {
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>
-				<h1 class="page-title"><?php the_title();?></h1>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-			}
+		$sectionId = 'landing';
+		$section = get_field($sectionId);
+		if ($section) {
+			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 
-			$sectionId = 'body';
-			$section = get_field($sectionId);
-			if ($section) {
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>
-				<?php the_content();?>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-			}
+			get_template_part( 'template-parts/content', get_post_type() );
+			
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+		}
 
-		endwhile; // End of the loop.
-		?>
+	endwhile;
+	?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_footer();

@@ -4870,14 +4870,26 @@ body section.minimum-full-height {
 
 body h1.page-title {
   color: #152d51;
-  padding: 2rem 1rem;
   text-transform: uppercase;
   font-weight: 700;
-  background: rgba(220, 229, 239, 0.95);
-  margin: 2rem 0; }
+  margin-top: 2rem; }
 
 body .grid-y.align-right h1.page-title {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  padding: 2rem 1rem;
+  background: rgba(220, 229, 239, 0.95); }
+
+body .page-content {
+  background-color: rgba(220, 229, 239, 0.95);
+  padding: 0.5rem;
+  margin-bottom: 4rem; }
+
+body .single-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem;
+  padding-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem; }
 
 a {
   display: inline-block; }
@@ -4893,13 +4905,25 @@ a {
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
-  body h1.page-title {
-    padding: 3rem 1rem; } }
+  body .grid-y.align-right h1.page-title {
+    padding: 3rem 1rem; }
+  body .page-content {
+    padding: 2rem;
+    margin-bottom: 6rem; }
+  body .single-container {
+    padding: 1rem;
+    padding-bottom: 3rem; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
 /* Large only */
 /* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+  body .page-content {
+    padding: 4rem 6rem; }
+  body .single-container {
+    padding: 1rem 2rem 3rem 2rem; } }
+
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 .menu {
@@ -4979,22 +5003,26 @@ header {
 /* XXLarge and up (>1920px) */
 .blog #post-grid,
 .archive #post-grid,
-.page-template-training-page #post-grid {
+.page-template-training-page #post-grid,
+.page-template-about-page #post-grid {
   margin: 2rem -0.625rem; }
   .blog #post-grid .post-image,
   .archive #post-grid .post-image,
-  .page-template-training-page #post-grid .post-image {
+  .page-template-training-page #post-grid .post-image,
+  .page-template-about-page #post-grid .post-image {
     margin-bottom: 1rem; }
   .blog #post-grid .post-title,
   .archive #post-grid .post-title,
-  .page-template-training-page #post-grid .post-title {
+  .page-template-training-page #post-grid .post-title,
+  .page-template-about-page #post-grid .post-title {
     font-weight: 700;
     text-transform: uppercase;
     color: #1226aa;
     font-size: 1.25em; }
   .blog #post-grid .post-more-information,
   .archive #post-grid .post-more-information,
-  .page-template-training-page #post-grid .post-more-information {
+  .page-template-training-page #post-grid .post-more-information,
+  .page-template-about-page #post-grid .post-more-information {
     margin-top: 1rem; }
 
 /* Small only */
@@ -5002,8 +5030,33 @@ header {
 @media screen and (min-width: 40em) {
   .blog #post-grid,
   .archive #post-grid,
-  .page-template-training-page #post-grid {
+  .page-template-training-page #post-grid,
+  .page-template-about-page #post-grid {
     margin: 2rem -0.9375rem; } }
+
+/* Medium only */
+/* Large and up (>1024px) */
+/* Large only */
+/* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
+.single .wp-post-image,
+.single-austeve-team-members .wp-post-image,
+.single-austeve-courses .wp-post-image {
+  margin-top: 2rem; }
+
+/* Small only */
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  .single .single-container,
+  .single-austeve-team-members .single-container,
+  .single-austeve-courses .single-container {
+    min-height: 550px; }
+    .single .single-container .wp-post-image,
+    .single-austeve-team-members .single-container .wp-post-image,
+    .single-austeve-courses .single-container .wp-post-image {
+      float: left;
+      max-width: 50%; } }
 
 /* Medium only */
 /* Large and up (>1024px) */

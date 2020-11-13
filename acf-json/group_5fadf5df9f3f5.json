@@ -1,9 +1,9 @@
 {
-    "key": "group_5ef3a3cec10c0",
-    "title": "Page Section",
+    "key": "group_5fadf5df9f3f5",
+    "title": "Default Landing Section",
     "fields": [
         {
-            "key": "field_5f6c91340b479",
+            "key": "field_5fadf5dfa5b5b",
             "label": "Is Page Section",
             "name": "is_page_section",
             "type": "true_false",
@@ -22,7 +22,7 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5f6c8aa2f55e8",
+            "key": "field_5fadf5dfa5b6f",
             "label": "Background",
             "name": "",
             "type": "tab",
@@ -38,7 +38,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ef3a3e6d6681",
+            "key": "field_5fadf5dfa5b7a",
             "label": "Color",
             "name": "background_color",
             "type": "color_picker",
@@ -53,7 +53,7 @@
             "default_value": "#ffffff"
         },
         {
-            "key": "field_5ef3a3f0d6682",
+            "key": "field_5fadf5dfa5b82",
             "label": "Image",
             "name": "background_image",
             "type": "image",
@@ -74,10 +74,11 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "default_value": 254
         },
         {
-            "key": "field_5ef3a409d6683",
+            "key": "field_5fadf5dfa5b8b",
             "label": "CSS Classes",
             "name": "background_classes",
             "type": "text",
@@ -96,7 +97,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5p3eihgda0bs",
+            "key": "field_5fadf5dfa5b94",
             "label": "Settings",
             "name": "",
             "type": "tab",
@@ -112,7 +113,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8ee5caaae",
+            "key": "field_5fadf5dfa5b9c",
             "label": "Text Color",
             "name": "content_text_color",
             "type": "color_picker",
@@ -127,7 +128,7 @@
             "default_value": "#000000"
         },
         {
-            "key": "field_5f6c8c2cad95a",
+            "key": "field_5fadf5dfa5ba5",
             "label": "CSS Classes",
             "name": "section_classes",
             "type": "text",
@@ -146,7 +147,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5f6c8c4fad95b",
+            "key": "field_5fadf5dfa5bad",
             "label": "Horizontal Alignment",
             "name": "section_horizontal_alignment",
             "type": "radio",
@@ -171,7 +172,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_5f6c8ca6ad95c",
+            "key": "field_5fadf5dfa5bb7",
             "label": "Vertical Alignment",
             "name": "section_vertical_alignment",
             "type": "radio",
@@ -196,7 +197,7 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_5f6c8cccad95d",
+            "key": "field_5fadf5dfa5bc0",
             "label": "Height",
             "name": "section_height",
             "type": "flexible_content",
@@ -205,7 +206,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5f6c8ca6ad95c",
+                        "field": "field_5fadf5dfa5bb7",
                         "operator": "!=",
                         "value": "left"
                     }
@@ -233,7 +234,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5f6c8d15ad95f",
+                            "key": "field_5fadf5dfbfe49",
                             "label": "Explicit Value",
                             "name": "explicit_value",
                             "type": "text",
@@ -278,5 +279,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1605233029
+    "modified": 1605236418
 }
