@@ -6,7 +6,9 @@ import './foundation.js'
 jQuery( document ).ready(function() {
 
 	window.addEventListener('resize', calculateSectionMinusHeaderHeight);
+	window.addEventListener('resize', triggerFoundationEqualizer);
 	calculateSectionMinusHeaderHeight();
+	Foundation.addToJquery(jQuery);
 	
 });
 
@@ -26,3 +28,14 @@ var calculateSectionMinusHeaderHeight = _.debounce(function () {
 
 	});
 }, 250);
+
+
+var triggerFoundationEqualizer = _.debounce(function (groups) {
+	new Foundation.Equalizer(jQuery("[data-equalize-by-row]")).getHeightsByRow(resetHeights);
+}, 250);
+
+
+function resetHeights(groups) {
+	jQuery('[data-equalize-by-row]').foundation('applyHeightByRow', groups);
+}
+

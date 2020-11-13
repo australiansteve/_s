@@ -1,0 +1,117 @@
+.page-template-about-page {
+
+	.intro-box {
+		background-color: $sky-95;
+		padding: 1rem;
+		margin-bottom: 2rem;
+
+		p:nth-of-type(1) {
+			font-weight: 700;
+			font-size: 1.1em;
+			margin: auto;
+			max-width: 90%;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	#call-to-action {
+
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.page-template-about-page {
+
+		#call-to-action {
+
+			.container {
+				margin-left: 2rem;
+
+				.text-box {
+					max-width: 60%;
+				}
+			}
+
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+	.page-template-about-page {
+
+		.intro-box {
+			max-width: 90%;
+			margin: auto;
+			padding: 3rem;
+		}
+
+		#call-to-action {
+
+			.section-content {
+				padding-left: 5%;
+			}
+
+		}
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+	.page-template-about-page {
+
+		#call-to-action {
+
+			.section-background {
+				background-position: calc(50% + calc(1920px * 0.3));
+			}
+
+		}
+	}
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+	.page-template-about-page {
+
+		.intro-box {
+			max-width: 100%;
+			padding: 6rem 10rem;
+		}
+
+		#call-to-action {
+
+			.container {
+
+				.text-box {
+					max-width: 55%;
+				}
+			}
+		}
+	}
+}

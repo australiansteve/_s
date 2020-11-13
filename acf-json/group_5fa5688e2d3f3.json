@@ -55,25 +55,6 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 0
-        },
-        {
-            "key": "field_5fa5689d8e86e",
-            "label": "More Information Button Text",
-            "name": "more_information_button_text",
-            "type": "text",
-            "instructions": "'More Information'",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -93,5 +74,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1604678579
+    "modified": 1605283730
 }
