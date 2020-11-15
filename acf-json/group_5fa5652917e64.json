@@ -55,44 +55,6 @@
             "maxlength": "",
             "rows": 4,
             "new_lines": "wpautop"
-        },
-        {
-            "key": "field_5fa5655a6e809",
-            "label": "Search Label",
-            "name": "search_label",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Search",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5fa5658dbb221",
-            "label": "Individual Course Button Text",
-            "name": "course_button_text",
-            "type": "text",
-            "instructions": "'More Information' in mockup",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "More Information",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -112,5 +74,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1605038434
+    "modified": 1605295983
 }

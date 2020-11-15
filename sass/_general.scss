@@ -126,6 +126,17 @@ a {
 	color: $navy;
 }
 
+
+.blue-box {
+	background-color: $navy;
+	color: $white;
+	padding: 1rem;
+
+	h2 {
+		color: $white;
+	}
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
@@ -160,6 +171,10 @@ a {
 		}
 
 	}
+
+	.blue-box {
+		padding: 2rem 10%;
+	}
 }
 
 /* Medium only */
@@ -175,8 +190,6 @@ a {
 		main {
 
 			div,
-			p,
-			a,
 			span {
 				font-size: 20px;
 			}
@@ -189,6 +202,11 @@ a {
 				padding-bottom: 4rem;
 			}
 		}
+	}
+
+	.blue-box {
+		padding: 4rem 15%;
+		margin-bottom: 2rem;
 	}
 }
 
@@ -205,8 +223,6 @@ a {
 		main {
 
 			div,
-			p,
-			a,
 			span {
 				font-size: 28px;
 			}
@@ -236,8 +252,6 @@ a {
 		main {
 
 			div,
-			p,
-			a,
 			span {
 				font-size: 42px;
 			}
@@ -250,5 +264,9 @@ a {
 				padding-bottom: 8rem;
 			}
 		}
+	}
+
+	.blue-box {
+		margin-bottom: 6rem;
 	}
 }

@@ -14,16 +14,16 @@ get_header();
 
 	<?php
 
-			$sectionId = 'landing';
-			$section = get_field($sectionId);
-			if ($section) {
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>
-				<h1 class="page-title"><?php the_title();?></h1>
-				
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-			}
+		$sectionId = 'landing';
+		$section = get_field($sectionId);
+		if ($section) {
+			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+			?>
+			<h1 class="page-title"><?php the_title();?></h1>
+			
+			<?php
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+		}
 	?>
 
 </main><!-- #main -->

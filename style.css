@@ -6400,6 +6400,13 @@ a {
   background: #f2f1f1;
   color: #152d51; }
 
+.blue-box {
+  background-color: #152d51;
+  color: #fff;
+  padding: 1rem; }
+  .blue-box h2 {
+    color: #fff; }
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   body section .section-background.image-medium-up {
@@ -6414,26 +6421,27 @@ a {
     margin-bottom: 6rem; }
   body .single-container {
     padding: 1rem;
-    padding-bottom: 3rem; } }
+    padding-bottom: 3rem; }
+  .blue-box {
+    padding: 2rem 10%; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
   body main div,
-  body main p,
-  body main a,
   body main span {
     font-size: 20px; }
   body section .section-content {
     padding-top: 4rem;
-    padding-bottom: 4rem; } }
+    padding-bottom: 4rem; }
+  .blue-box {
+    padding: 4rem 15%;
+    margin-bottom: 2rem; } }
 
 /* Large only */
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
   body main div,
-  body main p,
-  body main a,
   body main span {
     font-size: 28px; }
   body .page-content {
@@ -6445,13 +6453,13 @@ a {
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
   body main div,
-  body main p,
-  body main a,
   body main span {
     font-size: 42px; }
   body section .section-content {
     padding-top: 6rem;
-    padding-bottom: 8rem; } }
+    padding-bottom: 8rem; }
+  .blue-box {
+    margin-bottom: 6rem; } }
 
 .menu {
   display: inline-block; }
@@ -6531,22 +6539,26 @@ header {
 .blog #post-grid,
 .archive #post-grid,
 .page-template-training-page #post-grid,
-.page-template-about-page #post-grid {
+.page-template-about-page #post-grid,
+.home #courses #post-grid {
   margin: 2rem -0.625rem; }
   .blog #post-grid article,
   .archive #post-grid article,
   .page-template-training-page #post-grid article,
-  .page-template-about-page #post-grid article {
+  .page-template-about-page #post-grid article,
+  .home #courses #post-grid article {
     margin-bottom: 2rem; }
     .blog #post-grid article .post-image,
     .archive #post-grid article .post-image,
     .page-template-training-page #post-grid article .post-image,
-    .page-template-about-page #post-grid article .post-image {
+    .page-template-about-page #post-grid article .post-image,
+    .home #courses #post-grid article .post-image {
       margin-bottom: 1rem; }
     .blog #post-grid article .post-title,
     .archive #post-grid article .post-title,
     .page-template-training-page #post-grid article .post-title,
-    .page-template-about-page #post-grid article .post-title {
+    .page-template-about-page #post-grid article .post-title,
+    .home #courses #post-grid article .post-title {
       font-weight: 700;
       text-transform: uppercase;
       color: #1226aa;
@@ -6554,7 +6566,8 @@ header {
     .blog #post-grid article .button,
     .archive #post-grid article .button,
     .page-template-training-page #post-grid article .button,
-    .page-template-about-page #post-grid article .button {
+    .page-template-about-page #post-grid article .button,
+    .home #courses #post-grid article .button {
       font-size: 0.9em; }
 
 /* Small only */
@@ -6563,7 +6576,8 @@ header {
   .blog #post-grid,
   .archive #post-grid,
   .page-template-training-page #post-grid,
-  .page-template-about-page #post-grid {
+  .page-template-about-page #post-grid,
+  .home #courses #post-grid {
     margin: 2rem -0.9375rem; } }
 
 /* Medium only */
@@ -6594,6 +6608,95 @@ header {
 /* Large and up (>1024px) */
 /* Large only */
 /* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
+.home #landing .container {
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.5rem;
+  font-weight: 700; }
+
+.home #courses .text {
+  max-width: 80%;
+  margin: auto;
+  margin-bottom: 2rem; }
+
+.home #courses .button {
+  display: inline-block; }
+
+.home #testimonials .light-blue-box {
+  background: #dce5ef;
+  padding: 1rem; }
+
+.home #testimonials .testimonials-container {
+  overflow-x: auto;
+  white-space: nowrap; }
+  .home #testimonials .testimonials-container > div {
+    display: inline-block;
+    width: 100%;
+    transition: margin 1s linear; }
+  .home #testimonials .testimonials-container > div.left {
+    margin-left: -100%; }
+
+.home #testimonials .testimonial-control:hover {
+  cursor: pointer; }
+
+.home #testimonials .testimonial-control.active {
+  color: #fff; }
+
+.home #testimonials .testimonial {
+  padding: 1rem 0;
+  vertical-align: top; }
+  .home #testimonials .testimonial blockquote {
+    border-left: none;
+    white-space: initial; }
+    .home #testimonials .testimonial blockquote div.name {
+      margin-top: 1rem;
+      font-style: italic; }
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .home .button {
+    display: block; } }
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  .home .button {
+    margin-right: 1.5rem; }
+  .home .button:nth-last-of-type(1) {
+    margin-right: 0; }
+  .home #landing .container {
+    max-width: 80%;
+    padding: 2rem; }
+  .home #testimonials .testimonials-container {
+    max-width: 80%;
+    margin: auto; }
+  .home #testimonials .testimonial {
+    padding: 3rem 0 2rem 0; }
+  .home #testimonials .testimonials-controls {
+    margin-bottom: 2rem;
+    font-size: 0.8em; } }
+
+/* Medium only */
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .home #landing .container .text {
+    font-size: 1.4em; }
+  .home #courses .text {
+    max-width: 70%;
+    margin-bottom: 4rem; }
+  .home #testimonials .light-blue-box {
+    max-width: 80%;
+    margin: auto; }
+  .home #testimonials .testimonials-controls {
+    font-size: 0.6em; } }
+
+/* Large only */
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+  .home #landing .container {
+    max-width: 60%;
+    padding: 4rem; } }
+
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 .page-template-about-page .intro-box {
@@ -6678,15 +6781,18 @@ header {
   display: none; }
 
 .page-template-training-page #post-grid article .post-image,
-.post-type-archive-austeve-courses #post-grid article .post-image {
+.post-type-archive-austeve-courses #post-grid article .post-image,
+.home #courses #post-grid article .post-image {
   position: relative; }
   .page-template-training-page #post-grid article .post-image .icons,
-  .post-type-archive-austeve-courses #post-grid article .post-image .icons {
+  .post-type-archive-austeve-courses #post-grid article .post-image .icons,
+  .home #courses #post-grid article .post-image .icons {
     position: absolute;
     right: 0.5rem;
     top: 0.5rem; }
     .page-template-training-page #post-grid article .post-image .icons img,
-    .post-type-archive-austeve-courses #post-grid article .post-image .icons img {
+    .post-type-archive-austeve-courses #post-grid article .post-image .icons img,
+    .home #courses #post-grid article .post-image .icons img {
       float: right;
       max-width: 75px;
       margin-left: 0.5rem; }

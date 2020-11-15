@@ -81,10 +81,10 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 				'post_type'              => array( 'austeve-courses' ),
 				'post_status'            => array( 'publish' ),
 			);
-			$coursesquery = new WP_Query( $args );
-			if ( $coursesquery->have_posts() ) {
-				while ( $coursesquery->have_posts() ) {
-					$coursesquery->the_post();
+			$postsquery = new WP_Query( $args );
+			if ( $postsquery->have_posts() ) {
+				while ( $postsquery->have_posts() ) {
+					$postsquery->the_post();
 
 					include( locate_template( 'template-parts/archive-austeve-courses.php', false, false ) ); 
 
