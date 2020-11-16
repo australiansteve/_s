@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-	
+
 	<?php if ( have_posts() ) { ?>
 
 		<?php
@@ -20,14 +20,12 @@ get_header();
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>
-			<div class="page-header">
-				<?php
-				the_title( '<h1 class="page-title">', '</h1>' );
-				?>
-				<div class="page-content">
-					<?php the_content();?>
-				</div>
-			</div><!-- .page-header -->
+			<?php
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			?>
+			<div class="page-content">
+				<?php the_content();?>
+			</div>
 			<?php
 			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 		}

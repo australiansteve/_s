@@ -14,15 +14,15 @@
 
 get_header();
 ?>
-
 <main id="primary" class="site-main">
-
+	
 	<?php
 	while ( have_posts() ) :
 		the_post();
 
 		$sectionId = 'landing';
 		$section = get_field($sectionId);
+
 		if ($section) {
 			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 			?>

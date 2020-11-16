@@ -6,6 +6,13 @@
 		margin-top: 2rem;
 	}
 
+	p.product.woocommerce.add_to_cart_inline {
+
+		.button {
+			width: fit-content;
+		}
+	}
+
 }
 
 /* Small only */
@@ -26,7 +33,13 @@
 			.wp-post-image {
 				float: left;
 				max-width: 50%;
+				margin-right: 1rem;
+				margin-bottom: 1rem;
 			}
+		}
+
+		h1.page-title {
+			font-size: 2rem;
 		}
 	}
 }
@@ -39,6 +52,19 @@
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	.single,
+	.single-austeve-team-members,
+	.single-austeve-courses {
+
+		.single-container {
+
+			.wp-post-image {
+				margin-right: 2rem;
+				margin-bottom: 2rem;
+			}
+		}
+
+	}
 }
 
 /* Large only */
@@ -49,6 +75,14 @@
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	.single,
+	.single-austeve-team-members,
+	.single-austeve-courses {
+
+		h1.page-title {
+			font-size: 55px;
+		}
+	}
 }
 
 /* XLarge only */

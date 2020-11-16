@@ -47,15 +47,15 @@ function hamburger_cat_woocommerce_scripts() {
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
-			font-family: "star";
-			src: url("' . $font_path . 'star.eot");
-			src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
-				url("' . $font_path . 'star.woff") format("woff"),
-				url("' . $font_path . 'star.ttf") format("truetype"),
-				url("' . $font_path . 'star.svg#star") format("svg");
-			font-weight: normal;
-			font-style: normal;
-		}';
+		font-family: "star";
+		src: url("' . $font_path . 'star.eot");
+		src: url("' . $font_path . 'star.eot?#iefix") format("embedded-opentype"),
+		url("' . $font_path . 'star.woff") format("woff"),
+		url("' . $font_path . 'star.ttf") format("truetype"),
+		url("' . $font_path . 'star.svg#star") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}';
 
 	wp_add_inline_style( 'hamburger-cat-woocommerce-style', $inline_font );
 }
@@ -118,13 +118,19 @@ if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_before' ) ) {
 	 */
 	function hamburger_cat_woocommerce_wrapper_before() {
 		?>
-			<main id="primary" class="site-main">
-		<?php
+		<main id="primary" class="site-main">
+			<?php
+			$sectionId = 'other_landing';
+			$section = get_field($sectionId, 'options');
+			if ($section) {
+				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+				echo "<div class='page-content'>";
+			}
+		}
 	}
-}
-add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrapper_before' );
+	add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrapper_before' );
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_after' ) ) {
+	if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_after' ) ) {
 	/**
 	 * After Content.
 	 *
@@ -133,10 +139,17 @@ if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_after' ) ) {
 	 * @return void
 	 */
 	function hamburger_cat_woocommerce_wrapper_after() {
+		$sectionId = 'other_landing';
+		$section = get_field($sectionId, 'options');
+		if ($section) {
+			echo "</div>";
+			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+		}
 		?>
-			</main><!-- #main -->
-		<?php
-	}
+
+	</main><!-- #main -->
+	<?php
+}
 }
 add_action( 'woocommerce_after_main_content', 'hamburger_cat_woocommerce_wrapper_after' );
 
@@ -152,7 +165,7 @@ add_action( 'woocommerce_after_main_content', 'hamburger_cat_woocommerce_wrapper
 	?>
  */
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_cart_link_fragment' ) ) {
+	if ( ! function_exists( 'hamburger_cat_woocommerce_cart_link_fragment' ) ) {
 	/**
 	 * Cart Fragments.
 	 *
@@ -225,3 +238,55 @@ if ( ! function_exists( 'hamburger_cat_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+// To change add to cart text on single product page
+add_filter( 'woocommerce_product_add_to_cart_text', 'hamburger_cat_woocommerce_custom_single_add_to_cart_text' ); 
+function hamburger_cat_woocommerce_custom_single_add_to_cart_text() {
+
+	if (get_post_type() == 'austeve-courses'):
+		return __( get_field('course_add_to_cart_text', 'options'), 'woocommerce' );
+	endif; 
+}
+
+// define the woocommerce_cart_item_permalink callback 
+function hamburger_cat_filter_woocommerce_item_permalink( $product_get_permalink_item, $item, $item_key ) { 
+	$posts = get_posts(array(
+		'numberposts'	=> -1,
+		'post_type'		=> 'austeve-courses',
+		'meta_key'		=> 'product',
+		'meta_value'	=> $item['product_id']
+	));
+	if ($posts) {
+		return get_permalink($posts[0]->ID);
+	}
+
+
+	return $product_get_permalink_item; 
+}; 
+
+// add the filter 
+add_filter( 'woocommerce_cart_item_permalink', 'hamburger_cat_filter_woocommerce_item_permalink', 10, 3 ); 
+add_filter( 'woocommerce_order_item_permalink', 'hamburger_cat_filter_woocommerce_item_permalink', 10, 3 ); 
+
+function hamburger_cat_custom_redirects() {
+
+	if ( is_singular('product') ) {
+		$posts = get_posts(array(
+			'numberposts'	=> -1,
+			'post_type'		=> 'austeve-courses',
+			'meta_key'		=> 'product',
+			'meta_value'	=> get_the_ID()
+		));
+
+		if ($posts) {
+			error_log(print_r($posts[0], true));
+			error_log("Redirecting to ".get_permalink($posts[0]->ID));
+			wp_redirect( get_permalink($posts[0]->ID) );
+			die;
+		}
+
+
+	}
+
+}
+add_action( 'template_redirect', 'hamburger_cat_custom_redirects' );

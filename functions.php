@@ -199,19 +199,19 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 }, 10, 2);
 
 add_filter('nav_menu_css_class', function( $classes, $item, $args ) {
-    if(isset($args->add_li_class)) {
-        $classes[] = $args->add_li_class;
-    }
-    return $classes;
+	if(isset($args->add_li_class)) {
+		$classes[] = $args->add_li_class;
+	}
+	return $classes;
 }, 1, 3);
 
 
 function austeve_courses_pagesize( $query ) {
-    if ( ! is_admin() && (is_post_type_archive( 'austeve-courses' ) || (is_array($query->get('post_type')) && in_array('austeve-courses', $query->get('post_type'))))) {
+	if ( ! is_admin() && (is_post_type_archive( 'austeve-courses' ) || (is_array($query->get('post_type')) && in_array('austeve-courses', $query->get('post_type'))))) {
         // Display 50 posts for 'austeve-courses'
-        $query->set( 'posts_per_page', 50 );
+		$query->set( 'posts_per_page', 50 );
 
-        error_log("Course Query : ".print_r($query, true));
+		error_log("Course Query : ".print_r($query, true));
 		
 		$queries = null;
 		parse_str($_SERVER['QUERY_STRING'], $queries);
@@ -224,7 +224,7 @@ function austeve_courses_pagesize( $query ) {
 
 		if (array_key_exists('category', $queries)) {
 
-		 	$query->set('tax_query', array(
+			$query->set('tax_query', array(
 				array(
 					'taxonomy'         => 'course-category',
 					'terms'            => $queries['category'],
@@ -234,21 +234,21 @@ function austeve_courses_pagesize( $query ) {
 			));
 		}
 
-        return;
-    }
+		return;
+	}
 }
 add_action( 'pre_get_posts', 'austeve_courses_pagesize', 1, 1 );
 
 
 function austeve_team_members_pagesize( $query ) {
-    if ( ! is_admin() && (is_post_type_archive( 'austeve-team-members' ) || (is_array($query->get('post_type')) && in_array('austeve-team-members', $query->get('post_type'))))) {
+	if ( ! is_admin() && (is_post_type_archive( 'austeve-team-members' ) || (is_array($query->get('post_type')) && in_array('austeve-team-members', $query->get('post_type'))))) {
         // Display 50 posts for 'austeve-team-members'
-        $query->set( 'posts_per_page', 50 );
-        $query->set( 'orderby', 'menu_order' );
-        $query->set( 'order', 'ASC' );
+		$query->set( 'posts_per_page', 50 );
+		$query->set( 'orderby', 'menu_order' );
+		$query->set( 'order', 'ASC' );
 
-        return;
-    }
+		return;
+	}
 }
 add_action( 'pre_get_posts', 'austeve_team_members_pagesize', 1, 1 );
 
@@ -303,11 +303,11 @@ add_action('wp_ajax_austeve_get_courses', 'austeve_get_courses');
 add_action('wp_ajax_nopriv_austeve_get_courses', 'austeve_get_courses');
 
 add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field');
-	function add_default_value_to_image_field($field) {
-		acf_render_field_setting( $field, array(
-			'label'			=> 'Default Image',
-			'instructions'		=> 'Appears when creating a new post',
-			'type'			=> 'image',
-			'name'			=> 'default_value',
-		));
-	}
+function add_default_value_to_image_field($field) {
+	acf_render_field_setting( $field, array(
+		'label'			=> 'Default Image',
+		'instructions'		=> 'Appears when creating a new post',
+		'type'			=> 'image',
+		'name'			=> 'default_value',
+	));
+}

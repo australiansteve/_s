@@ -6312,6 +6312,71 @@ a.thumbnail {
 #primary[tabindex="-1"]:focus {
   outline: 0; }
 
+.woocommerce-page main header {
+  background-color: inherit; }
+
+.woocommerce-page main ul {
+  display: flex; }
+
+.woocommerce-page main .page-content .woocommerce {
+  text-align: left; }
+
+.woocommerce-page main .woocommerce-message,
+.woocommerce-page main .woocommerce-info,
+.woocommerce-page main .woocommerce-error,
+.woocommerce-page main .woocommerce-noreviews,
+.woocommerce-page main p.no-comments {
+  background-color: #dce5ef;
+  border: 2px solid #152d51;
+  margin-left: 0;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  text-align: center; }
+  .woocommerce-page main .woocommerce-message .button,
+  .woocommerce-page main .woocommerce-info .button,
+  .woocommerce-page main .woocommerce-error .button,
+  .woocommerce-page main .woocommerce-noreviews .button,
+  .woocommerce-page main p.no-comments .button {
+    margin-top: 0; }
+  .woocommerce-page main .woocommerce-message li,
+  .woocommerce-page main .woocommerce-info li,
+  .woocommerce-page main .woocommerce-error li,
+  .woocommerce-page main .woocommerce-noreviews li,
+  .woocommerce-page main p.no-comments li {
+    margin-left: 1rem; }
+
+.woocommerce-page main .select2-container--default .select2-selection--single {
+  padding: 0.25rem;
+  height: auto; }
+  .woocommerce-page main .select2-container--default .select2-selection--single .select2-selection__arrow {
+    right: 8px;
+    top: 0.5rem; }
+
+.woocommerce-page main ul.woocommerce-order-overview {
+  display: block; }
+
+/* Small only */
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  .woocommerce-page main .woocommerce-message .button,
+  .woocommerce-page main .woocommerce-info .button,
+  .woocommerce-page main .woocommerce-error .button,
+  .woocommerce-page main .woocommerce-noreviews .button,
+  .woocommerce-page main p.no-comments .button {
+    margin-right: 2rem;
+    margin-bottom: 0; }
+  .woocommerce-page main .woocommerce form,
+  .woocommerce-page main .woocommerce .cart-collaterals,
+  .woocommerce-page main .woocommerce .woocommerce-order {
+    max-width: 800px;
+    margin: auto; } }
+
+/* Medium only */
+/* Large and up (>1024px) */
+/* Large only */
+/* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
 /* Hamburger Cat style */
 body section {
   position: relative; }
@@ -6428,8 +6493,7 @@ a {
 /* Medium only */
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
-  body main div,
-  body main span {
+  body main div {
     font-size: 20px; }
   body section .section-content {
     padding-top: 4rem;
@@ -6441,8 +6505,7 @@ a {
 /* Large only */
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
-  body main div,
-  body main span {
+  body main div {
     font-size: 28px; }
   body .page-content {
     padding: 4rem 6rem; }
@@ -6452,8 +6515,7 @@ a {
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
-  body main div,
-  body main span {
+  body main div {
     font-size: 42px; }
   body section .section-content {
     padding-top: 6rem;
@@ -6591,6 +6653,11 @@ header {
 .single-austeve-courses .wp-post-image {
   margin-top: 2rem; }
 
+.single p.product.woocommerce.add_to_cart_inline .button,
+.single-austeve-team-members p.product.woocommerce.add_to_cart_inline .button,
+.single-austeve-courses p.product.woocommerce.add_to_cart_inline .button {
+  width: fit-content; }
+
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
@@ -6602,12 +6669,31 @@ header {
     .single-austeve-team-members .single-container .wp-post-image,
     .single-austeve-courses .single-container .wp-post-image {
       float: left;
-      max-width: 50%; } }
+      max-width: 50%;
+      margin-right: 1rem;
+      margin-bottom: 1rem; }
+  .single h1.page-title,
+  .single-austeve-team-members h1.page-title,
+  .single-austeve-courses h1.page-title {
+    font-size: 2rem; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .single .single-container .wp-post-image,
+  .single-austeve-team-members .single-container .wp-post-image,
+  .single-austeve-courses .single-container .wp-post-image {
+    margin-right: 2rem;
+    margin-bottom: 2rem; } }
+
 /* Large only */
 /* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+  .single h1.page-title,
+  .single-austeve-team-members h1.page-title,
+  .single-austeve-courses h1.page-title {
+    font-size: 55px; } }
+
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 .home #landing .container {

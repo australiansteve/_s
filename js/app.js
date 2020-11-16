@@ -31,7 +31,9 @@ var calculateSectionMinusHeaderHeight = _.debounce(function () {
 
 
 var triggerFoundationEqualizer = _.debounce(function (groups) {
-	new Foundation.Equalizer(jQuery("[data-equalize-by-row]")).getHeightsByRow(resetHeights);
+	if (jQuery("[data-equalize-by-row]").length) {
+		new Foundation.Equalizer(jQuery("[data-equalize-by-row]")).getHeightsByRow(resetHeights);
+	}
 }, 250);
 
 
