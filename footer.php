@@ -25,16 +25,22 @@
 							while( have_rows('footer_1_logos', 'options') ) : the_row();
 
 								?>
-								<div class="partner-logo">
-									<?php
-									$image = get_sub_field('image');
-									$size = 'footer-partners-logo';
+								<div class="partner-logo grid-x">
+									<div class="cell shrink">
+										<?php
+										$image = get_sub_field('image');
+										$size = 'footer-partners-logo';
 
-									if( $image ) {
-										echo wp_get_attachment_image( $image, $size );
-									}
-									echo "<span>".get_sub_field('text')."</span>";
-									?>
+										if( $image ) {
+											echo wp_get_attachment_image( $image, $size );
+										}
+										?>
+									</div>									
+									<div class="cell auto">
+										<?php
+										echo "<span>".get_sub_field('text')."</span>";
+										?>
+									</div>
 								</div>
 								<?php
 
