@@ -34,6 +34,9 @@ body {
 			background-position: 100% 0%;
 		}
 
+		.section-background.size-auto {
+			background-size: auto;
+		}
 	}
 
 	section.half-height {
@@ -137,6 +140,13 @@ a {
 	}
 }
 
+
+.light-blue-box {
+	background: $sky;
+	color: $navy;
+	padding: 1rem;
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
@@ -207,6 +217,7 @@ a {
 		padding: 4rem 15%;
 		margin-bottom: 2rem;
 	}
+
 }
 
 /* Large only */

@@ -87,6 +87,13 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	.page-template-training-page,
+	.post-type-archive-austeve-courses {
+
+		.intro-box {
+			padding: 1rem 2rem 2rem 2rem;
+		}
+	}
 }
 
 /* Medium only */
@@ -107,6 +114,13 @@
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	.page-template-training-page,
+	.post-type-archive-austeve-courses {
+
+		.intro-box {
+			padding: 2rem 10% 4rem 10%;
+		}
+	}
 }
 
 /* XLarge only */

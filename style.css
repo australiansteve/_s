@@ -6377,6 +6377,28 @@ a.thumbnail {
 /* XLarge and up (>1600px) */
 /* XLarge only */
 /* XXLarge and up (>1920px) */
+body .nf-form-content button,
+body .nf-form-content input[type="button"],
+body .nf-form-content input[type="submit"] {
+  background: #152d51;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.2em; }
+
+/* Small only */
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  body .nf-form-wrap {
+    max-width: 600px;
+    margin: auto; } }
+
+/* Medium only */
+/* Large and up (>1024px) */
+/* Large only */
+/* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
 /* Hamburger Cat style */
 body section {
   position: relative; }
@@ -6400,6 +6422,8 @@ body section {
     background-repeat: no-repeat; }
   body section .section-background.position-top-right {
     background-position: 100% 0%; }
+  body section .section-background.size-auto {
+    background-size: auto; }
 
 body section.half-height {
   height: 50vh; }
@@ -6471,6 +6495,11 @@ a {
   padding: 1rem; }
   .blue-box h2 {
     color: #fff; }
+
+.light-blue-box {
+  background: #dce5ef;
+  color: #152d51;
+  padding: 1rem; }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
@@ -6709,10 +6738,6 @@ header {
 .home #courses .button {
   display: inline-block; }
 
-.home #testimonials .light-blue-box {
-  background: #dce5ef;
-  padding: 1rem; }
-
 .home #testimonials .testimonials-container {
   overflow-x: auto;
   white-space: nowrap; }
@@ -6885,8 +6910,93 @@ header {
 
 /* Small only */
 /* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  .page-template-training-page .intro-box,
+  .post-type-archive-austeve-courses .intro-box {
+    padding: 1rem 2rem 2rem 2rem; } }
+
 /* Medium only */
 /* Large and up (>1024px) */
+/* Large only */
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+  .page-template-training-page .intro-box,
+  .post-type-archive-austeve-courses .intro-box {
+    padding: 2rem 10% 4rem 10%; } }
+
+/* XLarge only */
+/* XXLarge and up (>1920px) */
+.page-template-living-lab-page .intro-box {
+  background: rgba(220, 229, 239, 0.95);
+  padding: 0 0.5rem 0.5rem 0.5rem; }
+
+.page-template-living-lab-page .light-blue-box {
+  margin-top: 2rem; }
+  .page-template-living-lab-page .light-blue-box .logo-box-title {
+    font-size: 1.2em;
+    margin-bottom: 1rem; }
+  .page-template-living-lab-page .light-blue-box .text {
+    margin-bottom: 1rem; }
+
+.page-template-living-lab-page #logos .cell {
+  background: #fff;
+  color: #152d51;
+  margin-bottom: 1rem; }
+  .page-template-living-lab-page #logos .cell a {
+    color: #152d51; }
+  .page-template-living-lab-page #logos .cell .name {
+    text-transform: uppercase;
+    font-weight: 700; }
+
+.page-template-living-lab-page #logos .logo-link {
+  display: block;
+  height: 100%; }
+
+.page-template-living-lab-page #logos .logo {
+  padding: 0.5rem; }
+  .page-template-living-lab-page #logos .logo .image-grid .cell {
+    margin-bottom: 0; }
+
+/* Small only */
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+  .page-template-living-lab-page .intro-box {
+    padding: 1rem 2rem 2rem 2rem; }
+  .page-template-living-lab-page #logos .cell {
+    margin-bottom: 2rem; } }
+
+/* Medium only */
+/* Large and up (>1024px) */
+/* Large only */
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+  .page-template-living-lab-page .intro-box {
+    padding: 2rem 10% 4rem 10%; } }
+
+/* XLarge only */
+/* XXLarge and up (>1920px) */
+.page-template-contact-page .text {
+  margin-bottom: 2rem; }
+
+.page-template-contact-page .byline {
+  margin-top: 2rem;
+  font-size: 1.2em; }
+  .page-template-contact-page .byline ul {
+    margin: 0; }
+    .page-template-contact-page .byline ul a {
+      font-size: 1.2em;
+      padding: 0.5rem; }
+
+/* Small only */
+/* Medium and up (640px) */
+/* Medium only */
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .page-template-contact-page .text {
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 4rem; } }
+
 /* Large only */
 /* XLarge and up (>1600px) */
 /* XLarge only */

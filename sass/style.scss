@@ -32,6 +32,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 --------------------------------------------- */
 @import "utilities/accessibility";
 @import "utilities/woocommerce-page";
+@import "utilities/ninja-forms";
 
 /* Hamburger Cat style */
 @import "general";
@@ -42,5 +43,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "pages/home-page";
 @import "pages/about-page";
 @import "pages/training-page";
+@import "pages/living-lab-page";
+@import "pages/contact-page";
 @import "pages/single-austeve-courses";
 @import "footer";

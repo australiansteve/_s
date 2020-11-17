@@ -41,7 +41,7 @@
             "key": "field_5fa569f4feaad",
             "label": "Text",
             "name": "text",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -52,9 +52,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
         },
         {
             "key": "field_5faaec2b103bd",
@@ -79,7 +79,7 @@
             "key": "field_5faaec3e103be",
             "label": "Logo Box Text",
             "name": "logo_box_text",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -90,9 +90,9 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
         },
         {
             "key": "field_5fa56a09feaae",
@@ -126,7 +126,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "id",
                     "preview_size": "medium",
                     "library": "all",
                     "min_width": "",
@@ -135,7 +135,8 @@
                     "max_width": "",
                     "max_height": "",
                     "max_size": "",
-                    "mime_types": ""
+                    "mime_types": "",
+                    "default_value": ""
                 },
                 {
                     "key": "field_5fa56a1bfeab0",
@@ -214,5 +215,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1605037240
+    "modified": 1605553414
 }
