@@ -1,0 +1,88 @@
+#sidebar {
+
+	.button,
+	input[type="button"] {
+		margin-top: 0;
+		font-size: 0.9em;
+	}
+
+	#search {
+
+		input[type="text"] {
+
+			/* Mimick Ninja Forms style */
+			background: #f7f7f7;
+			border: 1px solid #c4c4c4;
+			border-radius: 0;
+			box-shadow: none;
+			color: #787878;
+			height: 50px;
+		}
+	}
+
+	#subscribe {
+		margin-top: 2rem;
+
+		.nf-field-label {
+			margin: 0 !important;
+		}
+
+		/* stylelint-disable selector-id-pattern */
+		#ninja_forms_required_items,
+		.nf-field-container {
+			margin-bottom: 1rem;
+		}
+		/* stylelint-enable selector-id-pattern */
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+	#sidebar {
+		margin-top: 2rem;
+	}
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+	#sidebar {
+
+		.button,
+		input[type="button"] {
+			font-size: 0.75em;
+		}
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

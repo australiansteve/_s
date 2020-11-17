@@ -6384,7 +6384,9 @@ body .nf-form-content input[type="submit"] {
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  height: auto;
+  padding: 0.85em 1em; }
 
 /* Small only */
 /* Medium and up (640px) */
@@ -6464,6 +6466,12 @@ body h2 {
   text-transform: uppercase;
   font-weight: 700; }
 
+body h3,
+body h4 {
+  color: #1226aa;
+  text-transform: uppercase;
+  font-weight: 700; }
+
 body .page-content {
   background-color: rgba(220, 229, 239, 0.95);
   padding: 0.5rem;
@@ -6500,6 +6508,21 @@ a {
   background: #dce5ef;
   color: #152d51;
   padding: 1rem; }
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */ }
+  .iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%; }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
@@ -6810,6 +6833,31 @@ header {
 
 /* XLarge only */
 /* XXLarge and up (>1920px) */
+.blog article {
+  margin-bottom: 2rem; }
+  .blog article .post-image {
+    margin-bottom: 1rem;
+    max-width: 1100px; }
+  .blog article .post-title h3 {
+    margin-bottom: 0; }
+  .blog article .post-more-information .button {
+    margin-top: 0;
+    font-size: 0.9em; }
+
+/* Small only */
+/* Medium and up (640px) */
+/* Medium only */
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .blog article {
+    margin-bottom: 4rem; }
+    .blog article .post-more-information .button {
+      margin-top: 1rem; } }
+
+/* Large only */
+/* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
 .page-template-about-page .intro-box {
   background-color: rgba(220, 229, 239, 0.95);
   padding: 1rem;
@@ -6996,6 +7044,47 @@ header {
     max-width: 80%;
     margin: auto;
     margin-bottom: 4rem; } }
+
+/* Large only */
+/* XLarge and up (>1600px) */
+/* XLarge only */
+/* XXLarge and up (>1920px) */
+#sidebar .button,
+#sidebar input[type="button"] {
+  margin-top: 0;
+  font-size: 0.9em; }
+
+#sidebar #search input[type="text"] {
+  /* Mimick Ninja Forms style */
+  background: #f7f7f7;
+  border: 1px solid #c4c4c4;
+  border-radius: 0;
+  box-shadow: none;
+  color: #787878;
+  height: 50px; }
+
+#sidebar #subscribe {
+  margin-top: 2rem;
+  /* stylelint-disable selector-id-pattern */
+  /* stylelint-enable selector-id-pattern */ }
+  #sidebar #subscribe .nf-field-label {
+    margin: 0 !important; }
+  #sidebar #subscribe #ninja_forms_required_items,
+  #sidebar #subscribe .nf-field-container {
+    margin-bottom: 1rem; }
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  #sidebar {
+    margin-top: 2rem; } }
+
+/* Medium and up (640px) */
+/* Medium only */
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  #sidebar .button,
+  #sidebar input[type="button"] {
+    font-size: 0.75em; } }
 
 /* Large only */
 /* XLarge and up (>1600px) */

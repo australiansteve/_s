@@ -98,6 +98,13 @@ body {
 		font-weight: 700;
 	}
 
+	h3,
+	h4 {
+		color: $aquila-blue;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
 	.page-content {
 		background-color: $sky-95;
 		padding: 0.5rem;
@@ -145,6 +152,23 @@ a {
 	background: $sky;
 	color: $navy;
 	padding: 1rem;
+}
+
+.iframe-container {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+	}
 }
 
 /* Small only */

@@ -1,27 +1,11 @@
 {
-    "key": "group_5fa56b1cd5733",
-    "title": "Blog Page - Intro",
+    "key": "group_5fb3eb1385d05",
+    "title": "Post Customization",
     "fields": [
         {
-            "key": "field_5fa56b1cdaa8d",
-            "label": "Intro",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5fa56b50c30ac",
-            "label": "Text",
-            "name": "text",
+            "key": "field_5fb3eb1f616da",
+            "label": "Feature Video",
+            "name": "feature_video",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -47,13 +31,13 @@
             }
         ]
     ],
-    "menu_order": 22,
+    "menu_order": 1,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": false,
+    "active": true,
     "description": "",
-    "modified": 1605624220
+    "modified": 1605626707
 }

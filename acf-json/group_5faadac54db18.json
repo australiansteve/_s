@@ -79,6 +79,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5fb3e8eb872dd",
+            "label": "Read More Button",
+            "name": "read_more_button",
+            "type": "text",
+            "instructions": "Displayed on the buttons on the Our Stories blog page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Read More",
+            "placeholder": "Read More",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5fad8e91c6939",
             "label": "Search In Progress",
             "name": "search_in_progress",
@@ -153,5 +172,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605472559
+    "modified": 1605626134
 }

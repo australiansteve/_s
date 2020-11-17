@@ -107,6 +107,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'header-logo', 405, 130, true );
 		add_image_size( 'footer-logo', 275, 145, true );
 		add_image_size( 'featured-image', 750, 600, true );
+		add_image_size( 'featured-image-skinny', 1100, 550, true );
 		add_image_size( 'archive-square', 600, 600, true );
 	}
 endif;
@@ -311,3 +312,24 @@ function add_default_value_to_image_field($field) {
 		'name'			=> 'default_value',
 	));
 }
+
+
+function austeve_posts_filter( $query ) {
+	if ( is_home() ) {
+
+		$query->set( 'posts_per_page', 1 );
+
+		return;
+	}
+}
+//add_action( 'pre_get_posts', 'austeve_posts_filter', 1, 1 );
+
+// archive navigation attributes 
+function filter_archive_posts_link_attributes( $var ) { 
+    $var .= " class='button' ";
+    return $var; 
+}; 
+         
+// add the filter 
+add_filter( 'previous_posts_link_attributes', 'filter_archive_posts_link_attributes', 10, 1 ); 
+add_filter( 'next_posts_link_attributes', 'filter_archive_posts_link_attributes', 10, 1 ); 
