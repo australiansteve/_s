@@ -153,6 +153,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5fb5218521a20",
+            "label": "Back To About Page Button Text",
+            "name": "back_to_about_button_text",
+            "type": "text",
+            "instructions": "Displayed on the button on individual Team Member pages",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Back to our team",
+            "placeholder": "Back to our team",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -172,5 +191,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605626134
+    "modified": 1605706176
 }

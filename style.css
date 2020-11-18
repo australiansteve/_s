@@ -6753,6 +6753,10 @@ header {
       max-width: 50%;
       margin-right: 1rem;
       margin-bottom: 1rem; }
+    .single .single-container .button,
+    .single-austeve-team-members .single-container .button,
+    .single-austeve-courses .single-container .button {
+      font-size: 0.9em; }
   .single h1.page-title,
   .single-austeve-team-members h1.page-title,
   .single-austeve-courses h1.page-title {
@@ -6766,6 +6770,13 @@ header {
   .single-austeve-courses .single-container .wp-post-image {
     margin-right: 2rem;
     margin-bottom: 2rem; } }
+
+/* Large/XLarge and up (>1200px) */
+@media screen and (min-width: 75em) {
+  .single .single-container,
+  .single-austeve-team-members .single-container,
+  .single-austeve-courses .single-container {
+    min-height: 700px; } }
 
 /* Large only */
 /* XLarge and up (>1600px) */
