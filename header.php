@@ -28,17 +28,23 @@
 		<header id="masthead" class="site-header">
 			<div class="grid-container">
 				<div class="grid-x">
-					<div class="cell medium-4" id="logo">
-						<?php 
-						$image = get_field('logo', 'options');
-						$size = 'header-logo'; // (thumbnail, medium, large, full or custom size)
-						
-						if( $image ) {
-							echo wp_get_attachment_image( $image, $size );
-						}
-						?>
+					<div class="cell medium-5 large-4 text-center medium-text-left" id="logo">
+						<div class="grid-y align-center" style="height: 100%">
+							<div class="cell">
+								<a href="/" title="<?php echo get_the_title(get_option('page_on_front')); ?>">
+									<?php 
+									$image = get_field('logo', 'options');
+									$size = 'header-logo';
+									
+									if( $image ) {
+										echo wp_get_attachment_image( $image, $size );
+									}
+									?>
+								</a>
+							</div>
+						</div>
 					</div>
-					<div class="cell medium-8">
+					<div class="cell medium-7 large-8">
 						<div class="medium-text-right">
 							<nav id="site-navigation" class="main-navigation">
 								<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
@@ -59,7 +65,7 @@
 													'theme_location'	=> 'social-menu',
 													'container'		=> false,
 													'items_wrap' => '%3$s',
-    												'add_li_class'  => 'social-menu-item'
+													'add_li_class'  => 'social-menu-item'
 												)
 											);
 											?>
@@ -79,9 +85,19 @@
 								);
 								?>
 							</nav><!-- #site-navigation -->
-							<span class="language show-for-medium">
-								EN | ES
-							</span>
+
+							<div class="language show-for-medium">
+								<?php 
+								wp_nav_menu(
+									array(
+										'theme_location'	=> 'language-menu',
+										'menu_id'		=> 'language-menu',
+										'menu_class'	=> 'horizontal menu show-for-medium text-right',
+										'container'		=> false
+									)
+								);
+								?>
+							</div>
 
 							<div class="social">
 								<?php 

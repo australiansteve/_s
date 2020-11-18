@@ -6620,15 +6620,37 @@ nav ul {
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
-  nav {
-    display: inline-block; } }
+  nav#site-navigation {
+    display: inline-block;
+    padding-top: 0.5rem; }
+  .menu a,
+  .menu .button {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9em; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
 /* Large only */
+/* Large/XLarge and up (>1200px) */
+@media screen and (min-width: 75em) {
+  .menu a,
+  .menu .button {
+    font-size: 1.2em; } }
+
 /* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+  .menu a,
+  .menu .button {
+    padding: 0.7rem 1rem;
+    font-size: 1.5em; } }
+
 /* XLarge only */
 /* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+  .menu a,
+  .menu .button {
+    font-size: 1.7em; } }
+
 header {
   background-color: #152d51;
   color: #fff;
@@ -6636,7 +6658,9 @@ header {
   font-family: Audrey;
   font-weight: 700; }
   header #logo {
-    padding: 10px; }
+    padding: 1rem; }
+    header #logo img {
+      max-width: 300px; }
   header a {
     color: #fff;
     text-transform: uppercase;
@@ -6644,6 +6668,11 @@ header {
 
 /* Small only */
 /* Medium and up (640px) */
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 51.88em) {
+  header #logo img {
+    max-width: 222px; } }
+
 /* Medium only */
 /* Large and up (>1024px) */
 /* Large only */
@@ -6762,7 +6791,7 @@ header {
   display: inline-block; }
 
 .home #testimonials .testimonials-container {
-  overflow-x: auto;
+  overflow-x: hidden;
   white-space: nowrap; }
   .home #testimonials .testimonials-container > div {
     display: inline-block;

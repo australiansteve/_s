@@ -24,7 +24,7 @@ var calculateSectionMinusHeaderHeight = _.debounce(function () {
 				maxChildHeight = jQuery(this).outerHeight();
 			}
 		});
-		jQuery(this).css("min-height", maxChildHeight + "px");
+		jQuery(this).css("min-height", "calc("+maxChildHeight + "px + 4rem)");
 
 	});
 }, 250);

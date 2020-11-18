@@ -15,6 +15,11 @@
 	a:focus {
 		color: $light-gray;
 	}
+
+	a,
+	.button {
+	}
+
 }
 
 nav {
@@ -83,9 +88,20 @@ nav {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	nav {
+	nav#site-navigation {
 		display: inline-block;
+		padding-top: 0.5rem;
 	}
+
+	.menu {
+
+		a,
+		.button {
+			padding: 0.7rem 0.9rem;
+			font-size: 0.9em;
+		}
+	}
+
 }
 
 /* Medium only */
@@ -103,9 +119,29 @@ nav {
 
 }
 
+/* Large/XLarge and up (>1200px) */
+@media screen and (min-width: 75em) {
+
+	.menu {
+
+		a,
+		.button {
+			font-size: 1.2em;
+		}
+	}
+}
+
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	.menu {
+
+		a,
+		.button {
+			padding: 0.7rem 1rem;
+			font-size: 1.5em;
+		}
+	}
 }
 
 /* XLarge only */
@@ -116,4 +152,11 @@ nav {
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
+	.menu {
+
+		a,
+		.button {
+			font-size: 1.7em;
+		}
+	}
 }
