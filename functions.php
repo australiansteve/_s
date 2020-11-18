@@ -206,18 +206,15 @@ add_filter('nav_menu_css_class', function( $classes, $item, $args ) {
 	return $classes;
 }, 1, 3);
 
-
 function austeve_courses_pagesize( $query ) {
 	if ( ! is_admin() && (is_post_type_archive( 'austeve-courses' ) || (is_array($query->get('post_type')) && in_array('austeve-courses', $query->get('post_type'))))) {
         // Display 50 posts for 'austeve-courses'
 		$query->set( 'posts_per_page', 50 );
-
-		error_log("Course Query : ".print_r($query, true));
+		$query->set( 'orderby', 'menu_order' );
+		$query->set( 'order', 'ASC' );
 		
 		$queries = null;
 		parse_str($_SERVER['QUERY_STRING'], $queries);
-
-		error_log("Course Filter : ".print_r($queries, true));
 
 		if(array_key_exists('search', $queries)) {
 			$query->set('s', $queries['search']);
@@ -240,7 +237,6 @@ function austeve_courses_pagesize( $query ) {
 }
 add_action( 'pre_get_posts', 'austeve_courses_pagesize', 1, 1 );
 
-
 function austeve_team_members_pagesize( $query ) {
 	if ( ! is_admin() && (is_post_type_archive( 'austeve-team-members' ) || (is_array($query->get('post_type')) && in_array('austeve-team-members', $query->get('post_type'))))) {
         // Display 50 posts for 'austeve-team-members'
@@ -253,12 +249,10 @@ function austeve_team_members_pagesize( $query ) {
 }
 add_action( 'pre_get_posts', 'austeve_team_members_pagesize', 1, 1 );
 
-
 function austeve_get_courses() {
 
 	$nonce = $_REQUEST['security'];
 	if (wp_verify_nonce( $nonce, 'get-courses')) {
-		error_log("AJAX SEARCH");
 		$category = isset($_REQUEST['category']) ? $_REQUEST['category'] : null;
 		$search = isset($_REQUEST['s']) ? $_REQUEST['s']: null;
 
@@ -299,37 +293,40 @@ function austeve_get_courses() {
 
 	exit;
 }
-
 add_action('wp_ajax_austeve_get_courses', 'austeve_get_courses');
 add_action('wp_ajax_nopriv_austeve_get_courses', 'austeve_get_courses');
 
-add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field');
+/* Add default value field to all ACF Images */
 function add_default_value_to_image_field($field) {
 	acf_render_field_setting( $field, array(
 		'label'			=> 'Default Image',
-		'instructions'		=> 'Appears when creating a new post',
+		'instructions'	=> 'Appears when creating a new post',
 		'type'			=> 'image',
 		'name'			=> 'default_value',
 	));
 }
+add_action('acf/render_field_settings/type=image', 'add_default_value_to_image_field');
 
-
-function austeve_posts_filter( $query ) {
-	if ( is_home() ) {
-
-		$query->set( 'posts_per_page', 1 );
-
-		return;
-	}
-}
-//add_action( 'pre_get_posts', 'austeve_posts_filter', 1, 1 );
-
-// archive navigation attributes 
+/* Add 'button' class to post archive navigation */
 function filter_archive_posts_link_attributes( $var ) { 
-    $var .= " class='button' ";
-    return $var; 
+	$var .= " class='button' ";
+	return $var; 
 }; 
-         
-// add the filter 
 add_filter( 'previous_posts_link_attributes', 'filter_archive_posts_link_attributes', 10, 1 ); 
 add_filter( 'next_posts_link_attributes', 'filter_archive_posts_link_attributes', 10, 1 ); 
+
+/* Populate select boxes with ninja form 'value : name' pairs */
+function austeve_populate_ninja_forms_select_fields($field) {
+	// reset choices
+	$field['choices'] = array();
+	$forms = Ninja_Forms()->form()->get_forms();
+	foreach ( $forms as $form ) {
+		$form_id 	= $form->get_id();
+		$form_name 	= $form->get_setting( 'title' );
+
+		$field['choices'][$form_id ] = $form_name;
+	}
+    return $field;
+}
+add_filter('acf/load_field/name=register_interest_form_id', 'austeve_populate_ninja_forms_select_fields');
+add_filter('acf/load_field/name=contact_for_info_form_id', 'austeve_populate_ninja_forms_select_fields');

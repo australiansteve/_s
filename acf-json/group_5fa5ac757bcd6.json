@@ -187,10 +187,10 @@
         },
         {
             "key": "field_5fa5add5aca97",
-            "label": "Register Interest Form ID",
+            "label": "Register Interest Form",
             "name": "register_interest_form_id",
-            "type": "number",
-            "instructions": "This is displayed only when a registration link is not provided. Use the Ninja Form ID to display this contact form & receive notification of interest",
+            "type": "select",
+            "instructions": "A registration form will be displayed only when a registration link is not provided",
             "required": 0,
             "conditional_logic": [
                 [
@@ -206,19 +206,26 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "choices": {
+                "1": "Contact Me",
+                "2": "Newsletter Subscription",
+                "3": "Newsletter Subscription - Sidebar",
+                "4": "Register Course Interest",
+                "5": "Contact For Information"
+            },
+            "default_value": 4,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5fa5adf9aca98",
-            "label": "Contact For Information Form ID",
-            "name": "contact_for_info_form_id",
-            "type": "number",
+            "label": "Contact For Information Form",
+            "name": "contact_for_information_form_id",
+            "type": "select",
             "instructions": "Ninja Form ID",
             "required": 0,
             "conditional_logic": [
@@ -235,13 +242,20 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "choices": {
+                "1": "Contact Me",
+                "2": "Newsletter Subscription",
+                "3": "Newsletter Subscription - Sidebar",
+                "4": "Register Course Interest",
+                "5": "Contact For Information"
+            },
+            "default_value": 5,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -261,5 +275,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605034048
+    "modified": 1605717483
 }

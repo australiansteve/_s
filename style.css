@@ -6739,6 +6739,13 @@ header {
 .single-austeve-courses p.product.woocommerce.add_to_cart_inline .button {
   width: fit-content; }
 
+.single .price,
+.single-austeve-team-members .price,
+.single-austeve-courses .price {
+  color: #8a8a8a;
+  font-size: 1.5em;
+  font-weight: 700; }
+
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {

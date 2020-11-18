@@ -172,6 +172,82 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5fb53d12023f0",
+            "label": "Back To Courses Page Button Text",
+            "name": "back_to_courses_button_text",
+            "type": "text",
+            "instructions": "Displayed on the button on individual Course pages",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "All courses",
+            "placeholder": "All courses",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fb52ec0b0c8b",
+            "label": "Register Now Button Text",
+            "name": "register_now_button_text",
+            "type": "text",
+            "instructions": "Shown on Webinar courses when there is a registration link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Register Now",
+            "placeholder": "Register Now",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fb52e93b0c8a",
+            "label": "Register Interest Button Text",
+            "name": "register_interest_button_text",
+            "type": "text",
+            "instructions": "Shown on Webinar courses when there is no registration link yet",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Register Interest",
+            "placeholder": "Register Interest",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5fb54beb8bc76",
+            "label": "Contact For Information Button Text",
+            "name": "contact_for_information_button_text",
+            "type": "text",
+            "instructions": "Shown on 'Register Now' courses for interested parties to",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact For Information",
+            "placeholder": "Contact For Information",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -191,5 +267,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605706176
+    "modified": 1605717073
 }
