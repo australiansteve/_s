@@ -22,6 +22,8 @@ footer {
 			font-family: Audrey;
 			text-transform: uppercase;
 			font-weight: 700;
+			margin-bottom: 0.5rem;
+			padding-bottom: 0.5rem;
 		}
 
 		.partner-logo {
@@ -30,12 +32,66 @@ footer {
 			img {
 				margin-right: 1rem;
 				vertical-align: top;
+				max-width: 150px;
 			}
 
 			span {
 				font-weight: 200;
 				font-style: italic;
 			}
+		}
+
+		.partner-logo:nth-of-type(1) {
+			padding-top: 0;
+
+			img {
+				max-width: 75px;
+			}
+		}
+	}
+
+	#footer-4 {
+		/* stylelint-disable selector-id-pattern */
+		#ninja_forms_required_items,
+		.nf-field-container {
+			margin-bottom: 0;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		input.ninja-forms-field,
+		.nf-form-content select.ninja-forms-field:not([multiple]) {
+			height: 32px;
+		}
+
+		.nf-error.field-wrap .nf-field-element::after {
+			height: 32px;
+			font-size: 15px;
+			line-height: 32px;
+		}
+
+		.nf-form-content input[type="button"] {
+			font-size: 0.8em;
+			padding: 0.5rem 0.7rem;
+		}
+
+		/* stylelint-enable selector-id-pattern */
+	}
+
+	.site-info {
+
+		font-size: 0.9em;
+
+		img {
+			margin-bottom: 1rem;
+			max-width: 275px;
+		}
+
+		.legal {
+			margin-top: 0.5rem;
+			font-size: 0.8em;
 		}
 	}
 }
@@ -51,8 +107,10 @@ footer {
 	footer {
 
 		.container {
-			padding: 1rem 0.5rem;
+			padding: 1rem 0.5rem 0 0.5rem;
+
 		}
+
 	}
 }
 
@@ -64,6 +122,14 @@ footer {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	footer {
+
+		.submit-container {
+
+			.nf-field-element {
+			}
+		}
+	}
 }
 
 /* Large only */

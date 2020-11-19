@@ -75,7 +75,7 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 			</div>
 		</div>
 
-		<div id="post-grid" class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3 austeve-courses" data-equalizer data-equalize-by-row="true">
+		<div id="post-grid" class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3 austeve-courses align-center" data-equalizer data-equalize-by-row="true">
 			<?php
 			$args = array(
 				'post_type'              => array( 'austeve-courses' ),

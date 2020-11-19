@@ -17,8 +17,7 @@
 			.post-title {
 				font-weight: 700;
 				text-transform: uppercase;
-				color: $aquila-blue;
-				font-size: 1.25em;
+				color: $navy;
 			}
 
 			.button {
@@ -43,7 +42,16 @@
 	.home #courses {
 
 		#post-grid {
-			margin: 2rem -0.9375rem;
+			margin: 2rem -0.925rem;
+
+			article {
+
+				.post-title {
+					font-size: 1em;
+				}
+
+			}
+
 		}
 
 	}
@@ -77,4 +85,27 @@
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
+	.blog,
+	.archive,
+	.page-template-training-page,
+	.page-template-about-page,
+	.home #courses {
+
+		#post-grid {
+
+			article {
+
+				.post-title {
+					font-size: 32px;
+				}
+
+				.button {
+					font-size: 32px;
+				}
+
+			}
+
+		}
+
+	}
 }

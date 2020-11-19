@@ -11,6 +11,13 @@ body {
 		height: auto;
 		padding: 0.85em 1em;
 	}
+
+	.nf-form-content button.inverse,
+	.nf-form-content input[type="button"].inverse,
+	.nf-form-content input[type="submit"].inverse {
+		background: $gale;
+		color: $navy;
+	}
 }
 
 /* Small only */

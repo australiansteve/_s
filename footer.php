@@ -26,17 +26,17 @@
 
 								?>
 								<div class="partner-logo grid-x">
-									<div class="cell shrink">
+									<div class="cell shrink medium-12 large-shrink">
 										<?php
 										$image = get_sub_field('image');
-										$size = 'footer-partners-logo';
+										$size = 'footer-partner-logo';
 
 										if( $image ) {
 											echo wp_get_attachment_image( $image, $size );
 										}
 										?>
 									</div>									
-									<div class="cell auto">
+									<div class="cell auto medium-12 large-auto">
 										<?php
 										echo "<span>".get_sub_field('text')."</span>";
 										?>
@@ -92,30 +92,30 @@
 
 		<div class="grid-x site-info">
 			<div class="cell text-center">
-				<div class="container">
+				<?php 
+				$image = get_field('footer_logo', 'options');
+				$size = 'footer-logo';
+				
+				if( $image ) {
+					echo wp_get_attachment_image( $image, $size );
+				}
+				?>
+				<div class="footer-menu">
 					<?php 
-					$image = get_field('footer_logo', 'options');
-					$size = 'footer-logo';
-					
-					if( $image ) {
-						echo wp_get_attachment_image( $image, $size );
-					}
+					wp_nav_menu(
+						array(
+							'theme_location'	=> 'footer-menu',
+							'menu_id'		=> 'footer-menu',
+							'menu_class'	=> 'horizontal menu',
+							'container'		=> false
+						)
+					);
 					?>
-					<div class="footer-menu">
-						<?php 
-						wp_nav_menu(
-							array(
-								'theme_location'	=> 'footer-menu',
-								'menu_id'		=> 'footer-menu',
-								'menu_class'	=> 'horizontal menu',
-								'container'		=> false
-							)
-						);
-						?>
-					</div>
-					<div class="wcc">
-						<a href="https://weavercrawford.com" target="_blank"><i class="far fa-copyright"></i> Weaver Crawford Creative <?php echo date("Y"); ?></a>
-					</div>
+				</div>
+				<div class="legal">
+					<i class="far fa-copyright"></i> Aquila <?php echo date("Y"); ?><br/>
+					Site by: <a href="https://weavercrawford.com" target="_blank">Weaver Crawford Creative</a><br/>
+					<span class="gray-text">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</span>
 				</div>
 			</div>
 		</div><!-- .site-info -->

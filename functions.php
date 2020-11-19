@@ -105,10 +105,11 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		);
 
 		add_image_size( 'header-logo', 600, 157, true );
-		add_image_size( 'footer-logo', 275, 145, true );
+		add_image_size( 'footer-logo', 300, 160, true );
 		add_image_size( 'featured-image', 750, 600, true );
 		add_image_size( 'featured-image-skinny', 1100, 550, true );
 		add_image_size( 'archive-square', 600, 600, true );
+		add_image_size( 'footer-partner-logo', 120, 9999 ); //120 pixels wide (and unlimited height)
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );

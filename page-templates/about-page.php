@@ -51,7 +51,7 @@ get_header();
 		<div class="text-box">
 			<?php echo $section['text']; ?>
 		</div>
-		<div id="post-grid" class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3" data-equalizer data-equalize-by-row="true">
+		<div id="post-grid" class="grid-x grid-margin-x small-up-1 medium-up-2 large-up-3 align-center" data-equalizer data-equalize-by-row="true">
 			<?php
 			$args = array(
 				'post_type'              => array( 'austeve-team-members' ),

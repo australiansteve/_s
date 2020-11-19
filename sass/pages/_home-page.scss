@@ -2,10 +2,19 @@
 
 	#landing {
 
+		.section-background {
+			background-position: 60% bottom;
+		}
+
 		.container {
-			background: rgba(255, 255, 255, 0.75);
-			padding: 0.5rem;
 			font-weight: 700;
+		}
+	}
+
+	#call-to-action {
+
+		.blue-box {
+			font-weight: 600;
 		}
 	}
 
@@ -15,6 +24,7 @@
 			max-width: 80%;
 			margin: auto;
 			margin-bottom: 2rem;
+			font-weight: 600;
 		}
 
 		.button {
@@ -35,7 +45,7 @@
 			}
 
 			>div.left {
-				margin-left: -100%;
+				margin-left: calc(-100% - 4px);
 			}
 		}
 
@@ -93,6 +103,11 @@
 
 		#landing {
 
+
+			.section-background {
+				background-position: right bottom;
+			}
+
 			.container {
 				max-width: 80%;
 				padding: 2rem;
@@ -129,18 +144,6 @@
 
 	.home {
 
-		#landing {
-
-			.container {
-
-
-				.text {
-					font-size: 1.4em;
-				}
-
-			}
-		}
-
 		#courses {
 
 			.text {
@@ -154,6 +157,13 @@
 			.light-blue-box {
 				max-width: 80%;
 				margin: auto;
+			}
+
+			.testimonials-container {
+
+				>div.left {
+					margin-left: calc(-100% - 5px);
+				}
 			}
 
 			.testimonials-controls {
@@ -176,8 +186,18 @@
 		#landing {
 
 			.container {
-				max-width: 60%;
+				max-width: 70%;
 				padding: 4rem;
+			}
+		}
+
+		#testimonials {
+
+			.testimonials-container {
+
+				>div.left {
+					margin-left: calc(-100% - 7px);
+				}
 			}
 		}
 	}
@@ -191,4 +211,16 @@
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
+	.home {
+
+		#testimonials {
+
+			.testimonials-container {
+
+				>div.left {
+					margin-left: calc(-100% - 10px);
+				}
+			}
+		}
+	}
 }

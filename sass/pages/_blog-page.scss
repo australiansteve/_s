@@ -1,5 +1,10 @@
 .blog {
 
+	.intro-box {
+		background: $sky-95;
+		padding: 0 0.5rem 0.5rem 0.5rem;
+	}
+
 	article {
 		margin-bottom: 2rem;
 
@@ -33,6 +38,12 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	.blog {
+
+		.intro-box {
+			padding: 1rem 2rem 2rem 2rem;
+		}
+	}
 }
 
 /* Medium only */
@@ -67,6 +78,12 @@
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	.blog {
+
+		.intro-box {
+			padding: 2rem 10% 4rem 10%;
+		}
+	}
 }
 
 /* XLarge only */

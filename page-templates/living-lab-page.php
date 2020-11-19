@@ -71,7 +71,7 @@ get_header();
 										<div class="cell">
 											<?php
 											$image = $logo['image'];
-											$size = 'thumbnail';
+											$size = 'full';
 
 											if( $image ) {
 												echo wp_get_attachment_image( $image, $size );
