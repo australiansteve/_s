@@ -6,9 +6,11 @@
 		
 		<h1 class="page-title"><?php the_title();?></h1>
 		
-		<div class="price">
-			<?php the_field('price');?>
-		</div>
+		<?php if (get_field('price')) :?>
+			<div class="price">
+				<?php the_field('price');?>
+			</div>
+		<?php endif; ?>
 
 		<?php include( locate_template( 'template-parts/content-austeve-courses-button.php', false, false ) );  ?>
 

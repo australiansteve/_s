@@ -1,37 +1,31 @@
 .page-template-training-page,
 .post-type-archive-austeve-courses {
 
-	.intro-box {
-		background: $sky-95;
-		padding: 0 0.5rem 0.5rem 0.5rem;
-	}
-
 	#search-filters {
 
-		label[label-for="s"] {
-			margin-bottom: -0.75rem;
+		label {
+			font-size: 0.9em;
+			line-height: 35px;
+			font-weight: 700;
+			text-transform: uppercase;
 		}
 
 		#s {
-			max-width: 80%;
-			display: inline-block;
+			margin-bottom: 1rem;
 		}
 
 		#submit-s {
-			margin-top: 0.9em;
-			padding: 0.65rem;
-			height: auto;
+			margin: 0;
+			padding: 0.45rem 1rem;
+			height: 38px;
 			margin-left: -0.25rem;
 		}
 
 		#course-category-grid {
+			margin-bottom: 1rem;
 
 			.button {
-				margin-right: 1rem;
-			}
-
-			.button:nth-last-of-type(1) {
-				margin-right: 0;
+				margin: 1rem 0.5rem 0 0.5rem;
 			}
 		}
 
@@ -47,6 +41,14 @@
 			i {
 				display: none;
 			}
+		}
+	}
+
+	#search-progress {
+		font-size: 1.2em;
+
+		i {
+			margin-right: 1rem;
 		}
 	}
 
@@ -90,9 +92,6 @@
 	.page-template-training-page,
 	.post-type-archive-austeve-courses {
 
-		.intro-box {
-			padding: 1rem 2rem 2rem 2rem;
-		}
 	}
 }
 
@@ -117,8 +116,19 @@
 	.page-template-training-page,
 	.post-type-archive-austeve-courses {
 
-		.intro-box {
-			padding: 2rem 10% 4rem 10%;
+		#search-filters {
+
+			label {
+				line-height: 50px;
+			}
+
+			#s {
+				height: 50px;
+			}
+
+			#submit-s {
+				height: 50px;
+			}
 		}
 	}
 }
@@ -131,4 +141,22 @@
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
+	.page-template-training-page,
+	.post-type-archive-austeve-courses {
+
+		#search-filters {
+
+			label {
+				line-height: 55px;
+			}
+
+			#s {
+				height: 55px;
+			}
+
+			#submit-s {
+				height: 55px;
+			}
+		}
+	}
 }

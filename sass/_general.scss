@@ -100,7 +100,7 @@ body {
 
 	h3,
 	h4 {
-		color: $aquila-blue;
+		color: $navy;
 		text-transform: uppercase;
 		font-weight: 700;
 	}
@@ -157,11 +157,16 @@ a {
 	}
 }
 
-
 .light-blue-box {
 	background: $sky;
 	color: $navy;
 	padding: 1rem;
+}
+
+.intro-box {
+	background: $sky-95;
+	padding: 0 0.5rem 0.5rem 0.5rem;
+	font-weight: 600;
 }
 
 .iframe-container {
@@ -218,8 +223,7 @@ a {
 		}
 
 		.single-container {
-			padding: 1rem;
-			padding-bottom: 3rem;
+			padding: 0.1rem 2rem 2rem 2rem;
 		}
 
 		section {
@@ -232,11 +236,14 @@ a {
 				}
 			}
 		}
-
 	}
 
 	.blue-box {
 		padding: 2rem 4rem;
+	}
+
+	.intro-box {
+		padding: 1rem 2rem 2rem 2rem;
 	}
 }
 
@@ -270,11 +277,19 @@ a {
 				}
 			}
 		}
+
+		.single-container {
+			padding: 1rem 3rem 3rem 3rem;
+		}
 	}
 
 	.blue-box {
 		padding: 4rem;
 		margin-bottom: 2rem;
+	}
+
+	.light-blue-box {
+		padding: 2rem;
 	}
 
 }
@@ -312,9 +327,12 @@ a {
 		}
 
 		.single-container {
-			padding: 1rem 2rem 3rem 2rem;
+			padding: 1rem 5rem 3rem 5rem;
 		}
+	}
 
+	.intro-box {
+		padding: 2rem 10% 4rem 10%;
 	}
 }
 
@@ -352,6 +370,10 @@ a {
 				padding-top: 6rem;
 				padding-bottom: 8rem;
 			}
+		}
+
+		.single-container {
+			padding: 1rem 7rem 4rem 7rem;
 		}
 	}
 

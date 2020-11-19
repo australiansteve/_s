@@ -1,11 +1,5 @@
 .page-template-living-lab-page {
 
-	.intro-box {
-		background: $sky-95;
-		padding: 0 0.5rem 0.5rem 0.5rem;
-	}
-
-
 	.light-blue-box {
 
 		margin-top: 2rem;
@@ -13,9 +7,12 @@
 		.logo-box-title {
 			font-size: 1.2em;
 			margin-bottom: 1rem;
+			font-weight: 600;
+			font-family: audrey;
 		}
 
 		.text {
+			font-weight: 600;
 			margin-bottom: 1rem;
 		}
 	}
@@ -53,6 +50,20 @@
 			}
 		}
 	}
+
+	#byline {
+		margin-top: 1rem;
+		color: $white;
+		font-weight: 600;
+
+		a {
+			color: $white;
+		}
+
+		a:hover {
+			color: $white;
+		}
+	}
 }
 
 /* Small only */
@@ -65,8 +76,12 @@
 
 	.page-template-living-lab-page {
 
-		.intro-box {
-			padding: 1rem 2rem 2rem 2rem;
+		.light-blue-box {
+			padding: 2rem 2rem 0 2rem;
+
+			.text {
+				margin-bottom: 2rem;
+			}
 		}
 
 		#logos {
@@ -74,6 +89,10 @@
 			.cell {
 				margin-bottom: 2rem;
 			}
+		}
+
+		#byline {
+			margin-top: 3rem;
 		}
 	}
 }
@@ -86,6 +105,24 @@
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	.page-template-living-lab-page {
+
+		.light-blue-box {
+
+			.logo-box-title {
+				font-size: 1.4em;
+			}
+
+			.text {
+				margin-bottom: 3rem;
+			}
+		}
+
+
+		#byline {
+			margin-top: 4rem;
+		}
+	}
 }
 
 /* Large only */
@@ -98,9 +135,6 @@
 
 	.page-template-living-lab-page {
 
-		.intro-box {
-			padding: 2rem 10% 4rem 10%;
-		}
 	}
 }
 

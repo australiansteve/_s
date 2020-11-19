@@ -6384,7 +6384,7 @@ body .nf-form-content input[type="submit"] {
   color: #fff;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: initial;
   height: auto;
   padding: 0.85em 1em; }
 
@@ -6403,6 +6403,10 @@ body .nf-form-content input[type="submit"].inverse {
 
 /* Medium only */
 /* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .nf-error .nf-error-msg {
+    font-size: 20px; } }
+
 /* Large only */
 /* XLarge and up (>1600px) */
 /* XLarge only */
@@ -6474,7 +6478,7 @@ body h2 {
 
 body h3,
 body h4 {
-  color: #1226aa;
+  color: #152d51;
   text-transform: uppercase;
   font-weight: 700; }
 
@@ -6523,6 +6527,11 @@ a {
   color: #152d51;
   padding: 1rem; }
 
+.intro-box {
+  background: rgba(220, 229, 239, 0.95);
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  font-weight: 600; }
+
 .iframe-container {
   position: relative;
   overflow: hidden;
@@ -6556,13 +6565,14 @@ a {
     padding: 2rem;
     margin-bottom: 6rem; }
   body .single-container {
-    padding: 1rem;
-    padding-bottom: 3rem; }
+    padding: 0.1rem 2rem 2rem 2rem; }
   body section .section-content > .grid-container {
     padding-left: 30px;
     padding-right: 30px; }
   .blue-box {
-    padding: 2rem 4rem; } }
+    padding: 2rem 4rem; }
+  .intro-box {
+    padding: 1rem 2rem 2rem 2rem; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
@@ -6575,9 +6585,13 @@ a {
     body section .section-content > .grid-container {
       padding-left: 50px;
       padding-right: 50px; }
+  body .single-container {
+    padding: 1rem 3rem 3rem 3rem; }
   .blue-box {
     padding: 4rem;
-    margin-bottom: 2rem; } }
+    margin-bottom: 2rem; }
+  .light-blue-box {
+    padding: 2rem; } }
 
 /* Large only */
 /* XLarge and up (>1600px) */
@@ -6590,7 +6604,9 @@ a {
   body .page-content {
     padding: 4rem 6rem; }
   body .single-container {
-    padding: 1rem 2rem 3rem 2rem; } }
+    padding: 1rem 5rem 3rem 5rem; }
+  .intro-box {
+    padding: 2rem 10% 4rem 10%; } }
 
 /* XLarge only */
 /* XXLarge and up (>1920px) */
@@ -6603,6 +6619,8 @@ a {
   body section .section-content {
     padding-top: 6rem;
     padding-bottom: 8rem; }
+  body .single-container {
+    padding: 1rem 7rem 4rem 7rem; }
   .blue-box {
     margin-bottom: 6rem; } }
 
@@ -6796,6 +6814,23 @@ header {
   font-size: 1.5em;
   font-weight: 700; }
 
+.single .post-content,
+.single-austeve-team-members .post-content,
+.single-austeve-courses .post-content {
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
+
+.single .navigation .button,
+.single-austeve-team-members .navigation .button,
+.single-austeve-courses .navigation .button {
+  margin: 0; }
+
+.single .navigation i,
+.single-austeve-team-members .navigation i,
+.single-austeve-courses .navigation i {
+  margin-top: 0.25rem; }
+
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
@@ -6817,7 +6852,14 @@ header {
   .single h1.page-title,
   .single-austeve-team-members h1.page-title,
   .single-austeve-courses h1.page-title {
-    font-size: 2rem; } }
+    font-size: 2rem; }
+  .single:not(.single-austeve-team-members):not(.single-austeve-courses) .single-container {
+    min-height: auto; }
+    .single:not(.single-austeve-team-members):not(.single-austeve-courses) .single-container .wp-post-image {
+      float: none;
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 0; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
@@ -6826,7 +6868,14 @@ header {
   .single-austeve-team-members .single-container .wp-post-image,
   .single-austeve-courses .single-container .wp-post-image {
     margin-right: 2rem;
-    margin-bottom: 2rem; } }
+    margin-bottom: 2rem; }
+  .single .post-content,
+  .single-austeve-team-members .post-content,
+  .single-austeve-courses .post-content {
+    margin-top: 2rem; }
+  .single:not(.single-austeve-team-members):not(.single-austeve-courses) .single-container .wp-post-image {
+    margin-right: 0;
+    margin-bottom: 0; } }
 
 /* Large/XLarge and up (>1200px) */
 @media screen and (min-width: 75em) {
@@ -6841,7 +6890,12 @@ header {
   .single h1.page-title,
   .single-austeve-team-members h1.page-title,
   .single-austeve-courses h1.page-title {
-    font-size: 55px; } }
+    font-size: 55px; }
+  .single .post-content,
+  .single-austeve-team-members .post-content,
+  .single-austeve-courses .post-content {
+    margin-top: 4rem;
+    margin-bottom: 4rem; } }
 
 /* XLarge only */
 /* XXLarge and up (>1920px) */
@@ -6903,7 +6957,7 @@ header {
   .home #landing .section-background {
     background-position: right bottom; }
   .home #landing .container {
-    max-width: 80%;
+    max-width: 70%;
     padding: 2rem; }
   .home #testimonials .testimonials-container {
     max-width: 80%;
@@ -6943,10 +6997,6 @@ header {
   .home #testimonials .testimonials-container > div.left {
     margin-left: calc(-100% - 10px); } }
 
-.blog .intro-box {
-  background: rgba(220, 229, 239, 0.95);
-  padding: 0 0.5rem 0.5rem 0.5rem; }
-
 .blog article {
   margin-bottom: 2rem; }
   .blog article .post-image {
@@ -6960,10 +7010,6 @@ header {
 
 /* Small only */
 /* Medium and up (640px) */
-@media screen and (min-width: 40em) {
-  .blog .intro-box {
-    padding: 1rem 2rem 2rem 2rem; } }
-
 /* Medium only */
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
@@ -6974,16 +7020,10 @@ header {
 
 /* Large only */
 /* XLarge and up (>1600px) */
-@media screen and (min-width: 100em) {
-  .blog .intro-box {
-    padding: 2rem 10% 4rem 10%; } }
-
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 .page-template-about-page .intro-box {
-  background-color: rgba(220, 229, 239, 0.95);
-  padding: 1rem;
-  margin-bottom: 2rem; }
+  padding-top: 1rem; }
   .page-template-about-page .intro-box p:nth-of-type(1) {
     font-weight: 700;
     font-size: 1.1em;
@@ -6991,12 +7031,17 @@ header {
     max-width: 90%;
     margin-bottom: 1.5rem; }
 
+.page-template-about-page #call-to-action .text-box {
+  font-weight: 600; }
+
 .page-template-about-page #team .text-box {
   font-weight: 600; }
 
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
+  .page-template-about-page .intro-box {
+    padding-top: 2rem; }
   .page-template-about-page #call-to-action .container {
     margin-left: 2rem; }
     .page-template-about-page #call-to-action .container .text-box {
@@ -7008,10 +7053,6 @@ header {
 /* Medium only */
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
-  .page-template-about-page .intro-box {
-    max-width: 90%;
-    margin: auto;
-    padding: 3rem; }
   .page-template-about-page #call-to-action .section-content {
     padding-left: 5%; } }
 
@@ -7028,40 +7069,33 @@ header {
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
-  .page-template-about-page .intro-box {
-    max-width: 100%;
-    padding: 6rem 10rem; }
   .page-template-about-page #call-to-action .container .text-box {
     max-width: 55%; } }
 
-.page-template-training-page .intro-box,
-.post-type-archive-austeve-courses .intro-box {
-  background: rgba(220, 229, 239, 0.95);
-  padding: 0 0.5rem 0.5rem 0.5rem; }
-
-.page-template-training-page #search-filters label[label-for="s"],
-.post-type-archive-austeve-courses #search-filters label[label-for="s"] {
-  margin-bottom: -0.75rem; }
+.page-template-training-page #search-filters label,
+.post-type-archive-austeve-courses #search-filters label {
+  font-size: 0.9em;
+  line-height: 35px;
+  font-weight: 700;
+  text-transform: uppercase; }
 
 .page-template-training-page #search-filters #s,
 .post-type-archive-austeve-courses #search-filters #s {
-  max-width: 80%;
-  display: inline-block; }
+  margin-bottom: 1rem; }
 
 .page-template-training-page #search-filters #submit-s,
 .post-type-archive-austeve-courses #search-filters #submit-s {
-  margin-top: 0.9em;
-  padding: 0.65rem;
-  height: auto;
+  margin: 0;
+  padding: 0.45rem 1rem;
+  height: 38px;
   margin-left: -0.25rem; }
 
-.page-template-training-page #search-filters #course-category-grid .button,
-.post-type-archive-austeve-courses #search-filters #course-category-grid .button {
-  margin-right: 1rem; }
-
-.page-template-training-page #search-filters #course-category-grid .button:nth-last-of-type(1),
-.post-type-archive-austeve-courses #search-filters #course-category-grid .button:nth-last-of-type(1) {
-  margin-right: 0; }
+.page-template-training-page #search-filters #course-category-grid,
+.post-type-archive-austeve-courses #search-filters #course-category-grid {
+  margin-bottom: 1rem; }
+  .page-template-training-page #search-filters #course-category-grid .button,
+  .post-type-archive-austeve-courses #search-filters #course-category-grid .button {
+    margin: 1rem 0.5rem 0 0.5rem; }
 
 .page-template-training-page #search-filters .course-category-filter i,
 .post-type-archive-austeve-courses #search-filters .course-category-filter i {
@@ -7070,6 +7104,13 @@ header {
 .page-template-training-page #search-filters .course-category-filter:not(.active) i,
 .post-type-archive-austeve-courses #search-filters .course-category-filter:not(.active) i {
   display: none; }
+
+.page-template-training-page #search-progress,
+.post-type-archive-austeve-courses #search-progress {
+  font-size: 1.2em; }
+  .page-template-training-page #search-progress i,
+  .post-type-archive-austeve-courses #search-progress i {
+    margin-right: 1rem; }
 
 .page-template-training-page #post-grid article .post-image,
 .post-type-archive-austeve-courses #post-grid article .post-image,
@@ -7090,32 +7131,43 @@ header {
 
 /* Small only */
 /* Medium and up (640px) */
-@media screen and (min-width: 40em) {
-  .page-template-training-page .intro-box,
-  .post-type-archive-austeve-courses .intro-box {
-    padding: 1rem 2rem 2rem 2rem; } }
-
 /* Medium only */
 /* Large and up (>1024px) */
 /* Large only */
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
-  .page-template-training-page .intro-box,
-  .post-type-archive-austeve-courses .intro-box {
-    padding: 2rem 10% 4rem 10%; } }
+  .page-template-training-page #search-filters label,
+  .post-type-archive-austeve-courses #search-filters label {
+    line-height: 50px; }
+  .page-template-training-page #search-filters #s,
+  .post-type-archive-austeve-courses #search-filters #s {
+    height: 50px; }
+  .page-template-training-page #search-filters #submit-s,
+  .post-type-archive-austeve-courses #search-filters #submit-s {
+    height: 50px; } }
 
 /* XLarge only */
 /* XXLarge and up (>1920px) */
-.page-template-living-lab-page .intro-box {
-  background: rgba(220, 229, 239, 0.95);
-  padding: 0 0.5rem 0.5rem 0.5rem; }
+@media screen and (min-width: 120em) {
+  .page-template-training-page #search-filters label,
+  .post-type-archive-austeve-courses #search-filters label {
+    line-height: 55px; }
+  .page-template-training-page #search-filters #s,
+  .post-type-archive-austeve-courses #search-filters #s {
+    height: 55px; }
+  .page-template-training-page #search-filters #submit-s,
+  .post-type-archive-austeve-courses #search-filters #submit-s {
+    height: 55px; } }
 
 .page-template-living-lab-page .light-blue-box {
   margin-top: 2rem; }
   .page-template-living-lab-page .light-blue-box .logo-box-title {
     font-size: 1.2em;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-family: audrey; }
   .page-template-living-lab-page .light-blue-box .text {
+    font-weight: 600;
     margin-bottom: 1rem; }
 
 .page-template-living-lab-page #logos .cell {
@@ -7137,26 +7189,44 @@ header {
   .page-template-living-lab-page #logos .logo .image-grid .cell {
     margin-bottom: 0; }
 
+.page-template-living-lab-page #byline {
+  margin-top: 1rem;
+  color: #fff;
+  font-weight: 600; }
+  .page-template-living-lab-page #byline a {
+    color: #fff; }
+  .page-template-living-lab-page #byline a:hover {
+    color: #fff; }
+
 /* Small only */
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
-  .page-template-living-lab-page .intro-box {
-    padding: 1rem 2rem 2rem 2rem; }
+  .page-template-living-lab-page .light-blue-box {
+    padding: 2rem 2rem 0 2rem; }
+    .page-template-living-lab-page .light-blue-box .text {
+      margin-bottom: 2rem; }
   .page-template-living-lab-page #logos .cell {
-    margin-bottom: 2rem; } }
+    margin-bottom: 2rem; }
+  .page-template-living-lab-page #byline {
+    margin-top: 3rem; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .page-template-living-lab-page .light-blue-box .logo-box-title {
+    font-size: 1.4em; }
+  .page-template-living-lab-page .light-blue-box .text {
+    margin-bottom: 3rem; }
+  .page-template-living-lab-page #byline {
+    margin-top: 4rem; } }
+
 /* Large only */
 /* XLarge and up (>1600px) */
-@media screen and (min-width: 100em) {
-  .page-template-living-lab-page .intro-box {
-    padding: 2rem 10% 4rem 10%; } }
-
 /* XLarge only */
 /* XXLarge and up (>1920px) */
 .page-template-contact-page .text {
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  font-weight: 600; }
 
 .page-template-contact-page .byline {
   margin-top: 2rem;

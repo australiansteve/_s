@@ -193,6 +193,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5fb5d276f8bf9",
+            "label": "Back To Blog Button Text",
+            "name": "back_to_blog_button_text",
+            "type": "text",
+            "instructions": "Displayed on the button on individual posts",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Back To Stories",
+            "placeholder": "Back To Stories",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5fb52ec0b0c8b",
             "label": "Register Now Button Text",
             "name": "register_now_button_text",
@@ -267,5 +286,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605717073
+    "modified": 1605751451
 }

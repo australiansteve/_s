@@ -53,7 +53,7 @@ get_header();
 					<?php echo $section['logo_box_text']; ?>
 				</div>
 				
-				<div id="logos" class="grid-x grid-margin-x small-up-2 medium-up-3">
+				<div id="logos" class="grid-x grid-margin-x small-up-2 medium-up-3 align-center">
 					<?php 
 					error_log("logos:".print_r($section['logos'], true));
 					foreach($section['logos'] as $logo) :
@@ -92,17 +92,18 @@ get_header();
 					endforeach;
 					?>
 				</div>
-
-				<div class="text" id="byline">
-					<?php echo $section['footer_byline']; ?>
-				</div>
 			</div>
-			<?php
-			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-		}
-		?>
 
-	</main><!-- #main -->
+			<div class="text" id="byline">
+				<?php echo $section['footer_byline']; ?>
+			</div>
+		</div>
+		<?php
+		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+	}
+	?>
 
-	<?php
-	get_footer();
+</main><!-- #main -->
+
+<?php
+get_footer();

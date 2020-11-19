@@ -42,10 +42,17 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 			<?php echo $section['introductory_text']; ?>
 
 			<div id="search-filters">
-				<label label-for="s"><?php echo $section['search_label'];?></label>
-				<input type="text" name="s" id="s" value="<?php echo $searchTerm;?>"/>
-				<a class="button" name="submit-s" id="submit-s"><i class="fas fa-search"></i></a>
-
+				<div class="grid-x">
+					<div class="cell small-2">
+						<label label-for="s"><?php echo $section['search_label'];?></label>
+					</div>
+					<div class="cell small-8 text-right">
+						<input type="text" name="s" id="s" value="<?php echo $searchTerm;?>"/>
+					</div>
+					<div class="cell small-2 text-left">
+						<a class="button" name="submit-s" id="submit-s"><i class="fas fa-search"></i></a>
+					</div>
+				</div>
 				<?php
 				$categories = get_terms([
 					'taxonomy' => 'course-category',
@@ -94,12 +101,23 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 			?>
 		</div>
 		<script type="text/javascript">
+
+			var triggerFoundationEqualizer = _.debounce(function (groups) {
+				if (jQuery("[data-equalize-by-row]").length) {
+					new Foundation.Equalizer(jQuery("[data-equalize-by-row]")).getHeightsByRow(resetHeights);
+				}
+			}, 250);
+
+			function resetHeights(groups) {
+				jQuery('[data-equalize-by-row]').foundation('applyHeightByRow', groups);
+			}
+
 			function startSearch() {
 				jQuery(".austeve-courses").html("<div id='search-progress' class='cell auto text-center'><i class='fas fa-spinner fa-spin'></i><?php the_field('search_in_progress', 'options');?></div>").addClass("in-progress");
 			}
 
 			function endSearch() {
-				//jQuery(".austeve-courses").css("opacity", "1");
+				triggerFoundationEqualizer();
 			}
 
 
@@ -108,7 +126,6 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 				var selectBox = jQuery('#course-category-select');
 				selectBox.val("");
 				selectBox.trigger('change');
-
 			}
 
 			function filterByCategory(e) {
@@ -224,11 +241,9 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 			}
 
 			jQuery(document).on("change", "#search-filters select", searchCourses);
-			//jQuery(document).on("change", "#search-filters input", searchCourses);
 			jQuery(document).on("click", "#search-filters button#clear-search", clearSearch);
 			jQuery(document).on("click", "#search-filters .course-category-filter", filterByCategory);
 			jQuery(document).on("click", "#search-filters #submit-s", searchCourses);
-
 
 			window.onpopstate = popState;
 

@@ -7,7 +7,7 @@ body {
 		color: $white;
 		text-transform: uppercase;
 		font-weight: 700;
-		font-size: 1.2em;
+		font-size: initial;
 		height: auto;
 		padding: 0.85em 1em;
 	}
@@ -45,6 +45,9 @@ body {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	.nf-error .nf-error-msg {
+		font-size: 20px;
+	}
 }
 
 /* Large only */

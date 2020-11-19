@@ -28,12 +28,16 @@
 								<div class="partner-logo grid-x">
 									<div class="cell shrink medium-12 large-shrink">
 										<?php
+										$link = get_sub_field('link');
+										echo $link ? "<a href='".$link."' target='_blank'>": "";
 										$image = get_sub_field('image');
 										$size = 'footer-partner-logo';
 
 										if( $image ) {
 											echo wp_get_attachment_image( $image, $size );
 										}
+										echo $link ? "</a>": "";
+
 										?>
 									</div>									
 									<div class="cell auto medium-12 large-auto">

@@ -19,6 +19,23 @@
 		font-weight: 700;
 	}
 
+	.post-content {
+		text-align: left;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.navigation {
+
+		.button {
+			margin: 0;
+		}
+
+		i {
+			margin-top: 0.25rem;
+		}
+	}
+
 }
 
 /* Small only */
@@ -52,6 +69,20 @@
 			font-size: 2rem;
 		}
 	}
+
+	.single:not(.single-austeve-team-members):not(.single-austeve-courses) {
+
+		.single-container {
+			min-height: auto;
+
+			.wp-post-image {
+				float: none;
+				max-width: 100%;
+				margin-right: 0;
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 /* Medium only */
@@ -74,6 +105,21 @@
 			}
 		}
 
+		.post-content {
+			margin-top: 2rem;
+		}
+
+	}
+
+	.single:not(.single-austeve-team-members):not(.single-austeve-courses) {
+
+		.single-container {
+
+			.wp-post-image {
+				margin-right: 0;
+				margin-bottom: 0;
+			}
+		}
 	}
 }
 
@@ -104,6 +150,11 @@
 
 		h1.page-title {
 			font-size: 55px;
+		}
+
+		.post-content {
+			margin-top: 4rem;
+			margin-bottom: 4rem;
 		}
 	}
 }
