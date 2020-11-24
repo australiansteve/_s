@@ -194,6 +194,23 @@ a {
 	}
 }
 
+blockquote {
+	color: $navy;
+
+	p {
+		color: $navy;
+		font-size: inherit;
+	}
+
+	.cite-block,
+	cite {
+		color: $navy;
+		font-size: inherit;
+		margin-top: 1.5rem;
+	}
+}
+
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 

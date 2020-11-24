@@ -6552,6 +6552,17 @@ a {
   .gray-text a {
     color: #8a8a8a; }
 
+blockquote {
+  color: #152d51; }
+  blockquote p {
+    color: #152d51;
+    font-size: inherit; }
+  blockquote .cite-block, blockquote cite,
+  blockquote cite {
+    color: #152d51;
+    font-size: inherit;
+    margin-top: 1.5rem; }
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   body section .section-background.image-medium-up {

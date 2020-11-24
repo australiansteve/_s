@@ -21,7 +21,7 @@ get_header();
 				<?php echo $section['intro']; ?>
 			</div>
 			<div class="buttons">
-				<a class="button" href="<?php echo $section['button_link_1']; ?>"><?php echo $section['button_1_text']; ?></a> <a class="button" href="<?php echo $section['button_link_2']; ?>"><?php echo $section['button_2_text']; ?></a>
+				<a class="button" href="<?php echo $section['button_1_link']; ?>"><?php echo $section['button_1_text']; ?></a> <a class="button" href="<?php echo $section['button_2_link']; ?>"><?php echo $section['button_2_text']; ?></a>
 			</div>
 		</div>
 		<?php
@@ -41,6 +41,64 @@ get_header();
 			<div class="buttons">
 				<a class="button" href="<?php echo $section['button_link_1']; ?>"><?php echo $section['button_1_text']; ?></a> <a class="button" href="<?php echo $section['button_link_2']; ?>"><?php echo $section['button_2_text']; ?></a>
 			</div>
+		</div>
+		<?php
+		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+	}
+
+	$sectionId = 'testimonials';
+	$section = get_field($sectionId);
+	if ($section) {
+		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+		?>
+		<h2><?php echo $section['title'];?></h2>
+		<div class="light-blue-box">
+			<div class="testimonials-container">
+				<?php
+				$counter = 1;
+				$testimonials = $section['testimonials'];
+				foreach($testimonials as $testimonial) {
+					?>
+					<div class="testimonial" data-testimonial="<?php echo $counter++;?>">
+						<blockquote>
+							<?php echo $testimonial['text'];?>
+							<cite class="name"><?php echo $testimonial['name_title'];?></cite>
+						</blockquote>
+					</div>
+					<?php
+				}
+				?>
+			</div>
+			<div class="testimonials-controls">
+				<?php
+				$counter = 1;
+				foreach($testimonials as $testimonial) {
+					?>
+					<i class="fas fa-circle testimonial-control <?php echo $counter == 1 ? 'active' : '';?>" data-control="<?php echo $counter++;?>"></i>
+					<?php
+				}
+				?>
+			</div>
+
+			<script type="text/javascript">
+				function changeTestimonial(e) {
+					var newActiveTestimonial = jQuery(e.target).data('control');
+					console.log(newActiveTestimonial);
+					jQuery('.testimonial').each(function() {
+						if (jQuery(this).data('testimonial') < newActiveTestimonial) {
+							jQuery(this).addClass('left');
+						}
+						else {
+							jQuery(this).removeClass('left');
+						}
+					});
+
+					jQuery('.testimonial-control').removeClass('active');
+					jQuery(e.target).addClass('active');
+
+				}
+				jQuery(document).on('click', '.testimonial-control', changeTestimonial);
+			</script>
 		</div>
 		<?php
 		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
@@ -82,64 +140,6 @@ get_header();
 			}
 			wp_reset_postdata();
 			?>
-		</div>
-		<?php
-		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-	}
-
-	$sectionId = 'testimonials';
-	$section = get_field($sectionId);
-	if ($section) {
-		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-		?>
-		<h2><?php echo $section['title'];?></h2>
-		<div class="light-blue-box">
-			<div class="testimonials-container">
-				<?php
-				$counter = 1;
-				$testimonials = $section['testimonials'];
-				foreach($testimonials as $testimonial) {
-					?>
-					<div class="testimonial" data-testimonial="<?php echo $counter++;?>">
-						<blockquote>
-							<?php echo $testimonial['text'];?>
-							<div class="name"><?php echo $testimonial['name_title'];?></div>
-						</blockquote>
-					</div>
-					<?php
-				}
-				?>
-			</div>
-			<div class="testimonials-controls">
-				<?php
-				$counter = 1;
-				foreach($testimonials as $testimonial) {
-					?>
-					<i class="fas fa-circle testimonial-control <?php echo $counter == 1 ? 'active' : '';?>" data-control="<?php echo $counter++;?>"></i>
-					<?php
-				}
-				?>
-			</div>
-
-			<script type="text/javascript">
-				function changeTestimonial(e) {
-					var newActiveTestimonial = jQuery(e.target).data('control');
-					console.log(newActiveTestimonial);
-					jQuery('.testimonial').each(function() {
-						if (jQuery(this).data('testimonial') < newActiveTestimonial) {
-							jQuery(this).addClass('left');
-						}
-						else {
-							jQuery(this).removeClass('left');
-						}
-					});
-
-					jQuery('.testimonial-control').removeClass('active');
-					jQuery(e.target).addClass('active');
-
-				}
-				jQuery(document).on('click', '.testimonial-control', changeTestimonial);
-			</script>
 		</div>
 		<?php
 		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
