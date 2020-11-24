@@ -6674,11 +6674,23 @@ nav ul {
     padding-top: 0.5rem; }
   .menu a,
   .menu .button {
-    padding: 0.7rem 0.9rem;
-    font-size: 0.9em; } }
+    padding: 0.7rem 0.25rem;
+    font-size: 8px; } }
 
 /* Medium only */
+/* Medium/Large and up (>768px) */
+@media screen and (min-width: 768px) {
+  .menu a,
+  .menu .button {
+    font-size: 12px; } }
+
 /* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .menu a,
+  .menu .button {
+    padding: 0.7rem 0.5rem;
+    font-size: 1rem; } }
+
 /* Large only */
 /* Large/XLarge and up (>1200px) */
 @media screen and (min-width: 75em) {
@@ -6957,7 +6969,7 @@ header {
   .home #landing .section-background {
     background-position: right bottom; }
   .home #landing .container {
-    max-width: 70%;
+    max-width: 60%;
     padding: 2rem; }
   .home #testimonials .testimonials-container {
     max-width: 80%;
@@ -6971,6 +6983,8 @@ header {
 /* Medium only */
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
+  .home #landing .container {
+    max-width: 60%; }
   .home #courses .text {
     max-width: 70%;
     margin-bottom: 4rem; }
@@ -6986,7 +7000,7 @@ header {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
   .home #landing .container {
-    max-width: 70%;
+    max-width: 60%;
     padding: 4rem; }
   .home #testimonials .testimonials-container > div.left {
     margin-left: calc(-100% - 7px); } }

@@ -97,8 +97,8 @@ nav {
 
 		a,
 		.button {
-			padding: 0.7rem 0.9rem;
-			font-size: 0.9em;
+			padding: 0.7rem 0.25rem;
+			font-size: 8px;
 		}
 	}
 
@@ -109,9 +109,30 @@ nav {
 
 }
 
+
+/* Medium/Large and up (>768px) */
+@media screen and (min-width: 768px) {
+
+	.menu {
+
+		a,
+		.button {
+			font-size: 12px;
+		}
+	}
+}
+
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	.menu {
+
+		a,
+		.button {
+			padding: 0.7rem 0.5rem;
+			font-size: 1rem;
+		}
+	}
 }
 
 /* Large only */

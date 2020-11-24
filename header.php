@@ -28,7 +28,7 @@
 		<header id="masthead" class="site-header">
 			<div class="grid-container">
 				<div class="grid-x">
-					<div class="cell medium-5 large-4 text-center medium-text-left" id="logo">
+					<div class="cell medium-4 text-center medium-text-left" id="logo">
 						<div class="grid-y align-center" style="height: 100%">
 							<div class="cell">
 								<a href="/" title="<?php echo get_the_title(get_option('page_on_front')); ?>">
@@ -44,7 +44,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="cell medium-7 large-8">
+					<div class="cell medium-8">
 						<div class="medium-text-right">
 							<nav id="site-navigation" class="main-navigation">
 								<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>

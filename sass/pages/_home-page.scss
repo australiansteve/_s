@@ -109,7 +109,7 @@
 			}
 
 			.container {
-				max-width: 70%;
+				max-width: 60%;
 				padding: 2rem;
 
 			}
@@ -143,6 +143,13 @@
 @media screen and (min-width: 64em) {
 
 	.home {
+
+		#landing {
+
+			.container {
+				max-width: 60%;
+			}
+		}
 
 		#courses {
 
@@ -186,7 +193,7 @@
 		#landing {
 
 			.container {
-				max-width: 70%;
+				max-width: 60%;
 				padding: 4rem;
 			}
 		}
