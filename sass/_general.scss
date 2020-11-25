@@ -99,7 +99,9 @@ body {
 	}
 
 	h3,
-	h4 {
+	h4,
+	h5,
+	h6 {
 		color: $navy;
 		text-transform: uppercase;
 		font-weight: 700;
@@ -146,6 +148,9 @@ a {
 	color: $gale;
 }
 
+p > a {
+	text-decoration: underline;
+}
 
 .blue-box {
 	background-color: $navy;

@@ -4,12 +4,11 @@
 		padding-top: 1rem;
 
 		p:nth-of-type(1) {
-			font-weight: 700;
-			font-size: 1.1em;
-			margin: auto;
-			max-width: 90%;
 			margin-bottom: 1.5rem;
+			font-weight: 700;
+			font-size: 1.3em;
 		}
+
 	}
 
 	#call-to-action {
@@ -39,16 +38,16 @@
 
 		.intro-box {
 			padding-top: 2rem;
+
+			p:nth-of-type(1) {
+				margin-bottom: 2rem;
+			}
 		}
 
 		#call-to-action {
 
 			.container {
-				margin-left: 2rem;
-
-				.text-box {
-					max-width: 60%;
-				}
+				margin: 0 2rem;
 			}
 
 		}
@@ -73,15 +72,6 @@
 
 	.page-template-about-page {
 
-		#call-to-action {
-
-			.section-content {
-				padding-left: 5%;
-			}
-
-		}
-
-
 	}
 }
 
@@ -94,14 +84,6 @@
 @media screen and (min-width: 100em) {
 
 	.page-template-about-page {
-
-		#call-to-action {
-
-			.section-background {
-				background-position: calc(50% + calc(1920px * 0.33));
-			}
-
-		}
 
 		#team {
 
@@ -124,15 +106,5 @@
 
 	.page-template-about-page {
 
-
-		#call-to-action {
-
-			.container {
-
-				.text-box {
-					max-width: 55%;
-				}
-			}
-		}
 	}
 }

@@ -6477,7 +6477,9 @@ body h2 {
   font-weight: 700; }
 
 body h3,
-body h4 {
+body h4,
+body h5,
+body h6 {
   color: #152d51;
   text-transform: uppercase;
   font-weight: 700; }
@@ -6514,6 +6516,9 @@ a {
 .button.inverse.active {
   background: #152d51;
   color: #f2f1f1; }
+
+p > a {
+  text-decoration: underline; }
 
 .blue-box {
   background-color: #152d51;
@@ -7050,11 +7055,9 @@ header {
 .page-template-about-page .intro-box {
   padding-top: 1rem; }
   .page-template-about-page .intro-box p:nth-of-type(1) {
+    margin-bottom: 1.5rem;
     font-weight: 700;
-    font-size: 1.1em;
-    margin: auto;
-    max-width: 90%;
-    margin-bottom: 1.5rem; }
+    font-size: 1.3em; }
 
 .page-template-about-page #call-to-action .text-box {
   font-weight: 600; }
@@ -7067,25 +7070,19 @@ header {
 @media screen and (min-width: 40em) {
   .page-template-about-page .intro-box {
     padding-top: 2rem; }
+    .page-template-about-page .intro-box p:nth-of-type(1) {
+      margin-bottom: 2rem; }
   .page-template-about-page #call-to-action .container {
-    margin-left: 2rem; }
-    .page-template-about-page #call-to-action .container .text-box {
-      max-width: 60%; }
+    margin: 0 2rem; }
   #team .text-box {
     max-width: 90%;
     margin: auto; } }
 
 /* Medium only */
 /* Large and up (>1024px) */
-@media screen and (min-width: 64em) {
-  .page-template-about-page #call-to-action .section-content {
-    padding-left: 5%; } }
-
 /* Large only */
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
-  .page-template-about-page #call-to-action .section-background {
-    background-position: calc(50% + calc(1920px * 0.33)); }
   .page-template-about-page #team .text-box {
     max-width: 1300px;
     margin: auto;
@@ -7093,10 +7090,6 @@ header {
 
 /* XLarge only */
 /* XXLarge and up (>1920px) */
-@media screen and (min-width: 120em) {
-  .page-template-about-page #call-to-action .container .text-box {
-    max-width: 55%; } }
-
 .page-template-training-page #search-filters label,
 .post-type-archive-austeve-courses #search-filters label {
   font-size: 0.9em;

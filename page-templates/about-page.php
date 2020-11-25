@@ -31,12 +31,39 @@ get_header();
 	if ($section) {
 		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 		?>
+
 		<div class="container">
-			<h2><?php echo $section['title'];?></h2>
-			<div class="text-box">
-				<?php echo $section['text']; ?>
+			<div class="grid-x">
+				<div class="cell">
+					<h2><?php echo $section['title'];?></h2>
+				</div>
 			</div>
-			<a class="button" href="<?php echo $section['button_link']; ?>"><?php echo $section['button_text']; ?></a>
+			<div class="grid-x grid-margin-x">
+				<div class="cell medium-6">
+					<div class="grid-y align-center" style="height: 100%">
+						<div class="cell">
+							<div class="text-box">
+								<?php echo $section['text']; ?>
+							</div>
+							<?php if ($section['button_text'] && $section['button_link']):?>
+								<a class="button" href="<?php echo $section['button_link']; ?>"><?php echo $section['button_text']; ?></a>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
+				<div class="cell medium-6">
+					<div class="grid-y align-center" style="height: 100%">
+						<div class="cell">
+							<?php 
+							if ($section['video_url']) :
+								$videoEmbed = "<div class='iframe-container'>".$GLOBALS['wp_embed']->run_shortcode( "[embed width='100%']".$section['video_url']."[/embed]")."</div>";
+								echo $videoEmbed;
+							endif;
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<?php
 		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
@@ -69,7 +96,7 @@ get_header();
 			wp_reset_postdata();
 			?>
 		</div>
-		
+
 
 		<?php
 		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
