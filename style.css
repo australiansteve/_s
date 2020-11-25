@@ -6756,7 +6756,7 @@ header {
 .page-template-training-page #post-grid,
 .page-template-about-page #post-grid,
 .home #courses #post-grid {
-  margin: 2rem -0.625rem; }
+  margin: 2rem -0.625rem 0 -0.625rem; }
   .blog #post-grid article,
   .archive #post-grid article,
   .page-template-training-page #post-grid article,
@@ -6792,7 +6792,7 @@ header {
   .page-template-training-page #post-grid,
   .page-template-about-page #post-grid,
   .home #courses #post-grid {
-    margin: 2rem -0.925rem; }
+    margin: 2rem -0.925rem 0 -0.925rem; }
     .blog #post-grid article .post-title,
     .archive #post-grid article .post-title,
     .page-template-training-page #post-grid article .post-title,

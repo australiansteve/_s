@@ -81,9 +81,11 @@ get_header();
 			</div>
 
 			<script type="text/javascript">
+				var currentTestimonial = 1;
+				
+
 				function changeTestimonial(e) {
 					var newActiveTestimonial = jQuery(e.target).data('control');
-					console.log(newActiveTestimonial);
 					jQuery('.testimonial').each(function() {
 						if (jQuery(this).data('testimonial') < newActiveTestimonial) {
 							jQuery(this).addClass('left');
@@ -95,9 +97,35 @@ get_header();
 
 					jQuery('.testimonial-control').removeClass('active');
 					jQuery(e.target).addClass('active');
+					currentTestimonial = newActiveTestimonial;
 
 				}
 				jQuery(document).on('click', '.testimonial-control', changeTestimonial);
+
+				jQuery(document).on('mouseenter', '.light-blue-box', function(){
+					intervalManager(false, rotateTestimonials, 5000);
+				});
+
+				jQuery(document).on('mouseleave', '.light-blue-box', function(){
+					intervalManager(true, rotateTestimonials, 5000);
+				});
+
+				var intervalID = null;
+
+				function intervalManager(flag, animate, time) {
+					if(flag)
+						intervalID =  setInterval(animate, time);
+					else
+						clearInterval(intervalID);
+				}
+
+				const rotateTestimonials = function() {
+					nextTestimonialIndex = currentTestimonial < jQuery('.testimonial').length ? currentTestimonial : 0;
+					jQuery(jQuery('.testimonial-control').get(nextTestimonialIndex)).trigger('click');
+				};
+
+				intervalManager(true, rotateTestimonials, 5000);
+
 			</script>
 		</div>
 		<?php
@@ -140,6 +168,9 @@ get_header();
 			}
 			wp_reset_postdata();
 			?>
+		</div>
+		<div class="buttons">
+			<a class="button" href="<?php echo $section['button_link']; ?>"><?php echo $section['button_text']; ?></a>
 		</div>
 		<?php
 		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
