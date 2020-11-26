@@ -6568,6 +6568,9 @@ blockquote {
     font-size: inherit;
     margin-top: 1.5rem; }
 
+span.dash {
+  display: inline-block; }
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
   body section .section-background.image-medium-up {
