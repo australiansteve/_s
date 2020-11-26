@@ -235,6 +235,13 @@
                         "operator": "==",
                         "value": "contact"
                     }
+                ],
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "buynow"
+                    }
                 ]
             ],
             "wrapper": {
@@ -275,5 +282,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605717483
+    "modified": 1606400470
 }

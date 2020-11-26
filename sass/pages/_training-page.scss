@@ -25,7 +25,8 @@
 			margin-bottom: 1rem;
 
 			.button {
-				margin: 1rem 0.5rem 0 0.5rem;
+				margin: 0.5rem 0.25rem 0 0.25rem;
+				font-size: 0.8em;
 			}
 		}
 
@@ -103,6 +104,19 @@
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	.page-template-training-page,
+	.post-type-archive-austeve-courses {
+
+		#search-filters {
+
+			#course-category-grid {
+
+				.button {
+					margin: 1rem 0.5rem 0 0.5rem;
+				}
+			}
+		}
+	}
 }
 
 /* Large only */
@@ -129,7 +143,9 @@
 			#submit-s {
 				height: 50px;
 			}
+
 		}
+
 	}
 }
 

@@ -6830,10 +6830,16 @@ header {
 .single-austeve-courses .wp-post-image {
   margin-top: 2rem; }
 
-.single p.product.woocommerce.add_to_cart_inline .button,
-.single-austeve-team-members p.product.woocommerce.add_to_cart_inline .button,
-.single-austeve-courses p.product.woocommerce.add_to_cart_inline .button {
-  width: fit-content; }
+.single .buttons p.product.woocommerce.add_to_cart_inline,
+.single-austeve-team-members .buttons p.product.woocommerce.add_to_cart_inline,
+.single-austeve-courses .buttons p.product.woocommerce.add_to_cart_inline {
+  display: inline-block;
+  margin-right: 0.5rem; }
+  .single .buttons p.product.woocommerce.add_to_cart_inline .button,
+  .single-austeve-team-members .buttons p.product.woocommerce.add_to_cart_inline .button,
+  .single-austeve-courses .buttons p.product.woocommerce.add_to_cart_inline .button {
+    width: fit-content;
+    text-decoration: none; }
 
 .single .price,
 .single-austeve-team-members .price,
@@ -7113,7 +7119,8 @@ header {
   margin-bottom: 1rem; }
   .page-template-training-page #search-filters #course-category-grid .button,
   .post-type-archive-austeve-courses #search-filters #course-category-grid .button {
-    margin: 1rem 0.5rem 0 0.5rem; }
+    margin: 0.5rem 0.25rem 0 0.25rem;
+    font-size: 0.8em; }
 
 .page-template-training-page #search-filters .course-category-filter i,
 .post-type-archive-austeve-courses #search-filters .course-category-filter i {
@@ -7151,6 +7158,11 @@ header {
 /* Medium and up (640px) */
 /* Medium only */
 /* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+  .page-template-training-page #search-filters #course-category-grid .button,
+  .post-type-archive-austeve-courses #search-filters #course-category-grid .button {
+    margin: 1rem 0.5rem 0 0.5rem; } }
+
 /* Large only */
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {

@@ -7,9 +7,10 @@
 		<h1 class="page-title"><?php the_title();?></h1>
 		
 		<?php if (get_field('price')) :?>
+			<!-- Removed price
 			<div class="price">
 				<?php the_field('price');?>
-			</div>
+			</div>-->
 		<?php endif; ?>
 
 		<?php include( locate_template( 'template-parts/content-austeve-courses-button.php', false, false ) );  ?>
@@ -26,8 +27,8 @@
 		</div>
 
 		<?php
-		/* Form to be used for registering interest in a course or webinar */
-		if ( get_field('course_type') == 'contact' ) {
+		/* Form to be used for registering interest in a course or contacting for more information */
+		if ( get_field('course_type') == 'buynow' || get_field('course_type') == 'contact' ) {
 			?>
 			<div class="reveal" id="contact-now-modal" data-reveal>
 				<div class="modal-content">

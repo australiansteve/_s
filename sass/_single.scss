@@ -6,10 +6,16 @@
 		margin-top: 2rem;
 	}
 
-	p.product.woocommerce.add_to_cart_inline {
+	.buttons {
 
-		.button {
-			width: fit-content;
+		p.product.woocommerce.add_to_cart_inline {
+			display: inline-block;
+			margin-right: 0.5rem;
+
+			.button {
+				width: fit-content;
+				text-decoration: none;
+			}
 		}
 	}
 

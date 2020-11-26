@@ -267,6 +267,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5fbfba7d5b9a2",
+            "label": "Contact For Group Rates Button Text",
+            "name": "contact_for_information_button_text_buynow",
+            "type": "text",
+            "instructions": "Shown on 'Buy Now' courses for interested parties to inquire about group rates",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Group rates",
+            "placeholder": "Group Rates",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -286,5 +305,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605751451
+    "modified": 1606400696
 }

@@ -1,6 +1,13 @@
 <?php 
 if (get_field('course_type') == 'buynow') {
-	echo do_shortcode("[add_to_cart id='".get_field('product')."' show_price='false' style='']"); 
+	?>
+	<div class="buttons">
+		<?php
+		echo do_shortcode("[add_to_cart id='".get_field('product')."' show_price='false' style='']"); 
+		?>
+		<a class="button contact-for-information" data-course-id="<?php echo get_the_ID();?>" data-open="contact-now-modal"><?php the_field('contact_for_information_button_text_buynow', 'options');?></a>
+	</div>
+	<?php
 }
 else if (get_field('course_type') == 'contact') {
 	?>
