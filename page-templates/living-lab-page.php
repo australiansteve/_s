@@ -62,6 +62,7 @@ get_header();
 						<div class='cell'>
 							<?php
 							if ($link) {
+								$link = strpos($link, 'http') === false ? 'http://'.$link : $link;
 								echo "<a class='logo-link' href='".$link."' target='blank'>";
 							}
 							?>
