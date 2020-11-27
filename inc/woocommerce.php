@@ -288,5 +288,13 @@ function hamburger_cat_custom_redirects() {
 
 	}
 
+	if ( is_shop() ) {
+			error_log("Redirecting to ".site_url('our-training?lang='.ICL_LANGUAGE_CODE));
+			wp_redirect( site_url('our-training?lang='.ICL_LANGUAGE_CODE) );
+			die;
+
+
+	}
+
 }
 add_action( 'template_redirect', 'hamburger_cat_custom_redirects' );
