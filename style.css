@@ -20,6 +20,30 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 */
 @font-face {
+  font-family: Arsenal;
+  src: url(/wp-content/themes/hamburger-cat/fonts/Arsenal-Regular.ttf);
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: Arsenal;
+  src: url(/wp-content/themes/hamburger-cat/fonts/Arsenal-Italic.ttf);
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: Arsenal;
+  src: url(/wp-content/themes/hamburger-cat/fonts/Arsenal-Bold.ttf);
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: Arsenal;
+  src: url(/wp-content/themes/hamburger-cat/fonts/Arsenal-BoldItalic.ttf);
+  font-weight: 700;
+  font-style: italic; }
+
+@font-face {
   font-family: Audrey;
   src: url(/wp-content/themes/hamburger-cat/fonts/Audrey-Normal.otf);
   font-weight: 400;
@@ -3038,7 +3062,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: audrey, raleway, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+  font-family: arsenal, raleway, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   color: inherit;

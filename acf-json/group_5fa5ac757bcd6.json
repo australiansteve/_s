@@ -18,7 +18,7 @@
             "choices": {
                 "buynow": "Buy Now",
                 "contact": "Contact for information",
-                "webinar": "Webinar"
+                "webinar": "Workshop"
             },
             "default_value": "webinar",
             "allow_null": 0,
@@ -282,5 +282,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606400470
+    "modified": 1606438299
 }
