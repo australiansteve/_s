@@ -16,7 +16,7 @@
 				</div>
 			<?php endif; ?>
 			<div class="cell medium-auto medium-text-<?php echo $hasEmail ? 'left' : 'center'; ?>">
-				<a class="button" href="/about"><?php echo the_field('back_to_about_button_text', 'options');?></a>
+				<a class="button" href="/about?lang=<?php echo ICL_LANGUAGE_CODE;?>"><?php echo the_field('back_to_about_button_text', 'options');?></a>
 			</div>
 		</div>
 
