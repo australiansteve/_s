@@ -132,11 +132,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5fa5ad9faca96",
-            "label": "Skillport Course Link",
-            "name": "skillport_course_link",
+            "key": "field_5fc54ad697d61",
+            "label": "Contact Button text",
+            "name": "contact_button_text",
             "type": "text",
-            "instructions": "",
+            "instructions": "If left blank no contact button will be displayed",
             "required": 0,
             "conditional_logic": [
                 [
@@ -157,6 +157,47 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5fc54abf97d60",
+            "label": "Contact For Information Form",
+            "name": "contact_for_information_form_id",
+            "type": "select",
+            "instructions": "Ninja Form ID",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5fa5ac84aca92",
+                        "operator": "==",
+                        "value": "buynow"
+                    },
+                    {
+                        "field": "field_5fc54ad697d61",
+                        "operator": "!=",
+                        "value": ""
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": "Contact Me",
+                "2": "Newsletter Subscription",
+                "3": "Newsletter Subscription - Sidebar",
+                "4": "Register Course Interest",
+                "5": "Contact For Information"
+            },
+            "default_value": 5,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
         },
         {
             "key": "field_5fa5ad94aca95",
@@ -235,13 +276,6 @@
                         "operator": "==",
                         "value": "contact"
                     }
-                ],
-                [
-                    {
-                        "field": "field_5fa5ac84aca92",
-                        "operator": "==",
-                        "value": "buynow"
-                    }
                 ]
             ],
             "wrapper": {
@@ -263,6 +297,25 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_5fc2ab2fd8eb5",
+            "label": "Welcome Email",
+            "name": "welcome_email",
+            "type": "wysiwyg",
+            "instructions": "Only the Welcome Email defined on the ENGLISH course will be used. Contact Steve if that should not be the case.\r\n<br\/>Use {firstname} and {email} to personalize the email message",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -282,5 +335,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606438299
+    "modified": 1606766112
 }

@@ -11,39 +11,29 @@ get_header();
 ?>
 <main id="primary" class="site-main">
 
+	<?php
+	$sectionId = 'other_landing';
+	$section = get_field($sectionId, 'options');
+	if ($section) {
+		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+		?>
+		<div class="single-container">
+			<h1 class="page-title"><?php the_field('404_page_title', 'options');?></h1>
+				<p><?php the_field('404_page_text', 'options'); ?></p>
+
+				<form role="search" method="get" class="search-form" action="/">
+					<label>
+						<span class="screen-reader-text"><?php echo get_field('sidebar_search_title', 'options');?>:</span>
+						<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+					</label>
+					<input type="submit" class="search-submit button" value="Search">
+					<input type="hidden" name="lang" value="<?php echo ICL_LANGUAGE_CODE;?>">
+				</form>
+		</div>
+
 		<?php
-		$sectionId = 'other_landing';
-		$section = get_field($sectionId, 'options');
-		if ($section) {
-			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-			?>
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></h1>
-			</header><!-- .page-header -->
-			<?php
-			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-		}
-
-
-		$sectionId = 'other_body';
-		$section = get_field($sectionId, 'options');
-		if ($section) {
-			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-
-				?>
-				<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'hamburger-cat' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					?>
-
-			</div><!-- .page-content -->
-			<?php
-
-			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-		}
+		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+	}
 
 	?>
 

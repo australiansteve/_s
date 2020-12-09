@@ -269,11 +269,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5fbfba7d5b9a2",
-            "label": "Contact For Group Rates Button Text",
-            "name": "contact_for_information_button_text_buynow",
-            "type": "text",
-            "instructions": "Shown on 'Buy Now' courses for interested parties to inquire about group rates",
+            "key": "field_5fc53e3a2aaa3",
+            "label": "404 Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -281,11 +281,46 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Group rates",
-            "placeholder": "Group Rates",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5fc53e462aaa4",
+            "label": "404 Page Title",
+            "name": "404_page_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Page Not Found",
+            "placeholder": "",
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5fc53e4f2aaa5",
+            "label": "404 Page Text",
+            "name": "404_page_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -305,5 +340,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606400696
+    "modified": 1606766281
 }

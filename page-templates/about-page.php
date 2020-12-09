@@ -46,7 +46,7 @@ get_header();
 								<?php echo $section['text']; ?>
 							</div>
 							<?php if ($section['button_text'] && $section['button_link']):?>
-								<a class="button" href="<?php echo $section['button_link']; ?>"><?php echo $section['button_text']; ?></a>
+								<a class="button" href="<?php echo $section['button_link']; ?>" <?php echo $section['button_open_new_tab'] ? 'target=\'blank\'': '';?>><?php echo $section['button_text']; ?></a>
 							<?php endif; ?>
 						</div>
 					</div>

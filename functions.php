@@ -207,6 +207,16 @@ add_filter('nav_menu_css_class', function( $classes, $item, $args ) {
 	return $classes;
 }, 1, 3);
 
+function austeve_search_pagesize( $query ) {
+	if ( ! is_admin() && is_search()) {
+        // Display 12 posts for searches
+		$query->set( 'posts_per_page', 12 );
+
+		return;
+	}
+}
+add_action( 'pre_get_posts', 'austeve_search_pagesize', 1, 1 );
+
 function austeve_courses_pagesize( $query ) {
 	if ( ! is_admin() && (is_post_type_archive( 'austeve-courses' ) || (is_array($query->get('post_type')) && in_array('austeve-courses', $query->get('post_type'))))) {
         // Display 50 posts for 'austeve-courses'
@@ -256,6 +266,7 @@ function austeve_get_courses() {
 	if (wp_verify_nonce( $nonce, 'get-courses')) {
 		$category = isset($_REQUEST['category']) ? $_REQUEST['category'] : null;
 		$search = isset($_REQUEST['s']) ? $_REQUEST['s']: null;
+		$lang = isset($_REQUEST['lang']) ? $_REQUEST['lang']: 'en';
 
 		$args = array(
 			'post_type' => array('austeve-courses'),
@@ -279,7 +290,11 @@ function austeve_get_courses() {
 			$args['s'] = $search;
 		}
 
-		error_log("AJAX args: ".print_r($args, true));
+	  	//error_log("Setting ajax language: ".$lang);
+	  	global $sitepress;
+	    $sitepress->switch_lang($lang, true);
+
+		//error_log("AJAX args: ".print_r($args, true));
 		$ajaxposts = new WP_Query( $args );
 
 		if ( $ajaxposts->have_posts()) {
@@ -290,6 +305,7 @@ function austeve_get_courses() {
 		}
 
 		wp_reset_query();
+	    $sitepress->switch_lang(ICL_LANGUAGE_CODE);
 	}
 
 	exit;

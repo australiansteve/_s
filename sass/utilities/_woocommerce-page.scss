@@ -41,6 +41,7 @@
 		.select2-container--default .select2-selection--single {
 			padding: 0.25rem;
 			height: auto;
+			font-size: 1rem;
 
 			.select2-selection__arrow {
 				right: 8px;
@@ -50,6 +51,11 @@
 
 		ul.woocommerce-order-overview {
 			display: block;
+		}
+
+		ul.wc_payment_methods {
+			list-style: none;
+			margin-left: 0;
 		}
 	}
 }

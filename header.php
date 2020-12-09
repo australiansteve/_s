@@ -31,7 +31,7 @@
 					<div class="cell medium-4 text-center medium-text-left" id="logo">
 						<div class="grid-y align-center" style="height: 100%">
 							<div class="cell">
-								<a href="/" title="<?php echo get_the_title(get_option('page_on_front')); ?>">
+								<a href="/?lang=<?php echo ICL_LANGUAGE_CODE;?>" title="<?php echo get_the_title(get_option('page_on_front')); ?>">
 									<?php 
 									$image = get_field('logo', 'options');
 									$size = 'header-logo';

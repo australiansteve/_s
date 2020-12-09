@@ -39,7 +39,7 @@ get_header();
 				<?php echo $section['text']; ?>
 			</div>
 			<div class="buttons">
-				<a class="button" href="<?php echo $section['button_link_1']; ?>"><?php echo $section['button_1_text']; ?></a> <a class="button" href="<?php echo $section['button_link_2']; ?>"><?php echo $section['button_2_text']; ?></a>
+				<a class="button" href="<?php echo $section['button_1_link']; ?>"><?php echo $section['button_1_text']; ?></a> <a class="button" href="<?php echo $section['button_2_link']; ?>"><?php echo $section['button_2_text']; ?></a>
 			</div>
 		</div>
 		<?php

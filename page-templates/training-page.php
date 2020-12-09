@@ -56,7 +56,7 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 				<?php
 				$categories = get_terms([
 					'taxonomy' => 'course-category',
-					'hide_empty' => false,
+					'hide_empty' => false
 				]);
 				?>
 				<label label-for="course-category-select"><?php echo $section['filter_by_category_label'];?></label>
@@ -119,7 +119,6 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 			function endSearch() {
 				triggerFoundationEqualizer();
 			}
-
 
 			function clearCategoryFilter(e) {
 				e.preventDefault();
@@ -186,11 +185,12 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 
 			function getCourses(search = '', category = '', appendResults = false, setNewState = true) {
 				var newHistoryLocation = window.location.toString().substr(0, window.location.toString().indexOf("?"));
+				newHistoryLocation += "?lang=<?php echo ICL_LANGUAGE_CODE; ?>";
 				if (search != "") {
-					newHistoryLocation += "?search=" + search;
+					newHistoryLocation += "&search=" + search;
 				}
 				if (category != "") {
-					newHistoryLocation += (newHistoryLocation.indexOf('?') > 0 ? '&' : '?') + "category=" + category;
+					newHistoryLocation += "&category=" + category;
 				}
 				if (setNewState) {
 					console.log("newHistoryLocation: " + newHistoryLocation);
@@ -204,6 +204,7 @@ $searchCategory = array_key_exists('category', $queries) ? $queries['category'] 
 					data: { 
 						action : 'austeve_get_courses', 
 						security: '<?php echo $ajax_nonce; ?>', 
+						lang: '<?php echo ICL_LANGUAGE_CODE; ?>', 
 						category: category, 
 						s: search
 					},

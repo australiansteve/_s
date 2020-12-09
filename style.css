@@ -6371,13 +6371,18 @@ a.thumbnail {
 
 .woocommerce-page main .select2-container--default .select2-selection--single {
   padding: 0.25rem;
-  height: auto; }
+  height: auto;
+  font-size: 1rem; }
   .woocommerce-page main .select2-container--default .select2-selection--single .select2-selection__arrow {
     right: 8px;
     top: 0.5rem; }
 
 .woocommerce-page main ul.woocommerce-order-overview {
   display: block; }
+
+.woocommerce-page main ul.wc_payment_methods {
+  list-style: none;
+  margin-left: 0; }
 
 /* Small only */
 /* Medium and up (640px) */
@@ -6725,18 +6730,24 @@ nav ul {
 @media screen and (min-width: 768px) {
   .menu a,
   .menu .button {
-    font-size: 12px; } }
+    font-size: 11px; } }
 
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
   .menu a,
   .menu .button {
     padding: 0.7rem 0.5rem;
-    font-size: 1rem; } }
+    font-size: 14px; } }
 
 /* Large only */
 /* Large/XLarge and up (>1200px) */
 @media screen and (min-width: 75em) {
+  .menu a,
+  .menu .button {
+    font-size: 1em; } }
+
+/* Large/XLarge and up (>1310px) */
+@media screen and (min-width: 1310px) {
   .menu a,
   .menu .button {
     font-size: 1.2em; } }
@@ -6746,9 +6757,15 @@ nav ul {
   .menu a,
   .menu .button {
     padding: 0.7rem 1rem;
-    font-size: 1.5em; } }
+    font-size: 1.3em; } }
 
 /* XLarge only */
+/* Large/XLarge and up (>1750px) */
+@media screen and (min-width: 1750px) {
+  .menu a,
+  .menu .button {
+    font-size: 1.5em; } }
+
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
   .menu a,
@@ -6759,7 +6776,7 @@ header {
   background-color: #152d51;
   color: #fff;
   text-transform: uppercase;
-  font-family: Audrey;
+  font-family: Arsenal;
   font-weight: 700; }
   header #logo {
     padding: 1rem; }
@@ -6768,7 +6785,7 @@ header {
   header a {
     color: #fff;
     text-transform: uppercase;
-    font-family: Audrey; }
+    font-family: Arsenal; }
 
 /* Small only */
 /* Medium and up (640px) */
@@ -6787,25 +6804,29 @@ header {
 .archive #post-grid,
 .page-template-training-page #post-grid,
 .page-template-about-page #post-grid,
-.home #courses #post-grid {
+.home #courses #post-grid,
+.search #post-grid {
   margin: 2rem -0.625rem 0 -0.625rem; }
   .blog #post-grid article,
   .archive #post-grid article,
   .page-template-training-page #post-grid article,
   .page-template-about-page #post-grid article,
-  .home #courses #post-grid article {
+  .home #courses #post-grid article,
+  .search #post-grid article {
     margin-bottom: 2rem; }
     .blog #post-grid article .post-image,
     .archive #post-grid article .post-image,
     .page-template-training-page #post-grid article .post-image,
     .page-template-about-page #post-grid article .post-image,
-    .home #courses #post-grid article .post-image {
+    .home #courses #post-grid article .post-image,
+    .search #post-grid article .post-image {
       margin-bottom: 1rem; }
     .blog #post-grid article .post-title,
     .archive #post-grid article .post-title,
     .page-template-training-page #post-grid article .post-title,
     .page-template-about-page #post-grid article .post-title,
-    .home #courses #post-grid article .post-title {
+    .home #courses #post-grid article .post-title,
+    .search #post-grid article .post-title {
       font-weight: 700;
       text-transform: uppercase;
       color: #152d51; }
@@ -6813,7 +6834,8 @@ header {
     .archive #post-grid article .button,
     .page-template-training-page #post-grid article .button,
     .page-template-about-page #post-grid article .button,
-    .home #courses #post-grid article .button {
+    .home #courses #post-grid article .button,
+    .search #post-grid article .button {
       font-size: 0.9em; }
 
 /* Small only */
@@ -6823,13 +6845,15 @@ header {
   .archive #post-grid,
   .page-template-training-page #post-grid,
   .page-template-about-page #post-grid,
-  .home #courses #post-grid {
+  .home #courses #post-grid,
+  .search #post-grid {
     margin: 2rem -0.925rem 0 -0.925rem; }
     .blog #post-grid article .post-title,
     .archive #post-grid article .post-title,
     .page-template-training-page #post-grid article .post-title,
     .page-template-about-page #post-grid article .post-title,
-    .home #courses #post-grid article .post-title {
+    .home #courses #post-grid article .post-title,
+    .search #post-grid article .post-title {
       font-size: 1em; } }
 
 /* Medium only */
@@ -6843,13 +6867,15 @@ header {
   .archive #post-grid article .post-title,
   .page-template-training-page #post-grid article .post-title,
   .page-template-about-page #post-grid article .post-title,
-  .home #courses #post-grid article .post-title {
+  .home #courses #post-grid article .post-title,
+  .search #post-grid article .post-title {
     font-size: 32px; }
   .blog #post-grid article .button,
   .archive #post-grid article .button,
   .page-template-training-page #post-grid article .button,
   .page-template-about-page #post-grid article .button,
-  .home #courses #post-grid article .button {
+  .home #courses #post-grid article .button,
+  .search #post-grid article .button {
     font-size: 32px; } }
 
 .single .wp-post-image,
@@ -6857,16 +6883,19 @@ header {
 .single-austeve-courses .wp-post-image {
   margin-top: 2rem; }
 
-.single .buttons p.product.woocommerce.add_to_cart_inline,
-.single-austeve-team-members .buttons p.product.woocommerce.add_to_cart_inline,
-.single-austeve-courses .buttons p.product.woocommerce.add_to_cart_inline {
-  display: inline-block;
-  margin-right: 0.5rem; }
-  .single .buttons p.product.woocommerce.add_to_cart_inline .button,
-  .single-austeve-team-members .buttons p.product.woocommerce.add_to_cart_inline .button,
-  .single-austeve-courses .buttons p.product.woocommerce.add_to_cart_inline .button {
-    width: fit-content;
-    text-decoration: none; }
+.single .buttons,
+.single-austeve-team-members .buttons,
+.single-austeve-courses .buttons {
+  display: inline-block; }
+  .single .buttons p.product.woocommerce.add_to_cart_inline,
+  .single-austeve-team-members .buttons p.product.woocommerce.add_to_cart_inline,
+  .single-austeve-courses .buttons p.product.woocommerce.add_to_cart_inline {
+    display: inline-block; }
+    .single .buttons p.product.woocommerce.add_to_cart_inline .button,
+    .single-austeve-team-members .buttons p.product.woocommerce.add_to_cart_inline .button,
+    .single-austeve-courses .buttons p.product.woocommerce.add_to_cart_inline .button {
+      width: fit-content;
+      text-decoration: none; }
 
 .single .price,
 .single-austeve-team-members .price,

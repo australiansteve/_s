@@ -18,10 +18,8 @@
 		<?php the_content();?>
 		
 		<div class="grid-x grid-margin-x">
-			<div class="cell medium-6 text-center medium-text-right">
+			<div class="cell text-center">
 				<?php include( locate_template( 'template-parts/content-austeve-courses-button.php', false, false ) );  ?>
-			</div>
-			<div class="cell medium-6 text-center medium-text-left">
 				<a href="/our-training?lang=<?php echo ICL_LANGUAGE_CODE;?>" class="button"><?php the_field('back_to_courses_button_text', 'options');?></a>
 			</div>
 		</div>

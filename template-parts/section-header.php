@@ -1,4 +1,6 @@
 <?php
+error_log("SectionID: ".$sectionId);
+error_log("Section: ".print_r($section, true));
 $contentTextColor = $section['content_text_color'];
 $backgroundColor = $section['background_color'];
 $backgroundImage = ($section['background_image'] > 0) ? $section['background_image'] : ($sectionId == 'landing' || $sectionId == 'other_landing' ? get_field('default_background_image', 'options') : null );

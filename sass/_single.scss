@@ -7,10 +7,10 @@
 	}
 
 	.buttons {
+		display: inline-block;
 
 		p.product.woocommerce.add_to_cart_inline {
 			display: inline-block;
-			margin-right: 0.5rem;
 
 			.button {
 				width: fit-content;

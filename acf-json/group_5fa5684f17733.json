@@ -95,6 +95,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5fc550f46c894",
+            "label": "Button Open In New Tab",
+            "name": "button_open_new_tab",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_5fbea3402a091",
             "label": "Video URL",
             "name": "video_url",
@@ -131,5 +150,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1606329167
+    "modified": 1606766860
 }
