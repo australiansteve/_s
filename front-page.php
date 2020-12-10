@@ -12,15 +12,5 @@ if ($section) {
 	include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
 }
 
-$sectionId = 'body';
-$section = get_field($sectionId);
-if ($section) {
-	include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-	?>
-	Body Section
-	<?php
-	include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-}
-
 get_footer();
 ?>
