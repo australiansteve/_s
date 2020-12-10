@@ -101,6 +101,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		add_image_size( 'full-page-background', 1920, 1080, 'true');
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );

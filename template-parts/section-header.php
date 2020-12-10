@@ -2,7 +2,7 @@
 $contentTextColor = $section['content_text_color'];
 $backgroundColor = $section['background_color'];
 $backgroundImage = $section['background_image'];
-$backgroundImageUrl = wp_get_attachment_image_src($backgroundImage, 'full');
+$backgroundImageUrl = wp_get_attachment_image_src($backgroundImage, 'full-page-background');
 $backgroundCssValue = array();
 $backgroundClasses = $section['background_classes'];
 $sectionClasses = $section['section_classes'];
