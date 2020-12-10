@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying search results pages
+ * The template for displaying the blog page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,18 +13,15 @@ get_header();
 <main id="primary" class="site-main">
 
 	<?php
-	$sectionId = 'search_landing';
+	$sectionId = 'blog_landing';
 	$section = get_field($sectionId, 'options');
 	if ($section) {
+		$blogPageId = get_option('page_for_posts');
+
 		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 
 		?>
-		<h1 class="page-title">
-			<?php
-			/* translators: %s: search query. */
-			printf( esc_html__( 'Search Results for: %s', 'hamburger-cat' ), '<span>' . get_search_query() . '</span>' );
-			?>
-		</h1>
+		<h1 class="page-title"><?php echo get_the_title($blogPageId);?></h1>
 		<?php
 
 		if ( have_posts() ) {

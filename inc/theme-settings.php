@@ -25,4 +25,9 @@ acf_add_options_sub_page(array(
 	'parent_slug'	=> 'theme-general-settings',
 ));
 
+acf_add_options_sub_page(array(
+	'page_title' 	=> 'Page Layouts',
+	'menu_title'	=> 'Page Layouts',
+	'parent_slug'	=> 'theme-general-settings',
+));
 ?>

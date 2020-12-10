@@ -4801,6 +4801,12 @@ body section {
   body section .section-content {
     height: 100%; }
 
+body section.minimum-full-height {
+  min-height: 100vh; }
+
+body section.minimum-full-height-minus-header {
+  min-height: 100vh; }
+
 a {
   display: inline-block; }
 
