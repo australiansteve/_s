@@ -17,21 +17,12 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			$sectionId = 'landing';
-			$section = get_field($sectionId);
+			$sectionId = 'post_landing';
+			$section = get_field($sectionId, 'options');
 			if ($section) {
 				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 				?>
 				<h1 class="page-title"><?php the_title();?></h1>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-			}
-
-			$sectionId = 'body';
-			$section = get_field($sectionId);
-			if ($section) {
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>
 				<?php the_content();?>
 				<?php
 				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
