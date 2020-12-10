@@ -118,7 +118,7 @@ function hamburger_cat_scripts() {
 	wp_enqueue_script('lodash-js',
 		'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js'
 	);
-	
+
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_stylesheet_uri(), array(), HAMBURGER_CAT_VERSION );
@@ -166,3 +166,20 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( class_exists('ACF') ) {
 	require get_template_directory() . '/inc/theme-settings.php';
 }
+
+/* Scoial media menu item icons */
+add_filter('wp_nav_menu_objects', function( $items, $args ) {
+	// loop
+	foreach( $items as &$item ) {
+		// vars
+		$icon = get_field('icon', $item);
+		// replace title with icon
+		if( $icon ) {
+			$title = $item->title;
+			$item->title = '<i class="fab '.$icon.'" title="'.$title.'"></i>';	
+		}
+	}
+
+	// return
+	return $items;
+}, 10, 2);
