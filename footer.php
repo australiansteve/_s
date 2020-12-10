@@ -13,9 +13,21 @@
 
 		<footer id="colophon" class="site-footer">
 			<div class="grid-container">
+				<div class="grid-x footer-logo">
+					<div class="cell text-center">
+						<?php 
+						$image = get_field('footer_logo', 'options');
+						$size = 'full';
+						
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}
+						?>
+					</div>
+				</div><!-- .site-info -->
 				<div class="grid-x site-info">
 					<div class="cell text-center medium-text-right">
-						<a href="https://weavercrawford.com" target="_blank"><i class="far fa-copyright"></i> Weaver Crawford Creative <?php echo date("Y"); ?></a>
+						<?php the_field('footer_site_info_text', 'options'); ?>
 					</div>
 				</div><!-- .site-info -->
 			</div>

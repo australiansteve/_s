@@ -28,43 +28,75 @@
 		<header id="masthead" class="site-header">
 			<div class="grid-container">
 				
-				<nav id="site-navigation" class="main-navigation">
-					<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
-						<li>
-							<a href="#"><span>Menu</span> <i class="fas fa-bars"></i><i class="fas fa-caret-up"></i></a>
-							<ul class="menu vertical nested">
+				<div class="grid-x">
+					<div class="cell medium-4 large-3">
+						<?php 
+						$image = get_field('header_logo', 'options');
+						$size = 'full';
+						
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}
+						?>
+					</div>
+					<div class="cell medium-8 large-9">
+
+						<nav id="site-navigation" class="main-navigation">
+							<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
+								<li>
+									<a href="#"><span>Menu</span> <i class="fas fa-bars"></i><i class="fas fa-caret-up"></i></a>
+									<ul class="menu vertical nested">
+										<?php
+										wp_nav_menu(
+											array(
+												'theme_location'	=> 'primary-menu',
+												'container'		=> false,
+												'items_wrap' => '%3$s'
+											)
+										);
+										?>
+										<div class="social-wrapper">
+											<?php
+											wp_nav_menu(
+												array(
+													'theme_location'	=> 'social-menu',
+													'container'		=> false,
+													'items_wrap' => '%3$s'
+												)
+											);
+											?>
+										</div>
+									</ul>
+								</li>
+
+							</ul>
+
+							<div id="menu-1">
 								<?php
 								wp_nav_menu(
 									array(
-										'theme_location'	=> 'menu-1',
-										'container'		=> false,
-										'items_wrap' => '%3$s'
-									)
-								);
-
-								wp_nav_menu(
-									array(
-										'theme_location'	=> 'menu-2',
-										'container'		=> false,
-										'items_wrap' => '%3$s'
+										'theme_location'	=> 'primary-menu',
+										'menu_id'		=> 'primary-menu',
+										'menu_class'	=> 'horizontal menu show-for-medium text-right',
+										'container'		=> false
 									)
 								);
 								?>
-							</ul>
-						</li>
-
-					</ul>
-
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location'	=> 'primary-menu',
-							'menu_id'		=> 'primary-menu',
-							'menu_class'	=> 'horizontal menu show-for-medium text-center',
-							'container'		=> false
-						)
-					);
-					?>
-				</nav><!-- #site-navigation -->
+							</div>
+							<div id="social-menu">
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location'	=> 'social-menu',
+										'menu_id'		=> 'social-menu',
+										'menu_class'	=> 'horizontal menu show-for-medium text-right',
+										'container'		=> false
+									)
+								);
+								?>
+							</div>
+						</nav><!-- #site-navigation -->
+					</div>
+				</div>
 			</div><!-- .grid-container -->
 		</header><!-- #masthead -->

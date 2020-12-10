@@ -4821,16 +4821,22 @@ nav .accordion-menu li[aria-expanded="false"] .fa-bars {
 nav .accordion-menu li[aria-expanded="false"] .fa-caret-up {
   opacity: 0; }
 
+nav .accordion-menu .social-wrapper li {
+  display: inline-block;
+  width: auto; }
+  nav .accordion-menu .social-wrapper li a {
+    padding-right: 0; }
+
 nav .accordion-menu li[aria-expanded="true"] .fa-bars {
   opacity: 0; }
 
 nav .accordion-menu li[aria-expanded="true"] .fa-caret-up {
   opacity: 1; }
 
-nav ul#primary-menu {
+nav ul.show-for-medium {
   display: block;
   list-style: none;
   width: 100%;
   margin: 0; }
-  nav ul#primary-menu li {
+  nav ul.show-for-medium li {
     display: inline-block; }
