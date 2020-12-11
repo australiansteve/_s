@@ -21,12 +21,16 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			$sectionId = 'landing';
+			$section = get_field($sectionId);
+			if ($section) {
+				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+				?>
+				<h1 class="page-title"><?php the_title();?></h1>
+				<?php the_content();?>
+				<?php
+				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+			}
 
 		endwhile; // End of the loop.
 		?>

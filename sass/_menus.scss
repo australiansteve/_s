@@ -18,6 +18,18 @@ nav {
 				opacity: 0;
 			}
 		}
+
+		.social-wrapper {
+
+			li {
+				display: inline-block;
+				width: auto;
+
+				a {
+					padding-right: 0;
+				}
+			}
+		}
 	}
 
 	.accordion-menu {
@@ -31,6 +43,18 @@ nav {
 			.fa-caret-up {
 				opacity: 1;
 			}
+		}
+	}
+
+	ul.show-for-medium {
+		display: block;
+		list-style: none;
+		width: 100%;
+		margin: 0;
+
+		li {
+			display: inline-block;
+
 		}
 	}
 }

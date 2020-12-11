@@ -10,18 +10,18 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
+	<?php
+	$sectionId = 'archive_landing';
+	$section = get_field($sectionId, 'options');
+	if ($section) {
+		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
 
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+		the_archive_title( '<h1 class="page-title">', '</h1>' );
+		the_archive_description( '<div class="archive-description">', '</div>' );
 
-			<?php
+		if ( have_posts() ) {
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -31,20 +31,23 @@ get_header();
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/archive', get_post_type() );
 
 			endwhile;
 
-			the_posts_navigation();
-
-		else :
+			include( locate_template( 'template-parts/archive-nav.php', false, false ) ); 
+		}
+		else {
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+		}
 
-	</main><!-- #main -->
+		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+	}
+	?>
+
+</main><!-- #main -->
 
 <?php
 get_footer();

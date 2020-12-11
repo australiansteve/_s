@@ -50,8 +50,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'hamburger-cat' ),
-				'menu-2' => esc_html__( 'Secondary', 'hamburger-cat' ),
+				'primary-menu' => esc_html__( 'Primary', 'hamburger-cat' ),
+				'social-menu' => esc_html__( 'Social Media', 'hamburger-cat' ),
 			)
 		);
 
@@ -101,6 +101,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		add_image_size( 'full-page-background', 1920, 1080, 'true');
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -121,12 +123,17 @@ add_action( 'after_setup_theme', 'hamburger_cat_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function hamburger_cat_scripts() {
+
+	wp_enqueue_script('lodash-js',
+		'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js'
+	);
+
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_stylesheet_uri(), array(), HAMBURGER_CAT_VERSION );
 	wp_style_add_data( 'hamburger-cat-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array(), HAMBURGER_CAT_VERSION, true );
+	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array( 'jquery'), HAMBURGER_CAT_VERSION, true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -168,3 +175,20 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( class_exists('ACF') ) {
 	require get_template_directory() . '/inc/theme-settings.php';
 }
+
+/* Scoial media menu item icons */
+add_filter('wp_nav_menu_objects', function( $items, $args ) {
+	// loop
+	foreach( $items as &$item ) {
+		// vars
+		$icon = get_field('icon', $item);
+		// replace title with icon
+		if( $icon ) {
+			$title = $item->title;
+			$item->title = '<i class="fab '.$icon.'" title="'.$title.'"></i>';	
+		}
+	}
+
+	// return
+	return $items;
+}, 10, 2);

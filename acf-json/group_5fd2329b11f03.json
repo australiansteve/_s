@@ -1,9 +1,9 @@
 {
-    "key": "group_5f6c8dbc38401",
-    "title": "Default Page Layout",
+    "key": "group_5fd2329b11f03",
+    "title": "Post Layout Properties",
     "fields": [
         {
-            "key": "field_5f6c8dc310216",
+            "key": "field_5fd2329b1913e",
             "label": "Landing",
             "name": "",
             "type": "tab",
@@ -19,9 +19,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8dce10217",
+            "key": "field_5fd2329b1914c",
             "label": "Landing",
-            "name": "landing",
+            "name": "post_landing",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -43,14 +43,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "options_page",
                 "operator": "==",
-                "value": "default"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
+                "value": "acf-options-page-layouts"
             }
         ]
     ],
@@ -62,5 +57,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607611590
+    "modified": 1607611730
 }

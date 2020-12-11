@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying posts on archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -11,11 +11,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-		<h1 class="page-title"><?php the_title();?></h1>
+		<a href="<?php echo the_permalink();?>"><h1 class="page-title"><?php the_title();?></h1></a>
 		
-		<?php the_content();?>
-		
-	<footer class="entry-footer">
-		<?php hamburger_cat_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->

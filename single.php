@@ -13,22 +13,20 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php
+
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'hamburger-cat' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'hamburger-cat' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			$sectionId = 'post_landing';
+			$section = get_field($sectionId, 'options');
+			if ($section) {
+				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+				?>
+				<h1 class="page-title"><?php the_title();?></h1>
+				<?php the_content();?>
+				<?php
+				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
+			}
 
 		endwhile; // End of the loop.
 		?>

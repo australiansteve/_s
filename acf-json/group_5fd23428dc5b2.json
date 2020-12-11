@@ -1,9 +1,9 @@
 {
-    "key": "group_5f6c8dbc38401",
-    "title": "Default Page Layout",
+    "key": "group_5fd23428dc5b2",
+    "title": "Search Results Page Layout Properties",
     "fields": [
         {
-            "key": "field_5f6c8dc310216",
+            "key": "field_5fd23428e210c",
             "label": "Landing",
             "name": "",
             "type": "tab",
@@ -19,9 +19,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_5f6c8dce10217",
+            "key": "field_5fd23428e211f",
             "label": "Landing",
-            "name": "landing",
+            "name": "search_landing",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -43,18 +43,13 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "options_page",
                 "operator": "==",
-                "value": "default"
-            },
-            {
-                "param": "page_type",
-                "operator": "!=",
-                "value": "front_page"
+                "value": "acf-options-page-layouts"
             }
         ]
     ],
-    "menu_order": 10,
+    "menu_order": 15,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -62,5 +57,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607611590
+    "modified": 1607611453
 }

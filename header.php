@@ -27,62 +27,76 @@
 
 		<header id="masthead" class="site-header">
 			<div class="grid-container">
-				<div class="site-branding">
-					<?php
-					the_custom_logo();
-					if ( is_front_page() && is_home() ) :
+				
+				<div class="grid-x">
+					<div class="cell medium-4 large-3">
+						<?php 
+						$image = get_field('header_logo', 'options');
+						$size = 'full';
+						
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}
 						?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php
-				else :
-					?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-				endif;
-				$hamburger_cat_description = get_bloginfo( 'description', 'display' );
-				if ( $hamburger_cat_description || is_customize_preview() ) :
-					?>
-					<p class="site-description"><?php echo $hamburger_cat_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-				<?php endif; ?>
-			</div><!-- .site-branding -->
+					</div>
+					<div class="cell medium-8 large-9">
 
-			<nav id="site-navigation" class="main-navigation">
-				<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
-					<li>
-						<a href="#"><span>Menu</span> <i class="fas fa-bars"></i><i class="fas fa-caret-up"></i></a>
-						<ul class="menu vertical nested">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location'	=> 'menu-1',
-									'container'		=> false,
-									'items_wrap' => '%3$s'
-								)
-							);
+						<nav id="site-navigation" class="main-navigation">
+							<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
+								<li>
+									<a href="#"><span>Menu</span> <i class="fas fa-bars"></i><i class="fas fa-caret-up"></i></a>
+									<ul class="menu vertical nested">
+										<?php
+										wp_nav_menu(
+											array(
+												'theme_location'	=> 'primary-menu',
+												'container'		=> false,
+												'items_wrap' => '%3$s'
+											)
+										);
+										?>
+										<div class="social-wrapper">
+											<?php
+											wp_nav_menu(
+												array(
+													'theme_location'	=> 'social-menu',
+													'container'		=> false,
+													'items_wrap' => '%3$s'
+												)
+											);
+											?>
+										</div>
+									</ul>
+								</li>
 
-							wp_nav_menu(
-								array(
-									'theme_location'	=> 'menu-2',
-									'container'		=> false,
-									'items_wrap' => '%3$s'
-								)
-							);
-							?>
-						</ul>
-					</li>
+							</ul>
 
-				</ul>
-
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location'	=> 'menu-1',
-						'menu_id'		=> 'primary-menu',
-						'menu_class'	=> 'horizontal menu show-for-medium',
-						'container'		=> false
-					)
-				);
-				?>
-			</nav><!-- #site-navigation -->
-		</div><!-- .grid-container -->
-	</header><!-- #masthead -->
+							<div id="menu-1">
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location'	=> 'primary-menu',
+										'menu_id'		=> 'primary-menu',
+										'menu_class'	=> 'horizontal menu show-for-medium text-right',
+										'container'		=> false
+									)
+								);
+								?>
+							</div>
+							<div id="social-menu">
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location'	=> 'social-menu',
+										'menu_id'		=> 'social-menu',
+										'menu_class'	=> 'horizontal menu show-for-medium text-right',
+										'container'		=> false
+									)
+								);
+								?>
+							</div>
+						</nav><!-- #site-navigation -->
+					</div>
+				</div>
+			</div><!-- .grid-container -->
+		</header><!-- #masthead -->
