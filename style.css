@@ -4802,6 +4802,8 @@ body section {
     background-position: 50%; }
   body section .section-content {
     height: 100%; }
+    body section .section-content > .grid-container {
+      height: 100%; }
 
 body section.minimum-full-height {
   min-height: 100vh; }
