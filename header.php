@@ -43,6 +43,17 @@
 								</a>
 							</div>
 						</div>
+						<?php
+
+											wp_nav_menu(
+												array(
+													'theme_location'	=> 'language-menu',
+													'container'		=> false,
+													'menu_id'		=> 'language-menu',
+													'menu_class'	=> 'vertical menu show-for-small-only',
+												)
+											);
+						?>
 					</div>
 					<div class="cell medium-8">
 						<div class="medium-text-right">
@@ -68,6 +79,7 @@
 													'add_li_class'  => 'social-menu-item'
 												)
 											);
+
 											?>
 										</ul>
 									</li>

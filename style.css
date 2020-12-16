@@ -6684,6 +6684,18 @@ span.dash {
   .menu a:focus {
     color: #f2f1f1; }
 
+header #language-menu.show-for-small-only {
+  position: absolute;
+  top: 0;
+  right: 0.5rem; }
+  header #language-menu.show-for-small-only li {
+    display: block; }
+    header #language-menu.show-for-small-only li a {
+      padding-bottom: 0; }
+
+footer .footer-language-menu #language-menu img {
+  margin-bottom: 0; }
+
 nav .accordion-menu .fas {
   position: absolute;
   right: 1rem;
@@ -6779,9 +6791,11 @@ header {
   font-family: Arsenal;
   font-weight: 700; }
   header #logo {
-    padding: 1rem; }
+    padding: 1rem;
+    /* stylelint-disable */
+    /* stylelint-enable */ }
     header #logo img {
-      max-width: 300px; }
+      max-width: Min(300px, 80%); }
   header a {
     color: #fff;
     text-transform: uppercase;

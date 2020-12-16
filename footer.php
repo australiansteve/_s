@@ -104,6 +104,19 @@
 					echo wp_get_attachment_image( $image, $size );
 				}
 				?>
+				<div class="footer-language-menu">
+					<?php 
+					wp_nav_menu(
+						array(
+							'theme_location'	=> 'language-menu',
+							'menu_id'		=> 'language-menu',
+							'menu_class'	=> 'horizontal menu show-for-small-only',
+							'container'		=> false
+						)
+					);
+					?>
+				</div>
+
 				<div class="footer-menu">
 					<?php 
 					wp_nav_menu(

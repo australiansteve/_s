@@ -22,6 +22,27 @@
 
 }
 
+header #language-menu.show-for-small-only {
+	position: absolute;
+	top: 0;
+	right: 0.5rem;
+
+	li {
+		display: block;
+
+		a {
+			padding-bottom: 0;
+		}
+	}
+}
+
+footer .footer-language-menu #language-menu {
+
+	img {
+		margin-bottom: 0;
+	}
+}
+
 nav {
 
 	.accordion-menu {
