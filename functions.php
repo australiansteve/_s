@@ -123,7 +123,13 @@ function hamburger_cat_scripts() {
 
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
-	wp_enqueue_style( 'hamburger-cat-style', get_stylesheet_uri(), array(), HAMBURGER_CAT_VERSION );
+	// Google Fonts
+	wp_enqueue_style(
+		'google_fonts',
+		'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap'
+	);
+
+	wp_enqueue_style( 'hamburger-cat-style', get_stylesheet_uri(), array( 'google_fonts' ), HAMBURGER_CAT_VERSION );
 	wp_style_add_data( 'hamburger-cat-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array( 'jquery'), HAMBURGER_CAT_VERSION, true );
