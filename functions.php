@@ -95,14 +95,16 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 95,
+				'width'       => 195,
 				'flex-width'  => true,
 				'flex-height' => true,
+				'header-text' => array( 'site-title', 'site-description' ),
 			)
 		);
 
 		add_image_size( 'full-page-background', 1920, 1080, 'true');
+		add_image_size( 'header-logo', 390, 190, 'false');
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
