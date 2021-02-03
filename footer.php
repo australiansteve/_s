@@ -36,7 +36,11 @@
 						$size = 'full';
 						
 						if( $image ) {
-							echo wp_get_attachment_image( $image, $size );
+							?>
+							<div id="footer-logo">
+								<?php echo wp_get_attachment_image( $image, $size ); ?>
+							</div>
+							<?php
 						}
 						?>
 						<?php

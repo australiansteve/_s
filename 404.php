@@ -11,20 +11,14 @@ get_header();
 ?>
 <main id="primary" class="site-main">
 
-		<?php
-		$sectionId = '404_landing';
-		$section = get_field($sectionId, 'options');
-		if ($section) {
-			include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-			?>
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></h1>
-			</header><!-- .page-header -->
-			<?php
-			include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-		}
-
-	?>
+	<div class="page-content">
+		<div class="grid-container">
+			<h2 class="page-title"><span><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></span></h2>  
+			<div class="entry-content">
+				Try taking a look around - or head to the <a href="/">home page</a>, maybe?
+			</div>
+		</div>
+	</div>
 
 </main><!-- #main -->
 

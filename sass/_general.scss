@@ -41,7 +41,6 @@ body {
 		.page-content {
 			margin: 3rem 0;
 
-
 			h2 {
 				margin-bottom: 2rem;
 				font-weight: 700;
@@ -52,17 +51,30 @@ body {
 				}
 			}
 
+
+			h3 {
+				font-weight: 700;
+				margin-top: 0.5rem;
+				margin-bottom: 0.25rem;
+			}
+
 			.entry-content {
 				margin: 4rem 0;
 
-				.page-nav {
+				.breadcrumbs {
 					margin-top: 2rem;
 
 					a {
+						font-weight: 700;
 						text-decoration: underline;
+						text-underline-position: under;
 					}
 				}
 			}
+		}
+
+		article {
+			margin-bottom: 2rem;
 		}
 	}
 }
@@ -93,6 +105,12 @@ a {
 					}
 				}
 			}
+
+
+			article {
+				margin-top: 2rem;
+			}
+
 		}
 	}
 }
@@ -115,6 +133,10 @@ a {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	.grid-container {
+		padding-right: 70px;
+		padding-left: 70px;
+	}
 }
 
 /* XLarge only */
@@ -125,13 +147,8 @@ a {
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
-	body {
-
-		section {
-
-			.section-background {
-
-			}
-		}
+	.grid-container {
+		padding-right: 120px;
+		padding-left: 120px;
 	}
 }
