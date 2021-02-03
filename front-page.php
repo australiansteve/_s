@@ -2,15 +2,32 @@
 
 get_header();
 
-$sectionId = 'landing';
-$section = get_field($sectionId);
-if ($section) {
-	include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-	?>
-	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-	<?php
-	include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-}
+?>
+	<main id="primary" class="site-main">
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			if (has_post_thumbnail($post)) :
+				the_post_thumbnail( 'hero-image' );
+			endif;
+		?>
+
+		<div class="page-content">
+			<div class="grid-container">
+				<div class="entry-content">
+					<?php the_content(); ?>
+				</div>
+			</div>
+		</div>
+
+		<?php
+		endwhile; // End of the loop.
+		?>
+
+	</main><!-- #main -->
+<?php
 
 get_footer();
 ?>

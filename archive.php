@@ -12,41 +12,38 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<?php
-	$sectionId = 'archive_landing';
-	$section = get_field($sectionId, 'options');
-	if ($section) {
-		include( locate_template( 'template-parts/section-header.php', false, false ) ); 
+	<div class="page-content">
 
-		the_archive_title( '<h1 class="page-title">', '</h1>' );
-		the_archive_description( '<div class="archive-description">', '</div>' );
+		<div class="grid-container">
 
-		if ( have_posts() ) {
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			<div class="entry-content">
+				<?php
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</div>
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/archive', get_post_type() );
+			<?php
+			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
+			?>
 
-			endwhile;
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
+				<?php
+				while ( have_posts() ) :
+					the_post();
 
-			include( locate_template( 'template-parts/archive-nav.php', false, false ) ); 
-		}
-		else {
+					?>
 
-			get_template_part( 'template-parts/content', 'none' );
+					<div class="cell">
+						<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
+					</div>
 
-		}
 
-		include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-	}
-	?>
-
+					<?php
+				endwhile;
+				?>
+			</div>
+		</div>
+	</div>
 </main><!-- #main -->
 
 <?php
