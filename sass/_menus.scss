@@ -2,7 +2,8 @@ nav {
 
 	.accordion-menu {
 
-		.fas {
+		.fas.fa-bars,
+		.fas.fa-caret-up {
 			position: absolute;
 			right: $global-menu-h-padding;
 			transition: opacity 0.5s;
@@ -47,9 +48,9 @@ nav {
 	}
 
 	ul.show-for-medium {
-		display: block;
+		display: inline-block;
 		list-style: none;
-		width: 100%;
+		width: auto;
 		margin: 0;
 
 		li {
@@ -57,4 +58,99 @@ nav {
 
 		}
 	}
+
+	.wpml-ls-item.menu-item-has-children {
+
+		> a > span {
+			border-bottom: 2px solid $black;
+			padding-bottom: 4px;
+		}
+
+		.sub-menu {
+			position: absolute;
+			right: 0;
+			background-color: $white;
+
+			a {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+#language-menu-small.menu {
+	display: inline-block;
+	margin-left: 0;
+
+	li {
+		display: inline-block;
+		margin-left: -6px;
+
+		a {
+			padding: 0.5rem;
+			border-right: 1px solid $black;
+		}
+
+	}
+
+	li:nth-last-of-type(1) {
+
+		a {
+			border-right: none;
+		}
+	}
+}
+
+#footer-menu {
+	display: inline-block;
+}
+
+#social-menu {
+	display: inline-flex;
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	#social-menu {
+
+		a {
+			padding-left: 0;
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
 }

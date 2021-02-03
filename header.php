@@ -41,10 +41,24 @@
 							echo "<h1 class='site-title'>".get_bloginfo( 'name' )."</h1>";
 						}
 						?>
+
+						<div id="small-language-menu" class="show-for-small-only">
+							<?php
+							if ( has_nav_menu( 'language-menu' ) ) :
+									wp_nav_menu(
+										array(
+											'theme_location'	=> 'language-menu-small',
+											'menu_id'		=> 'language-menu-small',
+											'menu_class'	=> 'horizontal menu',
+										)
+									);
+								endif;
+							?>
+						</div>
 					</div>
 					<div class="cell medium-8 large-9">
 
-						<nav id="site-navigation" class="main-navigation">
+						<nav id="site-navigation" class="main-navigation medium-text-right">
 							<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
 								<li>
 									<a href="#"><span>Menu</span> <i class="fas fa-bars"></i><i class="fas fa-caret-up"></i></a>
@@ -74,7 +88,7 @@
 
 							</ul>
 
-							<div id="menu-1">
+							<div id="menus">
 								<?php
 								wp_nav_menu(
 									array(
@@ -84,18 +98,19 @@
 										'container'		=> false
 									)
 								);
-								?>
-							</div>
-							<div id="social-menu">
-								<?php
-								wp_nav_menu(
-									array(
-										'theme_location'	=> 'social-menu',
-										'menu_id'		=> 'social-menu',
-										'menu_class'	=> 'horizontal menu show-for-medium text-right',
-										'container'		=> false
-									)
-								);
+
+								if ( has_nav_menu( 'language-menu' ) ) :
+									wp_nav_menu(
+										array(
+											'theme_location'	=> 'language-menu',
+											'menu_id'		=> 'language-menu',
+											'menu_class'	=> 'vertical menu accordion-menu show-for-medium text-right',
+											'items_wrap'        => '<ul class="%2$s vertical menu accordion-menu" data-accordion-menu id="%1$s">%3$s</ul>',
+											'container' 	=> false
+										)
+									);
+								endif;
+
 								?>
 							</div>
 						</nav><!-- #site-navigation -->

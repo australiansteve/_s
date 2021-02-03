@@ -52,6 +52,9 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 			array(
 				'primary-menu' => esc_html__( 'Primary', 'hamburger-cat' ),
 				'social-menu' => esc_html__( 'Social Media', 'hamburger-cat' ),
+				'language-menu' => esc_html__( 'Language Switcher', 'hamburger-cat' ),
+				'language-menu-small' => esc_html__( 'Mobile Language Switcher', 'hamburger-cat' ),
+				'footer-menu' => esc_html__( 'Footer', 'hamburger-cat' ),
 			)
 		);
 
