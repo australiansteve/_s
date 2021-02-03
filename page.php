@@ -21,17 +21,20 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			$sectionId = 'landing';
-			$section = get_field($sectionId);
-			if ($section) {
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>
-				<h1 class="page-title"><?php the_title();?></h1>
-				<?php the_content();?>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-			}
+			if (has_post_thumbnail($post)) :
+				the_post_thumbnail( 'hero-image' );
+			endif;
+		?>
 
+		<div class="grid-container">
+			<div class="page-content">
+				<div class="entry-content">
+					<?php the_content(); ?>
+				</div>
+			</div>
+		</div>
+
+		<?php
 		endwhile; // End of the loop.
 		?>
 

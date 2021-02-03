@@ -38,6 +38,43 @@
             "layout": "block",
             "prefix_label": 0,
             "prefix_name": 1
+        },
+        {
+            "key": "field_5f6c907db3ac4",
+            "label": "Body",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f6c909db3ac5",
+            "label": "Body",
+            "name": "body",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_5ef3a3cec10c0"
+            ],
+            "display": "group",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 1
         }
     ],
     "location": [
@@ -52,6 +89,13 @@
                 "operator": "!=",
                 "value": "front_page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 10,
@@ -60,7 +104,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
-    "modified": 1607611590
+    "modified": 1612369452
 }

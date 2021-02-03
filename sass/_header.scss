@@ -1,10 +1,12 @@
 header#masthead {
 
 	margin-top: 1rem;
+	margin-bottom: 1rem;
 
 	img.size-header-logo {
 		max-width: 195px;
 	}
+
 }
 
 /* Small only */
@@ -15,6 +17,12 @@ header#masthead {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	header#masthead {
+
+		nav#site-navigation {
+			margin-top: 1.6rem;
+		}
+	}
 }
 
 /* Medium only */

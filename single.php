@@ -17,16 +17,32 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			$sectionId = 'post_landing';
-			$section = get_field($sectionId, 'options');
-			if ($section) {
-				include( locate_template( 'template-parts/section-header.php', false, false ) ); 
-				?>
-				<h1 class="page-title"><?php the_title();?></h1>
-				<?php the_content();?>
-				<?php
-				include( locate_template( 'template-parts/section-footer.php', false, false ) ); 
-			}
+			if (has_post_thumbnail($post)) :
+				the_post_thumbnail( 'hero-image' );
+			endif;
+
+			?>
+
+			<div class="grid-container">
+				<div class="page-content">
+					<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
+					<div class="entry-content">
+						<?php the_content(); ?>
+
+						<div class="page-nav">
+							<?php 
+							$post_type_string = get_post_type($post);
+							$post_type = get_post_type_object( $post_type_string ); 
+							echo "<a href='".get_post_type_archive_link($post_type_string)."'>";
+							echo get_post_type_labels($post_type)->all_items;
+							echo "</a>";
+							?>
+						</div>
+					</div>
+				</div> 
+			</div>
+
+			<?php
 
 		endwhile; // End of the loop.
 		?>

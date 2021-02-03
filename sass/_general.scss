@@ -1,5 +1,9 @@
 body {
 
+	.wp-post-image.size-hero-image {
+		min-width: 100%;
+	}
+
 	section {
 		position: relative;
 
@@ -31,6 +35,36 @@ body {
 	section.minimum-full-height-minus-header {
 		min-height: 100vh;
 	}
+
+	main {
+
+		.page-content {
+			margin: 3rem 0;
+
+
+			h2 {
+				margin-bottom: 2rem;
+				font-weight: 700;
+
+				span {
+					border-bottom: 2px solid $black;
+					padding-bottom: 1rem;
+				}
+			}
+
+			.entry-content {
+				margin: 4rem 0;
+
+				.page-nav {
+					margin-top: 2rem;
+
+					a {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
 }
 
 a {
@@ -45,6 +79,22 @@ a {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	body {
+
+		main {
+
+			.page-content {
+
+				.entry-content {
+					margin: 4rem 8%;
+
+					p {
+						max-width: 950px;
+					}
+				}
+			}
+		}
+	}
 }
 
 /* Medium only */
