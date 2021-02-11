@@ -1,0 +1,43 @@
+{
+    "key": "group_60253dcc22b49",
+    "title": "Projects Page Customization",
+    "fields": [
+        {
+            "key": "field_60253dcc3e1c5",
+            "label": "Projects Page Content",
+            "name": "projects_page_content",
+            "type": "wysiwyg",
+            "instructions": "This is the text that's displayed at the top of the Projects page, since it is not a regular page but an archive of projects",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1613053452
+}
