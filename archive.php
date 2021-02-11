@@ -17,13 +17,11 @@ get_header();
 		<div class="grid-container">
 
 			<div class="entry-content">
-				<?php
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
+				<?php get_template_part( 'template-parts/archive-description', get_post_type() ); ?>
 			</div>
 
 			<?php
-			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
+			the_archive_title( '<h2 class="page-title">', '</h2>' );
 			?>
 
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
