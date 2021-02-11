@@ -37,17 +37,19 @@
 				
 				<div class="grid-x">
 					<div class="cell medium-4 large-3 text-center medium-text-left">
-						<?php 
-						$image = get_field('header_logo', 'options');
-						$size = 'header-logo';
-						
-						if( $image ) {
-							echo wp_get_attachment_image( $image, $size );
-						}
-						else {
-							echo "<h1 class='site-title'>".get_bloginfo( 'name' )."</h1>";
-						}
-						?>
+						<a href="/" title="<?php echo get_bloginfo( 'name' );?>">
+							<?php 
+							$image = get_field('header_logo', 'options');
+							$size = 'header-logo';
+							
+							if( $image ) {
+								echo wp_get_attachment_image( $image, $size );
+							}
+							else {
+								echo "<h1 class='site-title'>".get_bloginfo( 'name' )."</h1>";
+							}
+							?>
+						</a>
 
 						<div id="small-language-menu" class="show-for-small-only">
 							<?php
