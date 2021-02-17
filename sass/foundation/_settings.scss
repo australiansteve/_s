@@ -71,11 +71,12 @@ $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: #606360;
 $white: #fefefe;
+$orange: #f79023;
 $foundation-palette: (
 	primary: $black,
-	secondary: $dark-gray,
+	secondary: $white,
 	success: #3adb76,
 	warning: #ffae00,
 	alert: #cc4b37,
@@ -158,10 +159,34 @@ $header-styles: (
 	),
 	medium: (
 		"h1": ("font-size": 48),
-		"h2": ("font-size": 40),
-		"h3": ("font-size": 31),
-		"h4": ("font-size": 25),
+		"h2": ("font-size": 28),
+		"h3": ("font-size": 24),
+		"h4": ("font-size": 22),
 		"h5": ("font-size": 20),
+		"h6": ("font-size": 16),
+	),
+	large: (
+		"h1": ("font-size": 48),
+		"h2": ("font-size": 36),
+		"h3": ("font-size": 32),
+		"h4": ("font-size": 24),
+		"h5": ("font-size": 21),
+		"h6": ("font-size": 16),
+	),
+	xlarge: (
+		"h1": ("font-size": 48),
+		"h2": ("font-size": 40),
+		"h3": ("font-size": 32),
+		"h4": ("font-size": 28),
+		"h5": ("font-size": 21),
+		"h6": ("font-size": 16),
+	),
+	xxlarge: (
+		"h1": ("font-size": 48),
+		"h2": ("font-size": 44),
+		"h3": ("font-size": 36),
+		"h4": ("font-size": 32),
+		"h5": ("font-size": 21),
 		"h6": ("font-size": 16),
 	),
 );

@@ -35,7 +35,9 @@ get_header();
 						<div class="grid-y align-center grid-padding-x" style="height: 100%">
 							<div class="cell">
 								<div class="container text_1">
-									<?php the_field("text_1"); ?>
+									<div class="inner-container">
+										<?php the_field("text_1"); ?>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -43,16 +45,7 @@ get_header();
 				</div>
 				<div class="grid-container">
 					<div class="grid-x" id="custom-content-2">
-						<div class="cell medium-6">
-							<div class="grid-y align-center grid-padding-x" style="height: 100%">
-								<div class="cell">
-									<div class="container text_2">
-										<?php the_field("text_2"); ?>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="cell medium-6">
+						<div class="cell medium-6 medium-order-2">
 							<div class="container image_2">
 								<?php 
 								$image = get_field('image_2');
@@ -63,8 +56,26 @@ get_header();
 								?>
 							</div>
 						</div>
+						<div class="cell medium-6 medium-order-1">
+							<div class="grid-y align-center grid-padding-x" style="height: 100%">
+								<div class="cell">
+									<div class="container text_2">
+										<div class="inner-container">
+											<?php the_field("text_2"); ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="grid-x" id="custom-content-3">
+						<div class="cell">
+							<div class="grid-x grid-padding-x">
+								<div class="cell">
+									<h2 class="section-title"><?php the_field("text_3"); ?></h2>
+								</div>
+							</div>
+						</div>
 						<div class="cell medium-6">
 							<div class="container contact_form_id">
 								<?php 
@@ -76,10 +87,12 @@ get_header();
 							</div>
 						</div>
 						<div class="cell medium-6">
-							<div class="grid-y align-center grid-padding-x" style="height: 100%">
+							<div class="grid-y grid-padding-x" style="height: 100%">
 								<div class="cell">
-									<div class="container text_3">
-										<?php the_field("text_3"); ?>
+									<div class="container text_4">
+										<div class="inner-container">
+											<?php the_field("text_4"); ?>
+										</div>
 									</div>
 								</div>
 							</div>

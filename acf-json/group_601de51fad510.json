@@ -113,8 +113,27 @@
             "key": "field_601de622f96f5",
             "label": "Text 3",
             "name": "text_3",
+            "type": "text",
+            "instructions": "Title of the Contact section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact us",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_602c06c841a2b",
+            "label": "Text 4",
+            "name": "text_4",
             "type": "wysiwyg",
-            "instructions": "",
+            "instructions": "Dispayed to the right of the contact form",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -173,5 +192,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1612628628
+    "modified": 1613498118
 }

@@ -28,7 +28,7 @@ get_header();
 				</div>
 				<div class="custom-content">
 					<h2 class="page-title"><span><?php the_field('title_1');?></span></h2>
-					<div class="grid-x medium-up-2" id="custom-content-1">
+					<div class="grid-x medium-up-2 grid-margin-x" id="custom-content-1">
 
 						<?php
 						if( have_rows('partners') ):
@@ -47,7 +47,7 @@ get_header();
 											echo wp_get_attachment_image( $partnerImageId, 'archive-image' );
 										}
 										?>
-										<h4><?php echo $partnerName;?></h4>
+										<h3><?php echo $partnerName;?></h3>
 										<div class="partner-title"><?php echo $partnerTitle;?></div>
 										<div class="partner-bio"><?php echo $partnerBio;?></div>
 										

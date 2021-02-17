@@ -1,0 +1,82 @@
+.nf-form-cont {
+
+	.nf-form-content {
+		padding: 5px 0;
+
+	}
+
+	.nf-error-msg,
+	.ninja-forms-req-symbol {
+		color: $orange !important;
+	}
+
+	.nf-error.field-wrap .nf-field-element::after {
+		background: $orange !important;
+	}
+
+	.nf-error .ninja-forms-field {
+		border-color: $orange !important;
+	}
+
+	.label-left .nf-field-label {
+		width: 25%;
+	}
+
+	.label-left .nf-field-element {
+		width: 75%;
+	}
+
+	.label-left .nf-after-field {
+		margin-left: 26.5%;
+	}
+
+	h3 {
+		margin-bottom: 2rem;
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+	.nf-form-cont {
+
+		.nf-error-field-errors {
+			margin-left: 25%;
+		}
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

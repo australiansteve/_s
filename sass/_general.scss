@@ -51,11 +51,8 @@ body {
 				}
 			}
 
-
 			h3 {
 				font-weight: 700;
-				margin-top: 0.5rem;
-				margin-bottom: 0.25rem;
 			}
 
 			.entry-content {
@@ -83,9 +80,52 @@ a {
 	display: inline-block;
 }
 
+a:hover {
+	color: $orange;
+}
+
+a.button,
+button,
+input[type="submit"],
+.nf-form-wrap .nf-form-content input[type="button"] {
+	background: $white;
+	color: $black;
+	font-weight: 700;
+	border-bottom: 1px solid $black;
+	padding-left: 0;
+}
+
+a.button:hover,
+button:hover,
+input[type="submit"]:hover,
+.nf-form-wrap .nf-form-content input[type="button"]:hover {
+	background: $white;
+	color: $orange;
+	border-bottom: 1px solid $orange;
+	cursor: pointer;
+}
+
+a.button:focus,
+button:focus,
+input[type="submit"]:focus,
+.nf-form-wrap .nf-form-content input[type="button"]:focus {
+	outline: none;
+}
+
+p > a.button {
+	margin-bottom: 0;
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	.grid-container {
+
+		.grid-padding-x > .cell {
+			margin-right: -0.625rem;
+			margin-left: -0.625rem;
+		}
+	}
 }
 
 /* Medium and up (640px) */

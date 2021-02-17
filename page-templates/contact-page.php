@@ -40,10 +40,12 @@ get_header();
 							</div>
 						</div>
 						<div class="cell medium-6">
-							<div class="grid-y align-center grid-padding-x" style="height: 100%">
+							<div class="grid-y grid-padding-x" style="height: 100%">
 								<div class="cell">
 									<div class="container text_1">
-										<?php the_field("text_1"); ?>
+										<div class="inner-container">
+											<?php the_field("text_1"); ?>
+										</div>
 									</div>
 								</div>
 							</div>
