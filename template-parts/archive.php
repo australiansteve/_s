@@ -7,7 +7,7 @@ $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-i
 
 	<a href="<?php echo the_permalink();?>">
 		<img src='<?php echo $thumbnail; ?>' />
-		<h3 class="page-title"><?php the_title();?></h3>
+		<h5 class="page-title"><?php the_title();?></h5>
 		<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
 	</a>
 		

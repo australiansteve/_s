@@ -40,9 +40,10 @@ get_header();
 
 									$serviceName = get_sub_field('name');
 									$serviceDescription = get_sub_field('description');
+									$activeClass = $counter == 1 ? 'active' : '';
 									?>
 									<div class="cell">
-										<div class="container service link">
+										<div class="container service link <?php echo $activeClass;?>">
 											
 											<h4><a href="#" data-service="<?php echo $counter++;?>"><?php echo $serviceName;?></a></h4>
 											
@@ -83,7 +84,10 @@ get_header();
 									console.log("link clicked " + jQuery(e.target).data("service"));
 									jQuery(".service.description:not(.hidden)").each(function() {jQuery(this).addClass("hidden");});
 									jQuery("#service-" + jQuery(e.target).data("service")).toggleClass("hidden");
-									
+
+
+									jQuery(".service.link.active").each(function() {jQuery(this).removeClass("active");});
+									jQuery(this).addClass('active');
 								});
 							</script>
 						</div>

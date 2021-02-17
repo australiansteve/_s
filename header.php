@@ -37,7 +37,10 @@
 				
 				<div class="grid-x">
 					<div class="cell medium-4 large-3 text-center medium-text-left">
-						<a href="/" title="<?php echo get_bloginfo( 'name' );?>">
+						<?php
+						$homeUrl = apply_filters( 'wpml_home_url', get_option( 'home' ) );
+						?>
+						<a href="<?php echo $homeUrl;?>" title="<?php echo get_bloginfo( 'name' );?>">
 							<?php 
 							$image = get_field('header_logo', 'options');
 							$size = 'header-logo';
