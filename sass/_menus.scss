@@ -121,6 +121,10 @@ nav {
 	}
 }
 
+.current_page_item a {
+	color: $orange;
+}
+
 #footer-menu,
 #social-menu {
 	display: inline-flex;
