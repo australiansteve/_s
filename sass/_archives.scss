@@ -4,4 +4,30 @@
 		margin-top: 0.5rem;
 		font-weight: 700;
 	}
+
+	#archive-tab-grid {
+
+		.link {
+			padding-bottom: 0.5rem;
+		}
+
+		.link.active {
+
+			a {
+				font-weight: 700;
+				color: $orange;
+			}
+		}
+	}
+}
+
+.tax-project-category {
+
+	.menu-item-object-austeve-projects {
+
+		a {
+			font-weight: 700;
+			color: $orange;
+		}
+	}
 }
