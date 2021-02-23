@@ -206,6 +206,22 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 	return $items;
 }, 10, 2);
 
+add_filter ( 'pre_get_posts', function($query) {
+	if (! is_admin() && $query->is_main_query() && is_post_type_archive('austeve-projects') && !is_tax('project-category')) {
+		//Restrict the Projects archive page to be one default category
+		$defaultCategory = get_field('projects_default_category', 'options');
+		$tax_query = $query->get( 'tax_query' ) ?: array();
+		$tax_query[] = array(
+				'taxonomy'         => 'project-category',
+				'terms'            => array($defaultCategory),
+				'field'            => 'term_id',
+				'operator'         => 'IN'
+		);		
+        $query->set( 'tax_query', $tax_query );
+
+		return $query;        
+	}
+}, 10, 1);
 
 add_filter( 'get_the_archive_title', function ($title) {
 	if ( is_post_type_archive() ) {
@@ -223,6 +239,7 @@ add_filter( 'get_the_archive_title', function ($title) {
 		}
 
 		/* Prepend post type archive */
+		global $post;
 		$post_type_string = get_post_type($post);
 		$post_type = get_post_type_object( $post_type_string ); 
 		$title = "<a href='".get_post_type_archive_link($post_type_string)."'><span>".get_post_type_labels($post_type)->name."</span></a> > ".$title;
