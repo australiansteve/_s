@@ -17,9 +17,7 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			if (has_post_thumbnail($post)) :
-				the_post_thumbnail( 'hero-image' );
-			endif;
+			get_template_part( 'template-parts/hero-image', get_post_type() );
 
 			?>
 
