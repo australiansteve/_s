@@ -25,7 +25,14 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hamburger-cat' ); ?></a>
 
-		<header id="masthead" class="site-header">
+		<?php
+		$useStickyHeader = get_field('use_sticky_header', 'options');
+		$stickyContainerData = $useStickyHeader ? 'data-sticky-container' : '';
+		$stickyData = $useStickyHeader ? 'data-sticky data-margin-top="0"' : '';
+		$stickyBgColor = get_field('sticky_header_background_color', 'options');
+		?>
+		<div <?php echo $stickyContainerData;?> >
+		<header id="masthead" class="site-header" <?php echo $stickyData;?> style="color:<?php echo $stickyBgColor;?>">
 			<div class="grid-container">
 				
 				<div class="grid-x">
@@ -123,3 +130,4 @@
 				</div>
 			</div><!-- .grid-container -->
 		</header><!-- #masthead -->
+	</div>
