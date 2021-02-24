@@ -1,7 +1,7 @@
 header#masthead {
 
-	margin-top: 1rem;
-	margin-bottom: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 
 	img.size-header-logo {
 		max-width: 195px;
@@ -21,6 +21,24 @@ header#masthead {
 
 		nav#site-navigation {
 			margin-top: 1.6rem;
+		}
+	}
+
+	div.sticky-container {
+		transition: height 500ms linear;
+
+	}
+
+	header#masthead.is-at-top.is-stuck {
+		background-color: $body-background;
+
+		nav#site-navigation {
+			margin-top: 0.75rem;
+		}
+
+		img.size-header-logo {
+			max-width: 125px;
+			transition: max-width 500ms linear;
 		}
 	}
 }
