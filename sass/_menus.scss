@@ -113,6 +113,15 @@ nav {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	nav {
+
+		.accordion-menu {
+
+			i {
+				font-size: 1.5rem;
+			}
+		}
+	}
 }
 
 /* Medium and up (640px) */
