@@ -13,9 +13,9 @@ get_header();
 
 	<div class="page-content">
 		<div class="grid-container">
-			<h2 class="page-title"><span><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></span></h2>  
+			<h2 class="page-title"><span><?php esc_html_e( get_field('404_page_title', 'options'), 'hamburger-cat' ); ?></span></h2>  
 			<div class="entry-content">
-				Try taking a look around - or head to the <a href="/">home page</a>, maybe?
+				<?php the_field('404_page_content', 'options'); ?>
 			</div>
 		</div>
 	</div>
