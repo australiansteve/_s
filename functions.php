@@ -210,14 +210,17 @@ add_filter ( 'pre_get_posts', function($query) {
 	if (! is_admin() && $query->is_main_query() && is_post_type_archive('austeve-projects') && !is_tax('project-category')) {
 		//Restrict the Projects archive page to be one default category
 		$defaultCategory = get_field('projects_default_category', 'options');
-		$tax_query = $query->get( 'tax_query' ) ?: array();
-		$tax_query[] = array(
-				'taxonomy'         => 'project-category',
-				'terms'            => array($defaultCategory),
-				'field'            => 'term_id',
-				'operator'         => 'IN'
-		);		
-        $query->set( 'tax_query', $tax_query );
+
+		if ($defaultCategory) {
+			$tax_query = $query->get( 'tax_query' ) ?: array();
+			$tax_query[] = array(
+					'taxonomy'         => 'project-category',
+					'terms'            => array($defaultCategory),
+					'field'            => 'term_id',
+					'operator'         => 'IN'
+			);		
+	        $query->set( 'tax_query', $tax_query );
+	    }
 
 		return $query;        
 	}
