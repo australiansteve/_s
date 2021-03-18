@@ -8,10 +8,10 @@ if ($numPages > 1) :
 
 <div class="grid-x navigation">
 	<div class="cell small-6 medium-5 text-left medium-text-right">
-		<?php echo get_previous_posts_link( ' <i class="fas fa-chevron-left"></i> <span class="nav-title screen-reader-text">Previous Page</span>' ); ?>
+		<?php echo get_previous_posts_link( ' <i class="fas fa-chevron-left"></i> PREVIOUS <span class="nav-title screen-reader-text">Previous Page</span>' ); ?>
 	</div>
 	<div class="cell small-6 medium-5 text-right medium-order-3 medium-text-left">
-		<?php echo get_next_posts_link( '<span class="nav-title screen-reader-text">Next Page</span> <i class="fas  fa-chevron-right"></i>' ); ?>
+		<?php echo get_next_posts_link( '<span class="nav-title screen-reader-text">Next Page</span> NEXT <i class="fas  fa-chevron-right"></i>' ); ?>
 	</div>
 	<div class="cell medium-order-2 medium-2 text-center">
 		Page <?php echo $currentPage;?> of <?php echo $numPages;?>

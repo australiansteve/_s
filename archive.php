@@ -16,11 +16,7 @@ get_header();
 
 		<div class="grid-container">
 
-			<div class="entry-content">
-				<?php
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</div>
+			<?php get_template_part( 'template-parts/archive-description', get_post_type() ); ?>
 
 			<?php
 			the_archive_title( '<h2 class="page-title">', '</h2>' );
@@ -43,7 +39,8 @@ get_header();
 				?>
 			</div>
 
-			<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
+			<?php get_template_part( 'template-parts/archive-nav', get_post_type() ); ?>
+			
 		</div>
 	</div>
 </main><!-- #main -->
