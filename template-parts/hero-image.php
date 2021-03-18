@@ -12,5 +12,4 @@ if ($displayHeroImage) :
 	}
 
 endif;
-
 ?>

@@ -27,6 +27,8 @@ get_header();
 					<div class="entry-content">
 						<?php the_content(); ?>
 
+						<?php get_template_part( 'template-parts/tags', get_post_type() ); ?>
+
 						<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
 					</div>
 				</div> 

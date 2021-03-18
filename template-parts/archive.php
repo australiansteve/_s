@@ -1,5 +1,5 @@
 <?php
-$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-image') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
+$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'wcc-archive-image') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'wcc-archive-image')[0]; 
 
 ?>
 

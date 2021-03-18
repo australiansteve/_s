@@ -61,6 +61,15 @@ body {
 			.entry-content {
 				margin: 4rem 0;
 
+				.tags {
+					margin-top: 1rem;
+
+					a:hover {
+						text-decoration: underline;
+						text-underline-position: under;
+					}
+				}
+
 				.breadcrumbs {
 					margin-top: 2rem;
 

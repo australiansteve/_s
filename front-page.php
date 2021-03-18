@@ -8,14 +8,19 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
-			get_template_part( 'template-parts/hero-image', get_post_type() );
 		?>
 
 		<div class="page-content">
-			<div class="grid-container">
-				<div class="entry-content">
-					<?php the_content(); ?>
+			<div class="bg-image" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'hero-image');?>);" ></div>
+			<div class="grid-y align-center" style="height: 100%;">
+				<div class="cell">
+					<div class="grid-container">
+						<div class="entry-content">
+							<div class="white-box">
+								<?php the_content(); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
