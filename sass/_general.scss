@@ -98,7 +98,15 @@ input[type="submit"],
 a.button:hover,
 button:hover,
 input[type="submit"]:hover,
-.nf-form-wrap .nf-form-content input[type="button"]:hover {
+.nf-form-wrap .nf-form-content input[type="button"]:hover,
+a.button:focus,
+button:focus,
+input[type="submit"]:focus,
+.nf-form-wrap .nf-form-content input[type="button"]:focus,
+a.button:active,
+button:active,
+input[type="submit"]:active,
+.nf-form-wrap .nf-form-content input[type="button"]:active {
 	background: $white;
 	color: $orange;
 	border-bottom: 1px solid $orange;
