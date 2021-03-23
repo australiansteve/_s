@@ -198,3 +198,9 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 	// return
 	return $items;
 }, 10, 2);
+
+
+/* Move Yoast metabox below ACF ones */
+add_filter( 'wpseo_metabox_prio', function() {
+    return 'low';
+});
