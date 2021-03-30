@@ -43,7 +43,6 @@ add_action( 'after_setup_theme', 'hamburger_cat_woocommerce_setup' );
  * @return void
  */
 function hamburger_cat_woocommerce_scripts() {
-	wp_enqueue_style( 'hamburger-cat-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), HAMBURGER_CAT_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -119,6 +118,9 @@ if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_before' ) ) {
 	function hamburger_cat_woocommerce_wrapper_before() {
 		?>
 			<main id="primary" class="site-main">
+				<div class="page-content">
+					<div class="grid-container">
+						<div class="entry-content">
 		<?php
 	}
 }
@@ -134,6 +136,9 @@ if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_after' ) ) {
 	 */
 	function hamburger_cat_woocommerce_wrapper_after() {
 		?>
+						</div>
+					</div>
+				</div>
 			</main><!-- #main -->
 		<?php
 	}
@@ -225,3 +230,103 @@ if ( ! function_exists( 'hamburger_cat_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+function austeve_woocommerce_before_single_product() {
+	?>
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-6">
+			<div class="featured-image">
+				<?php the_post_thumbnail( 'full' ); ?>
+			</div>
+
+	<?php
+}
+
+function austeve_woocommerce_product_gallery() {
+	?>
+				</div>
+			</div>
+		</div>
+		<div class="cell">
+			<div class="grid-x grid-margin-x text-center align-center small-up-2 medium-up-3 large-up-4" id="product-gallery-grid">
+				<?php
+				$product = new WC_product(get_the_id());
+				$attachment_ids = $product->get_gallery_image_ids();
+
+				foreach( $attachment_ids as $attachment_id ) 
+			    {
+			      // Display the image URL
+			      //echo $Original_image_url = wp_get_attachment_url( $attachment_id );
+
+			      // Display Image instead of URL
+			      echo "<div class='cell'><a class='wc-thumbnail-wrapper' data-url='".wp_get_attachment_url( $attachment_id )."' data-content='".wp_get_attachment_image($attachment_id, 'full')."'>".wp_get_attachment_image($attachment_id, 'thumbnail')."</a></div>";
+
+			    }
+				?>
+			</div>
+			<script type="text/javascript">
+				jQuery(".wc-thumbnail-wrapper").on('click', function() {
+					console.log(jQuery(this).data('content'));
+
+					jQuery('.featured-image').append(jQuery(this).data('content'));
+				});
+			</script>
+		</div>
+	<?php
+}
+
+function austeve_woocommerce_product_end() {
+	?>	
+	</div>
+	<?php
+}
+
+
+function austeve_woocommerce_after_single_product_main_image() {
+	?>
+		</div>
+		<div class="cell medium-6">
+			<div class="grid-y align-center" style="height: 100%">
+				<div class="cell">
+	<?php
+}
+
+function austeve_woocommerce_my_single_title() {
+?>
+    <h1 itemprop="name" class="product_title entry-title"><span><?php the_title(); ?></span></h1>
+<?php
+}
+
+function austeve_woocommerce_content_box_start() {
+?>
+    <div class="entry-content">
+<?php
+}
+
+function austeve_woocommerce_content_box_end() {
+?>
+    </div><!-- .entry-content -->
+<?php
+}
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );	
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
+
+add_action( 'woocommerce_before_single_product_summary', 'austeve_woocommerce_before_single_product', 20 );
+add_action( 'woocommerce_before_single_product_summary', 'austeve_woocommerce_after_single_product_main_image', 22 );
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+add_action( 'woocommerce_after_single_product_summary', 'austeve_woocommerce_product_gallery', 8 );
+add_action( 'woocommerce_after_single_product_summary', 'austeve_woocommerce_product_end', 25 );
+
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_title',5);
+add_action('woocommerce_single_product_summary', 'austeve_woocommerce_my_single_title',5);
+add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_start', 15);
+add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_end', 70);
+
+
+
