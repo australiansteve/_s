@@ -119,7 +119,6 @@ function hamburger_cat_woocommerce_wrapper_before() {
 		<main id="primary" class="site-main">
 			<div class="page-content">
 				<div class="grid-container">
-					<div class="entry-content">
 	<?php
 }
 
@@ -134,7 +133,6 @@ add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrappe
  */
 function hamburger_cat_woocommerce_wrapper_after() {
 	?>
-					</div>
 				</div>
 			</div>
 		</main><!-- #main -->
@@ -211,6 +209,7 @@ function hamburger_cat_woocommerce_header_cart() {
 	</ul>
 	<?php
 }
+
 
 function austeve_woocommerce_before_single_product() {
 	?>
@@ -339,4 +338,72 @@ add_action ( 'woocommerce_checkout_before_customer_details', 'austeve_checkout_b
 add_action ( 'woocommerce_checkout_after_customer_details', 'austeve_checkout_after_customer_details', 10 );
 add_action ( 'woocommerce_checkout_before_order_review_heading', 'austeve_checkout_before_order_review_heading', 10 );
 add_action ( 'woocommerce_checkout_after_order_review', 'austeve_checkout_after_order_review_heading', 10 );
+
+
+add_filter ( 'woocommerce_page_title', function($title) {
+	error_log("WC page title: ".$title);
+	return "<span>".$title."</span>";
+});
+
+add_filter ( 'woocommerce_product_loop_start', function($loopStart) {
+	error_log("Loop start: ".$loopStart);
+
+	$loopStart = "<ul class='products grid-x grid-margin-x small-up-1 medium-up-2 large-up-3'>";
+	return $loopStart;
+});
+
+add_filter ( 'woocommerce_product_loop_end', function($loopEnd) {
+	error_log("Loop end: ".$loopEnd);
+
+	$loopEnd = "</ul>";
+	return $loopEnd;
+});
+
+add_filter('post_class', function($classes, $class, $product_id) {
+    if(is_product_category() || is_shop()) {
+        //only add these classes if we're on a product category page.
+        $classes = array_merge(['cell'], $classes);
+    }
+    return $classes;
+},10,3);
+
+add_filter( 'single_product_archive_thumbnail_size', function( $size ) {
+	error_log("WC image size filter ".print_r($size, true));
+	return 'archive-image';
+} );
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+add_filter ( 'woocommerce_sale_flash', function( $sale ) {
+	error_log("Sale text: ".$sale);
+
+	$sale = '<span class="onsale"><img src="'.get_stylesheet_directory_uri().'/media/sale.png" alt="" width="" height="" /></span>';
+	return $sale;
+});
+
+function austeve_woocommerce_before_result_count() {
+	?>
+	<div class="grid-x">
+		<div class="cell medium-6">
+	<?php
+}
+
+function austeve_woocommerce_after_result_count() {
+?>
+		</div>
+		<div class="cell medium-6">
+<?php
+}
+
+function austeve_woocommerce_after_ordering() {
+?>
+		</div>
+	</div>
+<?php
+}
+
+add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_before_result_count', 19 );
+add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_result_count', 25 );
+add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_ordering', 31 );
+
 
