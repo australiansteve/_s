@@ -107,128 +107,109 @@ add_filter( 'woocommerce_output_related_products_args', 'hamburger_cat_woocommer
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_before' ) ) {
-	/**
-	 * Before Content.
-	 *
-	 * Wraps all WooCommerce content in wrappers which match the theme markup.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_wrapper_before() {
-		?>
-			<main id="primary" class="site-main">
-				<div class="page-content">
-					<div class="grid-container">
-						<div class="entry-content">
-		<?php
-	}
+/**
+ * Before Content.
+ *
+ * Wraps all WooCommerce content in wrappers which match the theme markup.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_wrapper_before() {
+	?>
+		<main id="primary" class="site-main">
+			<div class="page-content">
+				<div class="grid-container">
+					<div class="entry-content">
+	<?php
 }
+
 add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrapper_before' );
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_after' ) ) {
-	/**
-	 * After Content.
-	 *
-	 * Closes the wrapping divs.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_wrapper_after() {
-		?>
-						</div>
+/**
+ * After Content.
+ *
+ * Closes the wrapping divs.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_wrapper_after() {
+	?>
 					</div>
 				</div>
-			</main><!-- #main -->
-		<?php
-	}
+			</div>
+		</main><!-- #main -->
+	<?php
 }
+
 add_action( 'woocommerce_after_main_content', 'hamburger_cat_woocommerce_wrapper_after' );
 
 /**
- * Sample implementation of the WooCommerce Mini Cart.
+ * Cart Fragments.
  *
- * You can add the WooCommerce Mini Cart to header.php like so ...
+ * Ensure cart contents update when products are added to the cart via AJAX.
  *
-	<?php
-		if ( function_exists( 'hamburger_cat_woocommerce_header_cart' ) ) {
-			hamburger_cat_woocommerce_header_cart();
-		}
-	?>
+ * @param array $fragments Fragments to refresh via AJAX.
+ * @return array Fragments to refresh via AJAX.
  */
+function hamburger_cat_woocommerce_cart_link_fragment( $fragments ) {
+	ob_start();
+	hamburger_cat_woocommerce_cart_link();
+	$fragments['a.cart-contents'] = ob_get_clean();
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_cart_link_fragment' ) ) {
-	/**
-	 * Cart Fragments.
-	 *
-	 * Ensure cart contents update when products are added to the cart via AJAX.
-	 *
-	 * @param array $fragments Fragments to refresh via AJAX.
-	 * @return array Fragments to refresh via AJAX.
-	 */
-	function hamburger_cat_woocommerce_cart_link_fragment( $fragments ) {
-		ob_start();
-		hamburger_cat_woocommerce_cart_link();
-		$fragments['a.cart-contents'] = ob_get_clean();
-
-		return $fragments;
-	}
+	return $fragments;
 }
+
 add_filter( 'woocommerce_add_to_cart_fragments', 'hamburger_cat_woocommerce_cart_link_fragment' );
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_cart_link' ) ) {
-	/**
-	 * Cart Link.
-	 *
-	 * Displayed a link to the cart including the number of items present and the cart total.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_cart_link() {
-		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'hamburger-cat' ); ?>">
-			<?php
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'hamburger-cat' ),
-				WC()->cart->get_cart_contents_count()
-			);
-			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
-		</a>
+/**
+ * Cart Link.
+ *
+ * Displayed a link to the cart including the number of items present and the cart total.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_cart_link() {
+	?>
+	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'hamburger-cat' ); ?>">
 		<?php
-	}
+		$item_count_text = sprintf(
+			/* translators: number of items in the mini cart. */
+			_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'hamburger-cat' ),
+			WC()->cart->get_cart_contents_count()
+		);
+		?>
+		<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
+	</a>
+	<?php
 }
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_header_cart' ) ) {
-	/**
-	 * Display Header Cart.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_header_cart() {
-		if ( is_cart() ) {
-			$class = 'current-menu-item';
-		} else {
-			$class = '';
-		}
-		?>
-		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php hamburger_cat_woocommerce_cart_link(); ?>
-			</li>
-			<li>
-				<?php
-				$instance = array(
-					'title' => '',
-				);
-
-				the_widget( 'WC_Widget_Cart', $instance );
-				?>
-			</li>
-		</ul>
-		<?php
+/**
+ * Display Header Cart.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_header_cart() {
+	if ( is_cart() ) {
+		$class = 'current-menu-item';
+	} else {
+		$class = '';
 	}
+	?>
+	<ul id="site-header-cart" class="site-header-cart">
+		<li class="<?php echo esc_attr( $class ); ?>">
+			<?php hamburger_cat_woocommerce_cart_link(); ?>
+		</li>
+		<li>
+			<?php
+			$instance = array(
+				'title' => '',
+			);
+
+			the_widget( 'WC_Widget_Cart', $instance );
+			?>
+		</li>
+	</ul>
+	<?php
 }
 
 function austeve_woocommerce_before_single_product() {
@@ -328,5 +309,34 @@ add_action('woocommerce_single_product_summary', 'austeve_woocommerce_my_single_
 add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_start', 15);
 add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_end', 70);
 
+function austeve_checkout_before_customer_details() {
+	?>
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-6">
+	<?php
+}
 
+function austeve_checkout_after_customer_details() {
+	?>
+		</div>
+	<?php
+}
+
+function austeve_checkout_before_order_review_heading() {
+	?>
+		<div class="cell medium-6">
+	<?php
+}
+
+function austeve_checkout_after_order_review_heading() {
+	?>
+		</div>
+	</div>
+	<?php
+}
+
+add_action ( 'woocommerce_checkout_before_customer_details', 'austeve_checkout_before_customer_details', 10 );
+add_action ( 'woocommerce_checkout_after_customer_details', 'austeve_checkout_after_customer_details', 10 );
+add_action ( 'woocommerce_checkout_before_order_review_heading', 'austeve_checkout_before_order_review_heading', 10 );
+add_action ( 'woocommerce_checkout_after_order_review', 'austeve_checkout_after_order_review_heading', 10 );
 
