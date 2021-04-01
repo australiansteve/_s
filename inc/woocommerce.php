@@ -341,44 +341,48 @@ add_action ( 'woocommerce_checkout_after_order_review', 'austeve_checkout_after_
 
 
 add_filter ( 'woocommerce_page_title', function($title) {
-	error_log("WC page title: ".$title);
+
 	return "<span>".$title."</span>";
+
 });
 
 add_filter ( 'woocommerce_product_loop_start', function($loopStart) {
-	error_log("Loop start: ".$loopStart);
 
 	$loopStart = "<ul class='products grid-x grid-margin-x small-up-1 medium-up-2 large-up-3'>";
 	return $loopStart;
+
 });
 
 add_filter ( 'woocommerce_product_loop_end', function($loopEnd) {
-	error_log("Loop end: ".$loopEnd);
 
 	$loopEnd = "</ul>";
 	return $loopEnd;
+
 });
 
 add_filter('post_class', function($classes, $class, $product_id) {
+
     if(is_product_category() || is_shop()) {
         //only add these classes if we're on a product category page.
         $classes = array_merge(['cell'], $classes);
     }
     return $classes;
+
 },10,3);
 
 add_filter( 'single_product_archive_thumbnail_size', function( $size ) {
-	error_log("WC image size filter ".print_r($size, true));
+
 	return 'archive-image';
+
 } );
 
 remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
 add_filter ( 'woocommerce_sale_flash', function( $sale ) {
-	error_log("Sale text: ".$sale);
 
 	$sale = '<span class="onsale"><img src="'.get_stylesheet_directory_uri().'/media/sale.png" alt="" width="" height="" /></span>';
 	return $sale;
+	
 });
 
 function austeve_woocommerce_before_result_count() {
@@ -406,4 +410,18 @@ add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_before_result_c
 add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_result_count', 25 );
 add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_ordering', 31 );
 
+function austeve_woocommerce_sold_out_notice() {
 
+	global $post, $product;
+
+	if ( !$product->is_in_stock() ) : 
+
+	echo '<span class="sold-out"><img src="'.get_stylesheet_directory_uri().'/media/sold-out.png" alt="" width="" height="" /></span>';
+
+	//echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+
+	<?php
+endif;
+
+}
+add_action ( 'woocommerce_before_shop_loop_item_title', 'austeve_woocommerce_sold_out_notice', 11);
