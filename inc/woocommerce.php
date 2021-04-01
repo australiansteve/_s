@@ -43,7 +43,6 @@ add_action( 'after_setup_theme', 'hamburger_cat_woocommerce_setup' );
  * @return void
  */
 function hamburger_cat_woocommerce_scripts() {
-	wp_enqueue_style( 'hamburger-cat-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), HAMBURGER_CAT_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
@@ -108,120 +107,321 @@ add_filter( 'woocommerce_output_related_products_args', 'hamburger_cat_woocommer
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_before' ) ) {
-	/**
-	 * Before Content.
-	 *
-	 * Wraps all WooCommerce content in wrappers which match the theme markup.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_wrapper_before() {
-		?>
-			<main id="primary" class="site-main">
-		<?php
-	}
+/**
+ * Before Content.
+ *
+ * Wraps all WooCommerce content in wrappers which match the theme markup.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_wrapper_before() {
+	?>
+		<main id="primary" class="site-main">
+			<div class="page-content">
+				<div class="grid-container">
+	<?php
 }
+
 add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrapper_before' );
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_wrapper_after' ) ) {
-	/**
-	 * After Content.
-	 *
-	 * Closes the wrapping divs.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_wrapper_after() {
-		?>
-			</main><!-- #main -->
-		<?php
-	}
+/**
+ * After Content.
+ *
+ * Closes the wrapping divs.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_wrapper_after() {
+	?>
+				</div>
+			</div>
+		</main><!-- #main -->
+	<?php
 }
+
 add_action( 'woocommerce_after_main_content', 'hamburger_cat_woocommerce_wrapper_after' );
 
 /**
- * Sample implementation of the WooCommerce Mini Cart.
+ * Cart Fragments.
  *
- * You can add the WooCommerce Mini Cart to header.php like so ...
+ * Ensure cart contents update when products are added to the cart via AJAX.
  *
-	<?php
-		if ( function_exists( 'hamburger_cat_woocommerce_header_cart' ) ) {
-			hamburger_cat_woocommerce_header_cart();
-		}
-	?>
+ * @param array $fragments Fragments to refresh via AJAX.
+ * @return array Fragments to refresh via AJAX.
  */
+function hamburger_cat_woocommerce_cart_link_fragment( $fragments ) {
+	ob_start();
+	hamburger_cat_woocommerce_cart_link();
+	$fragments['a.cart-contents'] = ob_get_clean();
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_cart_link_fragment' ) ) {
-	/**
-	 * Cart Fragments.
-	 *
-	 * Ensure cart contents update when products are added to the cart via AJAX.
-	 *
-	 * @param array $fragments Fragments to refresh via AJAX.
-	 * @return array Fragments to refresh via AJAX.
-	 */
-	function hamburger_cat_woocommerce_cart_link_fragment( $fragments ) {
-		ob_start();
-		hamburger_cat_woocommerce_cart_link();
-		$fragments['a.cart-contents'] = ob_get_clean();
-
-		return $fragments;
-	}
+	return $fragments;
 }
+
 add_filter( 'woocommerce_add_to_cart_fragments', 'hamburger_cat_woocommerce_cart_link_fragment' );
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_cart_link' ) ) {
-	/**
-	 * Cart Link.
-	 *
-	 * Displayed a link to the cart including the number of items present and the cart total.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_cart_link() {
+/**
+ * Cart Link.
+ *
+ * Displayed a link to the cart including the number of items present and the cart total.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_cart_link() {
+	?>
+	<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'hamburger-cat' ); ?>">
+		<?php
+		$item_count_text = sprintf(
+			/* translators: number of items in the mini cart. */
+			_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'hamburger-cat' ),
+			WC()->cart->get_cart_contents_count()
+		);
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'hamburger-cat' ); ?>">
+		<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
+	</a>
+	<?php
+}
+
+/**
+ * Display Header Cart.
+ *
+ * @return void
+ */
+function hamburger_cat_woocommerce_header_cart() {
+	if ( is_cart() ) {
+		$class = 'current-menu-item';
+	} else {
+		$class = '';
+	}
+	?>
+	<ul id="site-header-cart" class="site-header-cart">
+		<li class="<?php echo esc_attr( $class ); ?>">
+			<?php hamburger_cat_woocommerce_cart_link(); ?>
+		</li>
+		<li>
 			<?php
-			$item_count_text = sprintf(
-				/* translators: number of items in the mini cart. */
-				_n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'hamburger-cat' ),
-				WC()->cart->get_cart_contents_count()
+			$instance = array(
+				'title' => '',
 			);
+
+			the_widget( 'WC_Widget_Cart', $instance );
 			?>
-			<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> <span class="count"><?php echo esc_html( $item_count_text ); ?></span>
-		</a>
-		<?php
-	}
+		</li>
+	</ul>
+	<?php
 }
 
-if ( ! function_exists( 'hamburger_cat_woocommerce_header_cart' ) ) {
-	/**
-	 * Display Header Cart.
-	 *
-	 * @return void
-	 */
-	function hamburger_cat_woocommerce_header_cart() {
-		if ( is_cart() ) {
-			$class = 'current-menu-item';
-		} else {
-			$class = '';
-		}
-		?>
-		<ul id="site-header-cart" class="site-header-cart">
-			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php hamburger_cat_woocommerce_cart_link(); ?>
-			</li>
-			<li>
+
+function austeve_woocommerce_before_single_product() {
+	?>
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-6">
+			<div class="featured-image">
+				<?php the_post_thumbnail( 'full' ); ?>
+			</div>
+
+	<?php
+}
+
+function austeve_woocommerce_product_gallery() {
+	?>
+				</div>
+			</div>
+		</div>
+		<div class="cell">
+			<div class="grid-x grid-margin-x text-center align-center small-up-2 medium-up-3 large-up-4" id="product-gallery-grid">
 				<?php
-				$instance = array(
-					'title' => '',
-				);
+				$product = new WC_product(get_the_id());
+				$attachment_ids = $product->get_gallery_image_ids();
 
-				the_widget( 'WC_Widget_Cart', $instance );
+				foreach( $attachment_ids as $attachment_id ) 
+			    {
+			      // Display the image URL
+			      //echo $Original_image_url = wp_get_attachment_url( $attachment_id );
+
+			      // Display Image instead of URL
+			      echo "<div class='cell'><a class='wc-thumbnail-wrapper' data-url='".wp_get_attachment_url( $attachment_id )."' data-content='".wp_get_attachment_image($attachment_id, 'full')."'>".wp_get_attachment_image($attachment_id, 'thumbnail')."</a></div>";
+
+			    }
 				?>
-			</li>
-		</ul>
-		<?php
-	}
+			</div>
+			<script type="text/javascript">
+				jQuery(".wc-thumbnail-wrapper").on('click', function() {
+					console.log(jQuery(this).data('content'));
+
+					jQuery('.featured-image').append(jQuery(this).data('content'));
+				});
+			</script>
+		</div>
+	<?php
 }
+
+function austeve_woocommerce_product_end() {
+	?>	
+	</div>
+	<?php
+}
+
+
+function austeve_woocommerce_after_single_product_main_image() {
+	?>
+		</div>
+		<div class="cell medium-6">
+			<div class="grid-y align-center" style="height: 100%">
+				<div class="cell">
+	<?php
+}
+
+function austeve_woocommerce_my_single_title() {
+?>
+    <h1 itemprop="name" class="product_title entry-title"><span><?php the_title(); ?></span></h1>
+<?php
+}
+
+function austeve_woocommerce_content_box_start() {
+?>
+    <div class="entry-content">
+<?php
+}
+
+function austeve_woocommerce_content_box_end() {
+?>
+    </div><!-- .entry-content -->
+<?php
+}
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );	
+
+remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+remove_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
+
+add_action( 'woocommerce_before_single_product_summary', 'austeve_woocommerce_before_single_product', 20 );
+add_action( 'woocommerce_before_single_product_summary', 'austeve_woocommerce_after_single_product_main_image', 22 );
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+add_action( 'woocommerce_after_single_product_summary', 'austeve_woocommerce_product_gallery', 8 );
+add_action( 'woocommerce_after_single_product_summary', 'austeve_woocommerce_product_end', 25 );
+
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_title',5);
+add_action('woocommerce_single_product_summary', 'austeve_woocommerce_my_single_title',5);
+add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_start', 15);
+add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_end', 70);
+
+function austeve_checkout_before_customer_details() {
+	?>
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-6">
+	<?php
+}
+
+function austeve_checkout_after_customer_details() {
+	?>
+		</div>
+	<?php
+}
+
+function austeve_checkout_before_order_review_heading() {
+	?>
+		<div class="cell medium-6">
+	<?php
+}
+
+function austeve_checkout_after_order_review_heading() {
+	?>
+		</div>
+	</div>
+	<?php
+}
+
+add_action ( 'woocommerce_checkout_before_customer_details', 'austeve_checkout_before_customer_details', 10 );
+add_action ( 'woocommerce_checkout_after_customer_details', 'austeve_checkout_after_customer_details', 10 );
+add_action ( 'woocommerce_checkout_before_order_review_heading', 'austeve_checkout_before_order_review_heading', 10 );
+add_action ( 'woocommerce_checkout_after_order_review', 'austeve_checkout_after_order_review_heading', 10 );
+
+
+add_filter ( 'woocommerce_page_title', function($title) {
+
+	return "<span>".$title."</span>";
+
+});
+
+add_filter ( 'woocommerce_product_loop_start', function($loopStart) {
+
+	$loopStart = "<ul class='products grid-x grid-margin-x small-up-1 medium-up-2 large-up-3'>";
+	return $loopStart;
+
+});
+
+add_filter ( 'woocommerce_product_loop_end', function($loopEnd) {
+
+	$loopEnd = "</ul>";
+	return $loopEnd;
+
+});
+
+add_filter('post_class', function($classes, $class, $product_id) {
+
+    if(is_product_category() || is_shop()) {
+        //only add these classes if we're on a product category page.
+        $classes = array_merge(['cell'], $classes);
+    }
+    return $classes;
+
+},10,3);
+
+add_filter( 'single_product_archive_thumbnail_size', function( $size ) {
+
+	return 'archive-image';
+
+} );
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+add_filter ( 'woocommerce_sale_flash', function( $sale ) {
+
+	$sale = '<span class="onsale"><img src="'.get_stylesheet_directory_uri().'/media/sale.png" alt="" width="" height="" /></span>';
+	return $sale;
+	
+});
+
+function austeve_woocommerce_before_result_count() {
+	?>
+	<div class="grid-x">
+		<div class="cell medium-6">
+	<?php
+}
+
+function austeve_woocommerce_after_result_count() {
+?>
+		</div>
+		<div class="cell medium-6">
+<?php
+}
+
+function austeve_woocommerce_after_ordering() {
+?>
+		</div>
+	</div>
+<?php
+}
+
+add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_before_result_count', 19 );
+add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_result_count', 25 );
+add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_ordering', 31 );
+
+function austeve_woocommerce_sold_out_notice() {
+
+	global $post, $product;
+
+	if ( !$product->is_in_stock() ) : 
+
+	echo '<span class="sold-out"><img src="'.get_stylesheet_directory_uri().'/media/sold-out.png" alt="" width="" height="" /></span>';
+
+	//echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+
+	<?php
+endif;
+
+}
+add_action ( 'woocommerce_before_shop_loop_item_title', 'austeve_woocommerce_sold_out_notice', 11);
