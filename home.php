@@ -38,6 +38,8 @@ get_header();
 				endwhile;
 				?>
 			</div>
+
+			<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
 		</div>
 	</div>
 
