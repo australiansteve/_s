@@ -80,6 +80,33 @@
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 
+<?php
+$customJS = get_field('custom_js', 'option');
+
+if( have_rows('custom_js', 'option') ):
+    while( have_rows('custom_js', 'option') ) : the_row();
+    	error_log("custom_js");
+
+        // Loop over sub repeater rows.
+        if( have_rows('js_script') ):
+            while( have_rows('js_script') ) : the_row();
+
+                // Get sub values.
+                $name = get_sub_field('name');
+                $script = get_sub_field('script');
+                $location = get_sub_field('display_in');
+
+                if ($location == 'footer') {
+                	echo $script;
+                }
+
+            endwhile;
+        endif;
+    endwhile;
+endif;
+
+?>
+
 <?php wp_footer(); ?>
 
 </body>
