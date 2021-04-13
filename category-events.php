@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the blog page
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -16,11 +16,15 @@ get_header();
 
 		<div class="grid-container">
 
-			<h2 class="page-title"><span>
+			<div class="entry-content">
+				<?php
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</div>
+
 			<?php
-			echo get_the_title( get_option( 'page_for_posts' ) );
+			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
 			?>
-			</span></h2>
 
 			<div class="grid-x">
 				<?php
@@ -42,7 +46,6 @@ get_header();
 			<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
 		</div>
 	</div>
-
 </main><!-- #main -->
 
 <?php

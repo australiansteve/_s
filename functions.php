@@ -108,7 +108,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
-		add_image_size( 'archive-image', 800, 640, true);
+		add_image_size( 'archive-image', 400, 320, true);
 		add_image_size( 'header-logo', 390, 190, false);
 	}
 endif;
@@ -282,3 +282,15 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+/* Do not show events in News page */
+add_action( 'pre_get_posts', 'austeve_exclude_events' );
+
+function austeve_exclude_events( $query ) {
+
+    /* Only modify the main query, on the home page */
+	if( $query->is_main_query() && $query->is_home() ) {
+		$exclude = get_cat_ID('Events');
+		$query->set( 'cat', '-'.$exclude );
+	}
+}
