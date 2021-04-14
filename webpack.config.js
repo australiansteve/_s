@@ -1,5 +1,6 @@
 const path = require('path');
 const TerserPlugin = require("terser-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
 	mode: 'development',
@@ -13,5 +14,12 @@ module.exports = {
     nodeEnv: 'production',
     minimize: true,
     minimizer: [new TerserPlugin()],
-  }
+  },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: "fonts", to: "fonts" },
+      ],
+    }),
+  ],
 };
