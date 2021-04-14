@@ -126,10 +126,6 @@ function hamburger_cat_scripts() {
 
 	$styleFile = (wp_get_environment_type() == 'production') ? 'style.min.css' : 'style.css';
 
-	wp_enqueue_script('lodash-js',
-		'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js'
-	);
-
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
 	// Google Fonts
