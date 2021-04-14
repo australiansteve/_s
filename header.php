@@ -18,21 +18,20 @@
 		<link rel="profile" href="https://gmpg.org/xfn/11">
 
 		<?php wp_head(); ?>
-
+	
 	</head>
 
 	<body <?php body_class(); ?>>
 
 		<?php 
 		$menuType = get_field('primary_menu_type', 'option');
-
 		$customJS = get_field('custom_js', 'option');
 
 		if( have_rows('custom_js', 'option') ):
 			while( have_rows('custom_js', 'option') ) : the_row();
 				error_log("custom_js");
 
-	        // Loop over sub repeater rows.
+        	// Loop over sub repeater rows.
 				if( have_rows('js_script') ):
 					while( have_rows('js_script') ) : the_row();
 
@@ -49,6 +48,18 @@
 				endif;
 			endwhile;
 		endif;
+
+	?>
+
+	<?php wp_body_open(); ?>
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hamburger-cat' ); ?></a>
+
+		<?php
+		$useStickyHeader = get_field('use_sticky_header', 'options');
+		$stickyContainerData = $useStickyHeader ? 'data-sticky-container' : '';
+		$stickyData = $useStickyHeader ? 'data-sticky data-margin-top="0"' : '';
+		$stickyBgColor = get_field('sticky_header_background_color', 'options');
 		?>
 
 		<?php wp_body_open(); ?>
