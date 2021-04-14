@@ -18,7 +18,12 @@
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
-	<?php
+	
+</head>
+
+<body <?php body_class(); ?>>
+
+	<?php 
 	$customJS = get_field('custom_js', 'option');
 
 	if( have_rows('custom_js', 'option') ):
@@ -34,7 +39,7 @@
 	                $script = get_sub_field('script');
 	                $location = get_sub_field('display_in');
 
-	                if ($location == 'header') {
+	                if ($location == 'body') {
 	                	echo $script;
 	                }
 
@@ -43,10 +48,7 @@
 	    endwhile;
 	endif;
 	?>
-	
-</head>
 
-<body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'hamburger-cat' ); ?></a>
