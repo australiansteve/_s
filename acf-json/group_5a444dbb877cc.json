@@ -1,0 +1,64 @@
+{
+    "key": "group_5a444dbb877cc",
+    "title": "Resource Information",
+    "fields": [
+        {
+            "key": "field_5a444dc4ea327",
+            "label": "Logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "For best results, use <b>square<\/b> images",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": 600,
+            "max_height": 600,
+            "max_size": 2,
+            "mime_types": "jpg, jpeg, png, gif"
+        },
+        {
+            "key": "field_5a444e08ea328",
+            "label": "URL",
+            "name": "url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "austeve-resources"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1618508426
+}

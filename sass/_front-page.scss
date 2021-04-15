@@ -1,0 +1,63 @@
+.home {
+
+	#front-page-landing {
+		position: relative;
+
+		.background-image {
+			background-position: 50% 65%;
+		}
+
+		.entry-content {
+			position: relative;
+			margin: 0;
+			padding: 3rem 10%;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.home {
+
+		#front-page-landing {
+			min-height: 350px;
+		}
+	}
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

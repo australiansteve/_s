@@ -43,6 +43,44 @@
             "mime_types": ""
         },
         {
+            "key": "field_60786401ad244",
+            "label": "Default Page Background",
+            "name": "default_page_background",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "-webkit-linear-gradient(5deg, #7ABB67 50%, #8FC781 50%)",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_607864ac245bd",
+            "label": "Default Content Background",
+            "name": "default_content_background",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#7ABB67",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60772c198fa3b",
             "label": "Custom Javascript",
             "name": "",
@@ -178,5 +216,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618424640
+    "modified": 1618502938
 }

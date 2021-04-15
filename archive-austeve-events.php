@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the blog page
+ * The template for displaying the events page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -19,11 +19,9 @@ $contentBackground = get_field('default_content_background', 'options');
 
 		<div class="grid-container">
 
-			<h2 class="page-title"><span>
 			<?php
-			echo get_the_title( get_option( 'page_for_posts' ) );
+			echo the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
 			?>
-			</span></h2>
 
 			<div class="entry-content">
 				<div class="grid-x grid-padding-x small-up-1">

@@ -1,0 +1,77 @@
+{
+    "key": "group_5a2f4671ce0a2",
+    "title": "Resource page links",
+    "fields": [
+        {
+            "key": "field_5a2f47ab40f65",
+            "label": "Municipal Regulations",
+            "name": "municipal_regulations",
+            "type": "url",
+            "instructions": "Paste the link to municipal regulations",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a2f47dcb397c",
+            "label": "Provincial Regulations",
+            "name": "provincial_regulations",
+            "type": "url",
+            "instructions": "Paste the link to provincial regulations",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a2f47eedcfba",
+            "label": "Federal Regulations",
+            "name": "federal_regulations",
+            "type": "url",
+            "instructions": "Paste the link to federal regulations",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:resources"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1618509558
+}

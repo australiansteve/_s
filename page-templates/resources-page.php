@@ -1,11 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * Template Name: Resources Page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -31,6 +26,9 @@ while ( have_posts() ) :
 				<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
 				<div class="entry-content" style="background: <?php echo $contentBackground;?>">
 					<?php the_content(); ?>
+
+					<?php get_template_part( 'template-parts/links-resource-category' ); ?>
+
 				</div>
 			</div>
 		</div>

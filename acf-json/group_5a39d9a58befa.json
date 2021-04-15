@@ -1,11 +1,11 @@
 {
-    "key": "group_5fd243ad6d28d",
-    "title": "Footer Settings",
+    "key": "group_5a39d9a58befa",
+    "title": "Event Information",
     "fields": [
         {
-            "key": "field_5fd243ad74774",
-            "label": "Logo",
-            "name": "footer_logo",
+            "key": "field_5a39d9ce5a6e5",
+            "label": "Cover Image",
+            "name": "cover_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -27,10 +27,10 @@
             "mime_types": ""
         },
         {
-            "key": "field_6078822da70d4",
-            "label": "Footer Left Text",
-            "name": "footer_left_text",
-            "type": "wysiwyg",
+            "key": "field_5a4cc495832a4",
+            "label": "Event Date",
+            "name": "event_date",
+            "type": "date_time_picker",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -39,18 +39,16 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
+            "display_format": "F j, Y g:i a",
+            "return_format": "F j, Y g:i a",
+            "first_day": 1
         },
         {
-            "key": "field_6078825d05112",
-            "label": "Footer Center Text",
-            "name": "footer_center_text",
-            "type": "wysiwyg",
-            "instructions": "",
+            "key": "field_5a4cc4b1832a5",
+            "label": "Eventbrite Link",
+            "name": "eventbrite_link",
+            "type": "url",
+            "instructions": "Link to the EventBrite page for tickets etc.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -58,17 +56,14 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0
+            "default_value": "https:\/\/www.eventbrite.ca\/o\/sustainable-saint-john-16736543414",
+            "placeholder": ""
         },
         {
-            "key": "field_5fd24c7ac6bc6",
-            "label": "Bottom Text",
-            "name": "footer_site_info_text",
-            "type": "wysiwyg",
+            "key": "field_5a4cc4f9832a6",
+            "label": "Eventbrite Button Text",
+            "name": "eventbrite_button_text",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -77,23 +72,23 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "<a href=\"https:\/\/weavercrawford.com\" target=\"_blank\"><i class=\"far fa-copyright\"><\/i> Weaver Crawford Creative <script>document.write(new Date().getFullYear())<\/script><\/a>",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "default_value": "View on Eventbrite",
+            "placeholder": "View on Eventbrite",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf-options-footer-settings"
+                "value": "austeve-events"
             }
         ]
     ],
-    "menu_order": 31,
+    "menu_order": 0,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -101,5 +96,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618510449
+    "modified": 1618499896
 }

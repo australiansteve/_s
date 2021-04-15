@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the blog page
+ * The template for displaying archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -19,14 +19,16 @@ $contentBackground = get_field('default_content_background', 'options');
 
 		<div class="grid-container">
 
-			<h2 class="page-title"><span>
+			<?php get_template_part( 'template-parts/links-resource-category' ) ?>
+
 			<?php
-			echo get_the_title( get_option( 'page_for_posts' ) );
+			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
 			?>
-			</span></h2>
+
 
 			<div class="entry-content">
-				<div class="grid-x grid-padding-x small-up-1">
+
+				<div class="grid-x grid-padding-x small-up-1" >
 					<?php
 					while ( have_posts() ) :
 						the_post();
@@ -47,7 +49,6 @@ $contentBackground = get_field('default_content_background', 'options');
 			</div>
 		</div>
 	</div>
-
 </main><!-- #main -->
 
 <?php
