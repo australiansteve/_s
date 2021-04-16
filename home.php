@@ -9,8 +9,8 @@
 
 get_header();
 
-$pageBackground = get_field('default_page_background', 'options');
-$contentBackground = get_field('default_content_background', 'options');
+$pageBackground = get_field('blog_page_custom_page_background', 'options') ? get_field('blog_page_custom_page_background', 'options') : get_field('default_page_background', 'options');
+$contentBackground = get_field('blog_page_custom_content_background', 'options') ? get_field('blog_page_custom_content_background', 'options') :get_field('default_content_background', 'options');
 ?>
 
 <main id="primary" class="site-main" style="background: <?php echo $pageBackground;?>">

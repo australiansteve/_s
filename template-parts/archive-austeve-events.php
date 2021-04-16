@@ -8,10 +8,10 @@ $contentBackground = get_field('default_content_background', 'options');
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-		<div class="grid-x grid-margin-x">
+		<div class="grid-x">
 			<div class="cell medium-5 large-4">
 				<a href="<?php echo the_permalink();?>">
-					<img src='<?php echo $thumbnail; ?>' />
+					<img class="image" src='<?php echo $thumbnail; ?>' />
 				</a>
 			</div>
 			<div class="cell medium-7 large-8">
@@ -21,7 +21,7 @@ $contentBackground = get_field('default_content_background', 'options');
 				<div class="event-date"><?php the_field('event_date');?></div>
 
 				<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
-				<a class="button" href="<?php echo get_field('eventbrite_link');?>"><?php echo get_field('eventbrite_button_text');?></a> <a class="button" href="<?php echo the_permalink();?>">Read More</a>
+				<?php if (get_field('eventbrite_link')) : ?><a class="button" href="<?php echo get_field('eventbrite_link');?>"><?php echo get_field('eventbrite_button_text');?></a> <?php endif;?><a class="button" href="<?php echo the_permalink();?>">Read More</a>
 			</div>
 		</div>
 

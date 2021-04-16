@@ -42,7 +42,7 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 0,
+            "media_upload": 1,
             "delay": 0
         },
         {
@@ -61,7 +61,7 @@
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
-            "media_upload": 0,
+            "media_upload": 1,
             "delay": 0
         },
         {
@@ -101,5 +101,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618510449
+    "modified": 1618597207
 }

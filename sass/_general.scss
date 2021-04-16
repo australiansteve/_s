@@ -39,14 +39,15 @@ body {
 	main {
 
 		.page-content {
-			margin: 3rem 0;
+			padding: 2rem 0;
+			color: $white;
 
 			h2 {
 				margin-bottom: 2rem;
 				font-weight: 700;
 
 				span {
-					border-bottom: 2px solid $black;
+					border-bottom: 2px solid $white;
 					padding-bottom: 1rem;
 				}
 			}
@@ -58,8 +59,21 @@ body {
 				margin-bottom: 0.25rem;
 			}
 
+			a {
+				color: $white;
+			}
+
+			a.button {
+				background-color: $green;
+			}
+
+			a.button:hover,
+			a.button:active {
+				background-color: $light-green;
+			}
+
 			.entry-content {
-				margin: 4rem 0;
+				margin: 2rem 0;
 				position: relative;
 
 
@@ -91,10 +105,94 @@ body {
 		}
 
 	}
+
+	#resource-categories {
+		max-width: 1200px;
+		margin: auto;
+		margin-bottom: 2rem;
+
+		.resource-category {
+			padding: 5rem 0 3rem 0;
+			text-align: center;
+			box-shadow: inset 0 0 0 1000px rgba(10, 10, 10, 0.5);
+			border: 5px solid $blue;
+			outline-color: $blue;
+			background-position: center top;
+
+			.resource-category-icon {
+				max-width: 50%;
+			}
+
+			h3 {
+				margin: 2rem 0 0 0;
+				font-size: 1.2rem;
+				text-transform: initial;
+				border-bottom: none;
+				width: auto;
+				color: $white;
+				font-weight: 400 !important;
+			}
+
+		}
+	}
+
+	#resource-categories {
+
+		.resource-category:hover,
+		.resource-category.active {
+			box-shadow: none;
+		}
+	}
+
+	label {
+		color: $white;
+	}
+
+	.nf-form-cont {
+		max-width: 450px;
+		margin: auto;
+
+
+		.ninja-forms-req-symbol {
+			color: $white;
+		}
+	}
+
+	input[type="button"],
+	input[type="submit"] {
+		color: $white;
+		background: $green;
+		padding: 0.65rem 0.85rem;
+		border: 1px solid $dark-green;
+		line-height: 1;
+		font-size: 0.9rem;
+	}
+
+	input[type="button"]:hover,
+	input[type="submit"]:hover {
+		cursor: pointer;
+		background: $light-green;
+	}
+
+	.mepr-price-menu.fixed .mepr-price-box-price {
+		font-size: 2rem;
+	}
+
 }
 
 a {
 	display: inline-block;
+}
+
+.tax-resource-category main .page-content {
+
+	a.button {
+		background: $light-blue;
+	}
+
+	a.button:hover {
+		background: $blue;
+	}
 }
 
 /* Small only */
@@ -112,7 +210,7 @@ a {
 			.page-content {
 
 				.entry-content {
-					margin: 4rem 8%;
+					margin: 2rem 8%;
 
 					p {
 					}
@@ -124,6 +222,14 @@ a {
 				margin-top: 2rem;
 			}
 
+		}
+
+
+		#resource-categories {
+
+			.resource-category {
+				padding-top: 12rem;
+			}
 		}
 	}
 }

@@ -23,21 +23,24 @@ while ( have_posts() ) :
 
 	<main id="primary" class="site-main" style="background: <?php echo $pageBackground;?>">
 		<?php
-			get_template_part( 'template-parts/hero-image', get_post_type() );
+		get_template_part( 'template-parts/hero-image', get_post_type() );
 		?>
 
 		<div class="grid-container">
 			<div class="page-content">
 				<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
+				
 				<div class="entry-content" style="background: <?php echo $contentBackground;?>">
-					<?php the_content(); ?>
+					<article>
+						<?php the_content(); ?>
+					</article>
 				</div>
 			</div>
 		</div>
 
 	</main><!-- #main -->
 
-<?php
+	<?php
 endwhile; 
 
 get_footer();

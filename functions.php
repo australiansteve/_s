@@ -232,3 +232,10 @@ function austeve_custom_js_in_head() {
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
 
+/**
+ * Filter the excerpt length to 30 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+add_filter( 'excerpt_length', function( $length ) { return 30; } );

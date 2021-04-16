@@ -26,23 +26,24 @@ while ( have_posts() ) :
 			<div class="page-content">
 				
 				<div class="entry-content" style="background: <?php echo $contentBackground;?>">
-					<div class="grid-x grid-margin-x">
-						<div class="cell medium-5 large-4">
-							<?php
-							$thumbnail = get_field('cover_image') ? wp_get_attachment_image_src(get_field('cover_image'), 'archive-image')[0] : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
-							?>
-							<img src='<?php echo $thumbnail; ?>' />
-						</div>
-						
-						<div class="cell medium-7 large-8">
-							<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
+					<article>
+						<div class="grid-x">
+							<div class="cell medium-5 large-4">
+								<?php
+								$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-image') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
+								?>
+								<img class="image" src='<?php echo $thumbnail; ?>' />
+							</div>
+							
+							<div class="cell medium-7 large-8">
+								<?php the_title('<h2 class="page-title">', '</h2>');?>  
 
-							<?php the_content(); ?>
+								<?php the_content(); ?>
 
-							<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
+								<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
+							</div>
 						</div>
-					</div>
-					
+					</article>
 				</div>
 			</div> 
 		</div>

@@ -26,38 +26,38 @@ while ( have_posts() ) :
 			<div class="page-content">
 				
 				<div class="entry-content" style="background: <?php echo $contentBackground;?>">
-					<div class="grid-x grid-margin-x">
-						<div class="cell medium-5 large-4">
-							<?php
-							$thumbnail = get_field('cover_image') ? wp_get_attachment_image_src(get_field('cover_image'), 'archive-image')[0] : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
-							?>
-							<img src='<?php echo $thumbnail; ?>' />
+					<article>
+						<div class="grid-x">
+							<div class="cell medium-5 large-4">
+								<?php
+								$thumbnail = get_field('cover_image') ? wp_get_attachment_image_src(get_field('cover_image'), 'archive-image')[0] : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
+								?>
+								<img class="image" src='<?php echo $thumbnail; ?>' />
+								
+								<?php if (get_field('eventbrite_link')): ?>
+								<a class="button" href="<?php echo get_field('eventbrite_link');?>"><?php echo get_field('eventbrite_button_text');?></a>
+								<?php endif; ?>
+
+							</div>
 							
-							<?php if (get_field('eventbrite_link')): ?>
-							<a class="button" href="<?php echo get_field('eventbrite_link');?>"><?php echo get_field('eventbrite_button_text');?></a>
-							<?php endif; ?>
+							<div class="cell medium-7 large-8">
+								<?php the_title('<h2 class="page-title">', '</h2>');?>  
 
+								<div class="event-date"><?php the_field('event_date');?></div>
+
+								<?php the_content(); ?>
+
+								<?php if (get_field('eventbrite_link')): ?>
+								<a class="button" href="<?php echo get_field('eventbrite_link');?>"><?php echo get_field('eventbrite_button_text');?></a>
+								<?php endif; ?>
+
+								<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
+							</div>
 						</div>
-						
-						<div class="cell medium-7 large-8">
-							<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
-
-							<div class="event-date"><?php the_field('event_date');?></div>
-
-							<?php the_content(); ?>
-
-							<?php if (get_field('eventbrite_link')): ?>
-							<a class="button" href="<?php echo get_field('eventbrite_link');?>"><?php echo get_field('eventbrite_button_text');?></a>
-							<?php endif; ?>
-
-							<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
-						</div>
-					</div>
-					
+					</article>
 				</div>
 			</div> 
 		</div>
-
 	</main><!-- #main -->
 	<?php
 

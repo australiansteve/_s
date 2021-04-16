@@ -2,6 +2,7 @@
 
 	#front-page-landing {
 		position: relative;
+		color: $white;
 
 		.background-image {
 			background-position: 50% 65%;
@@ -12,6 +13,89 @@
 			margin: 0;
 			padding: 3rem 10%;
 		}
+	}
+
+	#news-and-events {
+		color: $white;
+
+		.front-page-news {
+			background-color: $brown;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+
+			a.button {
+				background-color: $dark-brown;
+			}
+
+			a.button:hover {
+				background-color: $light-brown;
+			}
+
+			article:nth-of-type(odd) {
+				background: $light-brown;
+			}
+
+		}
+
+		.front-page-events {
+			background-color: $green;
+			padding-top: 2rem;
+			padding-bottom: 2rem;
+
+			a.button {
+				background-color: $light-green;
+			}
+
+			a.button:hover {
+				background-color: $green;
+			}
+
+			article:nth-of-type(odd) {
+				background: $light-green;
+
+				a.button {
+					background-color: $green;
+				}
+
+				a.button:hover {
+					background-color: $light-green;
+				}
+			}
+
+		}
+
+		article,
+		h2 {
+			margin: 0;
+			padding-left: 1rem;
+			padding-right: 1rem;
+
+			.content-container {
+				position: relative;
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+
+			.background-image {
+				opacity: 0.15;
+			}
+
+		}
+
+		.title,
+		.event-date {
+			text-transform: uppercase;
+		}
+	}
+
+	#newsletter-signup {
+		background: -webkit-linear-gradient(5deg, $green 50%, $light-green 50%);
+		color: $white;
+	}
+
+	#resources-section {
+		background: -webkit-linear-gradient(5deg, $blue 50%, $light-blue 50%);
+		color: $white;
 	}
 }
 
@@ -27,6 +111,25 @@
 
 		#front-page-landing {
 			min-height: 350px;
+		}
+
+		#news-and-events {
+
+			article {
+				height: 450px;
+
+				.content-container {
+					height: 100%;
+				}
+
+				.actions {
+					position: absolute;
+					bottom: 1rem;
+					left: 0;
+					right: 0;
+					text-align: center;
+				}
+			}
 		}
 	}
 
@@ -45,6 +148,21 @@
 /* Large only */
 @media screen and (min-width: 64em) and (max-width: 99.9375em) {
 
+}
+
+/* Large/XLarge and up (>1200px) */
+@media screen and (min-width: 1200px) {
+
+	.home {
+
+		#news-and-events {
+
+			article {
+				height: 350px;
+
+			}
+		}
+	}
 }
 
 /* XLarge and up (>1600px) */

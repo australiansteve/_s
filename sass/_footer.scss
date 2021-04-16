@@ -1,5 +1,17 @@
 footer {
 
+	padding-top: 2rem;
+	color: $brown;
+
+	a {
+		color: $brown;
+	}
+
+	a.button {
+		background: $brown;
+		color: $white;
+	}
+
 	#back-to-top {
 
 		a {

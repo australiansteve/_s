@@ -24,11 +24,11 @@ get_header();
 			</div>
 		</div>
 
-		<div id="custom-content-1">
+		<section id="news-and-events">
 			<div class="grid-container">
 				<div class="entry-content">
-					<div class="grid-x">
-						<div class="cell medium-6">
+					<div class="grid-x align-center">
+						<div class="cell medium-6 large-4 front-page-news">
 							<h2><?php the_field('posts_column_1_title');?></h2>
 							<?php
 							// WP_Query arguments
@@ -55,7 +55,7 @@ get_header();
 							?>
 
 						</div>
-						<div class="cell medium-6">
+						<div class="cell medium-6 large-4 front-page-events">
 							<h2><?php the_field('posts_column_2_title');?></h2>
 							<?php
 							// WP_Query arguments
@@ -84,36 +84,51 @@ get_header();
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
+		<script type="text/javascript">
+			jQuery( document ).ready(function() {
+			    jQuery('#news-and-events article').on('mouseenter', function() {
 
-		<div id="custom-content-2">
-			
-			<div class="background-gradient" style="background: -webkit-linear-gradient(5deg, #7ABB67 50%, #8FC781 50%);"></div>
+			    	jQuery(this).find('.background-image').css('background-image', 'url('+jQuery(this).data('background-url')+')');
+			    });
+			    jQuery('#news-and-events article').on('mouseleave', function() {
+			    	jQuery(this).find('.background-image').css('background-image', '');
+			    });
+			});
+		</script>
+
+		<section id="newsletter-signup">
 
 			<div class="grid-container">
-				<div class="entry-content">
-					<div class="container text-center">
-						<?php the_field('mailchimp_embed_code');?>
+				<div class="page-content">
+					<div class="entry-content">
+						<div class="container text-center">
+							<?php the_field('mailchimp_embed_code');?>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
-		<div id="custom-content-3">
+		</section>
+<!-- 
+		<section id="custom-content-3">
 			<div class="grid-container">
-				<div class="entry-content">
+				<div class="page-content">
+					<div class="entry-content">
+					</div>
 				</div>
 			</div>
-		</div>
+		</section> -->
 
-		<div id="custom-content-4">
+		<section id="resources-section">
 			<div class="grid-container">
-				<div class="entry-content">
-					<h2><?php the_field('resources_section_title');?></h2>
-					<?php get_template_part( 'template-parts/links-resource-category' ) ?>
+				<div class="page-content">
+					<div class="entry-content">
+						<h2><?php the_field('resources_section_title');?></h2>
+						<?php get_template_part( 'template-parts/links-resource-category' ) ?>
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
 		<?php
 		endwhile; // End of the loop.
