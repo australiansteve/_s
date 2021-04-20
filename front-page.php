@@ -24,6 +24,50 @@ get_header();
 			</div>
 		</div>
 
+		<section id="sponsors">
+			<div class="grid-container">
+				<div class="page-content">
+					<div class="entry-content">
+						<h2><?php the_field('sponsors_section_title');?></h2>
+						<div class="pre-sponsors">
+							<?php the_field('sponsors_pre_text');?>
+						</div>
+						<?php
+						if( have_rows('sponsors') ):
+							?>
+							<div class="grid-x align-center small-up-1 medium-up-3 the-sponsors grid-padding-x">
+								<?php
+								while( have_rows('sponsors') ) : the_row();
+
+									$sponsor = get_sub_field('sponsor');
+									?>
+									<div class="cell text-center">
+										<?php 
+										$image = $sponsor['logo'];
+										$size = 'full';
+
+										if( $image ) {
+											echo wp_get_attachment_image( $image, $size );
+										}
+										?>
+										<div><a href="<?php echo $sponsor['url'];?>" target="_blank"><?php echo $sponsor['name'];?></a></div>
+									</div>
+									<?php
+
+								endwhile;
+								?>
+							</div>
+							<?php
+						endif;
+						?>
+						<div class="post-sponsors">
+							<?php the_field('sponsors_post_text');?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<section id="news-and-events">
 			<div class="grid-container">
 				<div class="entry-content">
@@ -87,13 +131,13 @@ get_header();
 		</section>
 		<script type="text/javascript">
 			jQuery( document ).ready(function() {
-			    jQuery('#news-and-events article').on('mouseenter', function() {
+				jQuery('#news-and-events article').on('mouseenter', function() {
 
-			    	jQuery(this).find('.background-image').css('background-image', 'url('+jQuery(this).data('background-url')+')');
-			    });
-			    jQuery('#news-and-events article').on('mouseleave', function() {
-			    	jQuery(this).find('.background-image').css('background-image', '');
-			    });
+					jQuery(this).find('.background-image').css('background-image', 'url('+jQuery(this).data('background-url')+')');
+				});
+				jQuery('#news-and-events article').on('mouseleave', function() {
+					jQuery(this).find('.background-image').css('background-image', '');
+				});
 			});
 		</script>
 

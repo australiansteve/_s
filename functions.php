@@ -239,3 +239,11 @@ add_action('wp_head','austeve_custom_js_in_head', 50);
  * @return int (Maybe) modified excerpt length.
  */
 add_filter( 'excerpt_length', function( $length ) { return 30; } );
+
+
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_post_type_archive() ) {
+		$title = "<span>" . post_type_archive_title( '', false ) . "</span>";
+	} 
+	return $title;
+});

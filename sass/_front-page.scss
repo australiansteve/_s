@@ -88,9 +88,56 @@
 		}
 	}
 
+	#sponsors {
+		background: -webkit-linear-gradient(5deg, $blue 50%, $light-blue 50%);
+		color: $white;
+
+		.entry-content {
+			background: $blue;
+			padding: 1rem;
+		}
+
+		a.button {
+			background: $light-blue;
+		}
+
+		a.button:hover {
+			background: $blue;
+		}
+
+		.pre-sponsors {
+
+		}
+
+		.post-sponsors {
+			margin-top: 2rem;
+		}
+	}
+
 	#newsletter-signup {
 		background: -webkit-linear-gradient(5deg, $green 50%, $light-green 50%);
 		color: $white;
+
+		.container {
+			background: $green;
+			padding: 2rem 1rem;
+
+			/* stylelint-disable selector-id-pattern */
+			#mc_embed_signup {
+				max-width: 640px;
+				margin: auto;
+
+				.mc-field-group {
+					line-height: 0.25;
+
+					label {
+						text-align: left;
+						font-size: 1.25rem;
+					}
+				}
+			}
+			/* stylelint-enable selector-id-pattern */
+		}
 	}
 
 	#resources-section {
