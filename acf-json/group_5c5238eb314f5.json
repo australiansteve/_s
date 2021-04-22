@@ -1,0 +1,81 @@
+{
+    "key": "group_5c5238eb314f5",
+    "title": "Funds page attributes",
+    "fields": [
+        {
+            "key": "field_5c5238f778b70",
+            "label": "Introduction",
+            "name": "funds_introduction",
+            "type": "wysiwyg",
+            "instructions": "Text that gets displayed at the top of the 'Funds' page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5cabe66430d33",
+            "label": "Donate Now Text",
+            "name": "donate_now_text",
+            "type": "text",
+            "instructions": "Displays above the 'Donate Now' button on the funds page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Unsure of which fund to donate to? Give to our Community Fund today!",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5cdcacc9d814f",
+            "label": "Button text",
+            "name": "funds_button_text",
+            "type": "text",
+            "instructions": "Text displayed on the buttons seen on each Fund on the Funds page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "More Info\/Donate",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-general-settings"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1619017011
+}

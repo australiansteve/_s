@@ -64,7 +64,7 @@
 			<div class="grid-container">
 				
 				<div class="grid-x">
-					<div class="cell medium-4 large-3 text-center medium-text-left">
+					<div class="cell medium-4 large-3 text-center medium-text-left" id="header-left">
 						<?php
 						$homeLink = apply_filters( 'wpml_home_url', get_option( 'home' ) );
 						?>
@@ -82,7 +82,7 @@
 							?>
 						</a>
 
-						<div id="small-language-menu" class="show-for-small-only">
+						<div id="small-language-menu" class="show-for-small-only no-print">
 							<?php
 							if ( has_nav_menu( 'language-menu' ) ) :
 									wp_nav_menu(
@@ -96,8 +96,25 @@
 							?>
 						</div>
 					</div>
-					<div class="cell medium-8 large-9">
+					<div class="cell medium-8 large-9 no-print" id="header-right">
 
+						<div class="grid-x align-right" id="quick-actions">
+
+							<div class="cell auto show-for-medium">
+								<?php get_search_form( true ); ?>
+							</div>
+
+							<div class="cell auto text-center medium-text-right medium-shrink">
+								<a href="/funds" class="button donate-now">Donate Now</a>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="grid-x">
+					<div class="cell medium-text-right">
 						<nav id="site-navigation" class="main-navigation medium-text-right">
 							<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
 								<li>
@@ -156,6 +173,7 @@
 						</nav><!-- #site-navigation -->
 					</div>
 				</div>
+
 			</div><!-- .grid-container -->
 		</header><!-- #masthead -->
 	</div>

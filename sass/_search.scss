@@ -1,0 +1,15 @@
+
+.search-form {
+
+	#submit {
+		width: 100%;
+		background-color: $blue-color;
+		color: $light-gray;
+		height: 2.5rem;
+		border: 1px solid $blue-color;
+	}
+
+	#submit:hover {
+		cursor: pointer;
+	}
+}

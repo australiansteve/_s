@@ -1,0 +1,96 @@
+
+#open-grants-highlight {
+	background-color: $green-color;
+	padding: 1rem;
+
+	.container {
+		background-color: $white;
+		padding: 1rem 0.5rem;
+
+		ul {
+			list-style: none;
+			text-align: left;
+			font-size: 1.2rem;
+
+			.deadline {
+				font-size: 1rem;
+				font-style: italic;
+			}
+
+			a {
+				color: $black;
+			}
+		}
+	}
+
+	margin-bottom: 2rem;
+}
+
+#intro,
+#after-grants {
+	margin-bottom: 2rem;
+}
+
+
+#grant-eligibility {
+	background-color: $orange-color;
+	padding: 1rem;
+
+	.container {
+		background-color: $white;
+		padding: 1rem 0.5rem;
+
+	}
+}
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#open-grants-highlight {
+		padding: 2rem;
+
+		.container {
+			padding: 1rem 2rem;
+
+			ul {
+				text-align: center;
+
+			}
+
+		}
+	}
+
+	#grant-eligibility {
+		padding: 2rem;
+
+		.container {
+			padding: 1rem 2rem;
+
+			h3 {
+				font-size: 1.4rem;
+			}
+		}
+	}
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+}

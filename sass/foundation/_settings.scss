@@ -66,13 +66,21 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1920);
+$global-width: rem-calc(1360);
 $global-lineheight: 1.5;
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$pink-color: #bc5298;
+$green-color: #7fb955;
+$orange-color: #e68f52;
+$yellow-color: #e4e164;
+$blue-color: #6abfdb;
+$blue-bright-color: #6cc2dd;
+$green-color: #7fb955;
+$red-color: #f00;
 $foundation-palette: (
 	primary: $black,
 	secondary: $dark-gray,

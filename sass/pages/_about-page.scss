@@ -1,0 +1,195 @@
+#about-page {
+
+	h1,
+	h2 {
+		color: $pink-color;
+	}
+
+	.highlights {
+
+		text-align: center;
+		margin-top: 2rem;
+
+		h3,
+		p {
+			color: $white;
+		}
+
+		.highlight .container {
+			padding: 1rem;
+			margin-bottom: 2rem;
+			margin-top: 1rem;
+		}
+
+		.highlight:nth-of-type(1) .container {
+			background: $blue-color;
+		}
+
+		.highlight:nth-of-type(2) .container {
+			background: $orange-color;
+		}
+	}
+
+	#links {
+
+		.link {
+
+			padding: 1rem;
+			margin-bottom: 2rem;
+
+			a {
+				background: $black;
+				color: $white;
+				display: inline-block;
+				width: 100%;
+				padding: 1.25rem;
+			}
+		}
+	}
+
+	#team {
+		margin-bottom: 2rem;
+
+		.team-member-bio,
+		.team-member-image {
+			padding-bottom: 1.5rem;
+		}
+	}
+
+	#board,
+	#legal {
+
+		.active-arrow.active {
+			border-bottom: 30px solid $orange-color;
+		}
+
+		.bio-display {
+			background: $orange-color;
+			margin-top: 1.8rem;
+			margin-bottom: 2rem;
+
+			p {
+				margin: 1rem;
+				padding: 0.5rem;
+				background: $white;
+			}
+
+			.container {
+				background: $white;
+				margin: 1rem 1rem;
+			}
+		}
+	}
+
+}
+
+#report-types {
+
+	.report-type {
+
+		margin-top: 0.5rem;
+
+		p {
+			margin-bottom: 0.5rem;
+		}
+
+		.ui-icon {
+			margin-right: 0.5rem;
+		}
+	}
+
+	.report-type:focus {
+		outline-color: #454545;
+	}
+
+	.reports {
+		margin-bottom: 0.5rem;
+	}
+
+	/* Overrite some of the default 'active' colors of jQuery UI */
+	.ui-state-active,
+	.ui-widget-content .ui-state-active,
+	.ui-widget-header .ui-state-active,
+	a.ui-button:active,
+	.ui-button:active,
+	.ui-button.ui-state-active:hover {
+		border: 1px solid $black;
+		background: $white;
+		font-weight: 400;
+		color: $green-color;
+	}
+
+	.ui-state-default,
+	.ui-widget-content .ui-state-default,
+	.ui-widget-header .ui-state-default,
+	.ui-button,
+	html .ui-button.ui-state-disabled:hover,
+	html .ui-button.ui-state-disabled:active {
+		background: $white;
+		color: $green-color;
+	}
+
+	.ui-state-active .ui-icon,
+	.ui-button:active .ui-icon {
+		background-image: url(../img/ui-icons_454545_256x240.png);
+	}
+
+}
+
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+	#about-page {
+
+	}
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#about-page {
+
+		.highlights {
+
+			.highlight:nth-of-type(1) .container {
+				margin-right: 1rem;
+			}
+
+			.highlight:nth-of-type(2) .container {
+				margin-left: 1rem;
+			}
+		}
+
+		#team {
+
+			.team-member-bio {
+				padding-left: 2rem;
+			}
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+	#about-page {
+
+	}
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	#about-page {
+
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+	#about-page {
+
+	}
+}

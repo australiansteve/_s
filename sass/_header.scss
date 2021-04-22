@@ -4,7 +4,28 @@ header#masthead {
 	padding-bottom: 1rem;
 
 	img.size-header-logo {
-		max-width: 195px;
+		max-width: 230px;
+	}
+
+	#quick-actions {
+
+		.search-form {
+
+			input[type="text"] {
+				text-transform: uppercase;
+				letter-spacing: 0.25rem;
+			}
+
+			#submit {
+				font-style: italic;
+			}
+		}
+
+		.donate-now {
+			background-color: $yellow-color;
+			color: $black;
+			text-transform: uppercase;
+		}
 	}
 
 }
@@ -21,6 +42,39 @@ header#masthead {
 
 		nav#site-navigation {
 			margin-top: 1.6rem;
+		}
+
+
+		#header-left {
+			text-align: left;
+		}
+
+		#header-right {
+			text-align: right;
+
+			.donate-now {
+				margin-left: 1rem;
+				letter-spacing: 0.25rem;
+				padding-left: 2rem;
+				padding-right: 2rem;
+			}
+
+			#quick-actions {
+				margin-top: 1rem;
+			}
+
+			#main-menu {
+				margin-top: 1rem;
+
+				.dropdown.menu a {
+					padding: 0.7rem 0.2rem 0.7rem 1.8rem;
+					color: $black;
+				}
+			}
+		}
+
+		#primary-menu {
+
 		}
 	}
 

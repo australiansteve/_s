@@ -148,7 +148,9 @@
                                 "body": "Top of Body",
                                 "footer": "Footer"
                             },
-                            "default_value": "footer",
+                            "default_value": [
+                                "footer"
+                            ],
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -176,7 +178,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1618424640
+    "modified": 1619017022
 }

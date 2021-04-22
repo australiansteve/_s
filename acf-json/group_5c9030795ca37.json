@@ -1,0 +1,79 @@
+{
+    "key": "group_5c9030795ca37",
+    "title": "Fund Attributes (Featured Funds)",
+    "fields": [
+        {
+            "key": "field_5c90307966e0b",
+            "label": "Short Description",
+            "name": "short_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": 200,
+            "rows": 6,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5c90d936e2c32",
+            "label": "Background Color",
+            "name": "background_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "#bc5298": "Pink",
+                "#7fb955": "Green",
+                "#e68f52": "Orange",
+                "#e4e164": "Yellow",
+                "#6abfdb": "Blue",
+                "#6cc2dd": "Bright Blue"
+            },
+            "default_value": [
+                "#bc5298"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "austeve-funds"
+            },
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+                "value": "austeve-funds-category:featured"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1619016923
+}

@@ -1,6 +1,6 @@
 {
     "key": "group_5fd243ad6d28d",
-    "title": "Footer Settings",
+    "title": "General Footer Settings",
     "fields": [
         {
             "key": "field_5fd243ad74774",
@@ -63,5 +63,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607617731
+    "modified": 1619021936
 }
