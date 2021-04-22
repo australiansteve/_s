@@ -1,0 +1,229 @@
+.featured-fund,
+.fund {
+
+	min-height: 15vh;
+
+	.container {
+
+		position: relative;
+		text-align: center;
+		color: $white;
+
+		h4 {
+			margin-left: 0.2em;
+			margin-right: 0.2em;
+		}
+
+		.bg-color {
+
+			background-color: $pink-color;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			z-index: -2;
+			opacity: 0.7;
+		}
+
+		.bg-image {
+			background-position: 50% 50%;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.3;
+			z-index: -4;
+		}
+
+		.description {
+			margin-bottom: 1.5rem;
+			padding-left: 0.5rem;
+			padding-right: 0.5rem;
+		}
+
+		.action .button {
+			padding: 1rem;
+			background-color: $white;
+			color: $black;
+			font-weight: 500;
+			font-size: 0.8rem;
+			margin: 0.5rem 0.5rem 1rem 0.5rem;
+			text-transform: uppercase;
+		}
+	}
+
+	.container:hover {
+
+		.bg-image {
+			opacity: 0.5;
+		}
+	}
+}
+
+.featured-fund {
+	margin-bottom: 1rem;
+}
+
+.fund {
+
+	padding: 0 0.25rem 1rem 0.25rem;
+
+	h4 {
+		padding-top: 1rem;
+		font-size: 1.2rem;
+		display: inline-block;
+	}
+
+	.archive-content {
+
+		min-height: 20vh;
+
+	}
+}
+
+#fund-category-filters {
+
+	margin-bottom: 1rem;
+
+	p {
+		margin-bottom: 0.25rem;
+	}
+
+	.fund-category-checkbox {
+		margin: 0.25rem;
+		padding: 0.25rem 0.5rem;
+		color: $white;
+
+		input {
+			margin-bottom: 0.5rem;
+		}
+
+		input:checked {
+			color: $green-color;
+			background: $red-color;
+		}
+	}
+}
+
+.fund-single {
+
+	#page-content {
+		padding: 0 0.5rem;
+
+		img.attachment-post-thumbnail {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+#funds-page {
+
+	#donate-now {
+
+		.container {
+			margin: 0 0.25rem;
+			padding: 0.5rem;
+			border: 1px solid $light-gray;
+		}
+
+		.donate-now {
+			text-transform: uppercase;
+			background-color: $yellow-color;
+			color: $black;
+			letter-spacing: 0.1rem;
+			width: 100%;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#featured-funds > div.featured-fund:nth-of-type(1) {
+
+		.container {
+			margin-right: 1rem;
+		}
+	}
+
+	#featured-funds > div.featured-fund:nth-of-type(2) {
+
+		.container {
+			margin-left: 1rem;
+		}
+	}
+
+
+	.fund {
+
+		padding: 0 1rem 2rem 1rem;
+
+		.archive-content {
+
+			min-height: 150px;
+
+		}
+
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	.featured-fund,
+	.fund {
+
+		.container {
+
+			h4 {
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+				font-size: 1.4rem;
+			}
+
+			.archive-content {
+
+				min-height: 225px;
+
+			}
+
+			.action .button {
+				padding: 1rem;
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+
+	.fund .container .action .button {
+		display: block;
+	}
+
+	.single-austeve-funds img.wp-post-image {
+		float: right;
+		max-width: 50%;
+		margin-left: 2em;
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+}
+
+/* Minimum aspect ratio */
+@media (min-aspect-ratio: 1/1) {
+
+	.featured-fund, {
+		min-height: 40vh;
+	}
+}

@@ -1,0 +1,129 @@
+.home {
+
+	.wp-block-cover {
+
+		.wp-block-cover-text {
+			font-weight: 700;
+		}
+
+	}
+
+	#featured-post {
+
+		.featured-post-content {
+			text-align: center;
+		}
+
+		.container.content {
+			margin: 2rem 0 0 0;
+			padding: 1rem;
+			background-color: $white;
+
+			.action .button {
+				background-color: $black;
+				color: $white;
+				padding: 1rem 3rem;
+				margin-top: 1.5rem;
+				font-weight: 500;
+				font-size: 1rem;
+			}
+		}
+
+		.container {
+			margin: 2rem;
+			padding: 0;
+			background-color: none;
+		}
+	}
+
+	#more-stories {
+		padding-top: 3rem;
+		text-align: center;
+
+		a {
+			display: inline-block;
+			background-color: #000;
+			color: $white;
+			text-transform: uppercase;
+			font-size: 1.5rem;
+			font-weight: 700;
+			padding: 2rem 3rem;
+		}
+	}
+
+	#what-is-cf {
+		background-color: $blue-color;
+		text-align: center;
+		margin-top: 2rem;
+		padding: 2rem 0.5rem 4rem 0.5rem;
+
+		h2 {
+			color: $white;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.home {
+
+		.wp-block-cover {
+			min-height: 600px;
+
+			.wp-block-cover-text {
+				font-size: 2.5em;
+			}
+		}
+
+		#featured-post {
+
+			.container.content {
+				margin: 0 0 0 2rem;
+			}
+
+			.even .container.content {
+				margin: 0 2rem 0 0;
+			}
+		}
+
+		#what-is-cf {
+			padding: 2rem 2rem 4rem 2rem;
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

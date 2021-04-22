@@ -1,0 +1,114 @@
+#otherwise {
+	margin-top: 1rem;
+	font-size: 1.2rem;
+
+	a {
+		display: inline-block;
+		background-color: $black;
+		color: $white;
+		text-transform: uppercase;
+		font-size: 1.5rem;
+		font-weight: 700;
+		padding: 2rem 3rem;
+	}
+}
+
+#sub-page-links {
+
+	.button {
+		display: block;
+		text-align: center;
+		padding: 2em 0;
+	}
+}
+
+#reasons {
+	background-color: $green-color;
+	text-align: center;
+	padding: 1rem;
+
+	.container {
+		background-color: $white;
+		padding: 1rem 0.5rem;
+	}
+
+	.active-arrow.active {
+		border-bottom: 30px solid $green-color;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.reason-display {
+		background: $green-color;
+		margin-top: 1.8rem;
+		margin-bottom: 2rem;
+
+		p {
+			margin: 1rem;
+			padding: 0.5rem;
+			background: $white;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	#sub-page-links {
+
+		>div > div {
+
+			.button {
+				margin: 1em;
+			}
+		}
+
+		>div > div:nth-of-type(1) {
+
+			.button {
+				margin-left: 0;
+			}
+		}
+
+		>div > div:nth-last-of-type(1) {
+
+			.button {
+				margin-right: 0;
+			}
+		}
+
+		.button {
+			display: block;
+			text-align: center;
+			padding: 2em 0;
+		}
+	}
+
+	#reasons {
+		padding: 2rem;
+
+		.container {
+			padding: 1rem 2rem;
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+}

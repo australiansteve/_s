@@ -35,7 +35,17 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "utilities/woocommerce";
 
 /* Hamburger Cat style */
+@import "search";
 @import "general";
 @import "header";
 @import "menus";
 @import "footer";
+@import "archive";
+@import "single";
+@import "pages/front-page";
+@import "pages/about-page";
+@import "pages/contact-page";
+@import "pages/give-page";
+@import "pages/receive-page";
+@import "austeve-funds";
+@import "austeve-grants";

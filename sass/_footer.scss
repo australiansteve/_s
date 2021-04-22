@@ -1,4 +1,7 @@
 footer {
+	background: $black;
+	color: $white;
+	padding: 3rem 1rem;
 
 	#back-to-top {
 
@@ -16,4 +19,100 @@ footer {
 			color: rgba(200, 200, 200, 0.7);
 		}
 	}
+
+	a {
+		color: $white;
+	}
+
+	a:hover,
+	a:focus {
+		color: #a0a0a0;
+	}
+
+	.left-column,
+	.center-column {
+		padding: 0 3rem 0 0;
+
+	}
+
+	.right-column {
+		padding: 0;
+	}
+
+	.page-links {
+
+		a {
+			font-weight: 700;
+		}
+	}
+
+	.a-member-of {
+
+		img {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	.find-us-on {
+
+		i::before {
+			margin-right: 0.75em;
+		}
+	}
+
+	#copyright {
+		font-size: 0.6rem;
+	}
+
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	footer {
+
+		padding: 3rem 1rem 0 1rem;
+
+		.left-column,
+		.center-column,
+		.right-column {
+
+		}
+
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
 }

@@ -1,0 +1,152 @@
+.grant {
+
+	min-height: 25vh;
+
+	.container {
+		position: relative;
+		text-align: center;
+		color: $white;
+
+		.bg-color {
+
+			background-color: $pink-color;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			z-index: -2;
+			opacity: 1;
+		}
+
+		.bg-image {
+			background-position: 50% 50%;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.3;
+			z-index: -4;
+		}
+
+		.description {
+			margin-bottom: 1.5rem;
+		}
+
+		.action .button {
+			background-color: $white;
+			color: $black;
+			font-weight: 500;
+			font-size: 0.8rem;
+			margin: 0.5rem 0.5rem 1rem 0.5rem;
+		}
+	}
+
+	.container:hover {
+
+		.bg-image {
+			opacity: 0.5;
+		}
+	}
+}
+
+.grant {
+
+	padding: 0 0.25rem 1rem 0.25rem;
+
+	h3 {
+		padding-top: 1rem;
+		font-size: 1.4rem;
+		display: inline-block;
+	}
+
+	.archive-content {
+
+		min-height: 20vh;
+		padding: 0.5rem;
+
+	}
+}
+
+.grant-single {
+
+	.grant-timeline,
+	.grant-closing {
+		margin-bottom: 2rem;
+	}
+
+	.current-status {
+		font-weight: 700;
+		margin-top: 0.5em;
+	}
+
+	#grant-eligibility {
+		margin-top: 2em;
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up */
+@media screen and (min-width: 40em) {
+
+	.grant {
+
+		padding: 0 1rem 2rem 1rem;
+
+		.archive-content {
+
+			min-height: 150px;
+
+		}
+
+		.dates {
+			min-height: 7em;
+		}
+
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up */
+@media screen and (min-width: 64em) {
+
+	.grant {
+
+		.container {
+
+			h3 {
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+				font-size: 1.7rem;
+			}
+
+			.archive-content {
+
+				min-height: 200px;
+
+			}
+
+			.action .button {
+				padding: 1rem 3rem;
+				margin-bottom: 1.5rem;
+			}
+		}
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+
+}
+
+/* Minimum aspect ratio */
+@media (min-aspect-ratio: 1/1) {
+
+}

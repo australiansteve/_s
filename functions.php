@@ -102,7 +102,10 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 640, true);
-		add_image_size( 'header-logo', 390, 190, false);
+		add_image_size( 'header-logo', 460, 200, false);
+		add_image_size( 'bio-pic-size', 250, 250, array( 'center', 'center' ) ); // Hard crop center
+		add_image_size( 'feature-pic-size', 600, 350, array( 'center', 'center' ) ); // Hard crop center
+
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -226,6 +229,21 @@ function austeve_custom_js_in_head() {
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
 
+function austeve_clean_string($string) {
+   $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+
+   return strtolower(preg_replace('/[^A-Za-z0-9\-]/', '', $string)); // Removes special chars.
+}
+
+add_filter ( 'pre_get_posts', function($query) {
+	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-funds') ) {
+		
+		/* Always get 'all' funds ie up to 200 */
+	    $query->set( 'posts_per_page', '200' );
+	    
+		return $query;        
+	}
+}, 10, 1);
 
 add_filter( 'get_the_archive_title', function ($title) {
 	if ( is_post_type_archive() ) {

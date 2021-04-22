@@ -1,0 +1,106 @@
+.single-post {
+
+	.embed-container {
+		margin-bottom: 1em;
+	}
+}
+
+.single-austeve-funds {
+
+	iframe {
+		border: none;
+	}
+}
+
+#story-navigation {
+
+	.container {
+
+		position: relative;
+		text-align: center;
+
+		.content {
+			min-height: 13em;
+		}
+
+		a {
+			color: $white;
+		}
+
+		.bg-color {
+
+			background-color: $pink-color;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			z-index: -2;
+			opacity: 0.7;
+		}
+
+		.bg-image {
+			background-position: 50% 50%;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-size: cover;
+			opacity: 0.3;
+			z-index: -4;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	#single-post-content {
+		min-height: 25em;
+	}
+
+	.post-nav .container {
+		margin: 0 0.5em;
+	}
+
+	.post-nav:nth-of-type(1) .container {
+		margin-left: 0;
+	}
+
+	.post-nav:nth-last-of-type(1) .container {
+		margin-right: 0;
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}
