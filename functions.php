@@ -236,13 +236,12 @@ function austeve_clean_string($string) {
 }
 
 add_filter ( 'pre_get_posts', function($query) {
-	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-funds') ) {
-		
-		/* Always get 'all' funds ie up to 200 */
-	    $query->set( 'posts_per_page', '200' );
-	    $query->set('meta_key', 'stripped_name');
-		$query->set('orderby', 'meta_value');
-		$query->set('order'	, 'ASC');
+	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-funds') || (wp_doing_ajax() && in_array('austeve-funds', $query->get('post_type')))) {
+
+	    $query->set( 'posts_per_page', '20' );
+	    $query->set( 'meta_key', 'stripped_name' );
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'order'	, 'ASC' );
 
 		if(isset($_GET['fund-name']))
 		{
@@ -419,3 +418,62 @@ function austeve_posts_link_attributes() {
 add_filter('next_posts_link_attributes', 'austeve_posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'austeve_posts_link_attributes');
 
+function austeve_get_funds() {
+
+	$nonce = $_REQUEST['security'];
+	if (wp_verify_nonce( $nonce, 'archive-page-posts')) {
+		$page = intval($_REQUEST['page']);
+		$category = isset($_REQUEST['category']) ? $_REQUEST['category'] : null;
+		$search = isset($_REQUEST['s']) ? $_REQUEST['s']: null;
+
+		$args = array(
+			'post_type' => array('austeve-funds'),
+			'post_status' => array('publish'),
+			'nopaging' => false,
+			'paged' => $page,
+			'order' => 'ASC',
+			'orderby' => 'menu_order',
+		);
+
+		if ($category) {
+			$args['tax_query'] = array(
+				array(
+					'taxonomy'         => 'austeve-funds-category',
+					'terms'            => $category,
+					'field'            => 'slug',
+					'operator'         => 'IN',
+				)
+			);
+		}
+
+		if ($search) {
+			$args['s'] = $search;
+		}
+
+		error_log("AJAX args: ".print_r($args, true));
+		$ajaxposts = new WP_Query( $args );
+
+		if ( $ajaxposts->have_posts()) {
+
+		global $categoryBgColors; 
+		$savedBgColors = get_field('fund_category_background_colors', 'options');
+		foreach($savedBgColors as $color)
+		{
+			$categoryBgColors[$color['category']] = $color['color'];
+		}
+
+			while ( $ajaxposts->have_posts() ) {
+				$ajaxposts->the_post();
+
+				include( locate_template('template-parts/austeve-funds-archive.php', false, false ));
+			}
+		}
+
+		wp_reset_query();
+	}
+
+	exit;
+}
+
+add_action('wp_ajax_austeve_get_funds', 'austeve_get_funds');
+add_action('wp_ajax_nopriv_austeve_get_funds', 'austeve_get_funds');
