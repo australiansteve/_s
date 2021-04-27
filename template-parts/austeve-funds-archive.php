@@ -1,9 +1,10 @@
 <?php
+global $post;
+global $categoryBgColors;
 
 $terms = get_the_terms($post, 'austeve-funds-category' );
 
 $bgColor = get_field('default_fund_background_color', 'option'); //Default color
-global $categoryBgColors;
 if ($terms)
 {
 	foreach($terms as $term)
