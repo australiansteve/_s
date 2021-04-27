@@ -1,7 +1,7 @@
 header#masthead {
 
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-top: 0;
+	padding-bottom: 0;
 
 	img.size-header-logo {
 		max-width: 230px;
@@ -40,8 +40,20 @@ header#masthead {
 
 	header#masthead {
 
+		img.size-header-logo {
+			max-width: 300px;
+		}
+
 		nav#site-navigation {
-			margin-top: 1.6rem;
+
+			#primary-menu {
+
+				a {
+					padding: 0.7rem 0.2rem 0.7rem 1.8rem;
+					color: $black;
+				}
+			}
+
 		}
 
 
@@ -62,19 +74,6 @@ header#masthead {
 			#quick-actions {
 				margin-top: 1rem;
 			}
-
-			#main-menu {
-				margin-top: 1rem;
-
-				.dropdown.menu a {
-					padding: 0.7rem 0.2rem 0.7rem 1.8rem;
-					color: $black;
-				}
-			}
-		}
-
-		#primary-menu {
-
 		}
 	}
 
@@ -91,7 +90,7 @@ header#masthead {
 		}
 
 		img.size-header-logo {
-			max-width: 125px;
+			max-width: 205px;
 			transition: max-width 500ms linear;
 		}
 	}
