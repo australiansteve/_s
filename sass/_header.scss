@@ -33,6 +33,9 @@ header#masthead {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	header.sticky.is-anchored {
+		position: static;
+	}
 }
 
 /* Medium and up (640px) */
