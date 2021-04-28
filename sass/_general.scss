@@ -44,6 +44,7 @@ body {
 			h2 {
 				margin-bottom: 2rem;
 				font-weight: 700;
+				line-height: 1.9;
 
 				span {
 					border-bottom: 2px solid $pink-color;
@@ -60,6 +61,7 @@ body {
 
 			.entry-content {
 				margin: 1rem 0;
+				overflow-x: hidden;
 
 				.breadcrumbs {
 					margin-top: 2rem;

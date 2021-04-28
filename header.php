@@ -56,7 +56,7 @@
 		<?php
 		$useStickyHeader = get_field('use_sticky_header', 'options');
 		$stickyContainerData = $useStickyHeader ? 'data-sticky-container' : '';
-		$stickyData = $useStickyHeader ? 'data-sticky data-margin-top="0"' : '';
+		$stickyData = $useStickyHeader ? 'data-sticky data-margin-top="0" data-sticky-on="medium"' : '';
 		$stickyBgColor = get_field('sticky_header_background_color', 'options');
 		?>
 		<div <?php echo $stickyContainerData;?> >

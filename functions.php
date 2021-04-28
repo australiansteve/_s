@@ -101,7 +101,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
-		add_image_size( 'archive-image', 800, 640, true);
+		add_image_size( 'archive-image', 800, 500, true);
 		add_image_size( 'header-logo', 600, 260, false);
 		add_image_size( 'bio-pic-size', 250, 250, array( 'center', 'center' ) ); // Hard crop center
 		add_image_size( 'feature-pic-size', 600, 350, array( 'center', 'center' ) ); // Hard crop center
