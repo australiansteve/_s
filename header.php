@@ -48,7 +48,6 @@
 				endif;
 			endwhile;
 		endif;
-
 	?>
 
 	<?php wp_body_open(); ?>
@@ -59,7 +58,6 @@
 		$useStickyHeader = get_field('use_sticky_header', 'options');
 		$stickyContainerData = $useStickyHeader ? 'data-sticky-container' : '';
 		$stickyData = $useStickyHeader ? 'data-sticky data-margin-top="0"' : '';
-		$stickyBgColor = get_field('sticky_header_background_color', 'options');
 		?>
 
 		<?php wp_body_open(); ?>
@@ -97,6 +95,7 @@
 													)
 												);
 												?>
+
 												<div class="social-wrapper">
 													<?php
 													wp_nav_menu(
