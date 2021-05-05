@@ -10,6 +10,7 @@ jQuery( document ).ready(function() {
 	window.addEventListener('resize', triggerFoundationEqualizer);
 	calculateSectionMinusHeaderHeight();
 	Foundation.addToJquery(jQuery);
+
 	
 });
 
@@ -30,6 +31,9 @@ var calculateSectionMinusHeaderHeight = _.debounce(function () {
 	});
 }, 250);
 
+jQuery(".off-canvas-top").on('click', function(e) {
+	e.preventDefault();
+});
 
 var triggerFoundationEqualizer = _.debounce(function (groups) {
 	if (jQuery("[data-equalize-by-row]").length) {
