@@ -78,6 +78,26 @@ nav {
 	}
 }
 
+.off-canvas {
+	opacity: 0.95;
+
+	.off-canvas-container {
+		height: 100vh;
+		position: relative;
+
+		a.close-off-canvas {
+			position: absolute;
+			top: 1rem;
+			right: 1.18rem;
+		}
+
+		.grid-y {
+			min-height: 100%;
+			font-size: 1.9rem;
+		}
+	}
+}
+
 #language-menu-small.menu {
 	display: inline-block;
 	margin-left: 0;
@@ -120,6 +140,26 @@ nav {
 			padding-left: 0;
 		}
 	}
+
+	.off-canvas {
+		opacity: 0.9;
+
+		.off-canvas-container {
+
+			a.close-off-canvas {
+				top: 2.6rem;
+				right: 0.18rem;
+			}
+
+			.grid-y {
+				font-size: 2.6rem;
+
+				li {
+					margin-bottom: 1rem;
+				}
+			}
+		}
+	}
 }
 
 /* Medium only */
@@ -140,6 +180,23 @@ nav {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	.off-canvas {
+
+		.off-canvas-container {
+
+			a.close-off-canvas {
+				top: 4rem;
+			}
+
+			.grid-y {
+				font-size: 3.2rem;
+
+				li {
+					margin-bottom: 1.5rem;
+				}
+			}
+		}
+	}
 }
 
 /* XLarge only */
@@ -150,4 +207,17 @@ nav {
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
+	.off-canvas {
+
+		.off-canvas-container {
+
+			.grid-y {
+				font-size: 4.2rem;
+
+				li {
+					margin-bottom: 2.5rem;
+				}
+			}
+		}
+	}
 }
