@@ -225,3 +225,34 @@ function austeve_custom_js_in_head() {
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
 
+
+add_filter( 'get_the_archive_title', function ($title) {
+	if ( is_post_type_archive() ) {
+		$title = "<span>" . post_type_archive_title( '', false ) . "</span>";
+	} elseif ( is_tax('project-category') ) {
+		/* Start with tax term name */
+		$title = single_term_title( '', false );
+
+		/* Prepend parent term names */
+		$parentTermId = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) )->parent;
+		$parentTerm = get_term_by('id', $parentTermId, 'project-category');
+		while($parentTerm) {
+			$title = "<a href='".get_term_link($parentTerm->term_id)."'>".$parentTerm->name."</a> : ".$title;
+			$parentTerm = get_term_by('id', $parentTerm->parent, 'project-category');
+		}
+
+		/* Prepend post type archive */
+		global $post;
+		$post_type_string = get_post_type($post);
+		$post_type = get_post_type_object( $post_type_string ); 
+		$title = "<span><a href='".get_post_type_archive_link($post_type_string)."'>".get_post_type_labels($post_type)->name."</a> : " .$title. "</span>";
+
+	} elseif ( is_category() ) {
+		$title = "<span>" . single_cat_title( '', false ) . "</span>";
+	} elseif ( is_tag() ) {
+		$title = "<span>" . single_tag_title( '', false ) . "</span>";
+	} elseif ( is_author() ) {
+		$title = '<span>' . get_the_author() . '</span>' ;
+	}
+	return $title;
+});
