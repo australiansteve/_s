@@ -43,6 +43,41 @@
             "mime_types": ""
         },
         {
+            "key": "field_6093dd24eed74",
+            "label": "Projects Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6093dd36eed75",
+            "label": "Projects Page Introduction",
+            "name": "projects_page_introduction",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_60772c198fa3b",
             "label": "Custom Javascript",
             "name": "",
@@ -148,7 +183,9 @@
                                 "body": "Top of Body",
                                 "footer": "Footer"
                             },
-                            "default_value": "footer",
+                            "default_value": [
+                                "footer"
+                            ],
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -176,7 +213,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1618424640
+    "modified": 1620303179
 }

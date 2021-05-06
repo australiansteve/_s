@@ -108,7 +108,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
-		add_image_size( 'archive-image', 800, 640, true);
+		add_image_size( 'archive-image', 530, 440, true);
 		add_image_size( 'header-logo', 390, 190, false);
 	}
 endif;
@@ -232,7 +232,6 @@ function austeve_custom_js_in_head() {
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
 
-
 add_filter( 'get_the_archive_title', function ($title) {
 	if ( is_post_type_archive() ) {
 		$title = "<span>" . post_type_archive_title( '', false ) . "</span>";
@@ -262,4 +261,55 @@ add_filter( 'get_the_archive_title', function ($title) {
 		$title = '<span>' . get_the_author() . '</span>' ;
 	}
 	return $title;
+});
+
+function austeve_get_projects() {
+
+	$nonce = $_REQUEST['security'];
+	if (wp_verify_nonce( $nonce, 'archive-page-projects')) {
+		$page = intval($_REQUEST['page']);
+		$style = $_REQUEST['style'];
+		
+		$args = array(
+			'post_type' => array('austeve-projects'),
+			'post_status' => array('publish'),
+			'nopaging' => false,
+			'paged' => $page
+		);
+
+		error_log("AJAX args: ".print_r($args, true));
+		error_log("Style: ".$style);
+		$ajaxposts = new WP_Query( $args );
+
+		if ( $ajaxposts->have_posts()) {
+
+			while ( $ajaxposts->have_posts() ) {
+				$ajaxposts->the_post();
+
+				if ($style == 'list') {
+					include( locate_template('template-parts/archive-austeve-projects.php', false, false ));
+				}
+				else if ($style == 'hero' ) {
+					include( locate_template('template-parts/hero-austeve-project.php', false, false ));
+				}
+			}
+		}
+
+		wp_reset_query();
+	}
+
+	exit;
+}
+
+add_action('wp_ajax_austeve_get_projects', 'austeve_get_projects');
+add_action('wp_ajax_nopriv_austeve_get_projects', 'austeve_get_projects');
+
+add_filter ( 'pre_get_posts', function($query) {
+	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-projects') || (wp_doing_ajax() && in_array('austeve-projects', $query->get('post_type')))) {
+
+		//get 4 projects at a time so the layout is a bit more even
+	    $query->set( 'posts_per_page', '4' );
+
+		return $query; 
+    }
 });
