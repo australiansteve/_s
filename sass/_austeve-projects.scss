@@ -1,9 +1,5 @@
 .post-type-archive-austeve-projects {
 
-	.hero-austeve-projects-background {
-		background: $light-gray;
-	}
-
 	.austeve-projects-list {
 
 		article {
@@ -15,3 +11,36 @@
 		}
 	}
 }
+
+.single-austeve-projects {
+
+	.austeve-projects-hero {
+
+		.not-active {
+
+			.container {
+				position: relative;
+
+				.shaded-background {
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					z-index: 10;
+					background-color: rgba(255, 255, 255, 0.85);
+				}
+			}
+
+		}
+	}
+}
+
+.single-austeve-projects,
+.post-type-archive-austeve-projects {
+
+	.hero-austeve-projects-background {
+		background: $light-gray;
+	}
+}
+

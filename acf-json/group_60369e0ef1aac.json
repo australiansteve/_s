@@ -60,13 +60,6 @@
                 "operator": "==",
                 "value": "page"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "austeve-projects"
-            }
         ]
     ],
     "menu_order": 50,
@@ -75,7 +68,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": 1,
     "description": "",
-    "modified": 1614192548
+    "modified": 1620312701
 }
