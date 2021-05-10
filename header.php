@@ -111,7 +111,7 @@
 				<div class="grid-container">
 
 					<div class="grid-x">
-						<div class="cell medium-4 large-3 text-center medium-text-left">
+						<div class="cell medium-4 text-center medium-text-left">
 							<?php
 							$homeLink = apply_filters( 'wpml_home_url', get_option( 'home' ) );
 							?>
@@ -143,7 +143,7 @@
 								?>
 							</div>
 						</div>
-						<div class="cell medium-8 large-9">
+						<div class="cell medium-8">
 
 							<nav id="site-navigation" class="main-navigation medium-text-right">
 

@@ -1,7 +1,7 @@
 
 <div class="hero-austeve-projects-background">
 	<div class="grid-container">
-		<div class="grid-x small-up-2 medium-up-4 align-center austeve-projects-hero">
+		<div class="grid-x small-up-1 medium-up-4 align-center austeve-projects-hero">
 
 			<?php
 
@@ -20,7 +20,7 @@
 				while ( $projects_query->have_posts() ) {
 					$projects_query->the_post();
 					?>
-					<div class="cell <?php echo $currentPostId == get_the_ID() ? 'is-active' : 'not-active'; ?>">
+					<div class="cell <?php echo $currentPostId == get_the_ID() ? 'is-active' : 'show-for-medium not-active'; ?>">
 						<div class="container">
 							<?php if ($currentPostId != get_the_ID()) :?>
 								<a href="<?php the_permalink();?>" title="<?php the_title();?>">

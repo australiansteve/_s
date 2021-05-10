@@ -88,14 +88,22 @@ nav {
 		a.close-off-canvas {
 			position: absolute;
 			top: 1rem;
-			right: 1.18rem;
+			right: 1rem;
 		}
 
 		.grid-y {
 			min-height: 100%;
 			font-size: 1.9rem;
+
+			.social-wrapper {
+				font-size: 0.5em;
+			}
 		}
 	}
+}
+
+.menu {
+	font-family: Abolition, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 }
 
 #language-menu-small.menu {
@@ -134,6 +142,10 @@ nav {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	nav {
+		font-size: 0.8rem;
+	}
+
 	#social-menu {
 
 		a {
@@ -147,8 +159,8 @@ nav {
 		.off-canvas-container {
 
 			a.close-off-canvas {
-				top: 2.6rem;
-				right: 0.18rem;
+				top: 1.8rem;
+				right: 0;
 			}
 
 			.grid-y {
@@ -180,16 +192,22 @@ nav {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+
+	nav {
+		font-size: 1rem;
+	}
+
 	.off-canvas {
 
 		.off-canvas-container {
 
 			a.close-off-canvas {
-				top: 4rem;
+				top: 2.25rem;
+				font-size: 1.25em;
 			}
 
 			.grid-y {
-				font-size: 3.2rem;
+				font-size: 3.8rem;
 
 				li {
 					margin-bottom: 1.5rem;

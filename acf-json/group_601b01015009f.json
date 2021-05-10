@@ -43,6 +43,44 @@
             "mime_types": ""
         },
         {
+            "key": "field_60944225769dd",
+            "label": "Read More Text",
+            "name": "read_more_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Read more",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_609445418e69e",
+            "label": "Back To News Text",
+            "name": "back_to_news_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Back to all news",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6093dd24eed74",
             "label": "Projects Page",
             "name": "",
@@ -215,5 +253,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1620303179
+    "modified": 1620329825
 }

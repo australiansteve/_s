@@ -20,7 +20,7 @@ header#masthead {
 	header#masthead {
 
 		nav#site-navigation {
-			margin-top: 1.6rem;
+			margin-top: 1rem;
 		}
 	}
 
@@ -51,6 +51,13 @@ header#masthead {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	header#masthead {
+
+		h1 {
+			line-height: 1;
+		}
+
+	}
 }
 
 /* Large only */
@@ -62,7 +69,11 @@ header#masthead {
 @media screen and (min-width: 100em) {
 
 	header#masthead {
-		margin-top: 1.5rem;
+
+		nav#site-navigation {
+			margin-top: 1.5rem;
+		}
+
 	}
 }
 

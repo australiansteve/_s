@@ -65,13 +65,13 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 125%;
 $global-width: rem-calc(1920);
 $global-lineheight: 1.5;
 $light-gray: #f5f1ef;
 $medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$dark-gray: #707070;
+$black: #000;
 $white: #fefefe;
 $foundation-palette: (
 	primary: $black,
@@ -81,8 +81,8 @@ $foundation-palette: (
 	alert: #cc4b37,
 );
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: "Montserrat", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+$body-font-color: $dark-gray;
+$body-font-family: "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -144,16 +144,16 @@ $header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: consolas, "Liberation Mono", courier, monospace;
-$header-color: inherit;
+$header-color: $black;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
 	small: (
-		"h1": ("font-size": 24),
-		"h2": ("font-size": 20),
-		"h3": ("font-size": 19),
-		"h4": ("font-size": 18),
-		"h5": ("font-size": 17),
+		"h1": ("font-size": 36),
+		"h2": ("font-size": 28),
+		"h3": ("font-size": 24),
+		"h4": ("font-size": 20),
+		"h5": ("font-size": 18),
 		"h6": ("font-size": 16),
 	),
 	medium: (
@@ -163,6 +163,22 @@ $header-styles: (
 		"h4": ("font-size": 25),
 		"h5": ("font-size": 20),
 		"h6": ("font-size": 16),
+	),
+	large: (
+		"h1": ("font-size": 72),
+		"h2": ("font-size": 40),
+		"h3": ("font-size": 32),
+		"h4": ("font-size": 28),
+		"h5": ("font-size": 24),
+		"h6": ("font-size": 20),
+	),
+	xlarge: (
+		"h1": ("font-size": 100),
+		"h2": ("font-size": 40),
+		"h3": ("font-size": 36),
+		"h4": ("font-size": 32),
+		"h5": ("font-size": 28),
+		"h6": ("font-size": 20),
 	),
 );
 $header-text-rendering: optimizeLegibility;

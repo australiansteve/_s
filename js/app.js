@@ -35,6 +35,12 @@ jQuery(".off-canvas-top").on('click', function(e) {
 	e.preventDefault();
 });
 
+jQuery(".reveal-more-button").on('click', function() {
+	//console.log("reveal more button clicked");
+	jQuery(".hidden-paragraph").css("max-height", "500px");
+	jQuery(this).css('display', 'none');
+});
+
 var triggerFoundationEqualizer = _.debounce(function (groups) {
 	if (jQuery("[data-equalize-by-row]").length) {
 		new Foundation.Equalizer(jQuery("[data-equalize-by-row]")).getHeightsByRow(resetHeights);

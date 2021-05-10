@@ -1,14 +1,12 @@
 <?php
-$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-image') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<a href="<?php echo the_permalink();?>">
-		<img src='<?php echo $thumbnail; ?>' />
-		<h3 class="page-title"><?php the_title();?></h3>
-		<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
-	</a>
+	<div class="date"><?php echo get_the_date('j M Y'); ?></div>
+	<h3 class="page-title"><?php the_title();?></h3>
+	<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
+	
+	<a class="read-more" href="<?php the_permalink(); ?>"><?php the_field('read_more_text', 'option'); ?></a>
 		
 </article><!-- #post-<?php the_ID(); ?> -->
