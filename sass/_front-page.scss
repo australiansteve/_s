@@ -1,54 +1,33 @@
-footer {
+.home {
 
-	#back-to-top {
+	.all-news-link {
 
-		a {
-			padding: 0.7rem 0;
+		margin: 1rem 0 3rem 0;
+
+		.entry-content {
+			margin: 1rem 0 4rem 0;
 		}
-	}
-
-	.site-info {
-		font-size: 0.7em;
-
-		div,
-		p,
-		a {
-			color: rgba(200, 200, 200, 0.7);
-		}
-	}
-
-	#footer-menu {
-		font-size: 1.5rem;
 	}
 }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
-	footer {
-
-		#footer-menu {
-			display: block;
-		}
-
-	}
 }
 
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	#page {
-		position: relative;
-		min-height: 100vh;
-		padding-bottom: 115px;
+	.home {
 
-		footer {
-			position: absolute;
-			right: 0;
-			left: 0;
-			bottom: 0;
+		.all-news-link {
+
+			.entry-content {
+				margin: 1rem 8% 4rem 8%;
+			}
 		}
 	}
+
 }
 
 /* Medium only */
