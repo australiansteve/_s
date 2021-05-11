@@ -23,9 +23,9 @@
 .marquee:hover {
 
 	.container {
-		-moz-animation-play-state: paused;
-		-webkit-animation-play-state: paused;
-		animation-play-state: paused;
+		-moz-animation-play-state: paused !important;
+		-webkit-animation-play-state: paused !important;
+		animation-play-state: paused !important;
 	}
 }
 

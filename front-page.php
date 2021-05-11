@@ -69,7 +69,7 @@ get_header();
 					</div>
 				</div>
 			</div>
-
+			
 			<?php
 		} 
 		// Restore original Post Data
