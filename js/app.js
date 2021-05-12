@@ -1,4 +1,6 @@
-import { lodash } from 'lodash'
+// import { lodash } from 'lodash'
+// var ld = require( 'lodash' );
+// var _ = ld.noConflict();
 
 //customizer.js is only done in backend so not including in main
 import './navigation.js'
