@@ -109,7 +109,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 640, true);
-		add_image_size( 'header-logo', 390, 190, false);
+		add_image_size( 'header-logo', 410, 120, false);
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -263,3 +263,19 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+
+add_action( 'learndash-quiz-before', function($quiz_id, $course_id, $user_id ) {
+	error_log("learndash-quiz-before");
+}, 99, 3);
+
+
+add_action( 'learndash-quiz-actual-content-after', function($quiz_id, $course_id, $user_id) {
+	error_log("learndash-quiz-actual-content-after");
+	echo "<script>
+		jQuery('.wpProQuiz_questionInput').on('change', function(){
+	    console.log('input selected: ' + this.checked);
+	});
+	</script>";
+}, 10, 3);
+
