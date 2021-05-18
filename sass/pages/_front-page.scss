@@ -1,0 +1,149 @@
+.home {
+
+	#landing {
+
+		background: linear-gradient($orange 0%, $orange 90%, $purple 90%);
+
+
+		.polaroids-container {
+			white-space: nowrap;
+			font-size: 0;
+			padding: 1rem;
+
+			.polaroid-container {
+				position: relative;
+				display: inline-block;
+				max-width: 50%;
+				white-space: normal;
+				padding: 0.75rem;
+
+				.polaroid-frame {
+					background-color: $white;
+					padding: 8px 8px 8px 24px;
+					box-shadow: 5px 10px $light-gray;
+
+				}
+			}
+
+			.polaroid-container:nth-of-type(1) {
+				transform: rotate(10deg);
+				z-index: 1;
+			}
+		}
+	}
+
+	#calls-to-action {
+		background: $purple;
+
+		.background-image {
+			left: 70%;
+			top: 75%;
+			bottom: -15%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: 1;
+			background-position: 100%;
+		}
+	}
+
+	#learner-spotlight {
+		background: linear-gradient($salmon 0%, $salmon 95%, $orange 95%);
+
+		.background-image {
+			right: 40%;
+			top: 50%;
+		}
+	}
+
+	#news {
+		background: $orange;
+
+		.background-image {
+			right: 70%;
+			top: 95%;
+			bottom: -35%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: 1;
+			background-position: 0% 0%;
+		}
+	}
+
+	#sponsors {
+		background: $teal;
+
+		.background-image {
+			left: 70%;
+			top: 90%;
+			bottom: -15%;
+			background-size: contain;
+			background-repeat: no-repeat;
+			z-index: 1;
+			background-position: 100%;
+		}
+	}
+
+	#newsletter {
+		background: $blue;
+	}
+
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+	.home {
+
+		#landing {
+
+			#landing-right {
+				position: relative;
+			}
+		}
+	}
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.home {
+
+		#landing {
+
+			.background-image {
+				left: 50%;
+			}
+
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

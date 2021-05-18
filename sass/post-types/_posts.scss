@@ -1,12 +1,4 @@
-header#masthead {
-
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	background: $orange;
-
-	img.size-header-logo {
-		max-width: 205px;
-	}
+article.category-learner-spotlight {
 
 }
 
@@ -18,28 +10,20 @@ header#masthead {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	header#masthead {
+	article.category-learner-spotlight {
+		padding-bottom: 200px;
+		transition: padding 2s linear;
 
-		nav#site-navigation {
-			margin-top: 1.6rem;
-		}
-	}
+		.highlight-cluster {
+			position: relative;
 
-	div.sticky-container {
-		transition: height 500ms linear;
-
-	}
-
-	header#masthead.is-at-top.is-stuck {
-		background-color: $body-background;
-
-		nav#site-navigation {
-			margin-top: 0.75rem;
-		}
-
-		img.size-header-logo {
-			max-width: 125px;
-			transition: max-width 500ms linear;
+			.overlay {
+				position: absolute;
+				bottom: -200px;
+				right: 0;
+				left: 0;
+				transition: bottom 2s linear;
+			}
 		}
 	}
 }
@@ -62,9 +46,6 @@ header#masthead {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
-	header#masthead {
-		margin-top: 1.5rem;
-	}
 }
 
 /* XLarge only */

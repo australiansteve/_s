@@ -36,10 +36,30 @@ body {
 		min-height: 100vh;
 	}
 
+	.background-container {
+		position: relative;
+
+		.background-image {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			z-index: 0;
+			background-size: cover;
+			background-position: 50% 50%;
+		}
+	}
+
+	.content-container {
+		position: relative;
+		z-index: 1;
+	}
+
 	main {
 
 		.page-content {
-			margin: 3rem 0;
+			margin: 0;
 
 			h2 {
 				margin-bottom: 2rem;
@@ -59,7 +79,8 @@ body {
 			}
 
 			.entry-content {
-				margin: 4rem 0;
+				margin: 0 0;
+				padding: 2rem 0;
 
 				.breadcrumbs {
 					margin-top: 2rem;
@@ -98,7 +119,7 @@ a {
 			.page-content {
 
 				.entry-content {
-					margin: 4rem 8%;
+					margin: 0 8%;
 
 					p {
 						max-width: 950px;
