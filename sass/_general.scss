@@ -79,7 +79,7 @@ body {
 			}
 
 			.entry-content {
-				margin: 0 0;
+				margin: 0;
 				padding: 2rem 0;
 
 				.breadcrumbs {
@@ -119,10 +119,9 @@ a {
 			.page-content {
 
 				.entry-content {
-					margin: 0 8%;
 
 					p {
-						max-width: 950px;
+						max-width: 85%;
 					}
 				}
 			}

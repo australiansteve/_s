@@ -4,7 +4,6 @@
 
 		background: linear-gradient($orange 0%, $orange 90%, $purple 90%);
 
-
 		.polaroids-container {
 			white-space: nowrap;
 			font-size: 0;
@@ -92,30 +91,11 @@
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
-	.home {
-
-		#landing {
-
-			#landing-right {
-				position: relative;
-			}
-		}
-	}
 }
 
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	.home {
-
-		#landing {
-
-			.background-image {
-				left: 50%;
-			}
-
-		}
-	}
 }
 
 /* Medium only */

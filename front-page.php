@@ -13,55 +13,10 @@ get_header();
 		?>
 
 		<div class="page-content">
-			<section id="landing" class="background-container">
-				<?php
-				$image = get_field('landing_background_image');
-				$size = 'full'; // (thumbnail, medium, large, full or custom size)
-				
-				if( $image ) {
-					$backgroundImageUrl = wp_get_attachment_image_src( $image, $size )[0];
-				}
-				?>
 
-				<div class="grid-container">
-					<div class="grid-x">
-						<div class="cell medium-6">
-							<div class="entry-content">
-								<?php the_content(); ?>
-							</div>
-						</div>
-						<div class="cell medium-6" id="landing-right">
-							<div class="background-image" style="background-image: url(<?php echo $backgroundImageUrl;?>);"></div>
-							<div class="polaroids-container">
-								<div class="polaroid-container">
-									<div class="polaroid-frame">
-										<?php 
-										$image = get_field('landing_polaroid_1');
-										$size = 'full'; 
-
-										if( $image ) {
-											echo wp_get_attachment_image( $image, $size );
-										}
-										?>
-									</div>
-								</div>
-								<div class="polaroid-container">
-									<div class="polaroid-frame">
-										<?php 
-										$image = get_field('landing_polaroid_2');
-										$size = 'full'; 
-
-										if( $image ) {
-											echo wp_get_attachment_image( $image, $size );
-										}
-										?>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			<?php
+			get_template_part( 'template-parts/section-landing' );
+			?>
 
 			<?php
 			$image = get_field('ctas_background_image');

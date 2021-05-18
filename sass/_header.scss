@@ -10,9 +10,35 @@ header#masthead {
 
 }
 
+.page,
+.home {
+
+	#landing {
+
+		background: linear-gradient($orange 0%, $orange 90%, $white 90%);
+
+		#landing-right {
+
+			.background-overlay {
+				min-height: 30vw;
+			}
+		}
+	}
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	.page,
+	.home {
+
+		#landing {
+
+			#landing-right {
+				position: relative;
+			}
+		}
+	}
 }
 
 /* Medium and up (640px) */
@@ -40,6 +66,18 @@ header#masthead {
 		img.size-header-logo {
 			max-width: 125px;
 			transition: max-width 500ms linear;
+		}
+	}
+
+	.page,
+	.home {
+
+		#landing {
+
+			.background-image {
+				left: 50%;
+			}
+
 		}
 	}
 }
