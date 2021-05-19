@@ -49,6 +49,18 @@ body {
 			background-size: cover;
 			background-position: 50% 50%;
 		}
+
+		.background-image-accent {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 40%;
+			left: 40%;
+			z-index: 0;
+			background-size: contain;
+			background-position: 0% 100%;
+			background-repeat: no-repeat;
+		}
 	}
 
 	.content-container {
