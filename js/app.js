@@ -1,6 +1,6 @@
 // import { lodash } from 'lodash'
-// var ld = require( 'lodash' );
-// var _ = ld.noConflict();
+var ld = require( 'lodash' );
+var _ = ld.noConflict();
 
 //customizer.js is only done in backend so not including in main
 import './navigation.js'
@@ -13,7 +13,8 @@ jQuery( document ).ready(function() {
 	calculateSectionMinusHeaderHeight();
 	Foundation.addToJquery(jQuery);
 
-	
+	padLearnerStoriesOverlay();
+	window.addEventListener('resize', padLearnerStoriesOverlay);		
 });
 
 var calculateSectionMinusHeaderHeight = _.debounce(function () {
@@ -32,6 +33,27 @@ var calculateSectionMinusHeaderHeight = _.debounce(function () {
 
 	});
 }, 250);
+
+var padLearnerStoriesOverlay = _.debounce(function() {
+	jQuery(".overlay").each(function(){
+	    var quoteHeight = jQuery(this).find(".feature-quote").outerHeight();
+	    var adjustmentHeight = (jQuery(this).outerHeight() - quoteHeight - 100);
+	    console.log(jQuery(this).outerHeight());
+	    console.log(quoteHeight);
+	    console.log(adjustmentHeight);
+
+	    jQuery(this).css("bottom", (adjustmentHeight * -1) + "px");
+
+	    	console.log(screen.width);
+	    if (screen.width >= 640) {
+	    	jQuery(this).parents("article.category-learner-spotlight").css("padding-bottom", (adjustmentHeight < 100 ) ? 100 : adjustmentHeight + "px");
+	    }
+	    else {
+	    	jQuery(this).parents("article.category-learner-spotlight").css("padding-bottom", "0px");
+	    }
+		
+	});
+}, 250 );
 
 jQuery(".off-canvas-top").on('click', function(e) {
 	e.preventDefault();

@@ -15,7 +15,9 @@
 		
 		<div class="grid-x">
 			<div class="cell medium-9 large-7">
-				<?php the_excerpt();?>
+				<div class="learner-spotlight-body">
+					<?php the_excerpt();?>
+				</div>
 				
 				<a href="<?php the_permalink();?>" class="button"><?php the_field('learn_more_button_text', 'options'); ?></a>
 			</div>
@@ -32,8 +34,9 @@
 			<div class="overlay"> 
 				<div class="grid-x">
 					<div class="cell medium-4 medium-offset-8">
-						<div style="background: orange;" class="feature-quote">
-							Feature quote
+						<div class="feature-quote">
+							<span class="quotation">“</span>
+							<?php the_field('feature_quote'); ?>
 						</div>
 					</div>
 				</div>
@@ -56,20 +59,8 @@
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <script type="text/javascript">
-	jQuery(document).on('ready', function() {
-
-			jQuery(this).find(".overlay").each(function(){
-			    var quoteHeight = jQuery(this).find(".feature-quote").outerHeight();
-			    var adjustmentHeight = (jQuery(this).outerHeight() - quoteHeight - 100);
-			    console.log(jQuery(this).outerHeight());
-			    console.log(quoteHeight);
-			    console.log(adjustmentHeight);
-
-			    jQuery(this).css("bottom", (adjustmentHeight * -1) + "px");
-				jQuery(this).parents("article.category-learner-spotlight").css("padding-bottom", (adjustmentHeight < 100 ) ? 100 : adjustmentHeight + "px");
-			});
-
-
+	
+	jQuery( document ).ready(function() {
 		
 	});
 </script>

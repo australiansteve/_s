@@ -33,16 +33,18 @@ get_header();
 						<div class="entry-content">
 							<div class="grid-x grid-margin-x text-center">
 								<div class="cell">
-									<?php the_field('ctas_intro_text'); ?>
+									<div class="ctas-intro">
+										<?php the_field('ctas_intro_text'); ?>
+									</div>
 								</div>
 								<div class="cell medium-6 medium-text-right">
-									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button"><?php the_field('ctas_button_text_1'); ?></a>
+									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button large"><?php the_field('ctas_button_text_1'); ?></a>
 								</div>
 								<div class="cell medium-6 medium-text-left">
-									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button"><?php the_field('ctas_button_text_2'); ?></a>
+									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button large"><?php the_field('ctas_button_text_2'); ?></a>
 								</div>
 								<div class="cell">
-									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button"><?php the_field('ctas_button_text_3'); ?></a>
+									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button medium teal"><?php the_field('ctas_button_text_3'); ?></a>
 								</div>
 							</div>
 						</div>
@@ -64,10 +66,11 @@ get_header();
 				<div class="grid-container">
 					<div class="background-container">
 						<div class="content-container">
-							<div class="grid-x align-center">
-								<div class="cell medium-8 xlarge-6">
-									<h3 class="learner-spotlight-section-title"><?php the_field('learner_spotlight_section_title'); ?></h3>
-									<?php
+							<div class="entry-content">
+								<div class="grid-x align-center">
+									<div class="cell medium-8 xlarge-6">
+										<h4 class="learner-spotlight-section-title"><?php the_field('learner_spotlight_section_title'); ?></h4>
+										<?php
 										$args = array(
 											'post_type'              => array( 'post' ),
 											'post_status'            => array( 'publish' ),
@@ -88,13 +91,14 @@ get_header();
 											while ( $postsquery->have_posts() ) {
 												$postsquery->the_post();
 												?>
-													<?php get_template_part( 'template-parts/learner-spotlight', get_post_type() ); ?>
+												<?php get_template_part( 'template-parts/learner-spotlight', get_post_type() ); ?>
 												<?php
 											}
 										}
 
 										wp_reset_postdata();
 										?>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -155,7 +159,7 @@ get_header();
 									</div>
 								</div>
 								<div class="cell">
-									<a href="<?php the_permalink(get_option('page_for_posts'));?>" class="button"><?php the_field('news_all_news_button_text'); ?></a>
+									<a href="<?php the_permalink(get_option('page_for_posts'));?>" class="button medium"><?php the_field('news_all_news_button_text'); ?></a>
 								</div>
 							</div>
 						</div>
@@ -182,7 +186,7 @@ get_header();
 									<h3 class="sponsors-section-title"><?php the_field('sponsors_section_title'); ?></h3>
 								</div>
 								<div class="cell">
-									<div class="grid-x small-up-2 medium-up-3 large-up-5 align-center grid-margin-x grid-margin-y">
+									<div class="grid-x small-up-2 medium-up-3 large-up-5 align-center grid-margin-x grid-margin-y" id="sponsor-grid">
 										<?php
 										if( have_rows('sponsors') ):
 
@@ -193,20 +197,22 @@ get_header();
 
 												?>
 												<div class="cell">
-													<?php if (!empty($link)) : ?>
-														<a href="<?php echo $sponsor['link']; ?>">
-														<?php endif; ?>
-														<?php 
-														$image = $sponsor['logo'];
-														$size = 'full';
-
-														if( $image ) {
-															echo wp_get_attachment_image( $image, $size );
-														}
-														?>
+													<div class="sponsor">
 														<?php if (!empty($link)) : ?>
-														</a>
-													<?php endif; ?>
+															<a href="<?php echo $sponsor['link']; ?>">
+															<?php endif; ?>
+															<?php 
+															$image = $sponsor['logo'];
+															$size = 'full';
+
+															if( $image ) {
+																echo wp_get_attachment_image( $image, $size );
+															}
+															?>
+															<?php if (!empty($link)) : ?>
+															</a>
+														<?php endif; ?>
+													</div>
 												</div>
 												<?php
 
@@ -225,10 +231,12 @@ get_header();
 
 			<section id="newsletter">
 				<div class="grid-container">
-					<div class="content-container">
-						<div class="grid-x align-center text-center">
-							<div class="cell">
-								<h3 class="newsletter-section-title"><?php the_field('newsletter_section_title'); ?></h3>
+					<div class="content-container">						
+						<div class="entry-content">
+							<div class="grid-x align-center text-center">
+								<div class="cell">
+									<h3 class="newsletter-section-title"><?php the_field('newsletter_section_title'); ?></h3>
+								</div>
 							</div>
 						</div>
 					</div>

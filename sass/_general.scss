@@ -65,7 +65,7 @@ body {
 
 	.content-container {
 		position: relative;
-		z-index: 1;
+		z-index: 10;
 	}
 
 	main {
@@ -74,20 +74,11 @@ body {
 			margin: 0;
 
 			h2 {
-				margin-bottom: 2rem;
-				font-weight: 700;
 
 				span {
 					border-bottom: 2px solid $black;
 					padding-bottom: 1rem;
 				}
-			}
-
-
-			h3 {
-				font-weight: 700;
-				margin-top: 0.5rem;
-				margin-bottom: 0.25rem;
 			}
 
 			.entry-content {
@@ -116,9 +107,61 @@ a {
 	display: inline-block;
 }
 
+a.button,
+button,
+input[type="button"] {
+	background-color: $yellow;
+	color: $black;
+	text-transform: uppercase;
+}
+
+a.button:hover,
+button:hover,
+input[type="button"]:hover {
+	background-color: $orange;
+	color: $black;
+}
+
+a.button.teal,
+button.teal,
+input[type="button"].teal {
+	background-color: $teal;
+}
+
+a.button.teal:hover,
+button.teal:hover,
+input[type="button"].teal:hover {
+	background-color: $blue;
+}
+
+.medium {
+	padding: 1.25rem 2.5rem;
+	font-size: 0.9em;
+}
+
+.large {
+	padding: 1.5rem 3rem;
+}
+
+.polaroid-container {
+	position: relative;
+
+	.polaroid-frame {
+		background-color: $white;
+		padding: 1.5rem 1.5rem 6rem 1.5rem;
+
+	}
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	a.button,
+	button,
+	input[type="button"] {
+		min-width: 80%;
+		margin: auto;
+	}
 }
 
 /* Medium and up (640px) */

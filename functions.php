@@ -133,6 +133,8 @@ function hamburger_cat_scripts() {
 
 	$styleFile = (wp_get_environment_type() == 'production') ? 'style.min.css' : 'style.css';
 
+	wp_enqueue_style( 'adobe-fonts', 'https://use.typekit.net/qsd7eyc.css', array());
+	
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_template_directory_uri(). '/dist/'.$styleFile, array( ), HAMBURGER_CAT_VERSION );

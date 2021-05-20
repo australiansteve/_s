@@ -1,25 +1,15 @@
-footer {
-	margin-top: 1rem;
+body {
 
-	#footer-logo img {
-		margin-bottom: 1rem;
+	h1,
+	h2 {
+		font-weight: 700;
+		text-transform: uppercase;
 	}
 
-	#back-to-top {
-
-		a {
-			padding: 0.7rem 0;
-		}
-	}
-
-	.site-info {
-		font-size: 0.7em;
-
-		div,
-		p,
-		a {
-			color: rgba(200, 200, 200, 0.7);
-		}
+	a.button,
+	button,
+	input[type="button"] {
+		font-weight: 700;
 	}
 }
 
@@ -31,6 +21,9 @@ footer {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	body {
+		font-size: 1.1em;
+	}
 }
 
 /* Medium only */
@@ -41,12 +34,8 @@ footer {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
-	footer {
-		margin-top: 2rem;
-
-		#footer-logo img {
-			margin-bottom: 2rem;
-		}
+	body {
+		font-size: 1.2em;
 	}
 }
 
@@ -58,6 +47,9 @@ footer {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	body {
+		font-size: 1.3em;
+	}
 }
 
 /* XLarge only */
@@ -68,4 +60,7 @@ footer {
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
+	body {
+		font-size: 1.4em;
+	}
 }

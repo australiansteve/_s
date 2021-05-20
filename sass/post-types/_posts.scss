@@ -1,10 +1,57 @@
 article.category-learner-spotlight {
 
+	.learner-spotlight-body {
+		font-family: avenir;
+		font-size: 0.9em;
+	}
+
+	.highlight-cluster {
+		margin-top: 2rem;
+	}
+
+	.feature-quote {
+		background: $orange;
+		padding: 1rem;
+		position: relative;
+		padding-top: 5.5rem;
+		font-size: 1em;
+
+		.quotation {
+			color: $dark-orange;
+			font-family: filson-pro;
+			font-size: 10em;
+			line-height: 1;
+			position: absolute;
+			top: 0;
+			left: 0.5rem;
+			z-index: 0;
+		}
+
+		p {
+			max-width: 85%;
+			z-index: 10;
+		}
+
+		p:nth-last-of-type(1) {
+			max-width: 100%;
+		}
+	}
+
+	h3.page-title {
+		text-transform: uppercase;
+	}
 }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	article.category-learner-spotlight {
+
+		.feature-quote {
+			margin-top: 1rem;
+			margin-bottom: 1rem;
+		}
+	}
 }
 
 /* Medium and up (640px) */

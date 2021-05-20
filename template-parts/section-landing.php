@@ -26,12 +26,14 @@
 		}
 		else if ($backgroundImageAccent == 'orange-green') {
 			$backgroundImageAccent = get_stylesheet_directory_uri().'/media/accent-orange-green.png';
+		}else {
+			$backgroundImageAccent = '';
 		}
 	}
 	?>
 
 	<div class="grid-container">
-		<div class="grid-x">
+		<div class="grid-x grid-margin-x">
 
 			<div class="cell medium-5 medium-offset-1">
 				<?php
