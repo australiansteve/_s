@@ -55,6 +55,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 				'language-menu' => esc_html__( 'Language Switcher', 'hamburger-cat' ),
 				'language-menu-small' => esc_html__( 'Mobile Language Switcher', 'hamburger-cat' ),
 				'footer-menu' => esc_html__( 'Footer', 'hamburger-cat' ),
+				'about-menu' => esc_html__( 'About Page sub-menu', 'hamburger-cat' ),
 			)
 		);
 
@@ -110,6 +111,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 640, true);
 		add_image_size( 'header-logo', 410, 120, false);
+		add_image_size( 'team-member-profile', 500, 500, true);
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );

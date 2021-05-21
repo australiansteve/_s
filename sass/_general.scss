@@ -110,7 +110,7 @@ a {
 a.button,
 button,
 input[type="button"] {
-	background-color: $yellow;
+	background-color: $lemon;
 	color: $black;
 	text-transform: uppercase;
 }
@@ -118,20 +118,20 @@ input[type="button"] {
 a.button:hover,
 button:hover,
 input[type="button"]:hover {
-	background-color: $orange;
+	background-color: $peach;
 	color: $black;
 }
 
-a.button.teal,
-button.teal,
-input[type="button"].teal {
-	background-color: $teal;
+a.button.secondary,
+button.secondary,
+input[type="button"].secondary {
+	background-color: $aqua;
 }
 
-a.button.teal:hover,
-button.teal:hover,
-input[type="button"].teal:hover {
-	background-color: $blue;
+a.button.secondary:hover,
+button.secondary:hover,
+input[type="button"].secondary:hover {
+	background-color: $sky-blue;
 }
 
 .medium {

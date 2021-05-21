@@ -21,10 +21,10 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			//get_template_part( 'template-parts/hero-image', get_post_type() );
+			$contentBackgroundColour = get_field('page_content_background_color');
 		?>
 
-			<div class="page-content">
+			<div class="page-content" style="background-color: <?php echo $contentBackgroundColour;?>;">
 				
 				<?php
 				get_template_part( 'template-parts/section-landing' );

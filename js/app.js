@@ -14,7 +14,8 @@ jQuery( document ).ready(function() {
 	Foundation.addToJquery(jQuery);
 
 	padLearnerStoriesOverlay();
-	window.addEventListener('resize', padLearnerStoriesOverlay);		
+	window.addEventListener('resize', padLearnerStoriesOverlay);	
+
 });
 
 var calculateSectionMinusHeaderHeight = _.debounce(function () {
@@ -64,7 +65,6 @@ var triggerFoundationEqualizer = _.debounce(function (groups) {
 		new Foundation.Equalizer(jQuery("[data-equalize-by-row]")).getHeightsByRow(resetHeights);
 	}
 }, 250);
-
 
 function resetHeights(groups) {
 	jQuery('[data-equalize-by-row]').foundation('applyHeightByRow', groups);

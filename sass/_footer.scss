@@ -31,6 +31,9 @@ footer {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	footer {
+		margin-top: 2rem;
+	}
 }
 
 /* Medium only */
@@ -43,6 +46,7 @@ footer {
 
 	footer {
 		margin-top: 2rem;
+		padding-top: 2rem;
 
 		#footer-logo img {
 			margin-bottom: 2rem;

@@ -80,7 +80,7 @@ nav {
 
 .off-canvas {
 	opacity: 0.95;
-	background-color: $yellow;
+	background-color: $lemon;
 
 	.off-canvas-container {
 		height: 100vh;
@@ -127,8 +127,49 @@ nav {
 	text-transform: uppercase;
 }
 
+#about-menu-small {
+	margin-left: 0;
+	margin-bottom: -1rem;
+
+	ul.menu {
+		margin-left: 0;
+	}
+
+	.accordion-divider {
+		background: #000;
+		line-height: 0.1;
+		min-height: 1px;
+	}
+
+	a {
+
+		span {
+			margin-right: 1rem;
+		}
+	}
+
+}
+
+#about-menu-medium {
+	font-size: 1.4em;
+
+	.current_page_item {
+		border-bottom: 1px solid $black;
+	}
+}
+
+.about-menu {
+	margin-top: 1rem;
+	text-transform: uppercase;
+
+	a {
+		display: inline-block;
+	}
+}
+
 #footer-menu,
-#social-menu {
+#social-menu,
+#about-menu-medium {
 	display: inline-flex;
 }
 

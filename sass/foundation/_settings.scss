@@ -73,13 +73,20 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$orange: #fee4d1;
-$purple: #c393ff;
-$salmon: #ee8187;
-$teal: #77d7da;
-$blue: #7191f7;
-$yellow: #fed93d;
-$dark-orange: #ff4e3b;
+//custom colors
+$mint: #46d09c;
+$aqua: #77d7da;
+$sky-blue: #40b6e0;
+$purple: #956fde;
+$pink-grapefruit: #ee8187;
+$tangerine: #ff9f50;
+$strawberry: #ff4e3b;
+$peach: #fee4d1;
+$lemon: #fed93d;
+$lavender: #c393ff;
+$perriwinkle: #7191f7;
+//end custom colors
+$transparent: rgba(255, 255, 255, 0);
 $foundation-palette: (
 	primary: $black,
 	secondary: $dark-gray,
@@ -286,7 +293,7 @@ $accordion-content-padding: 1rem;
 $accordionmenu-padding: $global-menu-padding;
 $accordionmenu-nested-margin: $global-menu-nested-margin;
 $accordionmenu-submenu-padding: $accordionmenu-padding;
-$accordionmenu-arrows: false;
+$accordionmenu-arrows: true;
 $accordionmenu-arrow-color: $black;
 $accordionmenu-item-background: null;
 $accordionmenu-border: null;

@@ -1,0 +1,83 @@
+{
+    "key": "group_60a6906dd57fb",
+    "title": "Page Customization",
+    "fields": [
+        {
+            "key": "field_60a690774d99a",
+            "label": "Page Introduction",
+            "name": "page_introduction",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": ""
+        },
+        {
+            "key": "field_60a7be5e98c4b",
+            "label": "Page Content Background Color",
+            "name": "page_content_background_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "#fefefe": "White (Default)",
+                "#77d7da": "Aqua",
+                "#c393ff": "Lavender",
+                "#fed93d": "Lemon",
+                "#46d09c": "Mint",
+                "#fee4d1": "Peach",
+                "#7191f7": "Perriwinkle",
+                "#ee8187": "Pink Grapefruit",
+                "#956fde": "Purple",
+                "#40b6e0": "Sky Blue",
+                "#ff4e3b": "Strawberry",
+                "#ff9f50": "Tangerine"
+            },
+            "default_value": "#fefefe",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_type",
+                "operator": "!=",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1621610558
+}

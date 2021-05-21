@@ -1,6 +1,6 @@
 <section id="landing" class="background-container">
 	<?php
-	$pageType = is_front_page() ? 'front-page' : '';
+	$pageType = is_front_page() ? 'front-page' : (is_page() ? 'page' : '');
 	$size = 'full';
 	
 	if (is_front_page()) {
