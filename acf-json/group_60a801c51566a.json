@@ -1,11 +1,11 @@
 {
-    "key": "group_60a51577c9c91",
-    "title": "Featured Image Decoration",
+    "key": "group_60a801c51566a",
+    "title": "Color Selector",
     "fields": [
         {
-            "key": "field_60a515830249d",
-            "label": "Featured Image Accent",
-            "name": "featured_image_accent",
+            "key": "field_60a801c51e43e",
+            "label": "Color",
+            "name": "color",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -15,8 +15,21 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
-            "default_value": "none",
+            "choices": {
+                "#fefefe": "White (Default)",
+                "#77d7da": "Aqua",
+                "#c393ff": "Lavender",
+                "#fed93d": "Lemon",
+                "#46d09c": "Mint",
+                "#fee4d1": "Peach",
+                "#7191f7": "Perriwinkle",
+                "#ee8187": "Pink Grapefruit",
+                "#956fde": "Purple",
+                "#40b6e0": "Sky Blue",
+                "#ff4e3b": "Strawberry",
+                "#ff9f50": "Tangerine"
+            },
+            "default_value": "#fefefe",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -32,16 +45,9 @@
                 "operator": "==",
                 "value": "post"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
         ]
     ],
-    "menu_order": 999,
+    "menu_order": 199,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -49,5 +55,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1621621866
+    "modified": 1621623298
 }

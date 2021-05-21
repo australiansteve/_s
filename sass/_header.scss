@@ -10,18 +10,15 @@ header#masthead {
 
 }
 
-.page,
-.home {
 
-	#landing {
+section#landing {
 
-		background: linear-gradient($peach 0%, $peach 90%, $transparent 90%);
+	background: linear-gradient($peach 0%, $peach 90%, $transparent 90%);
 
-		#landing-right {
+	#landing-right {
 
-			.background-overlay {
-				min-height: 30vw;
-			}
+		.background-overlay {
+			min-height: 30vw;
 		}
 	}
 }
@@ -29,14 +26,11 @@ header#masthead {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
-	.page,
-	.home {
 
-		#landing {
+	section#landing {
 
-			#landing-right {
-				position: relative;
-			}
+		#landing-right {
+			position: relative;
 		}
 	}
 }
@@ -69,17 +63,14 @@ header#masthead {
 		}
 	}
 
-	.page,
-	.home {
+	section#landing {
 
-		#landing {
-
-			.background-image {
-				left: 50%;
-			}
-
+		.background-image {
+			left: 50%;
 		}
+
 	}
+
 }
 
 /* Medium only */

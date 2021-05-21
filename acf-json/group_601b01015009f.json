@@ -43,6 +43,50 @@
             "mime_types": ""
         },
         {
+            "key": "field_60a7f9dce5d84",
+            "label": "Programs Page",
+            "name": "programs_page",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_60a7f9fce5d85",
+            "label": "Social Enterprises Page",
+            "name": "social_enterprises_page",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
             "key": "field_60a3c9fad292d",
             "label": "Custom Text",
             "name": "",
@@ -224,7 +268,7 @@
             }
         ]
     ],
-    "menu_order": 9,
+    "menu_order": 20,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -232,5 +276,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621612446
+    "modified": 1621621264
 }

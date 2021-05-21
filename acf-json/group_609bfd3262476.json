@@ -33,13 +33,13 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 999,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
+    "active": false,
     "description": "",
     "modified": 1620835706
 }

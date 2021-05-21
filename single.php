@@ -13,27 +13,29 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php
-
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/hero-image', get_post_type() );
+			$contentBackgroundColour = get_field('page_content_background_color');
+		?>
 
-			?>
+			<div class="page-content" style="background-color: <?php echo $contentBackgroundColour;?>;">
+				
+				<?php
+				get_template_part( 'template-parts/section-landing' );
+				?>
 
-			<div class="grid-container">
-				<div class="page-content">
-					<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
+				<div class="grid-container">
 					<div class="entry-content">
 						<?php the_content(); ?>
 
 						<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
 					</div>
-				</div> 
+				</div>
+
 			</div>
 
-			<?php
-
+		<?php
 		endwhile; // End of the loop.
 		?>
 
