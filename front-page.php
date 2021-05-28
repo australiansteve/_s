@@ -24,6 +24,10 @@ get_header();
 			</div>
 		</div>
 
+		<?php
+		$showSponsorsSection = get_field('show_sponsors_section'); 
+		if ($showSponsorsSection) :
+		?>
 		<section id="sponsors">
 			<div class="grid-container">
 				<div class="page-content">
@@ -42,15 +46,25 @@ get_header();
 									$sponsor = get_sub_field('sponsor');
 									?>
 									<div class="cell text-center">
-										<?php 
-										$image = $sponsor['logo'];
-										$size = 'full';
+										<?php if ($sponsor['url']) : ?>
+											<a href="<?php echo $sponsor['url'];?>" target="_blank">
+										<?php endif; ?>
+										<div class="logo-container">
+											
+											<?php 
+											$image = $sponsor['logo'];
+											$size = 'full';
 
-										if( $image ) {
-											echo wp_get_attachment_image( $image, $size );
-										}
-										?>
-										<div><a href="<?php echo $sponsor['url'];?>" target="_blank"><?php echo $sponsor['name'];?></a></div>
+											if( $image ) {
+												echo wp_get_attachment_image( $image, $size );
+											}
+											?>
+											
+										</div>
+										<div><?php echo $sponsor['name'];?></div>
+										<?php if ($sponsor['url']) : ?>
+											</a>
+										<?php endif; ?>
 									</div>
 									<?php
 
@@ -67,7 +81,10 @@ get_header();
 				</div>
 			</div>
 		</section>
-
+		<?php 
+		endif;
+		?>
+		
 		<section id="news-and-events">
 			<div class="grid-container">
 				<div class="entry-content">
