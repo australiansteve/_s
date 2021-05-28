@@ -1,38 +1,8 @@
-.home {
-
-	#landing {
-
-		background: linear-gradient($peach 0%, $peach 90%, $lavender 90%);
-
-		.polaroids-container {
-			white-space: nowrap;
-			font-size: 0;
-			padding: 1rem;
-
-			.polaroid-container {
-				position: relative;
-				display: inline-block;
-				max-width: 50%;
-				white-space: normal;
-				padding: 0.75rem;
-
-				.polaroid-frame {
-					background-color: $white;
-					padding: 8px 8px 8px 24px;
-					box-shadow: 5px 10px $polaroid-shadow;
-
-				}
-			}
-
-			.polaroid-container:nth-of-type(1) {
-				transform: rotate(10deg);
-				z-index: 1;
-			}
-		}
-	}
+.page-template-journey-page {
 
 	#calls-to-action {
-		background: $lavender;
+
+		background: linear-gradient($peach 0%, $peach 90%, $lavender 90%);
 
 		.background-image {
 			left: 70%;
@@ -46,21 +16,21 @@
 
 		.ctas-intro {
 			padding-bottom: 2rem;
-			text-transform: uppercase;
-
-			p {
-				max-width: 100%;
-			}
 		}
 
 		.button {
 			margin-bottom: 2rem;
+			display: block;
+		}
+
+		.button.secondary {
+			display: inline-block;
 		}
 
 	}
 
 	#featured-post {
-		background: linear-gradient($pink-grapefruit 0%, $pink-grapefruit 95%, $peach 95%);
+		background: linear-gradient($lavender 0%, $lavender 95%, $peach 95%);
 
 		.background-image {
 			right: 10%;
@@ -80,7 +50,7 @@
 		background: $peach;
 
 		.background-image {
-			right: 40%;
+			left: 40%;
 			top: 95%;
 			bottom: -35%;
 			background-size: contain;
@@ -93,31 +63,6 @@
 			margin-top: 1rem;
 			text-transform: uppercase;
 			font-weight: 700;
-		}
-	}
-
-	#sponsors {
-		background: $aqua;
-
-		.background-image {
-			left: 40%;
-			top: 90%;
-			bottom: -15%;
-			background-size: contain;
-			background-repeat: no-repeat;
-			z-index: 1;
-			background-position: 100%;
-		}
-
-		#sponsor-grid {
-
-			.cell:nth-last-of-type(1) {
-				margin-bottom: 4rem;
-			}
-		}
-
-		.sponsor {
-			margin-top: 2rem;
 		}
 	}
 
@@ -135,7 +80,7 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	.home {
+	.page-template-journey-page {
 
 		#calls-to-action {
 
@@ -154,18 +99,9 @@
 		#news {
 
 			.background-image {
-				right: 70%;
+				left: 70%;
 				top: 85%;
 				bottom: -20%;
-			}
-		}
-
-		#sponsors {
-
-			.background-image {
-				left: 70%;
-				top: 80%;
-				bottom: -30%;
 			}
 		}
 

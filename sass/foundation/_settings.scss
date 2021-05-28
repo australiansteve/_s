@@ -85,6 +85,7 @@ $peach: #fee4d1;
 $lemon: #fed93d;
 $lavender: #c393ff;
 $perriwinkle: #7191f7;
+$polaroid-shadow: rgba(75, 75, 75, 0.75);
 //end custom colors
 $transparent: rgba(255, 255, 255, 0);
 $foundation-palette: (
@@ -97,6 +98,7 @@ $foundation-palette: (
 $body-background: $white;
 $body-font-color: $black;
 $body-font-family: filson-pro, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+$secondary-body-font-family: avenir, arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;

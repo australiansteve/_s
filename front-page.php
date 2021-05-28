@@ -19,7 +19,7 @@ get_header();
 			?>
 
 			<?php
-			$image = get_field('ctas_background_image');
+			$image = get_field('ctas_background_accent');
 			$size = 'full'; // (thumbnail, medium, large, full or custom size)
 			
 			if( $image ) {
@@ -41,10 +41,10 @@ get_header();
 									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button large"><?php the_field('ctas_button_text_1'); ?></a>
 								</div>
 								<div class="cell medium-6 medium-text-left">
-									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button large"><?php the_field('ctas_button_text_2'); ?></a>
+									<a href="<?php the_field('ctas_button_link_2'); ?>" class="button large"><?php the_field('ctas_button_text_2'); ?></a>
 								</div>
 								<div class="cell">
-									<a href="<?php the_field('ctas_button_link_1'); ?>" class="button medium teal"><?php the_field('ctas_button_text_3'); ?></a>
+									<a href="<?php the_field('ctas_button_link_3'); ?>" class="button medium secondary"><?php the_field('ctas_button_text_3'); ?></a>
 								</div>
 							</div>
 						</div>
@@ -54,35 +54,30 @@ get_header();
 			</section>
 
 			<?php
-			$image = get_field('learner_spotlight_background_image');
+			$image = get_field('featured_post_background_image');
 			$size = 'full'; // (thumbnail, medium, large, full or custom size)
 			
 			if( $image ) {
-				$lsBackgroundImageUrl = wp_get_attachment_image_src( $image, $size )[0];
+				$fpBackgroundImageUrl = wp_get_attachment_image_src( $image, $size )[0];
 			}
+
+			if (get_field('featured_post')) :
 			?>
 
-			<section id="learner-spotlight">
+			<section id="featured-post">
 				<div class="grid-container">
 					<div class="background-container">
 						<div class="content-container">
 							<div class="entry-content">
 								<div class="grid-x align-center">
 									<div class="cell medium-8 xlarge-6">
-										<h4 class="learner-spotlight-section-title"><?php the_field('learner_spotlight_section_title'); ?></h4>
+										<h4 class="featured-post-section-title"><?php the_field('featured_post_section_title'); ?></h4>
 										<?php
 										$args = array(
 											'post_type'              => array( 'post' ),
 											'post_status'            => array( 'publish' ),
-											'posts_per_page'         => '3',
-											'tax_query'				=> array(
-												array(
-													'taxonomy'         => 'category',
-													'terms'            => 'learner-spotlight',
-													'field'            => 'slug',
-													'operator'         => 'IN',
-												),
-											)
+											'posts_per_page'         => '1',
+											'p'						=> get_field('featured_post') 
 										);
 
 										$postsquery = new WP_Query( $args );
@@ -91,7 +86,7 @@ get_header();
 											while ( $postsquery->have_posts() ) {
 												$postsquery->the_post();
 												?>
-												<?php get_template_part( 'template-parts/learner-spotlight', get_post_type() ); ?>
+												<?php get_template_part( 'template-parts/featured', get_post_type() ); ?>
 												<?php
 											}
 										}
@@ -102,13 +97,15 @@ get_header();
 								</div>
 							</div>
 						</div>
-						<div class="background-image" style="background-image: url(<?php echo $lsBackgroundImageUrl;?>);"></div>
+						<div class="background-image" style="background-image: url(<?php echo $fpBackgroundImageUrl;?>);"></div>
 					</div>
 				</div>
 			</section>
 
 			<?php
-			$image = get_field('news_background_image');
+			endif;
+
+			$image = get_field('news_background_accent');
 			$size = 'full'; // (thumbnail, medium, large, full or custom size)
 			
 			if( $image ) {
@@ -131,12 +128,13 @@ get_header();
 											'post_type'              => array( 'post' ),
 											'post_status'            => array( 'publish' ),
 											'posts_per_page'         => '3',
+											'post__not_in'			=> array(get_field('featured_post')),
 											'tax_query'				=> array(
 												array(
 													'taxonomy'         => 'category',
-													'terms'            => 'learner-spotlight',
+													'terms'            => 'news',
 													'field'            => 'slug',
-													'operator'         => 'NOT IN',
+													'operator'         => 'IN',
 												),
 											)
 										);
@@ -169,7 +167,7 @@ get_header();
 			</section>
 
 			<?php
-			$image = get_field('sponsors_background_image');
+			$image = get_field('sponsors_background_accent');
 			$size = 'full'; // (thumbnail, medium, large, full or custom size)
 			
 			if( $image ) {

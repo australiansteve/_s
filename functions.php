@@ -110,8 +110,10 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 500, true);
-		add_image_size( 'header-logo', 410, 120, false);
+		add_image_size( 'header-logo', 820, 240, false);
 		add_image_size( 'team-member-profile', 500, 500, true);
+		add_image_size( 'polaroid', 350, 250, true);
+		add_image_size( 'polaroid-portrait', 250, 350, true);
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -282,4 +284,43 @@ add_action( 'learndash-quiz-actual-content-after', function($quiz_id, $course_id
 	});
 	</script>";
 }, 10, 3);
+
+/* Hide WP editor for certain page templates */
+add_action( 'admin_init', function() {
+
+    $post_id = isset($_GET['post']) ? $_GET['post'] : (isset($_POST['post_ID']) ? $_POST['post_ID'] : null) ;
+    
+    if( !isset( $post_id ) ) return;
+ 
+    $template_file = get_post_meta($post_id, '_wp_page_template', true);
+     
+    if($template_file == 'page-templates/journey-page.php') { 
+        remove_post_type_support('page', 'editor');
+    }
+});
+
+
+function austeve_load_background_accents($field) {
+
+	error_log("austeve_load_background_accents ".print_r($field, true));
+
+	if ($field['name'] == 'accent') {
+
+		/* reset choices */
+	    $field['choices'] = array();
+	    $field['choices']['0'] = 'None';
+
+	    /* get the gallery values from options page */
+	    $choices = get_field('background_accent_options', 'option');
+
+	    /* Add gallery values to select choices */
+	    foreach( $choices as $image_id ): 
+	    	$field['choices'][ $image_id ] = get_the_title($image_id);
+	    endforeach;
+	}
+
+	return $field;
+}
+add_filter('acf/load_field/type=select', 'austeve_load_background_accents');
+add_filter('acf/load_field/type=clone', 'austeve_load_background_accents');
 

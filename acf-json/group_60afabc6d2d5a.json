@@ -1,11 +1,11 @@
 {
-    "key": "group_60a51577c9c91",
-    "title": "Featured Image Decoration",
+    "key": "group_60afabc6d2d5a",
+    "title": "Accent Selector",
     "fields": [
         {
-            "key": "field_60a515830249d",
-            "label": "Featured Image Accent",
-            "name": "featured_image_accent",
+            "key": "field_60afabcf11e50",
+            "label": "Accent",
+            "name": "accent",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -15,8 +15,20 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
-            "default_value": "none",
+            "choices": {
+                "-1": "None",
+                "395": "Pink &#038; Blue inverted",
+                "385": "pink-blue-accent",
+                "384": "pink-accent",
+                "393": "pink-accent-inverted",
+                "396": "Green &#038; Orange inverted",
+                "383": "green-orange-accent",
+                "394": "green-orange-accent-flip",
+                "397": "Green &#038; Orange flipped &#038; inverted",
+                "391": "green-yellow-accent",
+                "392": "green-yellow-accent-inverted"
+            },
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -32,13 +44,6 @@
                 "operator": "==",
                 "value": "post"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
         ]
     ],
     "menu_order": 999,
@@ -49,5 +54,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1621621866
+    "modified": 1622136392
 }

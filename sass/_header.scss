@@ -43,6 +43,11 @@ section#landing {
 		nav#site-navigation {
 			margin-top: 1.6rem;
 		}
+
+		img.size-header-logo {
+			max-width: 300px;
+		}
+
 	}
 
 	div.sticky-container {
@@ -58,7 +63,7 @@ section#landing {
 		}
 
 		img.size-header-logo {
-			max-width: 125px;
+			max-width: 250px;
 			transition: max-width 500ms linear;
 		}
 	}
@@ -93,6 +98,10 @@ section#landing {
 
 	header#masthead {
 		margin-top: 1.5rem;
+
+		img.size-header-logo {
+			max-width: 410px;
+		}
 	}
 }
 

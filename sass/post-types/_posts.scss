@@ -1,8 +1,9 @@
-article.category-learner-spotlight {
+article.featured-post {
 
-	.learner-spotlight-body {
-		font-family: avenir;
+	.featured-post-body {
+		font-family: $secondary-body-font-family;
 		font-size: 0.9em;
+		font-weight: 200;
 	}
 
 	.highlight-cluster {
@@ -15,6 +16,8 @@ article.category-learner-spotlight {
 		position: relative;
 		padding-top: 5.5rem;
 		font-size: 1em;
+		font-weight: 700;
+		font-style: italic;
 
 		.quotation {
 			color: $strawberry;
@@ -45,7 +48,7 @@ article.category-learner-spotlight {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
-	article.category-learner-spotlight {
+	article.featured-post {
 
 		.feature-quote {
 			margin-top: 1rem;
@@ -57,12 +60,13 @@ article.category-learner-spotlight {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	article.category-learner-spotlight {
+	article.featured-post {
 		padding-bottom: 200px;
 		transition: padding 2s linear;
 
 		.highlight-cluster {
 			position: relative;
+			z-index: -1;
 
 			.overlay {
 				position: absolute;

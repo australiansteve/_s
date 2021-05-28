@@ -38,13 +38,15 @@ get_header();
 					<?php the_content(); ?>
 				</div>
 
-					<div data-equalizer="wif-match" data-equalize-on="medium" data-equalize-by-row="true">
-						<div id="sjle-programs-grid" class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-3 text-center align-center"data-equalizer="title-match" data-equalize-on="medium" data-equalize-by-row="true">
+				<div data-equalizer="wif-match" data-equalize-on="medium" data-equalize-by-row="true">
+					<div id="sjle-programs-grid" class="grid-x grid-margin-x grid-margin-y small-up-1 medium-up-3 text-center align-center"data-equalizer="title-match" data-equalize-on="medium" data-equalize-by-row="true">
 						<?php
 						$args = array(
-							'post_type'              => array( 'sjle-programs' ),
-							'post_status'            => array( 'publish' ),
-							'posts_per_page'         => '-1',
+							'post_type'				=> array( 'sjle-programs' ),
+							'post_status'			=> array( 'publish' ),
+							'posts_per_page'		=> '-1',
+							'orderby' 				=> 'menu_order', 
+							'order' 				=> 'ASC', 
 						);
 
 						$postsquery = new WP_Query( $args );
@@ -55,23 +57,7 @@ get_header();
 
 								?>
 								<div class="cell">
-									<div class="sjle-program" style="background-color: <?php the_field('highlight_color'); ?>">
-										<div data-equalizer-watch="title-match">
-											<div class="name">
-												<?php the_title('<h3>', '</h3>'); ?>
-											</div>
-											<div class="secondary-title">
-												<h4><?php the_field('secondary_title'); ?></h4>
-											</div>
-										</div>
-										<div class="whos-it-for" data-equalizer-watch="wif-match">
-											<?php the_field('whos_it_for'); ?>
-										</div>
-									</div>
-
-									<div class="learn-more">
-										<a href="<?php the_permalink();?>" class="button"><?php the_field('learn_more_button_text', 'options');?></a>
-									</div>
+									<?php get_template_part('template-parts/archive', get_post_type()); ?>
 								</div>
 								<?php
 							}

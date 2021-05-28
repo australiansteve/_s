@@ -43,28 +43,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_60a7f9dce5d84",
-            "label": "Programs Page",
-            "name": "programs_page",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "page"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "id",
-            "ui": 1
-        },
-        {
             "key": "field_60a7f9fce5d85",
             "label": "Social Enterprises Page",
             "name": "social_enterprises_page",
@@ -85,6 +63,41 @@
             "multiple": 0,
             "return_format": "id",
             "ui": 1
+        },
+        {
+            "key": "field_60ae7be4fe100",
+            "label": "Programs Archive",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60ae7c0cfe101",
+            "label": "Page Introduction",
+            "name": "programs_archive_page_introduction",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_60a3c9fad292d",
@@ -257,6 +270,49 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_60afaae1d62e9",
+            "label": "Background Accents",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60afaaeed62ea",
+            "label": "Background Accent Options",
+            "name": "background_accent_options",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "insert": "append",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -268,7 +324,7 @@
             }
         ]
     ],
-    "menu_order": 20,
+    "menu_order": 9,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -276,5 +332,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1621621264
+    "modified": 1622125313
 }

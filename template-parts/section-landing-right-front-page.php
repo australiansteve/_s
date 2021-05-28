@@ -3,7 +3,7 @@
 		<div class="polaroid-frame">
 			<?php 
 			$image = get_field('landing_polaroid_1');
-			$size = 'full'; 
+			$size = 'polaroid-portrait'; 
 
 			if( $image ) {
 				echo wp_get_attachment_image( $image, $size );
@@ -15,7 +15,7 @@
 		<div class="polaroid-frame">
 			<?php 
 			$image = get_field('landing_polaroid_2');
-			$size = 'full'; 
+			$size = 'polaroid-portrait'; 
 
 			if( $image ) {
 				echo wp_get_attachment_image( $image, $size );

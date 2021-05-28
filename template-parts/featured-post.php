@@ -9,13 +9,13 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('featured-post'); ?>>
 	
 		<h3 class="page-title"><?php the_title();?></h3>
 		
 		<div class="grid-x">
 			<div class="cell medium-9 large-7">
-				<div class="learner-spotlight-body">
+				<div class="featured-post-body">
 					<?php the_excerpt();?>
 				</div>
 				
@@ -34,10 +34,12 @@
 			<div class="overlay"> 
 				<div class="grid-x">
 					<div class="cell medium-4 medium-offset-8">
+						<?php if ( get_field('feature_quote') ) : ?>
 						<div class="feature-quote">
 							<span class="quotation">“</span>
 							<?php the_field('feature_quote'); ?>
 						</div>
+						<?php endif; ?>
 					</div>
 				</div>
 

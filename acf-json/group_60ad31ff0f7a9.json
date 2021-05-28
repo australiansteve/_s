@@ -1,97 +1,9 @@
 {
-    "key": "group_609ad4fcea008",
-    "title": "Home Page Customization",
+    "key": "group_60ad31ff0f7a9",
+    "title": "Journey Page Customization",
     "fields": [
         {
-            "key": "field_609ad56d3284c",
-            "label": "Landing",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_609ad50932849",
-            "label": "Background Image",
-            "name": "landing_background_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_609ad53c3284a",
-            "label": "Polaroid 1",
-            "name": "landing_polaroid_1",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": 250,
-            "min_height": 350,
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_609ad55d3284b",
-            "label": "Polaroid 2",
-            "name": "landing_polaroid_2",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "id",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": 250,
-            "min_height": 350,
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_60a2a0fd13dd7",
+            "key": "field_60ad31ff1c840",
             "label": "Calls To Action",
             "name": "",
             "type": "tab",
@@ -107,7 +19,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_60a2a11213dd8",
+            "key": "field_60ad31ff1c846",
             "label": "Intro Text",
             "name": "ctas_intro_text",
             "type": "wysiwyg",
@@ -126,7 +38,7 @@
             "delay": 0
         },
         {
-            "key": "field_60a2a12813dd9",
+            "key": "field_60ad31ff1c84c",
             "label": "Button Text 1",
             "name": "ctas_button_text_1",
             "type": "text",
@@ -145,7 +57,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2a14313ddc",
+            "key": "field_60ad31ff1c857",
             "label": "Button Link 1",
             "name": "ctas_button_link_1",
             "type": "text",
@@ -164,7 +76,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2a13b13dda",
+            "key": "field_60ad31ff1c85e",
             "label": "Button Text 2",
             "name": "ctas_button_text_2",
             "type": "text",
@@ -183,7 +95,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2a15013ddd",
+            "key": "field_60ad31ff1c865",
             "label": "Button Link 2",
             "name": "ctas_button_link_2",
             "type": "text",
@@ -202,7 +114,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2a13e13ddb",
+            "key": "field_60ad31ff1c86b",
             "label": "Button Text 3",
             "name": "ctas_button_text_3",
             "type": "text",
@@ -221,7 +133,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2a15213dde",
+            "key": "field_60ad31ff1c871",
             "label": "Button Link 3",
             "name": "ctas_button_link_3",
             "type": "text",
@@ -240,7 +152,45 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2af1014c08",
+            "key": "field_60ad3217bb4d4",
+            "label": "Button Text 4",
+            "name": "ctas_button_text_4",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60ad321cbb4d5",
+            "label": "Button Link 4",
+            "name": "ctas_button_link_4",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_60ad31ff1c877",
             "label": "Background Accent",
             "name": "ctas",
             "type": "clone",
@@ -261,7 +211,7 @@
             "prefix_name": 1
         },
         {
-            "key": "field_60a2ac2868de3",
+            "key": "field_60ad31ff1c87d",
             "label": "Featured Post",
             "name": "",
             "type": "tab",
@@ -277,7 +227,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_60a2ac3d68de4",
+            "key": "field_60ad31ff1c883",
             "label": "Section Title",
             "name": "featured_post_section_title",
             "type": "text",
@@ -296,7 +246,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60afbd3d9044d",
+            "key": "field_60ad3b11c4a3d",
             "label": "Featured Post",
             "name": "featured_post",
             "type": "post_object",
@@ -318,7 +268,7 @@
             "ui": 1
         },
         {
-            "key": "field_60a2aca44fabd",
+            "key": "field_60ad31ff1c889",
             "label": "Background Image",
             "name": "featured_post_background_image",
             "type": "image",
@@ -342,7 +292,7 @@
             "mime_types": ""
         },
         {
-            "key": "field_60a2af2f14c09",
+            "key": "field_60ad31ff1c88f",
             "label": "News",
             "name": "",
             "type": "tab",
@@ -358,7 +308,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_60a2af3914c0a",
+            "key": "field_60ad31ff1c895",
             "label": "Section Title",
             "name": "news_section_title",
             "type": "text",
@@ -377,7 +327,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2b474d8c26",
+            "key": "field_60ad31ff1c89e",
             "label": "All News Button Text",
             "name": "news_all_news_button_text",
             "type": "text",
@@ -396,7 +346,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_60a2af4e14c0b",
+            "key": "field_60ad31ff1c8a6",
             "label": "Background Accent",
             "name": "news",
             "type": "clone",
@@ -417,144 +367,7 @@
             "prefix_name": 1
         },
         {
-            "key": "field_60a2b97723410",
-            "label": "Sponsors",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_60a2b98523411",
-            "label": "Section Title",
-            "name": "sponsors_section_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "OUR SPONSORS",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_60a2baa307827",
-            "label": "Sponsors",
-            "name": "sponsors",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "field_60a2bab807828",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_60a2bab807828",
-                    "label": "Sponsor",
-                    "name": "sponsor",
-                    "type": "group",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "layout": "row",
-                    "sub_fields": [
-                        {
-                            "key": "field_60a2bace07829",
-                            "label": "Logo",
-                            "name": "logo",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "id",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_60a2bae00782a",
-                            "label": "Link",
-                            "name": "link",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "key": "field_60a2b99323412",
-            "label": "Background Accent",
-            "name": "sponsors",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "field_60afabcf11e50"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 1
-        },
-        {
-            "key": "field_60a2af7c14c0c",
+            "key": "field_60ad31ff1c8c4",
             "label": "Newsletter",
             "name": "",
             "type": "tab",
@@ -570,7 +383,7 @@
             "endpoint": 0
         },
         {
-            "key": "field_60a2af8914c0d",
+            "key": "field_60ad31ff1c8cd",
             "label": "Section Title",
             "name": "newsletter_section_title",
             "type": "text",
@@ -592,13 +405,13 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "front_page"
+                "value": "page-templates\/journey-page.php"
             }
         ]
     ],
-    "menu_order": 1,
+    "menu_order": 10,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -606,5 +419,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622141179
+    "modified": 1622133599
 }

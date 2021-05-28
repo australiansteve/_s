@@ -1,6 +1,6 @@
 <section id="landing" class="background-container">
 	<?php
-	$pageType = is_front_page() ? 'front-page' : (is_page() ? 'page' : '');
+	$pageType = is_front_page() ? 'front-page' : (is_page() ? 'page' : (is_singular('sjle-programs') ? 'sjle-programs' : ''));
 	$size = 'full';
 	
 	if (is_front_page()) {
@@ -18,16 +18,9 @@
 
 	if (!empty($backgroundImageUrl)) {
 		$backgroundImageAccent = get_field('featured_image_accent');
-		if ($backgroundImageAccent == 'yellow-green') {
-			$backgroundImageAccent = get_stylesheet_directory_uri().'/media/accent-yellow-green.png';
-		}
-		else if ($backgroundImageAccent == 'pink') {
-			$backgroundImageAccent = get_stylesheet_directory_uri().'/media/accent-pink.png';
-		}
-		else if ($backgroundImageAccent == 'orange-green') {
-			$backgroundImageAccent = get_stylesheet_directory_uri().'/media/accent-orange-green.png';
-		}else {
-			$backgroundImageAccent = '';
+
+		if ($backgroundImageAccent) {
+			$backgroundImageAccent = wp_get_attachment_image_src( $backgroundImageAccent, 'full' )[0];
 		}
 	}
 	?>
@@ -42,8 +35,8 @@
 			</div>
 
 			<div class="cell medium-6" id="landing-right">
-				<div class="background-image" style="background-image: url(<?php echo $backgroundImageUrl;?>);"></div>
-				<?php if ($backgroundImageAccent) : ?>
+				<div class="background-image" style="<?php echo !empty($backgroundImageUrl) ? 'background-image: url('.$backgroundImageUrl.');' : '' ?>"></div>
+				<?php if (isset($backgroundImageAccent)) : ?>
 					<div class="background-image-accent" style="background-image: url(<?php echo $backgroundImageAccent;?>);"></div>
 				<?php endif; ?>
 				<?php

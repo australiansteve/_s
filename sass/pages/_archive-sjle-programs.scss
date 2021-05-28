@@ -1,25 +1,17 @@
-#sjle-programs-grid {
+.archive.post-type-archive-sjle-programs,
+.archive.tax-program-category {
 
-	.sjle-program {
-		padding: 1rem;
-		margin-bottom: 1rem;
+	.page-content {
+		background-color: $peach;
 
-		.title-container {
-			padding-bottom: 1rem;
+		#page-introduction {
+			padding-bottom: 2rem;
 		}
 
-		.whos-it-for {
-			text-transform: uppercase;
-			font-size: 0.8em;
-			font-weight: 700;
-			margin-top: 1rem;
-
-			p {
-				max-width: 100%;
-			}
+		#more-options {
+			padding-top: 2rem;
 		}
 	}
-
 }
 
 /* Small only */
@@ -40,15 +32,14 @@
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
-	#sjle-programs-grid {
+	.archive.post-type-archive-sjle-programs,
+	.archive.tax-program-category {
 
-		.sjle-program {
-			padding: 2rem;
+		.page-content {
 
-			.title-container {
-				padding-bottom: 2rem;
+			#more-options {
+				padding-top: 4rem;
 			}
-
 		}
 	}
 }
