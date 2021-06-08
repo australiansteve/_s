@@ -154,6 +154,19 @@ function hamburger_cat_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'hamburger_cat_scripts' );
 
+function hamburger_cat_h5p_alter_styles(&$styles, $libraries, $embed_type) {
+
+	$styleFile = (wp_get_environment_type() == 'production') ? 'h5p.min.css' : 'h5p.css';
+
+	$styles[] = (object) array(
+		// Path must be relative to wp-content/uploads/h5p or absolute.
+		'path' => get_template_directory_uri(). '/dist/'.$styleFile,
+		'version' => '?ver=1.2' // Cache buster
+	);
+	error_log("H5P Styles: ".print_r($styles, true));
+}
+add_action('h5p_alter_library_styles', 'hamburger_cat_h5p_alter_styles', 10, 3);
+
 /**
  * Implement the Custom Header feature.
  */
