@@ -107,28 +107,31 @@ a {
 	display: inline-block;
 }
 
-a.button,
+.button,
 button,
 input[type="button"] {
 	background-color: $lemon;
 	color: $black;
 	text-transform: uppercase;
+	margin: 0 0 1rem 0;
+	padding: 0.85em 1em;
+	font-size: 0.9rem;
 }
 
-a.button:hover,
+.button:hover,
 button:hover,
 input[type="button"]:hover {
 	background-color: $peach;
 	color: $black;
 }
 
-a.button.secondary,
+.button.secondary,
 button.secondary,
 input[type="button"].secondary {
 	background-color: $aqua;
 }
 
-a.button.secondary:hover,
+.button.secondary:hover,
 button.secondary:hover,
 input[type="button"].secondary:hover {
 	background-color: $sky-blue;
@@ -172,7 +175,7 @@ input[type="button"].secondary:hover {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
-	a.button,
+	.button,
 	button,
 	input[type="button"] {
 		min-width: 80%;

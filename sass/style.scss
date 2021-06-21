@@ -32,6 +32,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 --------------------------------------------- */
 @import "utilities/accessibility";
 @import "utilities/woocommerce";
+@import "utilities/responsive-voice";
 
 /* Hamburger Cat style */
 @import "general";
@@ -47,3 +48,5 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "post-types/sjle-programs";
 @import "post-types/social-enterprises";
 
+/* BuddyPress styles */
+@import "buddypress/profile";
