@@ -58,7 +58,7 @@
 		<?php
 		$useStickyHeader = get_field('use_sticky_header', 'options');
 		$stickyContainerData = $useStickyHeader ? 'data-sticky-container' : '';
-		$stickyData = $useStickyHeader ? 'data-sticky data-margin-top="0"' : '';
+		$stickyData = $useStickyHeader ? 'data-sticky data-margin-top="0" data-stick-to="top" data-sticky-on="medium"' : '';
 		?>
 		<div <?php echo $stickyContainerData;?> >
 
@@ -111,7 +111,7 @@
 				<div class="grid-container">
 
 					<div class="grid-x">
-						<div class="cell medium-4 large-3 text-center medium-text-left">
+						<div class="cell medium-11 text-center medium-text-left">
 							<?php
 							$homeLink = apply_filters( 'wpml_home_url', get_option( 'home' ) );
 							?>
@@ -143,7 +143,7 @@
 								?>
 							</div>
 						</div>
-						<div class="cell medium-8 large-9">
+						<div class="cell medium-1">
 
 							<nav id="site-navigation" class="main-navigation medium-text-right">
 

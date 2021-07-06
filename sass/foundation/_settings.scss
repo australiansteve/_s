@@ -73,6 +73,7 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$green: #1d6d3d;
 $foundation-palette: (
 	primary: $black,
 	secondary: $dark-gray,
@@ -140,7 +141,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: "Fjalla One", "Montserrat", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: consolas, "Liberation Mono", courier, monospace;
@@ -149,20 +150,44 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
 	small: (
-		"h1": ("font-size": 24),
-		"h2": ("font-size": 20),
-		"h3": ("font-size": 19),
-		"h4": ("font-size": 18),
-		"h5": ("font-size": 17),
+		"h1": ("font-size": 44),
+		"h2": ("font-size": 28),
+		"h3": ("font-size": 24),
+		"h4": ("font-size": 20),
+		"h5": ("font-size": 18),
 		"h6": ("font-size": 16),
 	),
 	medium: (
-		"h1": ("font-size": 48),
-		"h2": ("font-size": 40),
-		"h3": ("font-size": 31),
-		"h4": ("font-size": 25),
+		"h1": ("font-size": 32),
+		"h2": ("font-size": 28),
+		"h3": ("font-size": 26),
+		"h4": ("font-size": 24),
 		"h5": ("font-size": 20),
 		"h6": ("font-size": 16),
+	),
+	large: (
+		"h1": ("font-size": 36),
+		"h2": ("font-size": 32),
+		"h3": ("font-size": 28),
+		"h4": ("font-size": 24),
+		"h5": ("font-size": 20),
+		"h6": ("font-size": 16),
+	),
+	xlarge: (
+		"h1": ("font-size": 40),
+		"h2": ("font-size": 36),
+		"h3": ("font-size": 32),
+		"h4": ("font-size": 26),
+		"h5": ("font-size": 20),
+		"h6": ("font-size": 16),
+	),
+	xxlarge: (
+		"h1": ("font-size": 44),
+		"h2": ("font-size": 40),
+		"h3": ("font-size": 36),
+		"h4": ("font-size": 28),
+		"h5": ("font-size": 24),
+		"h6": ("font-size": 20),
 	),
 );
 $header-text-rendering: optimizeLegibility;
@@ -307,10 +332,10 @@ $button-radius: $global-radius;
 $button-border: 1px solid transparent;
 $button-hollow-border-width: 1px;
 $button-sizes: (
-	tiny: 0.6rem,
-	small: 0.75rem,
-	default: 0.9rem,
-	large: 1.25rem,
+	tiny: 0.6em,
+	small: 0.75em,
+	default: 0.9em,
+	large: 1.25em,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;

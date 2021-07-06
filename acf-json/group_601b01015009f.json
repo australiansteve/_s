@@ -43,6 +43,78 @@
             "mime_types": ""
         },
         {
+            "key": "field_60e35181cf09c",
+            "label": "Projects Page Customization",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60e35191cf09d",
+            "label": "Projects Page Customization",
+            "name": "projects_page_customization",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_60253dcc22b49"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
+            "key": "field_60e47eb189952",
+            "label": "Custom Text",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_60e47ebe89953",
+            "label": "'Back to News' Text",
+            "name": "back_to_news_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "BACK TO NEWS",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60772c198fa3b",
             "label": "Custom Javascript",
             "name": "",
@@ -178,5 +250,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618424640
+    "modified": 1625587432
 }

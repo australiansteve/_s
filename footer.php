@@ -14,23 +14,7 @@
 		<footer id="colophon" class="site-footer">
 			<div class="grid-container">
 				<div class="grid-x footer-logo">
-					<div class="cell medium-3 text-center medium-text-left">
-						<div id="social-menu">
-							<?php
-							if (has_nav_menu( 'social-menu' )):
-								wp_nav_menu(
-									array(
-										'theme_location'	=> 'social-menu',
-										'menu_id'		=> 'social-menu',
-										'menu_class'	=> 'horizontal menu text-center medium-text-left',
-										'container'		=> false
-									)
-								);
-							endif;
-							?>
-						</div>
-					</div>
-					<div class="cell text-center medium-6">
+					<div class="cell text-center medium-8 medium-order-2">
 						<?php 
 						$image = get_field('footer_logo', 'options');
 						$size = 'full';
@@ -57,7 +41,23 @@
 
 						?>
 					</div>
-					<div class="cell medium-3 text-center medium-text-right">
+					<div class="cell medium-2 medium-order-1 text-center medium-text-left">
+						<div id="social-menu">
+							<?php
+							if (has_nav_menu( 'social-menu' )):
+								wp_nav_menu(
+									array(
+										'theme_location'	=> 'social-menu',
+										'menu_id'		=> 'social-menu',
+										'menu_class'	=> 'horizontal menu text-center medium-text-left',
+										'container'		=> false
+									)
+								);
+							endif;
+							?>
+						</div>
+					</div>
+					<div class="cell medium-2 medium-order-3 text-center medium-text-right">
 						<div id="back-to-top">
 							<a href="#" class="back-to-top">
 								<i class="fas fa-2x fa-arrow-circle-up"></i>

@@ -26,8 +26,8 @@ get_header();
 					<div class="entry-content">
 						<article>
 							<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
-							<?php get_template_part( 'template-parts/meta', get_post_type() ); ?>
-							<?php the_content(); ?>
+							<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
+							<?php the_field('project-description'); ?>
 						</article>
 						<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
 					</div>

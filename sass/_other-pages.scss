@@ -1,0 +1,158 @@
+.page-template-services-page {
+
+	#custom-content-1 {
+		padding-bottom: 2rem;
+
+		.service.link {
+			padding-bottom: 0.5rem;
+		}
+
+		.service.link.active {
+
+			a {
+				font-weight: 700;
+				color: $green;
+			}
+		}
+	}
+
+	#custom-content-2 {
+		min-height: 40vh;
+		max-width: 800px;
+
+		.service.description {
+
+			h3,
+			p {
+				transition:
+					opacity 0.5s,
+					font-size 0.5s,
+					margin 0.5s,
+					padding 0.5s;
+			}
+		}
+
+		.service.description.hidden {
+
+			p,
+			h3 {
+				opacity: 0;
+				font-size: 0;
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+}
+
+.page-template-about-page {
+
+	#custom-content-1 {
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+
+		.team-member {
+
+			h3 {
+				margin-top: 1rem;
+				margin-bottom: 0.5rem;
+			}
+
+			.team-member-title {
+				font-size: 1.15em;
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
+
+.single-austeve-projects {
+
+	h3.sub-title {
+		font-weight: 400;
+	}
+}
+
+.page-template-contact-page {
+
+	#custom-content-1 {
+
+	}
+
+	.container.text_1 {
+		padding: 2rem 0;
+
+		.inner-container {
+			max-width: 540px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+	.page-template-about-page {
+
+		#custom-content-1 {
+
+			.team-member {
+
+				margin-bottom: 3rem;
+			}
+		}
+	}
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.page-template-contact-page {
+
+		.container.text_1 {
+			padding: 0;
+		}
+	}
+
+	.page-template-services-page {
+
+		#custom-content-1 {
+
+			.service.link {
+				padding-bottom: 1rem;
+			}
+		}
+	}
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

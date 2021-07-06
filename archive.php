@@ -12,38 +12,45 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<div class="page-content">
+	<?php
+	get_template_part( 'template-parts/hero-image', get_post_type() );
+	?>
 
-		<div class="grid-container">
+	<div class="grid-container">
+		
+		<div class="page-content">
 
 			<div class="entry-content">
 				<?php
-				the_archive_description( '<div class="archive-description">', '</div>' );
+				the_archive_title( '<h2 class="page-title">', '</h2>' );
+				get_template_part( 'template-parts/archive-description', get_post_type() ); 
 				?>
 			</div>
 
 			<?php
-			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
-			?>
+			if (have_posts()) :
 
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
-				<?php
-				while ( have_posts() ) :
-					the_post();
+				get_template_part( 'template-parts/archive-tabs', get_post_type() );
+				?>
 
-					?>
-
-					<div class="cell">
-						<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
-					</div>
-
+				<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 
 					<?php
-				endwhile;
-				?>
-			</div>
+					while ( have_posts() ) :
+						the_post();
+						?>
 
-			<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
+						<div class="cell">
+							<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
+						</div>
+
+						<?php
+					endwhile;
+					?>
+				</div>
+				<?php
+			endif;
+			?>
 		</div>
 	</div>
 </main><!-- #main -->
