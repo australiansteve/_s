@@ -48,6 +48,23 @@
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	body {
+
+		.hero-container {
+
+			img {
+				top: 0%;
+				transform: translate(-50%, 0%);
+			}
+		}
+
+		.bling.hero-container:hover {
+
+			img {
+				transform: translate(-50%, 0%) scale(1.05);
+			}
+		}
+	}
 }
 
 /* XLarge only */
