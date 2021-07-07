@@ -131,7 +131,7 @@ add_action( 'after_setup_theme', 'hamburger_cat_content_width', 0 );
  */
 function hamburger_cat_scripts() {
 
-	wp_enqueue_style( 'adobe-fonts', 'https://use.typekit.net/oof4cdw.css');
+	//wp_enqueue_style( 'adobe-fonts', 'https://use.typekit.net/oof4cdw.css');
 	
 	$styleFile = (wp_get_environment_type() == 'production') ? 'style.min.css' : 'style.css';
 

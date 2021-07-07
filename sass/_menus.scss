@@ -103,7 +103,30 @@ nav {
 }
 
 .menu {
-	font-family: Abolition, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+	font-family: Shrikhand, Roboto, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+
+	a {
+
+		color: $orange-light;
+	}
+
+	a:hover,
+	a.active,
+	a.focus {
+		color: $orange;
+	}
+}
+
+
+i {
+
+	color: $orange-light;
+}
+
+i:hover,
+i.active,
+i.focus {
+	color: $orange;
 }
 
 #language-menu-small.menu {
@@ -132,6 +155,18 @@ nav {
 #footer-menu,
 #social-menu {
 	display: inline-flex;
+}
+
+#social-menu {
+
+	a {
+		padding-left: 0;
+		color: $orange-light;
+	}
+
+	a:hover {
+		color: $orange;
+	}
 }
 
 /* Small only */

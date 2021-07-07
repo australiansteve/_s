@@ -68,11 +68,11 @@ body {
 
 			a:not(.wp-block-button__link) {
 				text-decoration: underline;
-				color: $dark-gray;
+				color: $orange;
 			}
 
 			a:hover {
-				color: scale-color($dark-gray, $lightness: -14%);
+				color: scale-color($orange, $lightness: -14%);
 			}
 
 			h1,
@@ -115,8 +115,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: Abolition, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+	font-family: Shrikhand, Roboto, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 	font-weight: 400;
+	color: $orange;
 
 	a {
 		color: inherit;

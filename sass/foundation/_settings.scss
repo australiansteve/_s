@@ -73,6 +73,9 @@ $medium-gray: #cacaca;
 $dark-gray: #707070;
 $black: #000;
 $white: #fefefe;
+$orange: #da550c;
+$orange-light: #fe8b00;
+
 $foundation-palette: (
 	primary: $black,
 	secondary: $dark-gray,
@@ -81,8 +84,8 @@ $foundation-palette: (
 	alert: #cc4b37,
 );
 $body-background: $white;
-$body-font-color: $dark-gray;
-$body-font-family: "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+$body-font-color: $black;
+$body-font-family: roboto, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -140,7 +143,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: shrikhand, roboto, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: consolas, "Liberation Mono", courier, monospace;
