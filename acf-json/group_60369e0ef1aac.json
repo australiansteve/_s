@@ -44,6 +44,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_60e6fdf969b95",
+            "label": "Vimeo ID",
+            "name": "video_background_vimeo_id",
+            "type": "text",
+            "instructions": "9 digit Vimeo ID seen in the URL. If specified this will trump the alternative Hero Image and the featured image",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -77,5 +96,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614192548
+    "modified": 1625751458
 }
