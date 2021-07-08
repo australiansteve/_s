@@ -13,8 +13,9 @@ else {
 	$postId = $post->id;
 	
 }
-if ($displayHeroImage) :
-	$videoEmbed = !empty($videoVimeoId);
+$videoEmbed = !empty($videoVimeoId);
+
+if ($displayHeroImage && ($videoEmbed || $alternateHeroImageId || has_post_thumbnail($postId))) :
 
 	if ($videoEmbed) {
 		$featured_img_url = "";

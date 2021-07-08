@@ -18,8 +18,9 @@ else {
 	$videoVimeoId = get_field('video_background_vimeo_id');
 	$images = get_field('project-gallery', $post);
 
-	if ($displayHeroImage) :
-		$videoEmbed = !empty($videoVimeoId);
+	$videoEmbed = !empty($videoVimeoId);
+
+	if ($displayHeroImage && ($videoEmbed || $alternateHeroImageId || $images || has_post_thumbnail($post))) :
 
 		if ($videoEmbed) {
 			$featured_img_url = "";
@@ -40,7 +41,7 @@ else {
 				}
 				else if ($images) {
 					echo "<img src='".$images[0]['sizes']['hero-image']."' />";
-					
+
 				}
 				else if (has_post_thumbnail($post)) {
 					the_post_thumbnail( 'hero-image' );

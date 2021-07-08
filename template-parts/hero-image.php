@@ -3,10 +3,9 @@ $displayHeroImage = get_field('display_hero_image');
 $alternateHeroImageId = get_field('use_alternative_hero_image');
 $videoVimeoId = get_field('video_background_vimeo_id');
 
+$videoEmbed = !empty($videoVimeoId);
 
-if ($displayHeroImage) :
-
-	$videoEmbed = !empty($videoVimeoId);
+if ($displayHeroImage && ($videoEmbed || $alternateHeroImageId || has_post_thumbnail($post))) :
 
 	if ($videoEmbed) {
 		$featured_img_url = "";
