@@ -14,7 +14,7 @@ $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-i
 		<div class="bling container">
 			<img src='<?php echo $thumbnail; ?>' width="800" height="470"/>
 		</div>
-		<h5 class="post-title"><?php the_title();?></h5>
+		<h4 class="post-title"><?php the_title();?></h4>
 		<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
 	</a>
 		
