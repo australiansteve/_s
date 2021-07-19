@@ -59,12 +59,11 @@
                 "id": ""
             },
             "choices": {
-                "top-right": "Normal",
-                "off-canvas-top": "Off Canvas (top)"
+                "top-right": "Top Right",
+                "off-canvas-top": "Off Canvas (top)",
+                "top-bar": "Full Width Bar (centered below logo)"
             },
-            "default_value": [
-                "top-right"
-            ],
+            "default_value": "top-right",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -88,7 +87,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1620239429
+    "modified": 1626695846
 }

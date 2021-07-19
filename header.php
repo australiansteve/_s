@@ -110,8 +110,12 @@
 			<header id="masthead" class="site-header" <?php echo $stickyData;?>>
 				<div class="grid-container">
 
+					<?php 
+					$headerLeftClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-4 large-3 text-center medium-text-left';
+					$headerRightClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-8 large-9 medium-text-right';
+					?>
 					<div class="grid-x">
-						<div class="cell medium-4 large-3 text-center medium-text-left">
+						<div class="cell <?php echo $headerLeftClasses;?> ">
 							<?php
 							$homeLink = apply_filters( 'wpml_home_url', get_option( 'home' ) );
 							?>
@@ -143,12 +147,12 @@
 								?>
 							</div>
 						</div>
-						<div class="cell medium-8 large-9">
+						<div class="cell <?php echo $headerRightClasses;?>">
 
-							<nav id="site-navigation" class="main-navigation medium-text-right">
+							<nav id="site-navigation" class="main-navigation">
 
 								<?php
-								if ($menuType == 'top-right') {
+								if ($menuType == 'top-right' || $menuType == 'top-bar') {
 									?>
 									<ul class="vertical menu accordion-menu show-for-small-only" data-accordion-menu>
 										<li>
@@ -218,6 +222,15 @@
 										?>
 										<a href="" class="off-canvas-top show-for-medium" data-open="offCanvasTop"><i class="fas fa-bars fa-2x"></i></a>
 										<?php
+									} elseif ($menuType == 'top-bar') {
+										wp_nav_menu(
+											array(
+												'theme_location'	=> 'primary-menu',
+												'menu_id'		=> 'primary-menu',
+												'menu_class'	=> 'horizontal menu show-for-medium text-center',
+												'container'		=> false
+											)
+										);
 									}
 
 									?>
