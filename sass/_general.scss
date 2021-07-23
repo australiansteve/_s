@@ -38,11 +38,23 @@ body {
 
 	main {
 
+		.grid-container {
+			max-width: 1024px;
+		}
+
 		.page-content {
 			margin: 3rem 0;
 
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				color: $pink-light;
+			}
+
 			h2 {
-				margin-bottom: 2rem;
 				font-weight: 700;
 
 				span {
@@ -59,15 +71,23 @@ body {
 			}
 
 			.entry-content {
-				margin: 4rem 0;
+				background: $black;
+				color: $pink;
+				padding: 1rem;
+
+				.post-meta {
+					color: $pink-light;
+					margin-bottom: 1rem;
+				}
+
+				img {
+					margin-bottom: 1rem;
+				}
 
 				.breadcrumbs {
 					margin-top: 2rem;
 
 					a {
-						font-weight: 700;
-						text-decoration: underline;
-						text-underline-position: under;
 					}
 				}
 			}
@@ -75,6 +95,25 @@ body {
 
 		article {
 			margin-bottom: 2rem;
+		}
+	}
+
+	.button,
+	button {
+		color: $pink-light;
+		background: $light-gray;
+		font-weight: 700;
+		min-width: 200px;
+		text-transform: uppercase;
+	}
+
+	.button:hover,
+	button:hover {
+		color: $pink-light;
+		background: $dark-gray;
+
+		a {
+			text-decoration: none;
 		}
 	}
 }

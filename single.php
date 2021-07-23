@@ -17,14 +17,23 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/hero-image', get_post_type() );
-
 			?>
 
 			<div class="grid-container">
 				<div class="page-content">
-					<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
 					<div class="entry-content">
+						
+						<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
+						<div class="post-meta">
+							<span class="date"><?php echo get_the_date(); ?></span>
+						</div>
+
+						<?php
+						if ( has_post_thumbnail() ) :
+							the_post_thumbnail('single-header');
+						endif;
+						?>
+
 						<?php the_content(); ?>
 
 						<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>

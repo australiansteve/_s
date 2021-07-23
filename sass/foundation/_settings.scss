@@ -68,11 +68,13 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1920);
 $global-lineheight: 1.5;
-$light-gray: #e6e6e6;
+$light-gray: #3c4140;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$pink: #c02c8b; /* clarify */
+$pink-light: #b4a0ab; /* clarify */
 $foundation-palette: (
 	primary: $black,
 	secondary: $dark-gray,

@@ -110,6 +110,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 640, true);
 		add_image_size( 'header-logo', 390, 190, false);
+		add_image_size( 'single-header', 1024, 440, true);
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
