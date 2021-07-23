@@ -21,17 +21,23 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 
-			get_template_part( 'template-parts/hero-image', get_post_type() );
 		?>
+		
+			<div class="grid-container">
+				<div class="page-content">
+					<div class="entry-content">
+						
+						<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
+						
+						<?php
+						get_template_part( 'template-parts/hero-image', get_post_type() );
+						?>
 
-		<div class="grid-container">
-			<div class="page-content">
-				<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
-				<div class="entry-content">
-					<?php the_content(); ?>
-				</div>
+						<?php the_content(); ?>
+
+					</div>
+				</div> 
 			</div>
-		</div>
 
 		<?php
 		endwhile; // End of the loop.

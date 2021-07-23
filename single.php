@@ -29,9 +29,7 @@ get_header();
 						</div>
 
 						<?php
-						if ( has_post_thumbnail() ) :
-							the_post_thumbnail('single-header');
-						endif;
+						get_template_part( 'template-parts/hero-image', get_post_type() );
 						?>
 
 						<?php the_content(); ?>
