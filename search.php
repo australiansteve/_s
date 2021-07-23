@@ -12,50 +12,48 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<div class="grid-container">
-		<div class="page-content">
+	<div class="page-content">
+		<div class="grid-container">
+			<div class="entry-content">
 
-			<h2 class="page-title">
-				<?php
-				/* translators: %s: search query. */
-				printf( esc_html__( 'Search results for: %s', 'hamburger-cat' ), '<span>' . get_search_query() . '</span>' );
-				?>
-			</h2>
-
-			<?php
-			if (have_posts()) :
-				?>
-				<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
+				<h2 class="page-title">
 					<?php
-					while ( have_posts() ) :
-						the_post();
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search results for: %s', 'hamburger-cat' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h2>
+
+				<?php
+				if (have_posts()) :
+					?>
+					<div class="grid-x small-up-1 medium-up-2 ">
+						<?php
+						while ( have_posts() ) :
+							the_post();
+							?>
+
+							<div class="cell">
+								<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
+							</div>
+
+							<?php
+						endwhile; 
 						?>
 
-						<div class="cell">
-							<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
-						</div>
+					</div>
+					<?php
 
+					include( locate_template( 'template-parts/archive-nav.php', false, false ) ); 
 
-						<?php
-					endwhile; 
+				else :
 					?>
-
-				</div>
-				<?php
-
-				include( locate_template( 'template-parts/archive-nav.php', false, false ) ); 
-
-			else :
+					<p>No search results</p>
+					<?php
+				endif;
 				?>
-				<div class="entry-content">
-					No search results
-				</div>
-				<?php
-			endif;
-			?>
 
+			</div>
 		</div>
-
 	</div>
 
 </main><!-- #main -->

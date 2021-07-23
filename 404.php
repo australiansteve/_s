@@ -13,8 +13,8 @@ get_header();
 
 	<div class="page-content">
 		<div class="grid-container">
-			<h2 class="page-title"><span><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></span></h2>  
 			<div class="entry-content">
+				<h2 class="page-title"><span><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></span></h2>  
 				Try taking a look around - or head to the <a href="/">home page</a>, maybe?
 			</div>
 		</div>

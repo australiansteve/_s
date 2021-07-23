@@ -1,5 +1,6 @@
 .archive,
-.blog {
+.blog,
+.search {
 
 	article {
 		background: $white;
@@ -31,7 +32,8 @@
 @media screen and (min-width: 40em) {
 
 	.archive,
-	.blog {
+	.blog,
+	.search {
 
 		#post-grid.medium-up-2 {
 
