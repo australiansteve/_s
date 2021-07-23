@@ -108,7 +108,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1024, 440, true);
-		add_image_size( 'archive-image', 800, 640, true);
+		add_image_size( 'archive-image', 400, 300, true);
 		add_image_size( 'header-logo', 390, 190, false);
 	}
 endif;
@@ -263,3 +263,10 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+function austeve_testing_paging($query) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'posts_per_page', 2 );
+    }
+}
+//add_action( 'pre_get_posts', 'austeve_testing_paging' );

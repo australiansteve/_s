@@ -1,0 +1,83 @@
+.archive,
+.blog {
+
+	article {
+		background: $white;
+		color: $black;
+		padding: 1rem;
+
+		.page-title {
+			color: inherit;
+		}
+
+		a {
+			color: $black;
+		}
+
+		a:hover {
+			color: $pink-light;
+		}
+
+	}
+
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.archive,
+	.blog {
+
+		#post-grid.medium-up-2 {
+
+
+			> .cell:nth-of-type(odd) {
+				padding-right: 0.75rem;
+			}
+
+			> .cell:nth-of-type(even) {
+				padding-left: 0.75rem;
+			}
+
+			article {
+				margin-top: 0;
+
+			}
+		}
+	}
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+}

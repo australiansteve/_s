@@ -1,0 +1,1 @@
+<div class="post-byline"><?php echo get_the_date(); ?></div>

@@ -120,6 +120,11 @@ body {
 
 a {
 	display: inline-block;
+	color: $pink;
+}
+
+a:hover {
+	color: $pink-light;
 }
 
 /* Small only */
