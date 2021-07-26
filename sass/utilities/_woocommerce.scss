@@ -33,6 +33,7 @@
 
 				.entry-content {
 					margin: 2rem 0;
+					padding: 0 0 2rem 0;
 
 
 					input[type="number"] {
@@ -110,11 +111,25 @@
 
 			ul.products {
 				list-style: none;
+				margin-left: 0;
+				margin-top: -2rem;
 
 				.product {
-					margin-bottom: 2rem;
 					position: relative;
 
+					article {
+						background-color: $pink-light;
+					}
+
+					a,
+					h2 {
+						color: $black;
+					}
+
+					a:hover,
+					a:hover h2 {
+						color: $pink;
+					}
 				}
 			}
 
@@ -125,13 +140,23 @@
 				right: 0;
 			}
 
+			.woocommerce-message {
+				padding: 1rem;
+				text-align: center;
+				border: 1px solid $pink;
+				margin-bottom: 1rem;
+				background-color: $dark-gray;
+				color: $pink-light;
+			}
+
 			ul.woocommerce-error[role="alert"] {
 				border: 1px solid $alert-color;
 				list-style: none;
 				margin-left: 0;
 				padding: 1rem;
 				text-align: center;
-
+				background-color: $dark-gray;
+				color: $pink-light;
 			}
 
 			.select2-container .select2-selection--single {
@@ -173,8 +198,56 @@
 					}
 				}
 			}
+
+			.shop_table {
+
+				thead,
+				tbody,
+				tfoot {
+					border: 1px solid $pink;
+					background-color: $black;
+					color: $pink;
+				}
+
+				tr {
+					border-top: 1px solid $pink;
+				}
+
+				tbody tr:nth-child(even) {
+					border-bottom: 0;
+					background-color: $black;
+				}
+
+				img {
+					margin-bottom: 0;
+				}
+
+
+			}
 		}
 	}
+
+	.select2-container--default .select2-selection--single {
+		background-color: $black;
+		color: $pink;
+	}
+
+	.select2-dropdown {
+		background-color: $black;
+		color: $pink;
+	}
+
+	.select2-container--default .select2-results__option[aria-selected="true"],
+	.select2-container--default .select2-results__option[data-selected="true"] {
+		background-color: $pink;
+		color: $black;
+	}
+
+	.select2-container--default .select2-results__option--highlighted[aria-selected],
+	.select2-container--default .select2-results__option--highlighted[data-selected] {
+		background: $pink-light;
+	}
+
 }
 
 .woocommerce-checkout {
@@ -217,10 +290,51 @@
 
 				.product {
 
-					.entry-content {
-						margin: 2rem 8%;
+					.summary.entry-summary {
+						padding-left: 1.5rem;
 					}
 				}
+			}
+		}
+	}
+
+	.woocommerce-page {
+
+		main {
+
+			.page-content {
+
+				ul.products {
+
+					.product:nth-child(3n+1) {
+						padding-right: 0.75rem;
+					}
+
+					.product:nth-child(3n+2) {
+						padding-left: 0.375rem;
+						padding-right: 0.375rem;
+					}
+
+					.product:nth-child(3n+3) {
+						padding-left: 0.75rem;
+					}
+				}
+			}
+		}
+	}
+
+	.woocommerce-cart {
+
+		.actions {
+
+			.coupon {
+				float: left;
+				width: 200px;
+			}
+
+			.button[name="update_cart"] {
+				float: right;
+				margin-top: 1.5rem;
 			}
 		}
 	}

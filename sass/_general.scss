@@ -123,7 +123,7 @@ body {
 	.button,
 	button {
 		color: $pink-light;
-		background: $light-gray;
+		background: $dark-gray;
 		font-weight: 700;
 		min-width: 200px;
 		text-transform: uppercase;
@@ -138,6 +138,11 @@ body {
 			text-decoration: none;
 		}
 	}
+
+	.button.disabled,
+	.button[disabled] {
+		background: $dark-gray;
+	}
 }
 
 a {
@@ -145,8 +150,31 @@ a {
 	color: $pink;
 }
 
-a:hover {
+a:hover,
+a:focus {
 	color: $pink-light;
+}
+
+:focus-visible {
+	outline-color: $pink;
+}
+
+[type="text"]:focus,
+[type="password"]:focus,
+[type="date"]:focus,
+[type="datetime"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="week"]:focus,
+[type="email"]:focus,
+[type="number"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="url"]:focus,
+[type="color"]:focus,
+textarea:focus {
+	color: $black;
 }
 
 /* Small only */

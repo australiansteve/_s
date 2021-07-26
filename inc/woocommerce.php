@@ -119,10 +119,11 @@ function hamburger_cat_woocommerce_wrapper_before() {
 		<main id="primary" class="site-main">
 			<div class="page-content">
 				<div class="grid-container">
+					<div class="entry-content">
 	<?php
 }
 
-add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrapper_before' );
+add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrapper_before', 9 );
 
 /**
  * After Content.
@@ -133,13 +134,14 @@ add_action( 'woocommerce_before_main_content', 'hamburger_cat_woocommerce_wrappe
  */
 function hamburger_cat_woocommerce_wrapper_after() {
 	?>
+					</div>
 				</div>
 			</div>
 		</main><!-- #main -->
 	<?php
 }
 
-add_action( 'woocommerce_after_main_content', 'hamburger_cat_woocommerce_wrapper_after' );
+add_action( 'woocommerce_after_main_content', 'hamburger_cat_woocommerce_wrapper_after', 11 );
 
 /**
  * Cart Fragments.
@@ -213,7 +215,7 @@ function hamburger_cat_woocommerce_header_cart() {
 
 function austeve_woocommerce_before_single_product() {
 	?>
-	<div class="grid-x grid-margin-x">
+	<div class="grid-x">
 		<div class="cell medium-6">
 			<div class="featured-image">
 				<?php the_post_thumbnail( 'full' ); ?>
@@ -339,16 +341,9 @@ add_action ( 'woocommerce_checkout_after_customer_details', 'austeve_checkout_af
 add_action ( 'woocommerce_checkout_before_order_review_heading', 'austeve_checkout_before_order_review_heading', 10 );
 add_action ( 'woocommerce_checkout_after_order_review', 'austeve_checkout_after_order_review_heading', 10 );
 
-
-add_filter ( 'woocommerce_page_title', function($title) {
-
-	return "<span>".$title."</span>";
-
-});
-
 add_filter ( 'woocommerce_product_loop_start', function($loopStart) {
 
-	$loopStart = "<ul class='products grid-x grid-margin-x small-up-1 medium-up-2 large-up-3'>";
+	$loopStart = "<ul class='products grid-x small-up-1 medium-up-3'>";
 	return $loopStart;
 
 });
@@ -385,30 +380,9 @@ add_filter ( 'woocommerce_sale_flash', function( $sale ) {
 	
 });
 
-function austeve_woocommerce_before_result_count() {
-	?>
-	<div class="grid-x">
-		<div class="cell medium-6">
-	<?php
-}
-
-function austeve_woocommerce_after_result_count() {
-?>
-		</div>
-		<div class="cell medium-6">
-<?php
-}
-
-function austeve_woocommerce_after_ordering() {
-?>
-		</div>
-	</div>
-<?php
-}
-
-add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_before_result_count', 19 );
-add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_result_count', 25 );
-add_action( 'woocommerce_before_shop_loop', 'austeve_woocommerce_after_ordering', 31 );
+remove_action ('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+remove_action ('woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb' , 20);
 
 function austeve_woocommerce_sold_out_notice() {
 
@@ -425,3 +399,17 @@ endif;
 
 }
 add_action ( 'woocommerce_before_shop_loop_item_title', 'austeve_woocommerce_sold_out_notice', 11);
+
+function austeve_woocommerce_before_shop_loop_item() {
+	?>
+	<article>
+	<?php
+}
+add_action ( 'woocommerce_before_shop_loop_item', 'austeve_woocommerce_before_shop_loop_item', 9);
+
+function austeve_woocommerce_after_shop_loop_item() {
+	?>
+	</article>
+	<?php
+}
+add_action ( 'woocommerce_after_shop_loop_item', 'austeve_woocommerce_after_shop_loop_item', 11);

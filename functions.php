@@ -266,8 +266,9 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 function austeve_testing_paging($query) {
-    if ( $query->is_home() && $query->is_main_query() ) {
-        $query->set( 'posts_per_page', 2 );
+    if ( !is_admin() && $query->is_main_query() && (is_product_category() || $query->is_post_type_archive('product'))  ) {
+        $query->set( 'posts_per_page', 50 );
     }
 }
-//add_action( 'pre_get_posts', 'austeve_testing_paging' );
+add_action( 'pre_get_posts', 'austeve_testing_paging' );
+
