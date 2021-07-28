@@ -82,8 +82,8 @@ $foundation-palette: (
 	warning: #ffae00,
 	alert: $pink,
 );
-$body-background: $white;
-$body-font-color: $black;
+$body-background: $black;
+$body-font-color: $pink;
 $body-font-family: "Montserrat", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -238,16 +238,16 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $white;
+$accordion-background: $black;
 $accordion-plusminus: true;
 $accordion-plus-content: "\002B";
 $accordion-minus-content: "\2013";
 $accordion-title-font-size: rem-calc(12);
-$accordion-item-color: $primary-color;
-$accordion-item-background-hover: $light-gray;
+$accordion-item-color: $pink;
+$accordion-item-background-hover: $pink-light;
 $accordion-item-padding: 1.25rem 1rem;
 $accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
+$accordion-content-border: 1px solid $pink;
 $accordion-content-color: $body-font-color;
 $accordion-content-padding: 1rem;
 

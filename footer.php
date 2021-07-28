@@ -10,7 +10,23 @@
  */
 
 ?>
+	<?php 
+	$bgImage = get_field('full_site_background_image', 'options');
 
+	if ($bgImage) {
+		$imageUrl = wp_get_attachment_image_src( $bgImage, 'full')[0];
+		error_log($imageUrl);
+		?>
+		<script type="text/javascript">
+			jQuery( document ).ready(function() {
+
+				jQuery('body').css('background-image', 'url(<?php echo $imageUrl; ?>)');
+				
+			});
+		</script>
+		<?php
+	}
+		?>
 		<footer id="colophon" class="site-footer">
 			<div class="grid-container">
 				<div class="grid-x footer-logo">

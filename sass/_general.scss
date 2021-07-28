@@ -1,5 +1,8 @@
 body {
 
+	background-color: $pink-light;
+	background-position: top center;
+
 	.wp-post-image.size-hero-image {
 		min-width: 100%;
 	}
@@ -43,7 +46,7 @@ body {
 		}
 
 		.page-content {
-			margin: 3rem 0;
+			padding-bottom: 3rem;
 
 			h1,
 			h2,

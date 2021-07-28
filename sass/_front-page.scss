@@ -27,31 +27,12 @@
 
 			.page-content {
 
-				.entry-content {
-					margin: 1rem 1rem;
+				.left-column {
+					margin-right: 0.75rem;
 				}
 
-				.column-parent {
-
-					section {
-						width: 50%;
-					}
-
-					#section-3,
-					#section-5,
-					#section-7,
-					#section-9 {
-						float: left;
-						clear: left;
-					}
-
-					#section-4,
-					#section-6,
-					#section-8,
-					#section-10 {
-						float: right;
-						clear: right;
-					}
+				.right-column {
+					margin-left: 0.75rem;
 				}
 			}
 		}

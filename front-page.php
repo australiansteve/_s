@@ -88,26 +88,30 @@ get_header();
 
 				<div class="grid-x show-for-medium">
 					<div class="cell medium-6">
-						<?php
-						include( locate_template( 'template-parts/front-page/section-3.php', false, false ) ); 
+						<div class="left-column">
+							<?php
+							include( locate_template( 'template-parts/front-page/section-3.php', false, false ) ); 
 
-						include( locate_template( 'template-parts/front-page/section-5.php', false, false ) ); 
+							include( locate_template( 'template-parts/front-page/section-5.php', false, false ) ); 
 
-						include( locate_template( 'template-parts/front-page/section-7.php', false, false ) ); 
+							include( locate_template( 'template-parts/front-page/section-7.php', false, false ) ); 
 
-						include( locate_template( 'template-parts/front-page/section-9.php', false, false ) ); 
-						?>
+							include( locate_template( 'template-parts/front-page/section-9.php', false, false ) ); 
+							?>
+						</div>
 					</div>
 					<div class="cell medium-6">
-						<?php
-						include( locate_template( 'template-parts/front-page/section-4.php', false, false ) ); 
+						<div class="right-column">
+							<?php
+							include( locate_template( 'template-parts/front-page/section-4.php', false, false ) ); 
 
-						include( locate_template( 'template-parts/front-page/section-6.php', false, false ) ); 
+							include( locate_template( 'template-parts/front-page/section-6.php', false, false ) ); 
 
-						include( locate_template( 'template-parts/front-page/section-8.php', false, false ) ); 
+							include( locate_template( 'template-parts/front-page/section-8.php', false, false ) ); 
 
-						include( locate_template( 'template-parts/front-page/section-10.php', false, false ) ); 
-						?>
+							include( locate_template( 'template-parts/front-page/section-10.php', false, false ) ); 
+							?>
+						</div>
 					</div>
 				</div>
 			</div>

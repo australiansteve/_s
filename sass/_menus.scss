@@ -9,6 +9,10 @@ nav {
 			transition: opacity 0.5s;
 		}
 
+		ul.nested.is-accordion-submenu {
+			margin-left: 0;
+		}
+
 		li[aria-expanded="false"] {
 
 			.fa-bars {
@@ -25,10 +29,6 @@ nav {
 			li {
 				display: inline-block;
 				width: auto;
-
-				a {
-					padding-right: 0;
-				}
 			}
 		}
 	}
@@ -75,6 +75,27 @@ nav {
 				display: inline-block;
 			}
 		}
+	}
+}
+
+nav.menu-type-top-bar {
+
+	background-color: $pink;
+
+	a {
+		color: $black;
+	}
+
+	a:hover {
+		color: $dark-gray;
+	}
+
+}
+
+#social-menu {
+
+	a {
+
 	}
 }
 
@@ -137,7 +158,7 @@ nav {
 	#social-menu {
 
 		a {
-			padding-left: 0;
+			padding: 0.25rem 0 0.25rem 0.75rem;
 		}
 	}
 
