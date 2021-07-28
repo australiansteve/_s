@@ -93,8 +93,11 @@ body {
 			}
 
 			.entry-content.no-padding {
-
 				padding: 0;
+			}
+
+			.entry-content.no-background {
+				background-color: unset;
 			}
 
 			.iframe-container {
