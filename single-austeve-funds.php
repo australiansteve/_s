@@ -20,7 +20,12 @@ get_header();
 
 					<div class="grid-x fund-single">
 						<!-- FUND -->
-						<div class="cell small-12 medium-7 large-8" id="page-content">
+						<?php
+						$displayDonationForm = get_field('display_donation_form');
+						$leftClasses = ($displayDonationForm == 'none') ? 'small-12' : 'small-12 medium-7 large-8';
+						$rightClasses = ($displayDonationForm == 'none') ? 'hide-for-small' : 'small-12 medium-5 large-4';
+						?>
+						<div class="cell <?php echo $leftClasses;?>" id="page-content">
 							<div class="grid-x">
 								<div class="cell small-12">
 									<?php the_post_thumbnail(); ?>
@@ -43,16 +48,23 @@ get_header();
 							</div>
 						</div>
 
-						<div class="cell small-12 medium-5 large-4 no-print" id="donate-now">
+						<div class="cell <?php echo $rightClasses;?> no-print" id="donate-now">
 							<?php 
-							$fundId = get_field('canada_helps_fund_id');
-							if(!$fundId || $fundId == 'NO_FUND')
-							{
-								$fundId = get_field('canada_helps_default_fund', 'option');
+							if ($displayDonationForm != 'none') {
+								$fundId = get_field('canada_helps_fund_id');
+								if( $displayDonationForm == 'default' || 
+									!$fundId || 
+									$fundId == 'NO_FUND') {
+
+									$fundId = get_field('canada_helps_default_fund', 'option');
+								}
+
+								$iFrameSrc = get_field('canada_helps_form_url', 'option')."?fundID=".$fundId;
+								?>
+								<iframe width="100%" height="1000px" src="<?php echo $iFrameSrc; ?>"></iframe>
+								<?php
 							}
-							$iFrameSrc = get_field('canada_helps_form_url', 'option')."?fundID=".$fundId;
 							?>
-							<iframe width="100%" height="1000px" src="<?php echo $iFrameSrc; ?>"></iframe>
 						</div>
 					</div>
 				</div>
