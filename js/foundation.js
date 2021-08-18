@@ -1,4 +1,5 @@
 import { Foundation } from 'foundation-sites/js/foundation.core'
+import { Accordion } from 'foundation-sites/js/foundation.accordion'
 import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu'
 import { Sticky } from 'foundation-sites/js/foundation.sticky'
 import { Equalizer } from 'foundation-sites/js/foundation.equalizer'
@@ -6,6 +7,7 @@ import { OffCanvas } from 'foundation-sites/js/foundation.offcanvas'
 
 function initFoundation() {
   // Include the Foundation Modules that we'll use in the app
+  Foundation.plugin(Accordion, 'Accordion')
   Foundation.plugin(AccordionMenu, 'AccordionMenu')
   Foundation.plugin(Sticky, 'Sticky')
   Foundation.plugin(Equalizer, 'Equalizer')

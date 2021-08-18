@@ -55,6 +55,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 				'language-menu' => esc_html__( 'Language Switcher', 'hamburger-cat' ),
 				'language-menu-small' => esc_html__( 'Mobile Language Switcher', 'hamburger-cat' ),
 				'footer-menu' => esc_html__( 'Footer', 'hamburger-cat' ),
+				'about-menu' => esc_html__( 'About Page sub-menu', 'hamburger-cat' ),
 			)
 		);
 
@@ -110,6 +111,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 640, true);
 		add_image_size( 'header-logo', 390, 190, false);
+		add_image_size( 'achievement', 250, 250, true);
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -263,3 +265,128 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+
+add_action('acf/save_post', 'austeve_acf_save_post', 5);
+add_action('acf/update_post', 'austeve_acf_save_post', 5);
+function austeve_acf_save_post( $post_id ) {
+
+    // Get previous values.
+    $prev_values = get_fields( $post_id );
+
+    // Get submitted values.
+    $values = $_POST['acf'];
+    error_log("Saving post: ".print_r($values, true));
+
+    // Check if a specific value was updated.
+    // if( isset($_POST['acf']['field_60d4cad316896']) ) {
+    // 	/* New user goal */
+    //     error_log("New goal is being saved: ".print_r($values['field_60d4cad316896'], true));
+
+    //     //current goals for user:
+    //     $userGoals = get_field('user_goals', 'user_'.get_current_user_id());
+    //     error_log("Current user goals: ".print_r($userGoals, true));
+
+    //     $userGoals[] = array("goal_text" => $values['field_60d4cad316896'], "related_topic" => $values['field_60edb518acf78']);
+        
+    //     error_log("New user goals: ".print_r($userGoals, true));
+
+    //     update_field('user_goals', $userGoals, 'user_'.get_current_user_id());
+
+    //     $_POST['acf']['field_60d4cad316896'] = "";
+    // }
+
+	if( isset($_POST['acf']['field_60eee62ff7dea']) ) {
+		//current goals for user:
+        $userGoals = get_field('user_goals', 'user_'.get_current_user_id());
+
+        error_log("New GOal Set: ".print_r($values['field_60eee62ff7dea'], true));
+        
+        foreach($values['field_60eee62ff7dea'] as $subvalue) {
+
+	        $newGoalTopic =  $subvalue['field_60eee67df7ded'];
+	        $newGoalText =  $subvalue['field_60eee68cf7dee'];
+
+	        $existingGoalKey = array_search($newGoalTopic, array_column($userGoals, 'related_topic'));
+
+	        if($existingGoalKey === false) {
+	        	$userGoals[] = array("goal_text" => $newGoalText, "related_topic" => $newGoalTopic);
+	        }
+	        else {
+	        	$userGoals[$existingGoalKey]['goal_text'] = $newGoalText;
+	        }
+        }
+
+        error_log("New user goals: ".print_r($userGoals, true));
+        update_field('user_goals', $userGoals, 'user_'.get_current_user_id());
+
+    }
+
+}
+
+
+function your_bp_admin_bar_add() {
+  global $wp_admin_bar, $bp;
+ 
+  if ( !bp_use_wp_admin_bar() || defined( 'DOING_AJAX' ) )
+    return;
+ 
+  $user_domain = bp_loggedin_user_domain();
+  $item_link = trailingslashit( $user_domain . 'dogs' );
+ 
+  $wp_admin_bar->add_menu( array(
+    'parent'  => $bp->my_account_menu_id,
+    'id'      => 'students',
+    'title'   => __( 'Students', 'your-plugin-domain' ),
+    'href'    => trailingslashit( $item_link ),
+    'meta'    => array( 'class' => 'menupop' )
+  ) );
+ 
+}
+add_action( 'bp_setup_admin_bar', 'your_bp_admin_bar_add', 300 );
+
+
+function austeve_ld_lesson_complete($lesson_data) {
+	error_log("Lesson is complete!");
+	error_log(print_r($lesson_data, true));
+	date_default_timezone_set('America/Halifax');
+
+	$lessonAlreadyComplete = false;
+	if( have_rows('lesson_completion_times', 'user_'.get_current_user_id()) ):
+	    while( have_rows('lesson_completion_times', 'user_'.get_current_user_id()) ) : the_row();
+	        if ($lesson_data['lesson']->ID == get_sub_field('lesson_id'))
+	        {
+	        	$lessonAlreadyComplete = true;
+	        }
+	    endwhile;
+	endif;
+
+	if (!$lessonAlreadyComplete) {
+		$lessonCompletionData = get_field('lesson_completion_times', 'user_'.get_current_user_id());
+		$lessonCompletionData[] = array("lesson_id" => $lesson_data['lesson']->ID, "completion_datetime" => date("Y-m-d H:i:s"));
+		update_field( 'lesson_completion_times', $lessonCompletionData, 'user_'.get_current_user_id() );
+	}
+}
+add_action( 'learndash_lesson_completed',  'austeve_ld_lesson_complete', 10, 1 );
+
+
+function austeve_get_xapi_content_in_post($post_id) {
+	//error_log("austeve_get_xapi_content_in_post: ".$post_id);
+	if(empty($post_id) || !is_numeric($post_id)) 
+		return array();
+	else
+	{
+		global $wpdb;
+		$meta_post_ids 	= $wpdb->get_col($wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = 'show_xapi_content' AND post_id = '%d'", $post_id));
+		$block_post_ids	= $wpdb->get_col($wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = 'show_xapi_content_blocks' AND post_id = '%d'", $post_id ));
+
+		$post_ids = array_merge($block_post_ids,$meta_post_ids);
+		
+		if(empty($post_ids))
+			return array();
+
+		$posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE ID IN (".implode(",", $post_ids).") AND post_status IN ('publish', 'draft') ORDER BY post_title");
+
+		return empty($posts)? array():$posts;
+	}
+}

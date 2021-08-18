@@ -1,4 +1,4 @@
-import { lodash } from 'lodash'
+//import { lodash } from 'lodash'
 
 //customizer.js is only done in backend so not including in main
 import './navigation.js'
@@ -11,7 +11,6 @@ jQuery( document ).ready(function() {
 	calculateSectionMinusHeaderHeight();
 	Foundation.addToJquery(jQuery);
 
-	
 });
 
 var calculateSectionMinusHeaderHeight = _.debounce(function () {

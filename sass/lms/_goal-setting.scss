@@ -1,0 +1,23 @@
+.acf-field.acf-field-repeater.acf-field-60eee62ff7dea {
+
+	/* hide add & remove buttons from goal setting table */
+	.acf-field.hidden {
+		display: none;
+	}
+
+	.acf-row-handle.remove {
+		display: none;
+	}
+
+	.acf-repeater tbody tr.acf-row {
+		border-bottom: 2px solid $black;
+	}
+
+	.acf-repeater tbody tr:nth-last-of-type(2) {
+		border-bottom: none;
+	}
+
+	.acf-actions {
+		display: none;
+	}
+}

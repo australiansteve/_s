@@ -33,6 +33,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "utilities/accessibility";
 @import "utilities/woocommerce";
 
+/* Custom Styling for LMS components */
+@import "lms/goal-setting";
+@import "lms/dashboards";
+
 /* Hamburger Cat style */
 @import "general";
 @import "header";
