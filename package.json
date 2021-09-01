@@ -42,6 +42,7 @@
   "scripts": {
     "watch": "node-sass sass/style.scss dist/style.css --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
     "compile:css": "stylelint 'sass/**/*.scss' --fix && node-sass sass/style.scss dist/style.css && node-sass --output-style compressed --source-map dist/style.min.css.map sass/style.scss dist/style.min.css",
+    "compile:h5pcss": "stylelint 'sass/h5p.scss' --fix && node-sass sass/h5p.scss dist/h5p.css && node-sass --output-style compressed --source-map dist/h5p.min.css.map sass/h5p.scss dist/h5p.min.css",
     "compile:rtl": "rtlcss dist/style.min.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",

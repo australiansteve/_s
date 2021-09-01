@@ -1,0 +1,31 @@
+html.h5p-iframe {
+	font-family: Montserrat, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+
+	body {
+		font-family: Montserrat, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+
+
+		.h5p-question-introduction {
+			line-height: 1.5;
+
+			p {
+				margin-top: 0;
+			}
+		}
+
+		.h5p-blanks {
+
+			.h5p-question-content {
+
+				p {
+					margin-bottom: 0.25rem;
+				}
+			}
+		}
+
+		.h5p-question {
+			background: rgba(245, 245, 245, 0.8);
+			padding: 1rem 0.5rem;
+		}
+	}
+}

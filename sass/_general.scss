@@ -83,6 +83,16 @@ a {
 	display: inline-block;
 }
 
+.hidden {
+	display: none;
+}
+
+.h5p-iframe-wrapper {
+	max-width: 600px;
+	margin: auto;
+	margin-bottom: 1rem;
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 

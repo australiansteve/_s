@@ -1,11 +1,12 @@
 <?php
 /**
- * BuddyBoss - Users Students
+ * BuddyBoss - Users Achievements
  *
  * @since BuddyPress 3.0.0
  * @version 3.0.0
  */
 ?>
+
 <?php
 $currentUserId = get_current_user_id();
 $userCourses = ld_get_mycourses($currentUserId);

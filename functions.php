@@ -135,6 +135,10 @@ function hamburger_cat_scripts() {
 
 	$styleFile = (wp_get_environment_type() == 'production') ? 'style.min.css' : 'style.css';
 
+	wp_enqueue_script('lodash-js',
+		'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js'
+	);
+
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_template_directory_uri(). '/dist/'.$styleFile, array( ), HAMBURGER_CAT_VERSION );
@@ -149,6 +153,19 @@ function hamburger_cat_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'hamburger_cat_scripts' );
+
+function hamburger_cat_h5p_alter_styles(&$styles, $libraries, $embed_type) {
+
+	$styleFile = (wp_get_environment_type() == 'production') ? 'h5p.min.css' : 'h5p.css';
+
+	$styles[] = (object) array(
+		// Path must be relative to wp-content/uploads/h5p or absolute.
+		'path' => get_template_directory_uri(). '/dist/'.$styleFile,
+		'version' => '?ver=1.4' // Cache buster
+	);
+	error_log("H5P Styles: ".print_r($styles, true));
+}
+add_action('h5p_alter_library_styles', 'hamburger_cat_h5p_alter_styles', 10, 3);
 
 /**
  * Implement the Custom Header feature.
@@ -266,65 +283,6 @@ add_filter( 'get_the_archive_title', function ($title) {
 	return $title;
 });
 
-
-add_action('acf/save_post', 'austeve_acf_save_post', 5);
-add_action('acf/update_post', 'austeve_acf_save_post', 5);
-function austeve_acf_save_post( $post_id ) {
-
-    // Get previous values.
-    $prev_values = get_fields( $post_id );
-
-    // Get submitted values.
-    $values = $_POST['acf'];
-    error_log("Saving post: ".print_r($values, true));
-
-    // Check if a specific value was updated.
-    // if( isset($_POST['acf']['field_60d4cad316896']) ) {
-    // 	/* New user goal */
-    //     error_log("New goal is being saved: ".print_r($values['field_60d4cad316896'], true));
-
-    //     //current goals for user:
-    //     $userGoals = get_field('user_goals', 'user_'.get_current_user_id());
-    //     error_log("Current user goals: ".print_r($userGoals, true));
-
-    //     $userGoals[] = array("goal_text" => $values['field_60d4cad316896'], "related_topic" => $values['field_60edb518acf78']);
-        
-    //     error_log("New user goals: ".print_r($userGoals, true));
-
-    //     update_field('user_goals', $userGoals, 'user_'.get_current_user_id());
-
-    //     $_POST['acf']['field_60d4cad316896'] = "";
-    // }
-
-	if( isset($_POST['acf']['field_60eee62ff7dea']) ) {
-		//current goals for user:
-        $userGoals = get_field('user_goals', 'user_'.get_current_user_id());
-
-        error_log("New GOal Set: ".print_r($values['field_60eee62ff7dea'], true));
-        
-        foreach($values['field_60eee62ff7dea'] as $subvalue) {
-
-	        $newGoalTopic =  $subvalue['field_60eee67df7ded'];
-	        $newGoalText =  $subvalue['field_60eee68cf7dee'];
-
-	        $existingGoalKey = array_search($newGoalTopic, array_column($userGoals, 'related_topic'));
-
-	        if($existingGoalKey === false) {
-	        	$userGoals[] = array("goal_text" => $newGoalText, "related_topic" => $newGoalTopic);
-	        }
-	        else {
-	        	$userGoals[$existingGoalKey]['goal_text'] = $newGoalText;
-	        }
-        }
-
-        error_log("New user goals: ".print_r($userGoals, true));
-        update_field('user_goals', $userGoals, 'user_'.get_current_user_id());
-
-    }
-
-}
-
-
 function your_bp_admin_bar_add() {
   global $wp_admin_bar, $bp;
  
@@ -344,7 +302,6 @@ function your_bp_admin_bar_add() {
  
 }
 add_action( 'bp_setup_admin_bar', 'your_bp_admin_bar_add', 300 );
-
 
 function austeve_ld_lesson_complete($lesson_data) {
 	error_log("Lesson is complete!");
@@ -369,7 +326,6 @@ function austeve_ld_lesson_complete($lesson_data) {
 }
 add_action( 'learndash_lesson_completed',  'austeve_ld_lesson_complete', 10, 1 );
 
-
 function austeve_get_xapi_content_in_post($post_id) {
 	//error_log("austeve_get_xapi_content_in_post: ".$post_id);
 	if(empty($post_id) || !is_numeric($post_id)) 
@@ -389,4 +345,18 @@ function austeve_get_xapi_content_in_post($post_id) {
 
 		return empty($posts)? array():$posts;
 	}
+}
+
+add_action( 'user_register', 'austeve_user_register_display_name', 999, 1 );
+
+function austeve_user_register_display_name ( $user_id ) {
+
+    // get the user data
+    $user_info = get_userdata( $user_id );
+
+    // pick our default display name
+    $display_publicly_as = $user_info->first_name. " ".$user_info->last_name;
+
+    // update the display name
+    wp_update_user( array ('ID' => $user_id, 'display_name' =>  $display_publicly_as));
 }

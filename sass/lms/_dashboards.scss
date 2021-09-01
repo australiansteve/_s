@@ -24,7 +24,8 @@
 			.topic {
 				margin-bottom: 0.75rem;
 
-				.topic-title {
+				.topic-title,
+				.goal-title {
 					font-weight: 700;
 				}
 			}
@@ -140,7 +141,8 @@
 
 			.student-details {
 
-				.student-progress {
+				div.student-progress,
+				div.student-goal {
 					padding-left: calc(1rem + 80px);
 
 					.results-loading {
