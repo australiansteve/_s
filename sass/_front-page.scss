@@ -53,7 +53,8 @@ body.home {
 		}
 
 		#custom-content-2,
-		#custom-content-3 {
+		#custom-content-3,
+		#custom-content-4 {
 			margin-top: 4rem;
 		}
 
@@ -61,6 +62,13 @@ body.home {
 
 			.section-title {
 				margin-bottom: 2rem;
+			}
+		}
+
+		#custom-content-4 {
+
+			.excerpt {
+				overflow-wrap: anywhere;
 			}
 		}
 	}
@@ -97,7 +105,8 @@ body.home {
 	body.home {
 
 		#custom-content-2,
-		#custom-content-3 {
+		#custom-content-3,
+		#custom-content-4 {
 			margin-top: 80px;
 		}
 	}
@@ -114,7 +123,8 @@ body.home {
 	body.home {
 
 		#custom-content-2,
-		#custom-content-3 {
+		#custom-content-3,
+		#custom-content-4 {
 			margin-top: 115px;
 		}
 	}

@@ -7,7 +7,7 @@ get_header();
 	while ( have_posts() ) :
 		the_post();
 
-			get_template_part( 'template-parts/hero-image', get_post_type() );
+		get_template_part( 'template-parts/hero-image', get_post_type() );
 		?>
 
 		<div class="page-content">
@@ -66,6 +66,43 @@ get_header();
 									</div>
 								</div>
 							</div>
+						</div>
+					</div>
+					<div class="grid-x" id="custom-content-4">
+						<div class="cell text-center">
+							<h2 class="section-title"><?php the_field("text_5"); ?></h2>
+						</div>
+						<div class="cell">
+
+
+							<div class="grid-x grid-margin-x align-center small-up-1 medium-up-3">
+
+								<?php
+								$args = array(
+									'post_type'              => array( 'post' ),
+									'post_status'            => array( 'publish' ),
+									'posts_per_page'         => '3'
+								);
+
+								$postsquery = new WP_Query( $args );
+
+								if ( $postsquery->have_posts() ) {
+									while ( $postsquery->have_posts() ) {
+										$postsquery->the_post();
+										?>
+										<div class="cell">
+											<?php 
+											get_template_part( 'template-parts/archive-front-page', get_post_type() );
+											?>
+										</div>
+										<?php
+									}
+								}
+
+								wp_reset_postdata();
+								?>
+							</div>
+
 						</div>
 					</div>
 					<div class="grid-x" id="custom-content-3">

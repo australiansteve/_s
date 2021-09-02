@@ -191,7 +191,7 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 		// replace title with icon
 		if( $icon ) {
 			$title = $item->title;
-			$item->title = '<i class="fab '.$icon.'" title="'.$title.'"></i>';	
+			$item->title = '<i class="'.$icon.'" title="'.$title.'"></i>';	
 		}
 	}
 
