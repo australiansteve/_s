@@ -26,8 +26,8 @@ acf_add_options_sub_page(array(
 ));
 
 acf_add_options_sub_page(array(
-	'page_title' 	=> 'H5P to Topic Mapping',
-	'menu_title'	=> 'H5p/Topic Mapping',
+	'page_title' 	=> 'GrassBlade LRS Connection Settings',
+	'menu_title'	=> 'GrassBlade LRS Settings',
 	'parent_slug'	=> 'theme-general-settings',
 ));
 

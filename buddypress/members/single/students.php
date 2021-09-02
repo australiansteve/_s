@@ -48,7 +48,9 @@ foreach($groups as $group) {
 
             <div class="student-details accordion-content" data-tab-content data-user-id="<?php echo $user['id'];?>">
                 <div class="container">
-
+                    <div class="text-center">
+                        <i class="fas fa-spinner fa-2x fa-spin"></i>
+                    </div>
                 </div>
                 <div class="student-actions text-center">
                     <?php if (bp_is_active( 'messages' )) : ?>

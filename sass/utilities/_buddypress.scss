@@ -1,0 +1,51 @@
+.buddypress.my-account {
+
+	#course_list { /* stylelint-disable-line selector-id-pattern */
+
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+
+		.learndash-course-link {
+
+			a {
+				width: 100%;
+			}
+		}
+
+		.learndash-course-link.color-tangerine {
+			background-color: $tangerine-color;
+		}
+
+		.learndash-course-link.color-purple {
+			background-color: $purple-color;
+		}
+
+		.course_progress {
+			margin-top: 1rem;
+			padding: 1rem;
+			border: 1px solid $yellow-color;
+			position: relative;
+			font-weight: 700;
+			text-transform: uppercase;
+
+			.course_progress_fill {
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				background: $yellow-color;
+				z-index: -1;
+			}
+		}
+
+		.continue-course.button {
+			margin-top: 1rem;
+			padding: 1rem;
+			background: $yellow-color;
+			color: $black;
+			border: none;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+}

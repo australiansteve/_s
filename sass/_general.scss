@@ -87,10 +87,12 @@ a {
 	display: none;
 }
 
-.h5p-iframe-wrapper {
+.h5p-iframe-wrapper,
+.h5p-content.h5p-no-frame {
 	max-width: 600px;
 	margin: auto;
 	margin-bottom: 1rem;
+	background: $light-gray;
 }
 
 /* Small only */

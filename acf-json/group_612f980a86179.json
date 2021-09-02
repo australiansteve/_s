@@ -1,0 +1,59 @@
+{
+    "key": "group_612f980a86179",
+    "title": "Color Selector (words)",
+    "fields": [
+        {
+            "key": "field_612f980a8da25",
+            "label": "Color",
+            "name": "color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "white": "White (Default)",
+                "aqua": "Aqua",
+                "lavender": "Lavender",
+                "lemon": "Lemon",
+                "mint": "Mint",
+                "peach": "Peach",
+                "perriwinkle": "Perriwinkle",
+                "pink-grapefruit": "Pink Grapefruit",
+                "purple": "Purple",
+                "sky-blue": "Sky Blue",
+                "strawberry": "Strawberry",
+                "tangerine": "Tangerine"
+            },
+            "default_value": "#fefefe",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 199,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "modified": 1630509154
+}

@@ -56,6 +56,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 				'language-menu-small' => esc_html__( 'Mobile Language Switcher', 'hamburger-cat' ),
 				'footer-menu' => esc_html__( 'Footer', 'hamburger-cat' ),
 				'about-menu' => esc_html__( 'About Page sub-menu', 'hamburger-cat' ),
+				'off-canvas-account-login-menu' => esc_html__( 'Off-Canvas Account Login menu', 'hamburger-cat' ),
+				'account-login-menu' => esc_html__( 'Account Login menu', 'hamburger-cat' )
 			)
 		);
 
@@ -112,6 +114,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'archive-image', 800, 640, true);
 		add_image_size( 'header-logo', 390, 190, false);
 		add_image_size( 'achievement', 250, 250, true);
+
+		add_filter( 'show_admin_bar', '__return_false' );
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -204,6 +208,8 @@ if ( class_exists('ACF') ) {
 /* Scoial media menu item icons */
 add_filter('wp_nav_menu_objects', function( $items, $args ) {
 	// loop
+	//error_log("wp_nav_menu_objects".print_r( $items, true)." ".print_r($args, true));
+
 	foreach( $items as &$item ) {
 		// vars
 		$icon = get_field('icon', $item);
@@ -221,32 +227,32 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 
 /* Move Yoast metabox below ACF ones */
 add_filter( 'wpseo_metabox_prio', function() {
-    return 'low';
+	return 'low';
 });
 
 function austeve_custom_js_in_head() {
 	$customJS = get_field('custom_js', 'option');
 
 	if( have_rows('custom_js', 'option') ):
-	    while( have_rows('custom_js', 'option') ) : the_row();
-	    	error_log("custom_js");
+		while( have_rows('custom_js', 'option') ) : the_row();
+			error_log("custom_js");
 
 	        // Loop over sub repeater rows.
-	        if( have_rows('js_script') ):
-	            while( have_rows('js_script') ) : the_row();
+			if( have_rows('js_script') ):
+				while( have_rows('js_script') ) : the_row();
 
 	                // Get sub values.
-	                $name = get_sub_field('name');
-	                $script = get_sub_field('script');
-	                $location = get_sub_field('display_in');
+					$name = get_sub_field('name');
+					$script = get_sub_field('script');
+					$location = get_sub_field('display_in');
 
-	                if ($location == 'header') {
-	                	echo $script;
-	                }
+					if ($location == 'header') {
+						echo $script;
+					}
 
-	            endwhile;
-	        endif;
-	    endwhile;
+				endwhile;
+			endif;
+		endwhile;
 	endif;
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
@@ -284,22 +290,22 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 function your_bp_admin_bar_add() {
-  global $wp_admin_bar, $bp;
- 
-  if ( !bp_use_wp_admin_bar() || defined( 'DOING_AJAX' ) )
-    return;
- 
-  $user_domain = bp_loggedin_user_domain();
-  $item_link = trailingslashit( $user_domain . 'dogs' );
- 
-  $wp_admin_bar->add_menu( array(
-    'parent'  => $bp->my_account_menu_id,
-    'id'      => 'students',
-    'title'   => __( 'Students', 'your-plugin-domain' ),
-    'href'    => trailingslashit( $item_link ),
-    'meta'    => array( 'class' => 'menupop' )
-  ) );
- 
+	global $wp_admin_bar, $bp;
+
+	if ( !bp_use_wp_admin_bar() || defined( 'DOING_AJAX' ) )
+		return;
+
+	$user_domain = bp_loggedin_user_domain();
+	$item_link = trailingslashit( $user_domain . 'goals' );
+
+	$wp_admin_bar->add_menu( array(
+		'parent'  => $bp->my_account_menu_id,
+		'id'      => 'my-goals',
+		'title'   => __( 'Goals', 'hamburger-cat' ),
+		'href'    => trailingslashit( $item_link ),
+		'meta'    => array( 'class' => 'menupop' )
+	) );
+
 }
 add_action( 'bp_setup_admin_bar', 'your_bp_admin_bar_add', 300 );
 
@@ -310,12 +316,12 @@ function austeve_ld_lesson_complete($lesson_data) {
 
 	$lessonAlreadyComplete = false;
 	if( have_rows('lesson_completion_times', 'user_'.get_current_user_id()) ):
-	    while( have_rows('lesson_completion_times', 'user_'.get_current_user_id()) ) : the_row();
-	        if ($lesson_data['lesson']->ID == get_sub_field('lesson_id'))
-	        {
-	        	$lessonAlreadyComplete = true;
-	        }
-	    endwhile;
+		while( have_rows('lesson_completion_times', 'user_'.get_current_user_id()) ) : the_row();
+			if ($lesson_data['lesson']->ID == get_sub_field('lesson_id'))
+			{
+				$lessonAlreadyComplete = true;
+			}
+		endwhile;
 	endif;
 
 	if (!$lessonAlreadyComplete) {
@@ -352,11 +358,35 @@ add_action( 'user_register', 'austeve_user_register_display_name', 999, 1 );
 function austeve_user_register_display_name ( $user_id ) {
 
     // get the user data
-    $user_info = get_userdata( $user_id );
+	$user_info = get_userdata( $user_id );
 
     // pick our default display name
-    $display_publicly_as = $user_info->first_name. " ".$user_info->last_name;
+	$display_publicly_as = $user_info->first_name. " ".$user_info->last_name;
 
     // update the display name
-    wp_update_user( array ('ID' => $user_id, 'display_name' =>  $display_publicly_as));
+	wp_update_user( array ('ID' => $user_id, 'display_name' =>  $display_publicly_as));
 }
+
+function austeve_before_topic_steps($post_type, $course_id, $user_id){
+
+	$step_complete = (boolean)learndash_user_progress_is_step_complete( $user_id, $course_id, get_the_ID() );
+
+	$wrapper_classes = "ld-steps-wrapper";
+	//echo "austeve_before_topic_steps ".get_the_ID();
+
+	if ($step_complete) {
+		$wrapper_classes .= " is-complete";
+	}
+	else {
+		$wrapper_classes .= " is-incomplete";
+	}
+
+	echo '<div class="'.$wrapper_classes.'">';
+}
+add_action( 'learndash-topic-course-steps-before', 'austeve_before_topic_steps', 999, 3 );
+
+function austeve_after_topic_steps($post_type, $course_id, $user_id){
+	echo '</div> <!-- end .ld-steps-wrapper -->';
+}
+add_action( 'learndash-topic-course-steps-after', 'austeve_after_topic_steps', 999, 3 );
+

@@ -20,20 +20,45 @@
             $goalText = get_sub_field('goal_text');
             $goalStatus = get_sub_field('status');
             $goalValue = get_sub_field('value');
+            $goalAdded = get_sub_field('history')[0]['date'];
 
-            $checkbox_class = ($goalStatus == 'complete' || $goalStatus == 'approved') ? 'fa-check-square' : 'fa-square';
-            $checkbox_class .= ($goalStatus == 'complete' || $goalStatus == 'incomplete' || $goalStatus == 'verified') ? ' enabled' : ' disabled';
+            $checkbox_help_text = "";
+            $checkbox_class = "";
+            switch ($goalStatus) {
+                case "created":
+                    $checkbox_help_text = "You can mark this as complete once your facilitator verifies it.";
+                    $checkbox_class = "fa-square disabled";
+                    break;
+                case "verified":
+                case "incomplete":
+                    $checkbox_help_text = "Mark as complete";
+                    $checkbox_class = "fa-square enabled";
+                    break;
+                case "complete":
+                    $checkbox_help_text = "Mark as incomplete";
+                    $checkbox_class = "fa-check-square enabled";
+                    break;
+                case "approved":
+                    $checkbox_help_text = "This goal has been completed!";
+                    $checkbox_class = "fa-check-square disabled";
+                    break;
+                default:
+                    break;
+            }
+
             ?>
             <div class="goal">
                 <div class="grid-x">
                     <div class="cell small-2 text-right">
-                        <div class="checkbox"><i class="far <?php echo $checkbox_class; ?> fa-2x" title="Mark as complete" onclick="return goalChecked(this, '<?php echo $goalId;?>', '<?php echo $relatedCourse;?>' );"></i></div>
+                        <div class="checkbox"><i class="far <?php echo $checkbox_class; ?> fa-2x" title="<?php echo $checkbox_help_text; ?>" onclick="return goalChecked(this, '<?php echo $goalId;?>', '<?php echo $relatedCourse;?>' );"></i></div>
                     </div>
                     <div class="cell small-10">
-                        <h5 class="goal-topic"><?php echo get_the_title($relatedTopic); ?></h5>
+                        <h5 class="goal-topic"><?php echo get_the_title($relatedLesson); ?> - <?php echo get_the_title($relatedTopic); ?> </h5>
+                        <div class="goal-meta"><span class="goal-added">Added: <?php echo $goalAdded;?></span><span class="goal-value"><?php echo $goalValue ? "Value: $".$goalValue : ""; ?></span></div>
                         <?php echo $goalText; ?>
                     </div>
                 </div>
+            </div>
                 <?php
 
             endwhile;

@@ -95,6 +95,30 @@
 	}
 }
 
+.bp-user.goals {
+
+	#my-goals {
+
+		.goal {
+			margin-bottom: 1rem;
+		}
+
+		.checkbox {
+			margin-right: 0.5rem;
+
+			i.enabled:hover {
+				cursor: pointer;
+			}
+		}
+
+
+		.goal-meta {
+			font-size: 0.9em;
+			color: $medium-gray;
+		}
+	}
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
@@ -114,6 +138,20 @@
 
 		}
 	}
+
+	.bp-user.goals {
+
+		#my-goals {
+
+			.goal-meta {
+
+				span {
+					display: block;
+				}
+			}
+		}
+	}
+
 }
 
 /* Medium and up (640px) */
@@ -170,6 +208,19 @@
 				}
 			}
 
+		}
+	}
+
+	.bp-user.goals {
+
+		#my-goals {
+
+			.goal-meta {
+
+				span {
+					margin-right: 2rem;
+				}
+			}
 		}
 	}
 }

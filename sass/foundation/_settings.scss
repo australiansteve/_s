@@ -68,11 +68,16 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1920);
 $global-lineheight: 1.5;
-$light-gray: #e6e6e6;
+$light-gray: #f0f3f6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+
+$tangerine-color: #ff9f50;
+$purple-color: #9982bb;
+$yellow-color: #fed93d;
+
 $foundation-palette: (
 	primary: $black,
 	secondary: $dark-gray,

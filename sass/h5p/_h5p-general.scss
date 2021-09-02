@@ -18,13 +18,13 @@ html.h5p-iframe {
 			.h5p-question-content {
 
 				p {
-					margin-bottom: 0.25rem;
+					margin-bottom: 0.5rem;
 				}
 			}
 		}
 
 		.h5p-question {
-			background: rgba(245, 245, 245, 0.8);
+			background: $light-gray;
 			padding: 1rem 0.5rem;
 		}
 	}
