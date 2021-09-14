@@ -38,6 +38,30 @@
             "maxlength": ""
         },
         {
+            "key": "field_611fcc1508ea0",
+            "label": "Video Type",
+            "name": "video_type_1",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "vimeo": "Vimeo",
+                "youtube": "YouTube"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "vimeo",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
             "key": "field_60ff005e1079a",
             "label": "Section 2",
             "name": "",
@@ -163,6 +187,30 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_611fcc4508ea1",
+            "label": "Video Type",
+            "name": "video_type_3",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "vimeo": "Vimeo",
+                "youtube": "YouTube"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "vimeo",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
         },
         {
             "key": "field_60ff00611079c",
@@ -560,5 +608,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1627326069
+    "modified": 1629474000
 }

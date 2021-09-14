@@ -60,16 +60,19 @@
 						}
 						?>
 						<?php
-						$menuLocation = has_nav_menu( 'footer-menu' ) ? 'footer-menu' : 'primary-menu';
-						
-						wp_nav_menu(
-							array(
-								'theme_location'	=> $menuLocation,
-								'menu_id'		=> 'footer-menu',
-								'menu_class'	=> 'vertical medium-horizontal menu text-center',
-								'container'		=> false
-							)
-						);
+
+						if (has_nav_menu( 'footer-menu' )) {
+							$menuLocation = 'footer-menu';
+							
+							wp_nav_menu(
+								array(
+									'theme_location'	=> $menuLocation,
+									'menu_id'		=> 'footer-menu',
+									'menu_class'	=> 'vertical medium-horizontal menu text-center',
+									'container'		=> false
+								)
+							);
+						}
 
 						?>
 					</div>
@@ -88,7 +91,7 @@
 
 				</div><!-- .site-info -->
 				<div class="grid-x site-info">
-					<div class="cell text-center medium-text-right">
+					<div class="cell text-center">
 						<?php the_field('footer_site_info_text', 'options'); ?>
 					</div>
 				</div><!-- .site-info -->

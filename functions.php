@@ -55,6 +55,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 				'language-menu' => esc_html__( 'Language Switcher', 'hamburger-cat' ),
 				'language-menu-small' => esc_html__( 'Mobile Language Switcher', 'hamburger-cat' ),
 				'footer-menu' => esc_html__( 'Footer', 'hamburger-cat' ),
+				'cart-menu' => esc_html__( 'Cart Menu', 'hamburger-cat' ),
 			)
 		);
 
@@ -109,7 +110,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1024, 440, true);
 		add_image_size( 'archive-image', 400, 300, true);
-		add_image_size( 'header-logo', 390, 190, false);
+		add_image_size( 'header-logo', 1024, 665, true);
 		add_image_size( 'about-portrait', 512, 768, false);
 	}
 endif;
@@ -192,7 +193,7 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 		// replace title with icon
 		if( $icon ) {
 			$title = $item->title;
-			$item->title = '<i class="fab '.$icon.'" title="'.$title.'"></i>';	
+			$item->title = '<i class="'.$icon.'" title="'.$title.'"></i>';	
 		}
 	}
 
@@ -266,7 +267,7 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 function austeve_testing_paging($query) {
-    if ( !is_admin() && $query->is_main_query() && (is_product_category() || $query->is_post_type_archive('product'))  ) {
+    if ( !is_admin() && $query->is_main_query() && ((class_exists( 'WooCommerce' ) && is_product_category()) || $query->is_post_type_archive('product'))  ) {
         $query->set( 'posts_per_page', 50 );
     }
 }

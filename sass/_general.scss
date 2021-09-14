@@ -55,20 +55,13 @@ body {
 			h5,
 			h6 {
 				color: $pink-light;
-			}
-
-			h2 {
+				font-family: "Open Sans", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 				font-weight: 700;
-
-				span {
-					border-bottom: 2px solid $black;
-					padding-bottom: 1rem;
-				}
+				font-style: italic;
+				text-transform: uppercase;
 			}
-
 
 			h3 {
-				font-weight: 700;
 				margin-top: 0.5rem;
 				margin-bottom: 0.25rem;
 			}
@@ -198,7 +191,7 @@ textarea:focus {
 			.page-content {
 
 				.entry-content {
-					margin: 4rem 8%;
+					margin: 0.6rem 0 4rem 0;
 
 					p {
 						max-width: 950px;
@@ -223,6 +216,18 @@ textarea:focus {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	body {
+
+		main {
+
+			.page-content {
+
+				.entry-content {
+
+				}
+			}
+		}
+	}
 }
 
 /* Large only */
@@ -234,8 +239,8 @@ textarea:focus {
 @media screen and (min-width: 100em) {
 
 	.grid-container {
-		padding-right: 70px;
-		padding-left: 70px;
+		padding-right: 36px;
+		padding-left: 36px;
 	}
 }
 
@@ -247,8 +252,4 @@ textarea:focus {
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
-	.grid-container {
-		padding-right: 120px;
-		padding-left: 120px;
-	}
 }

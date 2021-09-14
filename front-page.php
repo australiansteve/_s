@@ -17,16 +17,28 @@ get_header();
 
 				<?php
 				$section1VideoId = get_field('video_id_1');
+				$section1VideoType = get_field('video_type_1');
 
 				if ($section1VideoId) :
 					?>
 					<section id="section-1">
 						<div class="entry-content no-padding" id="section-1-content">
+							<?php
 
-							<div class="iframe-container">
-								<iframe class="responsive" src="https://player.vimeo.com/video/<?php echo $section1VideoId;?>?color=c02c8b&title=0&byline=0&portrait=0&autoplay=0&loop=0&autopause=0&muted=0&controls=1&background=0" frameborder="0"allow="autoplay; fullscreen; picture-in-picture" muted autoplay></iframe>
-							</div>
-
+							if ($section1VideoType == 'vimeo') :
+								?>
+								<div class="iframe-container">
+									<iframe class="responsive" src="https://player.vimeo.com/video/<?php echo $section1VideoId;?>?color=c02c8b&title=0&byline=0&portrait=0&autoplay=0&loop=0&autopause=0&muted=0&controls=1&background=0" frameborder="0"allow="autoplay; fullscreen; picture-in-picture" muted autoplay></iframe>
+								</div>
+								<?php
+							elseif ($section1VideoType == 'youtube') :
+								?>
+								<div class="iframe-container">
+									<iframe class="responsive" src="https://www.youtube.com/embed/<?php echo $section1VideoId;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+								</div>
+								<?php
+							endif;
+							?>
 						</div>
 					</section>
 					<?php
@@ -49,6 +61,7 @@ get_header();
 				//Get all the content for sections 3-10
 				$section3Title = get_field('title_3');
 				$section3VideoId = get_field('video_id_3');
+				$section3VideoType = get_field('video_type_3');
 				$section4Title = get_field('title_4');
 				$section4Text = get_field('text_4');
 				$section5Title = get_field('title_5');
