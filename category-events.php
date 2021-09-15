@@ -26,7 +26,7 @@ get_header();
 			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
 			?>
 
-			<div class="grid-x">
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -34,7 +34,7 @@ get_header();
 					?>
 
 					<div class="cell">
-						<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
+						<?php get_template_part( 'template-parts/archive-event', get_post_type() ); ?>
 					</div>
 
 

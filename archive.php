@@ -30,7 +30,7 @@ get_header();
 				get_template_part( 'template-parts/archive-tabs', get_post_type() );
 				?>
 
-				<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
+				<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 
 					<?php
 					while ( have_posts() ) :

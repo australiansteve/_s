@@ -108,7 +108,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
-		add_image_size( 'archive-image', 400, 320, true);
+		add_image_size( 'archive-image', 640, 640, true);
 		add_image_size( 'header-logo', 390, 190, false);
 	}
 endif;
@@ -292,5 +292,9 @@ function austeve_exclude_events( $query ) {
 	if( $query->is_main_query() && $query->is_home() ) {
 		$exclude = get_cat_ID('Events');
 		$query->set( 'cat', '-'.$exclude );
+	}
+
+	if( $query->is_main_query() && !is_admin() ) {
+		$query->set( 'posts_per_page', 9 );
 	}
 }

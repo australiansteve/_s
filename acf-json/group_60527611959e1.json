@@ -3,6 +3,22 @@
     "title": "404 Page Customization",
     "fields": [
         {
+            "key": "field_6141fd65cd6cb",
+            "label": "404 Page Settings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_60527611b7593",
             "label": "404 Page Title",
             "name": "404_page_title",
@@ -58,5 +74,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1616017087
+    "modified": 1631714682
 }

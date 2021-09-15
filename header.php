@@ -82,7 +82,6 @@
 									<a class="close-off-canvas" aria-label="Close menu" type="button" data-close>
 										<i class="fas fa-times fa-2x"></i>
 									</a>
-
 									<div class="grid-y align-center">
 										<div class="cell text-center">
 											<ul class="menu vertical nested">

@@ -22,7 +22,7 @@ get_header();
 			?>
 			</span></h2>
 
-			<div class="grid-x">
+				<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
 				<?php
 				while ( have_posts() ) :
 					the_post();

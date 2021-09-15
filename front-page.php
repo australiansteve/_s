@@ -69,50 +69,45 @@ get_header();
 						</div>
 					</div>
 					<div class="grid-x" id="custom-content-3">
+						<div class="cell text-center">
+							<h2 class="section-title"><?php the_field("text_3"); ?></h2>
+						</div>
 						<div class="cell">
-							<div class="grid-x grid-padding-x">
-								<div class="cell">
-									<h2 class="section-title"><?php the_field("text_3"); ?></h2>
-								</div>
-							</div>
-						</div>
-						<div class="cell medium-6">
-							<div class="container contact_form_id">
-								<?php 
-								$formId = get_field('contact_form_id');
-								if( $formId ) {
-									echo do_shortcode("[ninja_forms id='".$formId."']");
-								}
-								?>
-							</div>
-						</div>
-						<div class="cell medium-6">
-							<div class="grid-y grid-padding-x" style="height: 100%">
-								<div class="cell">
-									<div class="container text_4">
-										<div class="inner-container">
-											<?php the_field("text_4"); ?>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="custom-content-4">
-					<div class="container professional_affilations">
-						<div class="grid-x align-middle align-center">
-							<?php 
-							$images = get_field('professional_affilations');
-							$size = 'full';
-							if( $images ): ?>
+								<div class="grid-x grid-padding-x align-center small-up-1 medium-up-3">
 
-								<?php foreach( $images as $image_id ): ?>
-									<div class="cell shrink text-center">
-										<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-									</div>
-								<?php endforeach; ?>
-							<?php endif; ?>
+									<?php
+									$args = array(
+										'post_type'              => array( 'post' ),
+										'post_status'            => array( 'publish' ),
+										'posts_per_page'         => '3',
+										'tax_query'              => array(
+											array(
+												'taxonomy'         => 'category',
+												'terms'            => 'news',
+												'field'            => 'slug',
+												'operator'         => 'IN',
+											),
+										),
+									);
+
+									$postsquery = new WP_Query( $args );
+
+									if ( $postsquery->have_posts() ) {
+										while ( $postsquery->have_posts() ) {
+											$postsquery->the_post();
+											?>
+											<div class="cell">
+												<?php 
+												get_template_part( 'template-parts/archive-front-page', get_post_type() );
+												?>
+											</div>
+											<?php
+										}
+									}
+
+									wp_reset_postdata();
+									?>
+								</div>
 						</div>
 					</div>
 				</div>

@@ -27,11 +27,12 @@ get_header();
 					<?php the_content(); ?>
 				</div>
 				<div class="custom-content">
-					<h2 class="page-title"><span><?php the_field('title_1');?></span></h2>
-					<div class="grid-x medium-up-2 grid-margin-x" id="custom-content-1">
-
-						<?php
-						if( have_rows('partners') ):
+					<?php
+					if( have_rows('partners') ):
+						?>
+						<h2 class="page-title"><span><?php the_field('title_1');?></span></h2>
+						<div class="grid-x small-up-1 medium-up-4 grid-margin-x align-center" id="custom-content-1">
+							<?php
 
 							while( have_rows('partners') ) : the_row();
 
@@ -56,10 +57,11 @@ get_header();
 								<?php
 
 							endwhile;
-
-						endif;
-						?>
-					</div>
+							?>
+						</div>
+						<?php
+					endif;
+					?>
 				</div>
 			</div>
 		</div>

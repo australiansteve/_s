@@ -1,13 +1,13 @@
 {
-    "key": "group_60252a113f685",
-    "title": "Project Customization",
+    "key": "group_614208e09f811",
+    "title": "Event Customization",
     "fields": [
         {
-            "key": "field_60252a1870ffe",
-            "label": "Project Subtitle",
-            "name": "project_subtitle",
-            "type": "text",
-            "instructions": "This is displayed below the title, and on the Projects page",
+            "key": "field_614208eb826c8",
+            "label": "Event Date",
+            "name": "event_date",
+            "type": "date_time_picker",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -15,11 +15,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "display_format": "F j, Y g:i a",
+            "return_format": "F j, Y g:i a",
+            "first_day": 1
         }
     ],
     "location": [
@@ -27,7 +25,12 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "austeve-projects"
+                "value": "post"
+            },
+            {
+                "param": "post_category",
+                "operator": "==",
+                "value": "category:events"
             }
         ]
     ],
@@ -39,5 +42,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1613048403
+    "modified": 1631717831
 }
