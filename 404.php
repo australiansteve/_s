@@ -11,9 +11,9 @@ get_header();
 ?>
 <main id="primary" class="site-main">
 
-	<div class="page-content">
-		<div class="grid-container">
-			<h2 class="page-title"><span><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></span></h2>  
+	<div class="grid-container">
+		<div class="page-content text-center">
+			<h2 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'hamburger-cat' ); ?></h2>  
 			<div class="entry-content">
 				Try taking a look around - or head to the <a href="/">home page</a>, maybe?
 			</div>

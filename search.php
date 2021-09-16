@@ -13,12 +13,12 @@ get_header();
 <main id="primary" class="site-main">
 
 	<div class="grid-container">
-		<div class="page-content">
+		<div class="page-content text-center">
 
 			<h2 class="page-title">
 				<?php
 				/* translators: %s: search query. */
-				printf( esc_html__( 'Search results for: %s', 'hamburger-cat' ), '<span>' . get_search_query() . '</span>' );
+				printf( esc_html__( 'Search results for: %s', 'hamburger-cat' ), get_search_query() );
 				?>
 			</h2>
 

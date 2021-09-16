@@ -1,19 +1,30 @@
 footer {
 
-	#back-to-top {
+	background-color: $inky-blue;
+	color: $off-white;
+	padding: 1rem;
 
-		a {
-			padding: 0.7rem 0;
-		}
+	.footer-logo img {
+		max-width: 120px;
 	}
 
 	.site-info {
-		font-size: 0.7em;
 
-		div,
-		p,
-		a {
-			color: rgba(200, 200, 200, 0.7);
+		p {
+			margin-bottom: 0;
 		}
+
+	}
+
+	.copyright {
+		font-size: 0.7em;
+	}
+
+	a {
+		color: $off-white;
+	}
+
+	a:hover {
+		color: $white;
 	}
 }

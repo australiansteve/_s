@@ -12,9 +12,9 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<div class="page-content">
+	<div class="grid-container">
 
-		<div class="grid-container">
+		<div class="page-content text-center">
 
 			<div class="entry-content">
 				<?php
@@ -23,7 +23,7 @@ get_header();
 			</div>
 
 			<?php
-			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
+			the_archive_title( '<h2 class="page-title">', '</h2>' );
 			?>
 
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
