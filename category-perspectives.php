@@ -15,7 +15,7 @@ get_header();
 	<?php
 	get_template_part( 'template-parts/hero-image-category', get_post_type() );
 	?>
-	
+
 	<div class="page-content">
 
 		<div class="grid-container">
@@ -30,7 +30,7 @@ get_header();
 			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
 			?>
 
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 large-up-3">
+			<div class="grid-x grid-padding-x small-up-1">
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -38,7 +38,7 @@ get_header();
 					?>
 
 					<div class="cell">
-						<?php get_template_part( 'template-parts/archive-event', get_post_type() ); ?>
+						<?php get_template_part( 'template-parts/archive-perspectives', get_post_type() ); ?>
 					</div>
 
 					<?php

@@ -34,8 +34,32 @@
             "return_format": "id",
             "preview_size": "medium",
             "library": "all",
-            "min_width": "",
-            "min_height": "",
+            "min_width": 640,
+            "min_height": 640,
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_6143921d80211",
+            "label": "Default Placeholder Image (Landscape)",
+            "name": "default_placeholder_image_landscape",
+            "type": "image",
+            "instructions": "Used on the 'Perspectives' page if posts do not have featured images",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 800,
+            "min_height": 400,
             "min_size": "",
             "max_width": "",
             "max_height": "",
@@ -178,5 +202,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1618424640
+    "modified": 1631818356
 }

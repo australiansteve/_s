@@ -7,15 +7,15 @@
 
 	.nf-error-msg,
 	.ninja-forms-req-symbol {
-		color: $orange !important;
+		color: $accent-color !important;
 	}
 
 	.nf-error.field-wrap .nf-field-element::after {
-		background: $orange !important;
+		background: $accent-color !important;
 	}
 
 	.nf-error .ninja-forms-field {
-		border-color: $orange !important;
+		border-color: $accent-color !important;
 	}
 
 	.label-left .nf-field-label {

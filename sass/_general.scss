@@ -85,7 +85,7 @@ a {
 }
 
 a:hover {
-	color: $orange;
+	color: $accent-color;
 }
 
 a.button,
@@ -112,8 +112,8 @@ button:active,
 input[type="submit"]:active,
 .nf-form-wrap .nf-form-content input[type="button"]:active {
 	background: $white;
-	color: $orange;
-	border-bottom: 1px solid $orange;
+	color: $accent-color;
+	border-bottom: 1px solid $accent-color;
 	cursor: pointer;
 }
 
