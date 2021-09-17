@@ -39,7 +39,7 @@ get_header();
 						<?php
 						if( have_rows('sponsors') ):
 							?>
-							<div class="grid-x align-center small-up-1 medium-up-3 the-sponsors grid-padding-x">
+							<div class="grid-x align-center small-up-1 medium-up-3 the-sponsors grid-padding-x" data-equalizer data-equalize-on="medium">
 								<?php
 								while( have_rows('sponsors') ) : the_row();
 
@@ -49,7 +49,8 @@ get_header();
 										<?php if ($sponsor['url']) : ?>
 											<a href="<?php echo $sponsor['url'];?>" target="_blank">
 										<?php endif; ?>
-										<div class="logo-container">
+										<div class="logo-container" data-equalizer-watch>
+											
 											
 											<?php 
 											$image = $sponsor['logo'];
