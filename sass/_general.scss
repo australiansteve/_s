@@ -39,12 +39,11 @@ body {
 	main {
 
 		.page-content {
-			padding: 2rem 0;
+			margin: 2rem 0;
 
 			h1,
 			h2,
-			h3,
-			h4 {
+			h3 {
 				font-weight: 700;
 				text-transform: uppercase;
 			}
@@ -86,6 +85,7 @@ button {
 		main {
 
 			font-size: 1.25em;
+			min-height: 80vh;
 
 			.page-content {
 

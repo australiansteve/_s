@@ -1,0 +1,28 @@
+.archive,
+.blog {
+
+	article {
+
+		img {
+			margin-bottom: 0.5rem;
+		}
+
+		.meta-date {
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+.single {
+
+	article {
+
+		.meta-date {
+			margin-bottom: 0.5rem;
+		}
+
+		.breadcrumb-navigation {
+			margin: 3rem 0 4rem 0;
+		}
+	}
+}

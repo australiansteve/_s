@@ -79,8 +79,8 @@ $teal: #6b999f;
 $deep-teal: #2c6169;
 $marine-navy: #163235;
 $foundation-palette: (
-	primary: $black,
-	secondary: $dark-gray,
+	primary: $marine-navy,
+	secondary: $gold,
 	success: #3adb76,
 	warning: #ffae00,
 	alert: #f30,
@@ -201,8 +201,8 @@ $paragraph-lineheight: 1.25;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $enable-code-inline: true;
-$anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color: $marine-navy;
+$anchor-color-hover: scale-color($anchor-color, $lightness: -35%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;

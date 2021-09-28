@@ -1,19 +1,17 @@
 footer {
 
-	#back-to-top {
-
-		a {
-			padding: 0.7rem 0;
-		}
-	}
+	background-color: $white;
+	padding-top: 1rem;
 
 	.site-info {
 		font-size: 0.7em;
+	}
 
-		div,
-		p,
-		a {
-			color: rgba(200, 200, 200, 0.7);
-		}
+	#footer-menu {
+		font-size: 0.8em;
+		text-transform: uppercase;
+	}
+
+	#social-menu {
 	}
 }

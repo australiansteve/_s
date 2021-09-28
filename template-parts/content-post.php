@@ -11,11 +11,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
-		<h1 class="page-title"><?php the_title();?></h1>
-		
-		<?php the_content();?>
-		
-	<footer class="entry-footer">
-		<?php hamburger_cat_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php the_title('<h1 class="page-title">', '</h1>');?>  
+
+	<div class="meta-date"><p><?php echo get_the_date()?></p></div>
+
+	<?php the_content(); ?>
+
+	<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
+	
 </article><!-- #post-<?php the_ID(); ?> -->
+
+

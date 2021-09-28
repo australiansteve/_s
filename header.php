@@ -207,6 +207,17 @@
 											)
 										);
 
+										if ( has_nav_menu( 'social-menu' ) ) :
+											wp_nav_menu(
+												array(
+													'theme_location'	=> 'social-menu',
+													'menu_id'		=> 'social-menu',
+													'menu_class'	=> 'horizontal menu show-for-medium text-right',
+													'container'		=> false
+												)
+											);
+										endif;
+
 										if ( has_nav_menu( 'language-menu' ) ) :
 											wp_nav_menu(
 												array(

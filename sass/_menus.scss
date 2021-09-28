@@ -126,9 +126,20 @@ nav {
 	display: inline-flex;
 }
 
+#social-menu {
+	font-size: 1.2em;
+}
+
+.menu {
+	text-transform: uppercase;
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	ul#footer-menu {
+		display: block;
+	}
 }
 
 /* Medium and up (640px) */
@@ -138,6 +149,10 @@ nav {
 
 		a {
 			padding-left: 0;
+		}
+
+		li:nth-of-type(1) a {
+			padding-left: 1rem;
 		}
 	}
 
