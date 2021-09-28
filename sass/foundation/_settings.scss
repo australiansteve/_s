@@ -68,11 +68,16 @@
 $global-font-size: 100%;
 $global-width: rem-calc(1920);
 $global-lineheight: 1.5;
-$light-gray: #e6e6e6;
+$light-gray: #efefef;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
+$gold: #d9aa37;
+$aqua: #b0d2ce;
+$teal: #6b999f;
+$deep-teal: #2c6169;
+$marine-navy: #163235;
 $foundation-palette: (
 	primary: $black,
 	secondary: $dark-gray,
@@ -80,9 +85,9 @@ $foundation-palette: (
 	warning: #ffae00,
 	alert: #f30,
 );
-$body-background: $white;
-$body-font-color: $black;
-$body-font-family: "Montserrat", "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+$body-background: $light-gray;
+$body-font-color: $deep-teal;
+$body-font-family: "Avenir", helvetica, roboto, arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -140,35 +145,59 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: "Filson Pro", "Avenir", helvetica, roboto, arial, sans-serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: consolas, "Liberation Mono", courier, monospace;
-$header-color: inherit;
+$header-color: $marine-navy;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
 	small: (
-		"h1": ("font-size": 24),
-		"h2": ("font-size": 20),
-		"h3": ("font-size": 19),
-		"h4": ("font-size": 18),
-		"h5": ("font-size": 17),
+		"h1": ("font-size": 32),
+		"h2": ("font-size": 28),
+		"h3": ("font-size": 24),
+		"h4": ("font-size": 22),
+		"h5": ("font-size": 20),
 		"h6": ("font-size": 16),
 	),
 	medium: (
+		"h1": ("font-size": 42),
+		"h2": ("font-size": 36),
+		"h3": ("font-size": 28),
+		"h4": ("font-size": 24),
+		"h5": ("font-size": 22),
+		"h6": ("font-size": 20),
+	),
+	large: (
 		"h1": ("font-size": 48),
 		"h2": ("font-size": 40),
-		"h3": ("font-size": 31),
-		"h4": ("font-size": 25),
-		"h5": ("font-size": 20),
-		"h6": ("font-size": 16),
+		"h3": ("font-size": 32),
+		"h4": ("font-size": 26),
+		"h5": ("font-size": 22),
+		"h6": ("font-size": 20),
+	),
+	xlarge: (
+		"h1": ("font-size": 54),
+		"h2": ("font-size": 38),
+		"h3": ("font-size": 28),
+		"h4": ("font-size": 26),
+		"h5": ("font-size": 26),
+		"h6": ("font-size": 26),
+	),
+	xxlarge: (
+		"h1": ("font-size": 60),
+		"h2": ("font-size": 40),
+		"h3": ("font-size": 30),
+		"h4": ("font-size": 30),
+		"h5": ("font-size": 30),
+		"h6": ("font-size": 30),
 	),
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
+$paragraph-lineheight: 1.25;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $enable-code-inline: true;
@@ -281,7 +310,7 @@ $badge-font-size: 0.6rem;
 
 $breadcrumbs-margin: 0 0 $global-margin 0;
 $breadcrumbs-item-font-size: rem-calc(11);
-$breadcrumbs-item-color: $primary-color;
+$breadcrumbs-item-color: $marine-navy;
 $breadcrumbs-item-color-current: $black;
 $breadcrumbs-item-color-disabled: $medium-gray;
 $breadcrumbs-item-margin: 0.75rem;
@@ -299,18 +328,15 @@ $button-font-weight: null;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background: $gold;
+$button-background-hover: scale-color($gold, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-border: 1px solid transparent;
 $button-hollow-border-width: 1px;
 $button-sizes: (
-	tiny: 0.6rem,
-	small: 0.75rem,
-	default: 0.9rem,
-	large: 1.25rem,
+	default: 1em
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
@@ -433,24 +459,24 @@ $flexbox-responsive-breakpoints: true;
 // 20. Forms
 // ---------
 
-$fieldset-border: 1px solid $medium-gray;
+$fieldset-border: 1px solid $marine-navy;
 $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
 $form-spacing: rem-calc(16);
-$helptext-color: $black;
+$helptext-color: $marine-navy;
 $helptext-font-size: rem-calc(13);
 $helptext-font-style: italic;
-$input-prefix-color: $black;
+$input-prefix-color: $marine-navy;
 $input-prefix-background: $light-gray;
 $input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
-$form-label-color: $black;
+$form-label-color: $marine-navy;
 $form-label-font-size: rem-calc(14);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
 $select-background: $white;
-$select-triangle-color: $dark-gray;
+$select-triangle-color: $marine-navy;
 $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;
@@ -475,11 +501,11 @@ $form-button-radius: $global-radius;
 // 21. Label
 // ---------
 
-$label-background: $primary-color;
-$label-color: $white;
+$label-background: inherit;
+$label-color: $marine-navy;
 $label-color-alt: $black;
 $label-palette: $foundation-palette;
-$label-font-size: 0.8rem;
+$label-font-size: 0.9em;
 $label-padding: 0.33333rem 0.5rem;
 $label-radius: $global-radius;
 

@@ -1,5 +1,6 @@
 header#masthead {
 
+	background-color: $white;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 
@@ -62,7 +63,7 @@ header#masthead {
 @media screen and (min-width: 100em) {
 
 	header#masthead {
-		margin-top: 1.5rem;
+		padding-top: 1.5rem;
 	}
 }
 
