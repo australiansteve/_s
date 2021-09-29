@@ -39,7 +39,7 @@ body {
 	main {
 
 		.page-content {
-			margin: 2rem 0;
+			padding: 2rem 0;
 
 			h1,
 			h2,
@@ -49,7 +49,7 @@ body {
 			}
 
 			.entry-content {
-				margin: 2rem 0;
+				margin: 1rem 0;
 
 				.breadcrumbs {
 					margin-top: 2rem;
@@ -90,7 +90,7 @@ button {
 			.page-content {
 
 				.entry-content {
-					margin: 3rem 1rem;
+
 				}
 			}
 
@@ -116,23 +116,6 @@ button {
 		main {
 			font-size: 1.45em;
 
-			.page-content {
-
-				.entry-content {
-					max-width: 1024px;
-				}
-			}
-		}
-	}
-
-	.page-template-default.page,
-	.page-template-default.single {
-
-		.page-content {
-
-			.entry-content {
-				max-width: 1024px;
-			}
 		}
 	}
 }
@@ -158,7 +141,6 @@ button {
 			.page-content {
 
 				.entry-content {
-					margin: 3rem 2rem;
 				}
 			}
 		}

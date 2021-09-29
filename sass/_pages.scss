@@ -13,6 +13,17 @@
 	}
 }
 
+.single,
+.page {
+
+	.page-content {
+
+		.entry-content {
+			max-width: 1024px;
+		}
+	}
+}
+
 .single {
 
 	article {
@@ -25,4 +36,69 @@
 			margin: 3rem 0 4rem 0;
 		}
 	}
+}
+
+.page-template-about-page {
+
+	.page-intro-photo {
+		margin-bottom: 1rem;
+	}
+
+	.entry-content {
+		max-width: 1024px;
+	}
+
+	section {
+		margin-bottom: 2rem;
+
+		a.button {
+			margin-right: 1rem;
+		}
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+	.page-template-about-page {
+
+		section {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
 }
