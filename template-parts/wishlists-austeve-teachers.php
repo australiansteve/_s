@@ -4,6 +4,7 @@ $teacher_id = get_the_ID();
 $args = array(
 	'post_type'              => array( 'austeve-wishlists' ),
 	'post_status'            => array( 'publish' ),
+	'order'   => 'ASC',
 	'meta_query'              => array(
 		array(
 			'key'     => 'teacher',
