@@ -74,7 +74,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				
+
 			</div>
 
 			<div class="reveal view-wishlist-modal" id="wishlistModal" data-reveal>
@@ -132,7 +132,8 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 
 				function setup_donation(e) {
 					e.preventDefault();
-
+					jQuery('.make-donation-modal .donation-html').html("<div class='text-center'><i class='fas fa-circle-notch fa-spin'></i></div>");
+					
 					var teacher_id = jQuery(e.target).data('teacher-id');
 
 					jQuery.ajax({
