@@ -1,0 +1,21 @@
+.nf-form-content {
+	max-width: 600px !important;
+
+	input[type="button"] {
+		background: $inky-blue !important;
+		border-radius: 1.5rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		font-family: "Arciform Sans", "Avenir Book", sans-serif;
+		text-transform: uppercase;
+	}
+
+	input[type="button"]:hover,
+	input[type="button"]:active,
+	input[type="button"]:focus {
+		cursor: pointer;
+		background: scale-color($inky-blue, $lightness: -35%) !important;
+		color: $white !important;
+	}
+
+}

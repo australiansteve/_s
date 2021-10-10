@@ -126,6 +126,14 @@ nav {
 	display: inline-flex;
 }
 
+.menu {
+	font-family: "Arciform Sans", "Avenir Book", helvetica, roboto, arial, sans-serif;
+
+	a {
+		text-transform: uppercase;
+	}
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 

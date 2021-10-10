@@ -1,0 +1,1 @@
+<?php _e('No items found.', 'hamburger-cat'); ?>

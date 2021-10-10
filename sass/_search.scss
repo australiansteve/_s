@@ -1,33 +1,14 @@
-footer#colophon {
+#teacher-search-form,
+#school-search-form {
 
-	background-color: $inky-blue;
-	color: $off-white;
-	padding: 1rem;
-	clear: both;
-
-	.footer-logo img {
-		max-width: 120px;
+	input[type="text"] {
+		border-radius: 1.5rem;
+		text-align: center;
+		font-size: 1.5em;
+		height: 3rem;
+		color: $inky-blue;
 	}
 
-	.site-info {
-
-		p {
-			margin-bottom: 0;
-		}
-
-	}
-
-	.copyright {
-		font-size: 0.7em;
-	}
-
-	a {
-		color: $off-white;
-	}
-
-	a:hover {
-		color: $white;
-	}
 }
 
 /* Small only */
@@ -38,6 +19,11 @@ footer#colophon {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	#teacher-search-form,
+	#school-search-form {
+		max-width: 75%;
+		margin: auto;
+	}
 }
 
 /* Medium only */
@@ -48,6 +34,10 @@ footer#colophon {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	#teacher-search-form,
+	#school-search-form {
+		max-width: 50%;
+	}
 }
 
 /* Large only */
@@ -58,9 +48,6 @@ footer#colophon {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
-	footer#colophon {
-		font-size: 0.75em;
-	}
 }
 
 /* XLarge only */

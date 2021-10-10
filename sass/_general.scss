@@ -37,24 +37,13 @@ body {
 	}
 
 	main {
+		min-height: 50vh;
 
 		.page-content {
-			margin: 3rem 0;
-
-			h1 {
-				font-weight: 900;
-			}
-
-			h2 {
-				font-weight: 700;
-			}
-
-			h3 {
-				font-weight: 700;
-			}
+			padding: 2rem 0;
 
 			.entry-content {
-				margin: 4rem 0;
+				margin: 2rem 0;
 
 				.breadcrumbs {
 					margin-top: 2rem;
@@ -78,6 +67,12 @@ a {
 	display: inline-block;
 }
 
+.button,
+button {
+	font-family: "Arciform Sans", "Avenir Book", sans-serif;
+	text-transform: uppercase;
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
@@ -89,15 +84,12 @@ a {
 	body {
 
 		main {
+			min-height: calc(100vh - 230px - 4rem - calc(14vw * 5 / 6));
 
 			.page-content {
 
 				.entry-content {
-					margin: 4rem 8%;
-
-					p {
-						max-width: 950px;
-					}
+					margin: 2rem 8%;
 				}
 			}
 
@@ -118,6 +110,14 @@ a {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	body {
+		font-size: 1.25em;
+
+		main {
+			min-height: calc(100vh - 230px - 4rem - calc(11vw * 5 / 6));
+		}
+
+	}
 }
 
 /* Large only */
@@ -128,9 +128,8 @@ a {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
-	.grid-container {
-		padding-right: 70px;
-		padding-left: 70px;
+	body {
+		font-size: 1.5em;
 	}
 }
 
@@ -142,8 +141,9 @@ a {
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
 
-	.grid-container {
-		padding-right: 120px;
-		padding-left: 120px;
+	body {
+		font-size: 1.75em;
+
+
 	}
 }

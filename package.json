@@ -54,6 +54,7 @@
     "jquery": "^3.5.1",
     "lodash": "^4.17.21",
     "puppeteer": "^2.1.1",
+    "select2": "^4.1.0-rc.0",
     "typescript": "^4.0.3",
     "what-input": "^5.2.10"
   }

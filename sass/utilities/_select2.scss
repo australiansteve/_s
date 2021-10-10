@@ -1,0 +1,97 @@
+
+.select2-parent {
+	margin: 1rem 0;
+
+	.select2 {
+		margin: 0;
+
+
+		.select2-selection.select2-selection--single {
+			border-radius: 1.5rem;
+			text-align: center;
+			padding-bottom: 3rem;
+
+			.select2-selection__rendered {
+				color: $inky-blue;
+				line-height: 55px;
+			}
+
+			.select2-selection__arrow {
+				height: 55px;
+				right: 27.5px;
+
+				b {
+					border-width: 10px 8px 0 8px;
+					margin-left: -10px;
+					margin-top: -4px;
+				}
+			}
+		}
+
+		.select2-selection.select2-selection--single[aria-controls="select2-variation_id-container"][aria-expanded="true"] {
+
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+	}
+
+	.select2-search__field {
+		text-align: center;
+		color: $inky-blue;
+	}
+
+	.select2-results__option--highlighted.select2-results__option--selectable {
+		background-color: $inky-blue;
+	}
+
+	li.select2-results__option--highlighted.select2-results__option--selectable:nth-last-of-type(1) {
+		border-bottom-left-radius: 1rem;
+		border-bottom-right-radius: 1rem;
+	}
+
+
+	.select2-container.select2-container--default.select2-container--open {
+
+		.select2-dropdown.select2-dropdown--below {
+			border-radius: 1.5rem;
+			border-top: 1px solid $inky-blue;
+			margin-top: -50px;
+
+			.select2-search__field {
+				border-radius: 1rem;
+			}
+		}
+	}
+}
+
+.select2-container {
+
+	.select2-dropdown.select2-dropdown--below {
+		border-bottom-left-radius: 1.5rem;
+		border-bottom-right-radius: 1.5rem;
+		text-align: center;
+
+		.select2-results__option--highlighted.select2-results__option--selectable {
+			background-color: $inky-blue;
+		}
+
+		li.select2-results__option--highlighted.select2-results__option--selectable:nth-last-of-type(1) {
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+		}
+	}
+
+}
+
+.select2-dropdown {
+	border: 1px solid $inky-blue;
+}
+
+.select2-container--default .select2-selection--single {
+	border: 1px solid $inky-blue !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+	border-color: $inky-blue transparent transparent transparent;
+}

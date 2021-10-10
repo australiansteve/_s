@@ -1,0 +1,1 @@
+<?php _e('No teachers matched your search!', 'hamburger-cat'); ?>

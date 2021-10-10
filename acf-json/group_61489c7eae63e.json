@@ -1,0 +1,64 @@
+{
+    "key": "group_61489c7eae63e",
+    "title": "School Customization",
+    "fields": [
+        {
+            "key": "field_61489c8718676",
+            "label": "Grades",
+            "name": "grades",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_61489c9918677",
+            "min": 1,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Grade",
+            "sub_fields": [
+                {
+                    "key": "field_61489c9918677",
+                    "label": "Grade",
+                    "name": "grade",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "austeve-schools"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1632148721
+}

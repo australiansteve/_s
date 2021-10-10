@@ -1,0 +1,77 @@
+.single.austeve-teachers {
+
+	.wishlists-grid {
+		margin: 2rem 0;
+	}
+}
+
+.archive-grid-austeve-teachers {
+	margin-bottom: 4rem;
+}
+
+.wishlists-grid {
+
+	.wishlist-buttons {
+		padding-top: 1rem;
+
+		.button {
+			margin-left: 1rem;
+		}
+	}
+}
+
+.post-type-archive-austeve-teachers {
+
+	.donation-container {
+		display: inline-block;
+		position: relative;
+
+		.make-donation-dropdown {
+			border: 1px solid $inky-blue;
+			position: absolute;
+			right: 0;
+			top: 0;
+			border-radius: 1rem;
+			background-color: $white;
+			z-index: 1;
+
+			> div,
+			> a {
+				display: block;
+				border-bottom: 1px solid $inky-blue;
+				padding: 0.5rem;
+			}
+
+			> a:nth-last-of-type(1) {
+				border-bottom-style: hidden;
+				border-bottom-left-radius: 0.75rem;
+				border-bottom-right-radius: 0.75rem;
+			}
+
+			a:not(.close-donation-dropdown):hover {
+				background-color: $inky-blue;
+				color: $white;
+			}
+
+			.choose-amount {
+				text-align: left;
+
+				.close-donation-dropdown {
+					float: right;
+					margin-top: 1px;
+					margin-right: 8px;
+					margin-left: 8px;
+				}
+			}
+		}
+	}
+
+	.modal-container {
+		padding: 2rem 1rem;
+		text-align: center;
+
+		.button {
+			margin-top: 1rem;
+		}
+	}
+}

@@ -109,7 +109,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 640, true);
-		add_image_size( 'header-logo', 390, 190, false);
+		add_image_size( 'header-logo', 240, 200, false);
 		add_image_size( 'footer-logo', 240, 200, false);
 	}
 endif;
@@ -135,6 +135,9 @@ function hamburger_cat_scripts() {
 	$styleFile = (wp_get_environment_type() == 'production') ? 'style.min.css' : 'style.css';
 
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
+
+	wp_enqueue_style( 'select2-style', get_template_directory_uri(). '/dist/select2/css/select2.min.css', array( ) );
+	wp_enqueue_script( 'select2-js', get_template_directory_uri(). '/dist/select2/js/select2.min.js', array( 'jquery' ) );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_template_directory_uri(). '/dist/'.$styleFile, array( ), HAMBURGER_CAT_VERSION );
 
@@ -200,35 +203,42 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 	return $items;
 }, 10, 2);
 
+function austeve_add_additional_class_on_li($classes, $item, $args) {
+	if(isset($args->add_li_class)) {
+		$classes[] = $args->add_li_class;
+	}
+	return $classes;
+}
+add_filter('nav_menu_css_class', 'austeve_add_additional_class_on_li', 1, 3);
 
 /* Move Yoast metabox below ACF ones */
 add_filter( 'wpseo_metabox_prio', function() {
-    return 'low';
+	return 'low';
 });
 
 function austeve_custom_js_in_head() {
 	$customJS = get_field('custom_js', 'option');
 
 	if( have_rows('custom_js', 'option') ):
-	    while( have_rows('custom_js', 'option') ) : the_row();
-	    	error_log("custom_js");
+		while( have_rows('custom_js', 'option') ) : the_row();
+			error_log("custom_js");
 
 	        // Loop over sub repeater rows.
-	        if( have_rows('js_script') ):
-	            while( have_rows('js_script') ) : the_row();
+			if( have_rows('js_script') ):
+				while( have_rows('js_script') ) : the_row();
 
 	                // Get sub values.
-	                $name = get_sub_field('name');
-	                $script = get_sub_field('script');
-	                $location = get_sub_field('display_in');
+					$name = get_sub_field('name');
+					$script = get_sub_field('script');
+					$location = get_sub_field('display_in');
 
-	                if ($location == 'header') {
-	                	echo $script;
-	                }
+					if ($location == 'header') {
+						echo $script;
+					}
 
-	            endwhile;
-	        endif;
-	    endwhile;
+				endwhile;
+			endif;
+		endwhile;
 	endif;
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
@@ -264,3 +274,218 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+function austeve_add_query_vars_filter( $vars ){
+	$vars[] = "school";
+	$vars[] = "grade";
+	return $vars;
+}
+add_filter( 'query_vars', 'austeve_add_query_vars_filter' );
+
+function austeve_filter_teachers($query) {
+
+	if ( ! is_admin() && $query->is_main_query() && is_post_type_archive('austeve-teachers')) {
+
+		$school = intval(get_query_var('school'), 10);
+		
+		if ($school > 0):
+			error_log("filter by school");
+			
+			$school_query = array(
+				'key'     => 'school',
+				'value'   => $school,
+				'compare' => 'IN',
+			);    
+			
+			$meta_query = array( 'relation' => 'AND' , 
+				$school_query
+			);
+
+			error_log("meta_query: ".print_r($meta_query, true));
+			$query->set('meta_query',$meta_query);
+		endif;
+
+		//always order by grade
+		$query->set('meta_key', 'grade');
+		$query->set('orderby', 'meta_value_num grade');
+		$query->set('order', 'ASC');
+		$query->set('posts_per_page', '50');
+	}
+
+	return $query;
+}
+add_action('pre_get_posts', 'austeve_filter_teachers' );
+
+
+function austeve_acf_load_school_grades( $field ) {
+    
+    if (is_admin()) {
+	    global $post;
+
+	    $teacher_school = get_field('school', $post->ID);
+	    $school_grades = get_field('grades', $teacher_school);
+
+	    if( is_array($school_grades) ) {
+		    foreach($school_grades as $grade) {
+		    	 $field['choices'][] = $grade['grade'];
+		    }
+		}
+    	error_log("field ".print_r($field, true));
+	}
+
+    // return the field
+    return $field;
+    
+}
+
+add_filter('acf/load_field/key=field_61438a249523b', 'austeve_acf_load_school_grades');
+
+add_action( 'wp_ajax_austeve_get_view_wishlist', 'austeve_get_view_wishlist' );
+add_action( 'wp_ajax_nopriv_austeve_get_view_wishlist', 'austeve_get_view_wishlist' );
+
+function austeve_get_view_wishlist() {
+
+	$teacher_id  = intval( $_REQUEST['teacher_id'] );
+	$wishlist_id  = intval( $_REQUEST['wishlist_id'] );
+	error_log(print_r($wishlist_id, true));
+	$wishlist_category = get_the_terms( $wishlist_id, 'wishlist-category' );
+	error_log(print_r($wishlist_category, true));
+	$wishlist_category = is_array($wishlist_category) ? $wishlist_category[0] : $wishlist_category;
+
+	$nonce = $_REQUEST['security'];
+
+	if (wp_verify_nonce( $nonce, "get-wishlist" )) {
+
+		$custom_instructions = get_field('custom_instructions', 'term_'.$wishlist_category->term_id);
+		?>
+		<div>
+			<?php echo $custom_instructions;?>
+			<div class="text-center">
+				<a class="button" href="<?php the_field('wishlist_url', $wishlist_id);?>" target="_blank"><?php echo sprintf(__('View Wishlist', 'hamburger-cat')); ?></a>
+			</div>
+		</div>
+		<?php
+	}
+
+	die();				
+}
+add_action( 'wp_ajax_austeve_setup_donation', 'austeve_setup_donation' );
+add_action( 'wp_ajax_nopriv_austeve_setup_donation', 'austeve_setup_donation' );
+
+function austeve_setup_donation() {
+
+	$teacher_id  = intval( $_REQUEST['teacher_id'] );
+	$product_id = get_field('generic_gift_card_product', 'options');
+	$product = wc_get_product($product_id);
+	$variations = $product->get_available_variations();
+
+	$nonce = $_REQUEST['security'];
+
+	if (wp_verify_nonce( $nonce, "setup-donation" )) {
+
+		?>
+
+		<div><label label-for="teacher"><?php _e('Gift card for:', 'hamburger-cat');?></label><?php echo get_the_title($teacher_id);?> - <?php echo get_field('grades', get_field('school', $teacher_id))[get_field('grade', $teacher_id)]['grade'];?></div>
+		<div class="donation-form">
+			<input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
+			<label label-for="teacher"><?php _e('Value:', 'hamburger-cat'); ?></label>
+			<div class="select2-parent" data-parent-of="variation_id">
+				<select name="variation_id" class="select2-single" id="variation_id">
+					<?php
+					foreach($variations as $variation) {
+						echo "<option value='".$variation['variation_id']."'>".$variation['attributes']['attribute_value']."</option>";
+					}
+					?>
+				</select>
+			</div>
+			<input type="hidden" name="teacher_id" value="<?php echo $teacher_id;?>" />
+			<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)" data-close>Add to cart</button>
+		</div>
+		<?php
+	}
+
+	die();				
+}
+
+add_action( 'wp_ajax_austeve_add_to_cart', 'austeve_wc_ajax_add_to_cart' );
+add_action( 'wp_ajax_nopriv_austeve_add_to_cart', 'austeve_wc_ajax_add_to_cart' );
+
+function austeve_wc_ajax_add_to_cart() {
+	$product_id  = intval( $_REQUEST['product_id'] );
+	$variation_id  = intval( $_REQUEST['variation_id'] );
+	$teacher_id  = intval( $_REQUEST['teacher_id'] );
+
+	$nonce = $_REQUEST['security'];
+	$user_id = get_current_user_id();
+
+	if (wp_verify_nonce( $nonce, "add-to-cart" )) {
+		error_log("austeve_wc_ajax_add_to_cart is ok to go: ". $product_id.", ".$variation_id.", ".$teacher_id);
+		$sgrades = get_field('grades', get_field('school', $teacher_id));
+
+		$custom_data = array();
+		$custom_data['teacher_id'] = $teacher_id;
+		$custom_data['teacher_grade'] = $sgrades[get_field('grade', $teacher_id)]['grade'];
+		$custom_data['teacher_school'] = get_the_title(get_field('school', $teacher_id));
+
+		WC()->cart->add_to_cart( $product_id, '1', $variation_id, array(), $custom_data );
+
+		echo WC()->cart->cart_contents_count;
+	}
+	
+	die();
+}
+
+// Display custom cart item meta data (in cart and checkout)
+add_filter( 'woocommerce_get_item_data', 'display_cart_item_custom_meta_data', 10, 2 );
+function display_cart_item_custom_meta_data( $item_data, $cart_item ) {
+    $meta_key = 'teacher_id';
+    if ( isset($cart_item[$meta_key]) ) {
+        $item_data[] = array(
+            'key'       => "For Teacher",
+            'value'     => get_the_title($cart_item[$meta_key]),
+        );
+    }
+    $meta_key = 'teacher_grade';
+    if ( isset($cart_item[$meta_key]) ) {
+        $item_data[] = array(
+            'key'       => "\nGrade",
+            'value'     => $cart_item[$meta_key],
+        );
+    }
+    return $item_data;
+}
+
+// Save cart item custom meta as order item meta data and display it everywhere on orders and email notifications.
+add_action( 'woocommerce_checkout_create_order_line_item', 'save_cart_item_custom_meta_as_order_item_meta', 10, 4 );
+function save_cart_item_custom_meta_as_order_item_meta( $item, $cart_item_key, $values, $order ) {
+    $meta_key = 'teacher_id';
+    error_log("woocommerce_checkout_create_order_line_item: ".print_r($values, true));
+    if ( isset($values[$meta_key]) ) {
+        $item->update_meta_data( "For Teacher", get_the_title($values[$meta_key]));
+        $item->update_meta_data( "Grade", get_field('grade', $values[$meta_key]));
+        $item->update_meta_data( "School", get_the_title(get_field('school', $values[$meta_key])));
+    }
+    $meta_key = 'teacher_grade';
+    if ( isset($values[$meta_key]) ) {
+        $item->update_meta_data( "Grade", $values[$meta_key]);
+    }
+    $meta_key = 'teacher_school';
+    if ( isset($values[$meta_key]) ) {
+        $item->update_meta_data( "School", $values[$meta_key]);
+    }
+}
+
+add_action( 'wp_ajax_austeve_get_cart_count', 'austeve_get_cart_count' );
+add_action( 'wp_ajax_nopriv_austeve_get_cart_count', 'austeve_get_cart_count' );
+
+function austeve_get_cart_count() {
+
+	$nonce = $_REQUEST['security'];
+
+	if (wp_verify_nonce( $nonce, "get-cart-count" )) {
+
+		echo WC()->cart->cart_contents_count;
+	}
+	
+	die();
+}

@@ -192,17 +192,193 @@
 				margin-top: -0.5rem;
 			}
 
+			.woocommerce-terms-and-conditions-wrapper {
+				margin-bottom: 1rem;
+			}
+
+			label[for="payment_method_stripe"] {
+				margin-bottom: 1rem;
+				margin-left: 0;
+			}
+
 			/* stylelint-disable selector-id-pattern */
 			#order_review {
 				margin-top: 1.75rem;
 			}
+
+			#billing_state_field,
+			#billing_country_field {
+				margin-bottom: 1rem;
+			}
+
+			ul.wc_payment_methods {
+				list-style-type: none;
+				margin-left: 0;
+				color: $inky-blue;
+
+				label {
+					color: $inky-blue;
+				}
+			}
+
 			/* stylelint-enable selector-id-pattern */
+
+		}
+	}
+}
+
+.woocommerce-page {
+
+	.entry-content {
+
+		.woocommerce {
+			text-align: left;
+		}
+	}
+}
+
+
+.woocommerce-cart {
+
+	.woocommerce-cart-form {
+
+		.product-name {
+
+			dl.variation {
+				margin-top: 0.5rem;
+
+				dd,
+				dt {
+					display: inline-block;
+					width: 55%;
+
+					p {
+						margin-bottom: 0.5rem;
+					}
+				}
+
+				dt {
+					width: 40%;
+				}
+			}
+		}
+
+		.actions {
+
+			.coupon {
+
+				label {
+					display: inline-block;
+					width: 20%;
+				}
+
+				input {
+					display: inline-block;
+					width: 40%;
+				}
+
+				.button {
+					float: right;
+				}
+			}
+
+			.button[name="update_cart"] {
+				float: right;
+				clear: both;
+			}
 		}
 	}
 }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
+
+	/* START Make the WooCommerce Cart Table Responsive  for Mobile */
+
+	/* CSS published in http://www.jeremycarter.com.au/optimising-woocommerce-checkout-for-mobile/ */
+
+
+	/* Force table to not be like tables anymore */
+	.woocommerce-page {
+
+		table.shop_table,
+		table.shop_table thead,
+		table.shop_table tbody,
+		table.shop_table th,
+		table.shop_table td,
+		table.shop_table tr {
+			display: block;
+		}
+
+		/* Hide table headers (but not display: none;, for accessibility) */
+		table.shop_table thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+
+		td {
+
+			/* Behave  like a "row" */
+			border: 1px solid #d2d3d3;
+			position: relative;
+			padding-left: 30% !important;
+		}
+
+		.actions {
+			padding-bottom: 3rem;
+			padding-left: 6px !important;
+		}
+
+	}
+
+	.woocommerce-page table.shop_table td::before {
+
+		/* Now like a table header */
+		position: absolute;
+
+		/* Top/left values mimic padding */
+		top: 10px;
+		left: 6px;
+		width: 25%;
+		padding-right: 10px;
+		white-space: nowrap;
+		font-size: 0.8em;
+	}
+
+	/*
+Label the data
+*/
+	.woocommerce-page table.shop_table td.product-remove::before {
+		content: "DELETE";
+	}
+
+	.woocommerce-page table.shop_table td.product-thumbnail::before {
+		content: "IMAGE";
+	}
+
+	.woocommerce-page table.shop_table td.product-name::before {
+		content: "PRODUCT";
+	}
+
+	.woocommerce-page table.shop_table td.product-price::before {
+		content: "PRICE";
+	}
+
+	.woocommerce-page table.shop_table td.product-quantity::before {
+		content: "QUANTITY";
+	}
+
+	.woocommerce-page table.shop_table td.product-subtotal::before {
+		content: "SUBTOTAL";
+	}
+
+	.woocommerce-page table.shop_table td.product-total::before {
+		content: "TOTAL";
+	}
+
+
+	/* END Make the WooCommerce Cart Table Responsive  for Mobile */
 
 }
 
@@ -220,6 +396,21 @@
 					.entry-content {
 						margin: 2rem 8%;
 					}
+				}
+			}
+		}
+	}
+
+	.woocommerce-cart {
+
+		.woocommerce-cart-form {
+
+			.actions {
+
+				.coupon {
+					max-width: 435px;
+					margin-left: auto;
+
 				}
 			}
 		}

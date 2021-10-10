@@ -21,5 +21,11 @@ module.exports = {
         { from: "fonts", to: "fonts" },
       ],
     }),
+    new CopyPlugin({
+      patterns: [
+        { from: "node_modules/select2/dist/css", to: "select2/css" },
+        { from: "node_modules/select2/dist/js", to: "select2/js" },
+      ],
+    }),
   ],
 };

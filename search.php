@@ -15,6 +15,7 @@ get_header();
 	<div class="grid-container">
 		<div class="page-content text-center">
 
+				<div class="entry-content">
 			<h2 class="page-title">
 				<?php
 				/* translators: %s: search query. */
@@ -46,14 +47,11 @@ get_header();
 				include( locate_template( 'template-parts/archive-nav.php', false, false ) ); 
 
 			else :
-				?>
-				<div class="entry-content">
-					No search results
-				</div>
-				<?php
+				_e('No search results', 'hamburger-cat');
 			endif;
 			?>
 
+			</div>
 		</div>
 
 	</div>

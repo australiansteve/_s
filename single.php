@@ -23,9 +23,10 @@ get_header();
 
 			<div class="grid-container">
 				<div class="page-content text-center">
-					<?php the_title('<h2 class="page-title">', '</h2>');?>  
 					<div class="entry-content">
-						<?php the_content(); ?>
+						<?php the_title('<h2 class="page-title">', '</h2>');?>  
+
+						<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
 						<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
 					</div>

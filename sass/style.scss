@@ -32,9 +32,13 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 --------------------------------------------- */
 @import "utilities/accessibility";
 @import "utilities/woocommerce";
+@import "utilities/select2";
+@import "utilities/ninja-forms";
 
 /* Hamburger Cat style */
 @import "general";
 @import "header";
 @import "menus";
+@import "cpts";
+@import "search";
 @import "footer";
