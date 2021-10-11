@@ -5,45 +5,27 @@ import './navigation.js'
 import './foundation.js'
 
 jQuery( document ).ready(function() {
-	//console.log("LOADED");
 	window.addEventListener('resize', calculateSectionMinusHeaderHeight);
 	window.addEventListener('resize', triggerFoundationEqualizer);
 	calculateSectionMinusHeaderHeight();
 	Foundation.addToJquery(jQuery);
 
 	var primaryMenu = jQuery('#primary-menu-accordion');
-	//console.log(primaryMenu);
 	var accMenu = new Foundation.AccordionMenu(primaryMenu);
 
-	//console.log(accMenu);
-
 	jQuery(primaryMenu).on('up.zf.accordionMenu', function() {
-		console.log("primaryMenu up");
-
 		jQuery(this).find('i').addClass('fa-caret-down').removeClass('fa-caret-up');
 	});
 
 	jQuery(primaryMenu).on('down.zf.accordionMenu', function() {
-		console.log("primaryMenu down");
 		jQuery(this).find('i').addClass('fa-caret-up').removeClass('fa-caret-down');
 	});
 
 	jQuery('.select2-single').each(function(){
 		var thisId = jQuery(this).attr('id');
-		console.log('thisId: ' + thisId);
 		jQuery(this).select2({
 			dropdownParent: jQuery('.select2-parent[data-parent-of='+thisId+']')
 		});
-	});
-
-	jQuery('.button.make-donation').on('click', function() {
-		var teacher_id = jQuery(this).data('teacher-id');
-		jQuery('.make-donation-dropdown[data-teacher-id="'+teacher_id+'"]').css('display', 'block');
-	});
-
-	jQuery('.close-donation-dropdown').on('click', function() {
-		var teacher_id = jQuery(this).data('teacher-id');
-		jQuery('.make-donation-dropdown[data-teacher-id="'+teacher_id+'"]').css('display', 'none');
 	});
 
 });

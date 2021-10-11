@@ -58,7 +58,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 				
 			</div>
 
-			<div class="reveal make-donation-modal" id="donateModal" data-reveal>
+			<div class="reveal make-donation-modal" id="donateModal" data-reveal data-options="animationIn:slide-in-up; animationOut:slide-out-down;">
 
 				<div class="modal-container">
 
@@ -77,7 +77,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 
 			</div>
 
-			<div class="reveal view-wishlist-modal" id="wishlistModal" data-reveal>
+			<div class="reveal view-wishlist-modal" id="wishlistModal" data-reveal data-options="animationIn:slide-in-up; animationOut:slide-out-down;">
 				<div class="modal-container">
 					<div class="modal-html">
 						<div class="text-center"><i class="fas fa-circle-notch fa-spin"></i></div>
@@ -133,7 +133,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 				function setup_donation(e) {
 					e.preventDefault();
 					jQuery('.make-donation-modal .donation-html').html("<div class='text-center'><i class='fas fa-circle-notch fa-spin'></i></div>");
-					
+
 					var teacher_id = jQuery(e.target).data('teacher-id');
 
 					jQuery.ajax({
@@ -169,7 +169,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 				function add_donation_to_cart(e) {
 					e.preventDefault();
 					console.log(e.target);
-
+					var target = jQuery(e.target);
 					var product_id = jQuery('.make-donation-modal input[name=product_id]').val();
 					var variation_id = jQuery('.make-donation-modal select[name=variation_id]').val()
 					var teacher_id = jQuery('.make-donation-modal input[name=teacher_id]').val()
@@ -177,6 +177,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 					console.log("add_donation_to_cart " + product_id + " " + variation_id + " " + teacher_id);
 
 					jQuery('header span.header-cart-count').html("<i class='fas fa-circle-notch fa-spin'></i>");
+					target.append("<i class='fas fa-circle-notch fa-spin button-spinner'></i>");
 
 					jQuery.ajax({
 		                type: 'POST',
@@ -191,16 +192,22 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 		                },
 		                error: function (xhr, status, error) {
 		                    console.log("Error: " + error);
-		                    
+                        	target.find('.button-spinner').remove();
 		                },
 		                success: function( response ) {
 		                    if (response) {
+                        		target.find('.button-spinner').remove();
+                        		target.after("<div class='message'><?php _e('Added to cart.', 'hamburger-cat'); ?><br/><?php echo sprintf(__('<a href=\'%s\'><strong>View Cart</strong>.</a>', 'hamburger-cat'), wc_get_cart_url()); ?></div>");
 		                        setTimeout(function() {
 		                        	jQuery('header span.header-cart-count').html(response);
 		                        }, 1500);
+		                        setTimeout(function() {
+		                        	jQuery("#donateModal .close-button").trigger('click');
+		                        }, 3000);
 		                        
 		                    }
 		                    else {
+                        		target.find('.button-spinner').remove();
 		                        console.log("No response!");
 		                    }
 		                }

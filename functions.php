@@ -399,7 +399,7 @@ function austeve_setup_donation() {
 				</select>
 			</div>
 			<input type="hidden" name="teacher_id" value="<?php echo $teacher_id;?>" />
-			<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)" data-close>Add to cart</button>
+			<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)">Add to cart</button>
 		</div>
 		<?php
 	}
