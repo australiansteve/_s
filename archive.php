@@ -12,31 +12,25 @@ get_header();
 
 <main id="primary" class="site-main">
 
-	<div class="page-content">
+	<?php get_template_part( 'template-parts/hero-image-archive', get_post_type() ); ?>
 
-		<div class="grid-container">
-
-			<div class="entry-content">
-				<?php
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</div>
+	<div class="grid-container">
+		
+		<div class="page-content">
 
 			<?php
-			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
 			?>
 
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3" id="archive-grid">
+			<div class="grid-x grid-margin-x small-up-1 medium-up-2" id="archive-grid">
 				<?php
 				while ( have_posts() ) :
 					the_post();
-
 					?>
 
 					<div class="cell">
 						<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
 					</div>
-
 
 					<?php
 				endwhile;

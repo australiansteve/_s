@@ -12,9 +12,12 @@ get_header();
 
 <main id="primary" class="site-main">
 
+	<?php get_template_part( 'template-parts/hero-image-home' ); ?>
+
 	<div class="grid-container">
 
 		<div class="page-content">
+
 			<div class="entry-content">
 
 				<h2 class="page-title"><?php echo get_the_title( get_option( 'page_for_posts' ) ); ?></h2>
