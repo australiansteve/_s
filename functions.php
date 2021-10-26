@@ -319,7 +319,7 @@ add_action('pre_get_posts', 'austeve_filter_teachers' );
 
 function austeve_acf_load_school_grades( $field ) {
     
-    if (is_admin()) {
+    if (is_admin() && !is_ajax()) {
 	    global $post;
 
 	    $teacher_school = get_field('school', $post->ID);
@@ -374,34 +374,65 @@ add_action( 'wp_ajax_nopriv_austeve_setup_donation', 'austeve_setup_donation' );
 
 function austeve_setup_donation() {
 
-	$teacher_id  = intval( $_REQUEST['teacher_id'] );
-	$product_id = get_field('generic_gift_card_product', 'options');
-	$product = wc_get_product($product_id);
-	$variations = $product->get_available_variations();
-
 	$nonce = $_REQUEST['security'];
+
+	$teacher_id  = isset($_REQUEST['teacher_id']) ? intval( $_REQUEST['teacher_id'] ) : null;
+	$school_id  = isset($_REQUEST['school_id']) ? intval( $_REQUEST['school_id'] ) : null;
+
 
 	if (wp_verify_nonce( $nonce, "setup-donation" )) {
 
-		?>
+		if($school_id) {
+			error_log("school_id:".$school_id);
+			$product_id = get_field('school_gift_card_product', 'options');
+			$product = wc_get_product($product_id);
+			$variations = $product->get_available_variations();
+			?>
 
-		<div><label label-for="teacher"><?php _e('Gift card for:', 'hamburger-cat');?></label><?php echo get_the_title($teacher_id);?> - <?php echo get_field('grades', get_field('school', $teacher_id))[get_field('grade', $teacher_id)]['grade'];?></div>
-		<div class="donation-form">
-			<input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
-			<label label-for="teacher"><?php _e('Value:', 'hamburger-cat'); ?></label>
-			<div class="select2-parent" data-parent-of="variation_id">
-				<select name="variation_id" class="select2-single" id="variation_id">
-					<?php
-					foreach($variations as $variation) {
-						echo "<option value='".$variation['variation_id']."'>".$variation['attributes']['attribute_value']."</option>";
-					}
-					?>
-				</select>
+			<div><label label-for="school"><?php _e('Gift card for school:', 'hamburger-cat');?></label><?php echo get_the_title($school_id);?></div>
+			<div class="donation-form">
+				<input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
+				<label label-for="variation_id"><?php _e('Value:', 'hamburger-cat'); ?></label>
+				<div class="select2-parent" data-parent-of="variation_id">
+					<select name="variation_id" class="select2-single" id="variation_id">
+						<?php
+						foreach($variations as $variation) {
+							echo "<option value='".$variation['variation_id']."'>".$variation['attributes']['attribute_value']."</option>";
+						}
+						?>
+					</select>
+				</div>
+				<input type="hidden" name="school_id" value="<?php echo $school_id;?>" />
+				<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)">Add to cart</button>
 			</div>
-			<input type="hidden" name="teacher_id" value="<?php echo $teacher_id;?>" />
-			<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)">Add to cart</button>
-		</div>
+		<?php	
+		}
+		if($teacher_id) {
+			error_log("teacher_id:".$teacher_id);
+			$product_id = get_field('generic_gift_card_product', 'options');
+			$product = wc_get_product($product_id);
+			$variations = $product->get_available_variations();
+			?>
+
+			<div><label label-for="teacher"><?php _e('Gift card for:', 'hamburger-cat');?></label><?php echo get_the_title($teacher_id);?> - <?php echo get_field('grades', get_field('school', $teacher_id))[get_field('grade', $teacher_id)]['grade'];?></div>
+			<div class="donation-form">
+				<input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
+				<label label-for="teacher"><?php _e('Value:', 'hamburger-cat'); ?></label>
+				<div class="select2-parent" data-parent-of="variation_id">
+					<select name="variation_id" class="select2-single" id="variation_id">
+						<?php
+						foreach($variations as $variation) {
+							echo "<option value='".$variation['variation_id']."'>".$variation['attributes']['attribute_value']."</option>";
+						}
+						?>
+					</select>
+				</div>
+				<input type="hidden" name="teacher_id" value="<?php echo $teacher_id;?>" />
+				<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)">Add to cart</button>
+			</div>
 		<?php
+
+		}
 	}
 
 	die();				
@@ -413,7 +444,8 @@ add_action( 'wp_ajax_nopriv_austeve_add_to_cart', 'austeve_wc_ajax_add_to_cart' 
 function austeve_wc_ajax_add_to_cart() {
 	$product_id  = intval( $_REQUEST['product_id'] );
 	$variation_id  = intval( $_REQUEST['variation_id'] );
-	$teacher_id  = intval( $_REQUEST['teacher_id'] );
+	$teacher_id  = isset($_REQUEST['teacher_id']) ? intval( $_REQUEST['teacher_id'] ) : null;
+	$school_id  = isset($_REQUEST['school_id']) ? intval( $_REQUEST['school_id'] ) : null;
 
 	$nonce = $_REQUEST['security'];
 	$user_id = get_current_user_id();
@@ -423,10 +455,15 @@ function austeve_wc_ajax_add_to_cart() {
 		$sgrades = get_field('grades', get_field('school', $teacher_id));
 
 		$custom_data = array();
-		$custom_data['teacher_id'] = $teacher_id;
-		$custom_data['teacher_grade'] = $sgrades[get_field('grade', $teacher_id)]['grade'];
-		$custom_data['teacher_school'] = get_the_title(get_field('school', $teacher_id));
-
+		if ($teacher_id) {
+			$custom_data['teacher_id'] = $teacher_id;
+			$custom_data['teacher_grade'] = $sgrades[get_field('grade', $teacher_id)]['grade'];
+			$custom_data['teacher_school'] = get_the_title(get_field('school', $teacher_id));
+		}
+		if ($school_id) {
+			$custom_data['school_id'] = $school_id;
+		}
+		error_log("Adding custom data to cart item: ".print_r($custom_data, true));
 		WC()->cart->add_to_cart( $product_id, '1', $variation_id, array(), $custom_data );
 
 		echo WC()->cart->cart_contents_count;
@@ -452,6 +489,13 @@ function display_cart_item_custom_meta_data( $item_data, $cart_item ) {
             'value'     => $cart_item[$meta_key],
         );
     }
+    $meta_key = 'school_id';
+    if ( isset($cart_item[$meta_key]) ) {
+        $item_data[] = array(
+            'key'       => "For School",
+            'value'     => get_the_title($cart_item[$meta_key]),
+        );
+    }
     return $item_data;
 }
 
@@ -472,6 +516,10 @@ function save_cart_item_custom_meta_as_order_item_meta( $item, $cart_item_key, $
     $meta_key = 'teacher_school';
     if ( isset($values[$meta_key]) ) {
         $item->update_meta_data( "School", $values[$meta_key]);
+    }
+    $meta_key = 'school_id';
+    if ( isset($values[$meta_key]) ) {
+        $item->update_meta_data( "For School", get_the_title($values[$meta_key]));
     }
 }
 

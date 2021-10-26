@@ -65,6 +65,66 @@
             "ui": 1
         },
         {
+            "key": "field_61773f2ed2f26",
+            "label": "Teacher Gift Card Description",
+            "name": "teacher_gift_card_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_61773f196f2b2",
+            "label": "School Gift Card Product",
+            "name": "school_gift_card_product",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "id",
+            "ui": 1
+        },
+        {
+            "key": "field_61773f48d2f27",
+            "label": "School Gift Card Description",
+            "name": "school_gift_card_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_60772c198fa3b",
             "label": "Custom Javascript",
             "name": "",
@@ -200,5 +260,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632507765
+    "modified": 1635204961
 }
