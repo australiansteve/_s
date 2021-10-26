@@ -42,14 +42,28 @@
 
                 <?php 
                 $video_id = get_field('section_2_video_id');
+                $video_type = get_field('section_2_video_type');
 
                 if ($video_id) :
                     ?>
                     <section id="section-2">
                         <div class="entry-content no-padding" id="section-2-content">
-                            <div class="iframe-container">
-                                <iframe class="responsive" src="https://player.vimeo.com/video/<?php echo $video_id;?>?color=c02c8b&title=0&byline=0&portrait=0&autoplay=0&loop=0&autopause=0&muted=0&controls=1&background=0" frameborder="0"allow="autoplay; fullscreen; picture-in-picture" muted autoplay></iframe>
-                            </div>
+                            <?php
+
+                            if ($video_type == 'vimeo') :
+                                ?>
+                                <div class="iframe-container">
+                                    <iframe class="responsive" src="https://player.vimeo.com/video/<?php echo $video_id;?>?color=c02c8b&title=0&byline=0&portrait=0&autoplay=0&loop=0&autopause=0&muted=0&controls=1&background=0" frameborder="0"allow="autoplay; fullscreen; picture-in-picture" muted autoplay></iframe>
+                                </div>
+                                <?php
+                            elseif ($video_type == 'youtube') :
+                                ?>
+                                <div class="iframe-container">
+                                    <iframe class="responsive" src="https://www.youtube.com/embed/<?php echo $video_id;?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope" allowfullscreen></iframe>
+                                </div>
+                                <?php
+                            endif;
+                            ?>
                         </div>
                     </section>
                     <?php
