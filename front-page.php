@@ -76,6 +76,9 @@ get_header();
 				$section9Text = get_field('text_9');
 				$section10Title = get_field('title_10');
 				$section10Text = get_field('text_10');
+				$section11Title = get_field('title_11');
+				$section11Text = get_field('text_11');
+				$section11Gallery = get_field('gallery_11');
 
 				?>
 
@@ -127,6 +130,15 @@ get_header();
 						</div>
 					</div>
 				</div>
+
+				<div class="grid-x">
+					<div class="cell">
+						<?php
+							include( locate_template( 'template-parts/front-page/section-11.php', false, false ) ); 
+						?>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

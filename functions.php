@@ -112,6 +112,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'archive-image', 400, 300, true);
 		add_image_size( 'header-logo', 1024, 665, true);
 		add_image_size( 'about-portrait', 512, 768, false);
+		add_image_size( 'sponsor-logo', 300, 300, true);
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
