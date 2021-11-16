@@ -1,17 +1,30 @@
-<form id="school-search-form" action="/teachers" method="GET">
-	<div class="select2-parent" data-parent-of="school">
-		<select name="school" class="select2-single" id="school" onchange="this.form.submit()">
-			<?php
+<?php
 
-			$args = array(
-				'post_type'              => array( 'austeve-schools' ),
-				'post_status'            => array( 'publish' ),
-				'posts_per_page'         => '-1',
-			);
-			$postsquery = new WP_Query( $args );
+$args = array(
+	'post_type'              => array( 'austeve-schools' ),
+	'post_status'            => array( 'publish' ),
+	'posts_per_page'         => '-1',
+	'meta_query'			=>  array(
+		'relation' => 'OR',
+		array(
+			'key'         => 'is_disabled',
+			'value'            => '1',
+			'compare'            => '!=',
+		),
+		array(
+			'key' => 'is_disabled',
+			'compare' => 'NOT EXISTS'
+		),
+	),
+);
+$postsquery = new WP_Query( $args );
 
-			if ( $postsquery->have_posts() ) :
-				?>
+if ( $postsquery->have_posts() ) :
+	the_content();
+	?>
+	<form id="school-search-form" action="/teachers" method="GET">
+		<div class="select2-parent" data-parent-of="school">
+			<select name="school" class="select2-single" id="school" onchange="this.form.submit()">
 				<option value="0"><?php _e('Select your school', 'hamburger-cat'); ?></option>
 				<?php
 				while ( $postsquery->have_posts() ) :
@@ -22,14 +35,18 @@
 
 					<?php
 				endwhile;
-			else :?>
-
-				<option><?php _e('No schools found', 'hamburger-cat'); ?></option>
-				<?php
-			endif;
-
-			wp_reset_postdata();
-			?>
-		</select>
+				?>
+			</select>
+		</div>
+	</form>
+	<?php
+else :
+	?>
+	<div class="no-active-schools">
+		<?php the_field('no_active_school_placeholder_text', 'option');?>
 	</div>
-</form>
+	<?php
+endif;
+
+wp_reset_postdata();
+?>

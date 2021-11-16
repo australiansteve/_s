@@ -43,6 +43,25 @@
             "mime_types": ""
         },
         {
+            "key": "field_6192fd839439f",
+            "label": "No Active School Placeholder Text",
+            "name": "no_active_school_placeholder_text",
+            "type": "wysiwyg",
+            "instructions": "Displayed on the homepage when there are no active schools",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_614e1754b1ae8",
             "label": "Gift Card Product",
             "name": "generic_gift_card_product",
@@ -260,5 +279,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1635204961
+    "modified": 1637023180
 }

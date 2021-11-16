@@ -3,6 +3,25 @@
     "title": "School Customization",
     "fields": [
         {
+            "key": "field_6192f999d1e3c",
+            "label": "Disabled",
+            "name": "is_disabled",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_61489c8718676",
             "label": "Grades",
             "name": "grades",
@@ -60,5 +79,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632148721
+    "modified": 1637022162
 }
