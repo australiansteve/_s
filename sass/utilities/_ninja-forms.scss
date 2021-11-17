@@ -1,0 +1,37 @@
+.nf-form-wrap {
+
+	.nf-error .nf-error-msg,
+	.nf-error-msg,
+	.ninja-forms-req-symbol {
+		color: $turquoise;
+	}
+
+	.nf-error.field-wrap .nf-field-element::after {
+		background: $turquoise;
+	}
+
+	.nf-error .ninja-forms-field {
+		border-color: $turquoise !important;
+	}
+
+	.nf-form-content input[type="button"],
+	.nf-form-content input[type="submit"] {
+		background-color: $primary-color;
+		color: $white;
+		text-transform: uppercase;
+		font-weight: 400;
+		text-decoration: none;
+		margin: 0 0 1rem 0;
+		padding: 0.85em 1em;
+		font-size: 1em;
+		height: auto;
+
+		span {
+			display: block;
+			border: 1px solid $white;
+			margin: -8px -10px;
+			padding: 0.7rem;
+		}
+	}
+
+}

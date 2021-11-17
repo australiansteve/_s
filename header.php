@@ -111,8 +111,8 @@
 				<div class="grid-container">
 
 					<?php 
-					$headerLeftClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-4 large-3 text-center medium-text-left';
-					$headerRightClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-8 large-9 medium-text-right';
+					$headerLeftClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-6 large-5 text-center medium-text-left';
+					$headerRightClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-6 large-7 medium-text-right';
 					?>
 					<div class="grid-x">
 						<div class="cell <?php echo $headerLeftClasses;?> ">
@@ -198,26 +198,30 @@
 									<?php
 
 									if ($menuType == 'top-right') {
-										wp_nav_menu(
-											array(
-												'theme_location'	=> 'primary-menu',
-												'menu_id'		=> 'primary-menu',
-												'menu_class'	=> 'horizontal menu show-for-medium text-right',
-												'container'		=> false
-											)
-										);
 
 										if ( has_nav_menu( 'language-menu' ) ) :
 											wp_nav_menu(
 												array(
 													'theme_location'	=> 'language-menu',
 													'menu_id'		=> 'language-menu',
-													'menu_class'	=> 'vertical menu accordion-menu show-for-medium text-right',
-													'items_wrap'        => '<ul class="%2$s vertical menu accordion-menu" data-accordion-menu id="%1$s">%3$s</ul>',
+													'menu_class'	=> 'vertical menu show-for-medium text-right',
+													'items_wrap'        => '<ul class="%2$s horizontal menu" id="%1$s">%3$s</ul>',
 													'container' 	=> false
 												)
 											);
 										endif;
+
+										wp_nav_menu(
+											array(
+												'theme_location'	=> 'primary-menu',
+												'menu_id'		=> 'primary-menu',
+												'menu_class'	=> 'horizontal menu show-for-medium text-right',
+												'container'		=> false,
+												'link_before'	=> '<span>',
+												'link_after'	=> '</span>'
+											)
+										);
+
 									} elseif ($menuType == 'off-canvas-top') {
 										?>
 										<a href="" class="off-canvas-top show-for-medium" data-open="offCanvasTop"><i class="fas fa-bars fa-2x"></i></a>

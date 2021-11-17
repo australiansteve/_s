@@ -3,6 +3,7 @@ import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu'
 import { Sticky } from 'foundation-sites/js/foundation.sticky'
 import { Equalizer } from 'foundation-sites/js/foundation.equalizer'
 import { OffCanvas } from 'foundation-sites/js/foundation.offcanvas'
+import { Reveal } from 'foundation-sites/js/foundation.reveal'
 
 function initFoundation() {
   // Include the Foundation Modules that we'll use in the app
@@ -10,6 +11,7 @@ function initFoundation() {
   Foundation.plugin(Sticky, 'Sticky')
   Foundation.plugin(Equalizer, 'Equalizer')
   Foundation.plugin(OffCanvas, 'OffCanvas')
+  Foundation.plugin(Reveal, 'Reveal')
   
   // Add jQuery to Foundation
   Foundation.addToJquery(jQuery)

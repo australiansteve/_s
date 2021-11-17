@@ -109,7 +109,11 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 800, 640, true);
-		add_image_size( 'header-logo', 390, 190, false);
+		add_image_size( 'header-logo', 550, 180, true);
+		add_image_size( 'footer-logo', 650, 36, true);
+		add_image_size( 'hero-portrait', 850, 1150, true);
+		add_image_size( 'section-side', 820, 925, true);
+		add_image_size( 'homepage-landing', 1330, 730, true);
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -134,6 +138,8 @@ function hamburger_cat_scripts() {
 	$styleFile = (wp_get_environment_type() == 'production') ? 'style.min.css' : 'style.css';
 
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/30900d1525.js', array() );
+
+	wp_enqueue_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js', array() );
 
 	wp_enqueue_style( 'hamburger-cat-style', get_template_directory_uri(). '/dist/'.$styleFile, array( ), HAMBURGER_CAT_VERSION );
 
@@ -202,32 +208,32 @@ add_filter('wp_nav_menu_objects', function( $items, $args ) {
 
 /* Move Yoast metabox below ACF ones */
 add_filter( 'wpseo_metabox_prio', function() {
-    return 'low';
+	return 'low';
 });
 
 function austeve_custom_js_in_head() {
 	$customJS = get_field('custom_js', 'option');
 
 	if( have_rows('custom_js', 'option') ):
-	    while( have_rows('custom_js', 'option') ) : the_row();
-	    	error_log("custom_js");
+		while( have_rows('custom_js', 'option') ) : the_row();
+			error_log("custom_js");
 
 	        // Loop over sub repeater rows.
-	        if( have_rows('js_script') ):
-	            while( have_rows('js_script') ) : the_row();
+			if( have_rows('js_script') ):
+				while( have_rows('js_script') ) : the_row();
 
 	                // Get sub values.
-	                $name = get_sub_field('name');
-	                $script = get_sub_field('script');
-	                $location = get_sub_field('display_in');
+					$name = get_sub_field('name');
+					$script = get_sub_field('script');
+					$location = get_sub_field('display_in');
 
-	                if ($location == 'header') {
-	                	echo $script;
-	                }
+					if ($location == 'header') {
+						echo $script;
+					}
 
-	            endwhile;
-	        endif;
-	    endwhile;
+				endwhile;
+			endif;
+		endwhile;
 	endif;
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
@@ -265,6 +271,31 @@ add_filter( 'get_the_archive_title', function ($title) {
 });
 
 
+function filter_events($query) {
+	//error_log("pre_get_posts': ".print_r($query, true));
+	if ( $query->is_post_type_archive('austeve-events') && $query->is_main_query() && !is_admin()) {
+
+		/* Only show past events for the main part of the event archive */
+		$date_now = date('Y-m-d H:i:s');
+
+		$query->set( 'meta_query', array('relation' => 'AND',
+			array(
+				'key'			=> 'end_date',
+				'compare'		=> '<',
+				'value'			=> $date_now,
+				'type'			=> 'DATETIME'
+			)
+		));
+
+		$query->set( 'order', 'DESC');
+		$query->set( 'orderby', 'meta_value');
+		$query->set( 'meta_key', 'end_date');
+		$query->set( 'meta_type', 'DATE');
+
+	}
+}
+add_action ('pre_get_posts', 'filter_events');
+
 function get_more_archive() {
 
 	$nonce = $_REQUEST['security'];
@@ -301,6 +332,7 @@ function get_more_archive() {
 		if ( $postsquery->have_posts() ) {
 			while ( $postsquery->have_posts() ) {
 				$postsquery->the_post();
+
 				?>
 
 				<div class="cell">

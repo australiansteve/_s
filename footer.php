@@ -13,15 +13,15 @@
 
 		<footer id="colophon" class="site-footer">
 			<div class="grid-container">
-				<div class="grid-x footer-logo">
-					<div class="cell medium-3 text-center medium-text-left">
+				<div class="grid-x">
+					<div class="cell medium-3 text-center medium-text-left" id="footer-column-1">
 						<div id="social-menu">
 							<?php
 							if (has_nav_menu( 'social-menu' )):
 								wp_nav_menu(
 									array(
 										'theme_location'	=> 'social-menu',
-										'menu_id'		=> 'social-menu',
+										'menu_id'		=> 'social-menu-footer',
 										'menu_class'	=> 'horizontal menu text-center medium-text-left',
 										'container'		=> false
 									)
@@ -30,10 +30,10 @@
 							?>
 						</div>
 					</div>
-					<div class="cell text-center medium-6">
+					<div class="cell text-center medium-6" id="footer-column-2">
 						<?php 
 						$image = get_field('footer_logo', 'options');
-						$size = 'full';
+						$size = 'footer-logo';
 						
 						if( $image ) {
 							?>
@@ -57,17 +57,21 @@
 
 						?>
 					</div>
-					<div class="cell medium-3 text-center medium-text-right">
-						<div id="back-to-top">
-							<a href="#" class="back-to-top">
-								<i class="fas fa-2x fa-arrow-circle-up"></i>
-							</a>
+					<div class="cell medium-3 text-center medium-text-right" id="footer-column-3">
+						<div id="language-menu">
+							<?php
+							if (has_nav_menu( 'language-menu' )):
+								wp_nav_menu(
+									array(
+										'theme_location'	=> 'language-menu',
+										'menu_id'		=> 'language-menu-footer',
+										'menu_class'	=> 'horizontal menu text-center medium-text-right',
+										'container'		=> false
+									)
+								);
+							endif;
+							?>
 						</div>
-						<script type="text/javascript">
-							jQuery(".back-to-top").on('click', function() {
-								jQuery('html,body').animate({scrollTop:0},1000);
-							});
-						</script>
 					</div>
 
 				</div><!-- .site-info -->

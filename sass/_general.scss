@@ -39,36 +39,13 @@ body {
 	main {
 
 		.page-content {
-			margin: 3rem 0;
-
-			h2 {
-				margin-bottom: 2rem;
-				font-weight: 700;
-
-				span {
-					border-bottom: 2px solid $black;
-					padding-bottom: 1rem;
-				}
-			}
-
-
-			h3 {
-				font-weight: 700;
-				margin-top: 0.5rem;
-				margin-bottom: 0.25rem;
-			}
+			margin: 3rem 0 2rem 0;
 
 			.entry-content {
-				margin: 4rem 0;
+				margin: 3rem 0;
 
 				.breadcrumbs {
 					margin-top: 2rem;
-
-					a {
-						font-weight: 700;
-						text-decoration: underline;
-						text-underline-position: under;
-					}
 				}
 			}
 		}
@@ -76,11 +53,112 @@ body {
 		article {
 			margin-bottom: 2rem;
 		}
+
+		.teal-background {
+			background: $teal;
+			color: $white;
+
+			h1,
+			h2 {
+				color: $white;
+			}
+		}
+
+		.turquoise-background {
+			background: $turquoise;
+			color: $white;
+
+			h1,
+			h2 {
+				color: $white;
+			}
+		}
 	}
+}
+
+.reveal .button.close {
+	margin-top: 1rem;
 }
 
 a {
 	display: inline-block;
+}
+
+a.button,
+a.wp-block-button__link {
+	background-color: $primary-color;
+	color: $white;
+	text-transform: uppercase;
+	font-weight: 400;
+	text-decoration: none;
+	margin: 0 0 1rem 0;
+	padding: 0.85em 1em;
+	font-size: 1em;
+
+	span {
+		display: block;
+		border: 1px solid $white;
+		margin: -8px -10px;
+		padding: 0.7rem;
+	}
+}
+
+a.button:hover,
+a.button:focus,
+a.button:active,
+a.wp-block-button__link:hover,
+a.wp-block-button__link:focus,
+a.wp-block-button__link:active {
+	text-decoration: none;
+	background-color: scale-color($primary-color, $lightness: -15%);
+}
+
+
+a.button.reverse,
+a.wp-block-button__link.reverse {
+	background-color: $moonshine;
+	color: $primary-color;
+
+	span {
+		border: 1px solid $primary-color;
+	}
+}
+
+a.button.reverse:hover,
+a.button.reverse:focus,
+a.button.reverse:active,
+a.wp-block-button__link.reverse:hover,
+a.wp-block-button__link.reverse:focus,
+a.wp-block-button__link.reverse:active {
+	background-color: scale-color($moonshine, $lightness: -15%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	a {
+		font-weight: 400;
+		text-decoration: none;
+	}
+
+	a:hover,
+	a:focus,
+	a:active {
+		text-decoration: underline;
+	}
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	font-weight: 500;
 }
 
 /* Small only */
@@ -96,21 +174,42 @@ a {
 		main {
 
 			.page-content {
+				margin: 1rem 0 6rem 0;
 
 				.entry-content {
-					margin: 4rem 8%;
-
-					p {
-						max-width: 950px;
-					}
+					margin: 3rem 8%;
 				}
 			}
 
 
 			article {
-				margin-top: 2rem;
+
 			}
 
+			.ignore-grid-container-padding-left {
+				margin-left: -0.9375rem;
+			}
+
+			.add-grid-container-padding-left {
+				padding-left: 0.9375rem;
+			}
+
+			.ignore-grid-container-padding-right {
+				margin-right: -0.9375rem;
+			}
+
+			.add-grid-container-padding-right {
+				padding-right: 0.9375rem;
+			}
+
+			.text-container {
+				max-width: 80%;
+				margin: auto;
+			}
+		}
+
+		.reveal-overlay {
+			padding-bottom: 150px;
 		}
 	}
 }
@@ -122,6 +221,31 @@ a {
 
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
+
+	body {
+
+		font-size: 1.2em;
+
+		main {
+
+			.ignore-grid-container-padding-left {
+				margin-left: -2.1875rem;
+			}
+
+			.add-grid-container-padding-left {
+				padding-left: 2.1875rem;
+			}
+
+			.ignore-grid-container-padding-right {
+				margin-right: -2.1875rem;
+			}
+
+			.add-grid-container-padding-right {
+				padding-right: 2.1875rem;
+			}
+
+		}
+	}
 
 }
 
@@ -137,6 +261,38 @@ a {
 		padding-right: 70px;
 		padding-left: 70px;
 	}
+
+	body {
+
+		font-size: 1.35em;
+
+		main {
+
+			.ignore-grid-container-padding-left {
+				margin-left: -70px;
+			}
+
+			.add-grid-container-padding-left {
+				padding-left: 70px;
+			}
+
+			.ignore-grid-container-padding-right {
+				margin-right: -70px;
+			}
+
+			.add-grid-container-padding-right {
+				padding-right: 70px;
+			}
+		}
+	}
+
+	a.button,
+	a.wp-block-button__link {
+
+		span {
+			padding: 1.5rem;
+		}
+	}
 }
 
 /* XLarge only */
@@ -150,5 +306,34 @@ a {
 	.grid-container {
 		padding-right: 120px;
 		padding-left: 120px;
+	}
+
+	body {
+
+		font-size: 1.5em;
+
+		main {
+
+			.ignore-grid-container-padding-left {
+				margin-left: -120px;
+			}
+
+			.add-grid-container-padding-left {
+				padding-left: 120px;
+			}
+
+			.ignore-grid-container-padding-right {
+				margin-right: -120px;
+			}
+
+			.add-grid-container-padding-right {
+				padding-right: 120px;
+			}
+
+			.text-container {
+				max-width: 1530px;
+				margin: auto;
+			}
+		}
 	}
 }

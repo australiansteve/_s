@@ -52,7 +52,7 @@ else if( $nav_type == "infinite-scroll" ) {
 			var origText = jQuery('.load-more').html();
 
 			jQuery('.load-more').addClass('disabled');
-			jQuery('.load-more').append("<i style='margin-left: 0.75em' class='fas fa-spinner fa-spin'></i>");
+			jQuery('.load-more span').append("<i style='margin-left: 0.75em' class='fas fa-spinner fa-spin'></i>");
 
 			next_page_placeholder.attr('data-page', page + 1);
 

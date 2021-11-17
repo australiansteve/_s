@@ -1,0 +1,312 @@
+.archive {
+
+	.archive-filter.austeve-paintings {
+
+		.button {
+			margin-right: 1rem;
+		}
+
+	}
+
+
+	#past-events {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+
+		article {
+			margin-bottom: 0.75rem;
+		}
+	}
+
+}
+
+.page-template-contact-page {
+
+	main {
+		background: $teal;
+		color: $white;
+
+		h1 {
+			color: $white;
+		}
+	}
+}
+
+.page-template-about-page {
+
+	.artist-statement {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.home {
+
+	main .page-content {
+		margin-top: 0;
+	}
+
+	#section-1 {
+
+		.text-container {
+			padding: 1rem 0;
+
+			h1 {
+				font-family: montserrat;
+				font-size: 18pt;
+			}
+		}
+	}
+
+	#section-2 {
+
+		#section-2-right {
+			margin: 1rem 0;
+		}
+	}
+
+	#section-3 {
+		padding: 2rem 0;
+
+		article.type-austeve-paintings {
+			padding: 1rem;
+			border: 1px solid $white;
+			margin: 0.75 0;
+
+			a {
+
+				h3 {
+					color: $white;
+					font-family: montserrat;
+					margin: 1rem 0 0 0;
+				}
+			}
+
+			a:hover {
+
+				h3 {
+					color: $teal;
+				}
+			}
+		}
+
+	}
+
+	#section-4 {
+		padding: 2rem 0;
+
+	}
+
+	#section-5 {
+
+		#section-5-left {
+			padding: 2rem 0;
+		}
+	}
+}
+
+.posts-container#events-grid {
+
+	article.type-austeve-events {
+		padding: 1rem;
+		margin: 0.75 0;
+
+		border-bottom: 2px solid $teal;
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+	.home {
+
+		#section-4 {
+
+			.posts-container > .grid-x > .cell:nth-last-of-type(1) {
+
+				article.type-austeve-events {
+					border-bottom: none;
+				}
+			}
+
+		}
+	}
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	.archive {
+
+		#past-events {
+			margin-top: 4rem;
+		}
+	}
+
+	.home {
+
+		#section-1 {
+
+			.text-container {
+				padding: 1rem 0;
+
+				h1 {
+					font-size: 28pt;
+				}
+			}
+		}
+
+		#section-2 {
+
+			#section-2-right {
+				height: calc(50vw * 1.13); /* 925 / 820 = 1.13 */
+				margin: 0;
+				padding: 0 2rem;
+			}
+		}
+
+		#section-3 {
+			margin-top: -1px;
+
+			.posts-container {
+				margin-bottom: 2rem;
+			}
+
+			article.type-austeve-paintings {
+				margin: 0 0.75rem;
+
+				a {
+
+					h3 {
+						font-size: 25px;
+						margin: 2rem 0 1.5rem 0;
+					}
+				}
+			}
+		}
+
+		#section-4 {
+
+		}
+	}
+
+	.posts-container#events-grid {
+		margin-bottom: 2rem;
+
+		article.type-austeve-events {
+			margin: 0 0.75rem;
+
+			.location {
+				margin-bottom: 0.75rem;
+			}
+
+		}
+	}
+
+	.single {
+
+		h1 {
+			font-size: 28px;
+		}
+	}
+
+}
+
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+	.page-template-about-page {
+
+		.entry-content {
+			padding: 0 2rem;
+		}
+	}
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+	.home {
+
+		#section-1 {
+
+		}
+
+		#section-2 {
+
+			#section-2-right {
+				height: calc(41.66vw * 1.13); /* 925 / 820 = 1.13 */
+				margin: 0;
+				padding: 0 3rem;
+			}
+		}
+	}
+
+	.single {
+
+		h1 {
+			font-size: 36px;
+		}
+	}
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+	.home {
+
+		#section-1 {
+
+		}
+
+		#section-2 {
+
+			#section-2-right {
+				padding: 0 4rem;
+			}
+		}
+	}
+
+	.single {
+
+		h1 {
+			font-size: 44px;
+		}
+	}
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
+	.home {
+
+		#section-1 {
+
+		}
+
+		#section-2 {
+
+			#section-2-right {
+				height: calc(1920px * 0.4166 * 1.13); /* 925 / 820 = 1.13 */
+			}
+		}
+	}
+
+	.single {
+
+		h1 {
+			font-size: 60px;
+		}
+	}
+}

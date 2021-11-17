@@ -26,7 +26,7 @@ get_header();
 
 		<div class="grid-container">
 			<div class="page-content">
-				<?php the_title('<h2 class="page-title"><span>', '</span></h2>');?>  
+				<?php the_title('<h1 class="page-title"><span>', '</span></h1>');?>  
 				<div class="entry-content">
 					<?php the_content(); ?>
 				</div>

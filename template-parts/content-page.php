@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying page content
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,13 +13,6 @@
 
 	<h1 class="page-title"><?php the_title();?></h1>
 		
-		<?php the_content();?>
-
-		<footer class="entry-footer">
-
-			<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
-
-		</footer><!-- .entry-footer -->
-
+	<?php the_content();?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -59,6 +59,10 @@ nav {
 		}
 	}
 
+	ul.show-for-medium#language-menu {
+		display: block;
+	}
+
 	.wpml-ls-item.menu-item-has-children {
 
 		> a > span {
@@ -75,6 +79,15 @@ nav {
 				display: inline-block;
 			}
 		}
+	}
+
+	a {
+		color: $turquoise;
+		text-transform: uppercase;
+	}
+
+	a:hover {
+		color: $teal;
 	}
 }
 
@@ -122,7 +135,8 @@ nav {
 }
 
 #footer-menu,
-#social-menu {
+#social-menu,
+#language-menu-footer {
 	display: inline-flex;
 }
 
@@ -157,6 +171,27 @@ nav {
 				li {
 					margin-bottom: 1rem;
 				}
+			}
+		}
+	}
+
+	#language-menu {
+
+		.wpml-ls-current-language {
+
+			span {
+				border-bottom: 1px solid $turquoise;
+			}
+		}
+	}
+
+	#primary-menu {
+		margin-top: 1rem;
+
+		.current-menu-item {
+
+			span {
+				border-bottom: 1px solid $turquoise;
 			}
 		}
 	}

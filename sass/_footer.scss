@@ -16,4 +16,66 @@ footer {
 			color: rgba(200, 200, 200, 0.7);
 		}
 	}
+
+	.size-footer-logo {
+		max-width: 325px;
+		margin-bottom: 1rem;
+	}
+}
+
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+
+}
+
+/* Medium and up (640px) */
+@media screen and (min-width: 40em) {
+
+	#footer-column-1,
+	#footer-column-3 {
+		position: relative;
+	}
+
+	#social-menu-footer,
+	#language-menu-footer {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	#social-menu-footer {
+		left: 0;
+	}
+
+
+}
+
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
+}
+
+/* Large and up (>1024px) */
+@media screen and (min-width: 64em) {
+
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 99.9375em) {
+
+}
+
+/* XLarge and up (>1600px) */
+@media screen and (min-width: 100em) {
+
+}
+
+/* XLarge only */
+@media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
+}
+
+/* XXLarge and up (>1920px) */
+@media screen and (min-width: 120em) {
+
 }

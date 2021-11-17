@@ -12,6 +12,11 @@ jQuery( document ).ready(function() {
 	Foundation.addToJquery(jQuery);
 
 	
+	jQuery('.button, .wp-block-button__link.no-border-radius').each(function() {
+		if(jQuery(this).find(">span").length < 1) {
+			jQuery(this).html("<span>" + jQuery(this).html() + "</span>");
+		}
+	})
 });
 
 var calculateSectionMinusHeaderHeight = _.debounce(function () {

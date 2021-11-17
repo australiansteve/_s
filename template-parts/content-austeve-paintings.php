@@ -1,0 +1,79 @@
+<?php
+/**
+ * Template part for displaying paintings
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Hamburger_Cat
+ */
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<div class="grid-x grid-margin-x">
+		<div class="cell medium-6">
+			<a data-open="full-image"><?php echo the_post_thumbnail('full'); ?></a>
+		</div>
+
+		<div class="cell medium-6">
+			<h1 class="page-title"><?php the_title();?></h1>
+
+			<?php the_content();?>
+
+			<div class="austeve-paintings-meta">
+				<?php 
+				$year = get_field('year'); 
+				if ($year) {
+					?>
+					<div class="year"><?php echo $year;?></div>
+					<?php
+				}
+
+				$style = get_field('style'); 
+				if ($style) {
+					?>
+					<div class="style"><?php echo $style;?></div>
+					<?php
+				}
+
+				$size = get_field('size'); 
+				if ($size) {
+					?>
+					<div class="size"><?php echo $size;?></div>
+					<?php
+				}
+
+				$price = get_field('price'); 
+				$is_available = has_term( 'available', 'painting-category' );
+				if ($price && $is_available) {
+					?>
+					<div class="price"><span class="available"><?php _e('Available, ', 'hamburger-cat'); ?></span><?php echo $price;?></div>
+					<?php
+				}
+				else {
+					?>
+					<div class="price"><span class="sold"><?php _e('Sold', 'hamburger-cat'); ?></span></div>
+					<?php
+				}
+
+				?>
+			</div>
+		</div>
+	</div>
+	<footer class="entry-footer">
+
+		<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
+
+	</footer><!-- .entry-footer -->
+
+
+</article><!-- #post-<?php the_ID(); ?> -->
+
+<div class="reveal text-center" id="full-image" data-reveal>
+  <?php echo the_post_thumbnail('full'); ?>
+
+  <button class="close button" data-close aria-label="Close modal" type="button">
+    <?php _e('Close', 'hamburger-cat');?>
+  </button>
+</div>

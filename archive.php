@@ -16,18 +16,17 @@ get_header();
 
 		<div class="grid-container">
 
-			<div class="entry-content">
-				<?php
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</div>
-
 			<?php
-			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
+			the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' );
+			?>
+
+			<?php 
+			get_template_part( 'template-parts/archive-filter', get_post_type() );
 			?>
 
 			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3" id="archive-grid">
 				<?php
+
 				while ( have_posts() ) :
 					the_post();
 
@@ -46,6 +45,7 @@ get_header();
 					echo '<span class="next-page" data-page="2"/>';
 				endif;
 				?>
+				<span class="next-page" data-page="2"/>
 			</div>
 
 			<?php get_template_part( 'template-parts/archive', 'nav' ); ?>

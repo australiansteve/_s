@@ -1,0 +1,45 @@
+{
+    "key": "group_61807ada06a9d",
+    "title": "Blog Page Customization",
+    "fields": [
+        {
+            "key": "field_61807ae910b05",
+            "label": "Newsletter Signup Form ID",
+            "name": "newsletter_signup_form_id",
+            "type": "number",
+            "instructions": "ID of the form created by MC4WP plugin",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1635810568
+}
