@@ -296,6 +296,17 @@ function filter_events($query) {
 }
 add_action ('pre_get_posts', 'filter_events');
 
+function filter_paintings($query) {
+	//error_log("pre_get_posts': ".print_r($query, true));
+	if ( $query->is_post_type_archive('austeve-paintings') && $query->is_main_query() && !is_admin() ) {
+
+		$query->set( 'order', 'ASC');
+		$query->set( 'orderby', 'menu_order');
+
+	}
+}
+add_action ('pre_get_posts', 'filter_paintings', 20);
+
 function get_more_archive() {
 
 	$nonce = $_REQUEST['security'];
@@ -309,7 +320,9 @@ function get_more_archive() {
 		$args = array(
 			'post_type'		=> array( $post_type ),
 			'post_status'	=> array( 'publish' ),
-			'paged'			=> $page
+			'paged'			=> $page,
+			'order' 		=> 'ASC',
+			'orderby' 		=> 'menu_order'
 		);
 
 		if ($term_id > 0) {
