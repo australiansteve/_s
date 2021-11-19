@@ -78,13 +78,13 @@ get_header();
 			?>
 
 			
-					<?php
-					if ( have_posts()) :
-						?>
-						<section id="past-events">
-				<h2><?php _e('Past Events and Exhibits', 'hamburger-cat'); ?></h2>
-				<div class="grid-x grid-padding-x small-up-1">
-					<?php
+			<?php
+			if ( have_posts()) :
+				?>
+				<section id="past-events">
+					<h2><?php _e('Past Events and Exhibits', 'hamburger-cat'); ?></h2>
+					<div class="grid-x grid-padding-x small-up-1">
+						<?php
 						while ( have_posts() ) :
 							the_post();
 							?>
@@ -95,15 +95,21 @@ get_header();
 
 							<?php
 						endwhile;
-						?>
-						</div>
 
-				<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
-			</section>
-						<?php
-					endif;
-					?>
-				
+						$nav_type = get_field('archive_navigation_type', 'option');
+						if ($nav_type == 'infinite-scroll'):
+							echo '<span class="next-page" data-page="2"/>';
+						endif;
+						?>
+						<span class="next-page" data-page="2"/>
+					</div>
+
+					<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
+				</section>
+				<?php
+			endif;
+			?>
+
 		</div>
 	</div>
 </main><!-- #main -->
