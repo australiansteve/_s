@@ -263,3 +263,63 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+
+function get_more_archive() {
+
+	$nonce = $_REQUEST['security'];
+	$post_type = $_REQUEST['post_type'];
+	$term_id = $_REQUEST['term_id'];
+	$page = $_REQUEST['page'];
+
+	if (wp_verify_nonce( $nonce, 'get-more')) {
+		//error_log("Get page ".$page. " of ".$post_type);
+
+		$args = array(
+			'post_type'		=> array( $post_type ),
+			'post_status'	=> array( 'publish' ),
+			'paged'			=> $page
+		);
+
+		if ($term_id > 0) {
+			$tax_query = array(
+				array(
+					'taxonomy' => get_term( $term_id )->taxonomy,
+				      'field' => 'term_id', 
+				      'terms' => $term_id,
+				      'include_children' => false
+				),
+			);
+
+			$args['tax_query'] = $tax_query;
+		}
+
+		$postsquery = new WP_Query( $args );
+
+		ob_start();
+
+		if ( $postsquery->have_posts() ) {
+			while ( $postsquery->have_posts() ) {
+				$postsquery->the_post();
+				?>
+
+				<div class="cell">
+					<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
+				</div>
+
+				<?php
+			}
+		}
+
+		// Restore original Post Data
+		wp_reset_postdata();
+
+		echo ob_get_clean();
+
+	}
+
+	exit;
+}
+
+add_action('wp_ajax_austeve_get_more_archive', 'get_more_archive');
+add_action('wp_ajax_nopriv_austeve_get_more_archive', 'get_more_archive');

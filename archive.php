@@ -26,7 +26,7 @@ get_header();
 			the_archive_title( '<h2 class="page-title"><span>', '</span></h2>' );
 			?>
 
-			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
+			<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3" id="archive-grid">
 				<?php
 				while ( have_posts() ) :
 					the_post();
@@ -40,6 +40,11 @@ get_header();
 
 					<?php
 				endwhile;
+
+				$nav_type = get_field('archive_navigation_type', 'option');
+				if ($nav_type == 'infinite-scroll'):
+					echo '<span class="next-page" data-page="2"/>';
+				endif;
 				?>
 			</div>
 
