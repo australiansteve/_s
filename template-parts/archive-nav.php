@@ -27,8 +27,6 @@ if ( $nav_type == "paged" ) {
 }
 else if( $nav_type == "infinite-scroll" ) {
 
-	error_log(print_r(get_queried_object(), true)." get_queried_object()");
-
 	$queried_object = get_queried_object();
 
 	if (is_a($queried_object, 'WP_Term')) {
