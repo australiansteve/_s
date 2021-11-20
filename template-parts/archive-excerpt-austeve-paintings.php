@@ -33,7 +33,7 @@
 	}
 	else {
 		?>
-		<div class="price"><span class="sold"><?php _e('Sold', 'hamburger-cat'); ?></span></div>
+		<div class="price"><span class="sold"><?php _e('Unavailable', 'hamburger-cat'); ?></span></div>
 		<?php
 	}
 

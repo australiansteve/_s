@@ -74,6 +74,12 @@ body {
 			}
 		}
 	}
+
+	figcaption {
+		text-align: right;
+		color: $teal;
+		font-size: 0.5em;
+	}
 }
 
 .reveal .button.close {

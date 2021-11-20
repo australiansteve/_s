@@ -7,6 +7,7 @@
  * @package Hamburger_Cat
  */
 
+$caption = wp_get_attachment_caption(get_post_thumbnail_id());
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -14,6 +15,7 @@
 	<div class="grid-x grid-margin-x">
 		<div class="cell medium-6">
 			<a data-open="full-image"><?php echo the_post_thumbnail('full'); ?></a>
+			<?php echo ($caption) ? "<figcaption class='caption'>".$caption."</figcaption>" : ""; ?>
 		</div>
 
 		<div class="cell medium-6">
@@ -53,7 +55,7 @@
 				}
 				else {
 					?>
-					<div class="price"><span class="sold"><?php _e('Sold', 'hamburger-cat'); ?></span></div>
+					<div class="price"><span class="sold"><?php _e('Unavailable', 'hamburger-cat'); ?></span></div>
 					<?php
 				}
 
@@ -71,9 +73,12 @@
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <div class="reveal text-center" id="full-image" data-reveal>
-  <?php echo the_post_thumbnail('full'); ?>
+	<?php echo the_post_thumbnail('full'); ?>
+	<?php echo ($caption) ? "<figcaption class='caption'>".$caption."</figcaption>" : ""; ?>
 
-  <button class="close button" data-close aria-label="Close modal" type="button">
-    <?php _e('Close', 'hamburger-cat');?>
-  </button>
+	<div>
+		<button class="close button" data-close aria-label="Close modal" type="button">
+			<?php _e('Close', 'hamburger-cat');?>
+		</button>
+	</div>
 </div>

@@ -25,7 +25,7 @@ get_header();
 				get_template_part( 'template-parts/archive-filter', get_post_type() );
 				?>
 
-				<div class="grid-x grid-margin-x small-up-1 medium-up-2 xlarge-up-3" id="archive-grid">
+				<div class="grid-x grid-margin-x small-up-1 medium-up-2" id="archive-grid">
 					<?php
 
 					while ( have_posts() ) :
