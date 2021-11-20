@@ -34,4 +34,26 @@
 		}
 	}
 
+	.nf-form-content {
+
+		input:not([type="button"]),
+		input:not([type="button"]):focus,
+		textarea,
+		textarea:focus {
+			color: $turquoise;
+		}
+	}
+
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: $teal;
+		opacity: 1; /* Firefox */
+	}
+
+	:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: $teal;
+	}
+
+	::-ms-input-placeholder { /* Microsoft Edge */
+		color: $teal;
+	}
 }

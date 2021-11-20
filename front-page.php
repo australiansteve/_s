@@ -156,16 +156,29 @@ get_header();
 						$section_5_image_id = get_field('section_5_image');
 						?>
 						<div class="grid-x">
-							<div class="cell medium-6 large-7">
+							<div class="cell xlarge-5 xlarge-order-2 show-for-xlarge">
+								<?php 
+								echo wp_get_attachment_image( $section_5_image_id, 'section-side');
+								?>
+							</div>
+
+							<div class="cell hide-for-xlarge">
+								<?php 
+								echo wp_get_attachment_image( $section_5_image_id, 'hero-image-large');
+								?>
+							</div>
+
+							<div class="cell xlarge-7 xlarge-ordr-1">
+
 								<div class="grid-y align-center" id="section-5-left">
 									<div class="cell">
-										<div class="text-container xlarge-text-left add-grid-container-padding-left">
+										<div class="text-container medium-text-left">
 											<h2 class="section-title"><?php echo $section_5_title; ?></h2>
-											<div class="grid-x">
-												<div class="cell xlarge-7">
+											<div class="grid-x grid-margin-x">
+												<div class="cell medium-7">
 													<?php echo do_shortcode('[ninja_forms id="'.$section_5_contact_form_id.'"]'); ?>
 												</div>
-												<div class="cell xlarge-5">
+												<div class="cell medium-5">
 													<?php echo $section_5_text; ?>
 												</div>
 											</div>
@@ -173,11 +186,6 @@ get_header();
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="cell medium-6 large-5">
-								<?php 
-								echo wp_get_attachment_image( $section_5_image_id, 'section-side');
-								?>
 							</div>
 						</div>
 					</section>
