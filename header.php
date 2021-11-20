@@ -111,8 +111,8 @@
 				<div class="grid-container">
 
 					<?php 
-					$headerLeftClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-6 large-5 text-center medium-text-left';
-					$headerRightClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-6 large-7 medium-text-right';
+					$headerLeftClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-5 large-4 text-center medium-text-left';
+					$headerRightClasses = ($menuType == 'top-bar') ? 'small-12 text-center' : 'medium-7 large-8 medium-text-right';
 					?>
 					<div class="grid-x">
 						<div class="cell <?php echo $headerLeftClasses;?> ">

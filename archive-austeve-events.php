@@ -83,7 +83,7 @@ get_header();
 				?>
 				<section id="past-events">
 					<h2><?php _e('Past Events and Exhibits', 'hamburger-cat'); ?></h2>
-					<div class="grid-x grid-padding-x small-up-1">
+					<div class="grid-x grid-padding-x small-up-1" id="archive-grid">
 						<?php
 						while ( have_posts() ) :
 							the_post();
