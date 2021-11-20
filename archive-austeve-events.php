@@ -16,100 +16,102 @@ get_header();
 
 		<div class="grid-container">
 
-			<?php
-			the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' );
-			
-			/* Upcoming Events first */
-			$date_now = date('Y-m-d H:i:s');
+			<div class="entry-content">
 
-			$args = array(
-				'post_type'              => array( 'austeve-events' ),
-				'post_status'            => array( 'publish' ),
-				'posts_per_page'         => '3',
-				'meta_query' 		=> array(
-					'relation' 			=> 'AND',
+				<?php
+				the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' );
+				
+				/* Upcoming Events first */
+				$date_now = date('Y-m-d H:i:s');
 
-					array(
-						'key'			=> 'end_date',
-						'compare'		=> '>=',
-						'value'			=> $date_now,
-						'type'			=> 'DATETIME'
-					)
-				),
-				'order'				=> 'ASC',
-				'orderby'			=> 'meta_value',
-				'meta_key'			=> 'end_date',
-				'meta_type'			=> 'DATETIME'
-			);
+				$args = array(
+					'post_type'              => array( 'austeve-events' ),
+					'post_status'            => array( 'publish' ),
+					'posts_per_page'         => '3',
+					'meta_query' 		=> array(
+						'relation' 			=> 'AND',
 
-			$postsquery = new WP_Query( $args );
+						array(
+							'key'			=> 'end_date',
+							'compare'		=> '>=',
+							'value'			=> $date_now,
+							'type'			=> 'DATETIME'
+						)
+					),
+					'order'				=> 'ASC',
+					'orderby'			=> 'meta_value',
+					'meta_key'			=> 'end_date',
+					'meta_type'			=> 'DATETIME'
+				);
 
-			if ( $postsquery->have_posts() ) {
-				?>
-				<section id="upcoming-events">
-					<h2><?php _e('Upcoming Events & Exhibits', 'hamburger-cat'); ?></h2>
+				$postsquery = new WP_Query( $args );
 
-					<div class="posts-container" id="events-grid" data-equalizer="events-title" data-equalize-on="medium">
-						<div data-equalizer="events-location" data-equalize-on="medium">
+				if ( $postsquery->have_posts() ) {
+					?>
+					<section id="upcoming-events">
+						<h2><?php _e('Upcoming Events & Exhibits', 'hamburger-cat'); ?></h2>
+
+						<div class="posts-container" id="events-grid" data-equalizer="events-title" data-equalize-on="medium">
+							<div data-equalizer="events-location" data-equalize-on="medium">
 
 
-							<div class="grid-x small-up-1 medium-up-3 align-center">
-								<?php
-								while ( $postsquery->have_posts() ) {
-									$postsquery->the_post();
-									?>
-									<div class="cell">
-										<?php get_template_part( 'template-parts/front-page', get_post_type() ); ?>
-									</div>
+								<div class="grid-x small-up-1 medium-up-3 align-center">
 									<?php
-								}
-								?>
-							</div>
+									while ( $postsquery->have_posts() ) {
+										$postsquery->the_post();
+										?>
+										<div class="cell">
+											<?php get_template_part( 'template-parts/front-page', get_post_type() ); ?>
+										</div>
+										<?php
+									}
+									?>
+								</div>
 
+							</div>
 						</div>
-					</div>
-				</section>
-				<?php
-			}
+					</section>
+					<?php
+				}
 
-			wp_reset_postdata();
+				wp_reset_postdata();
 
-			/* Past Events - aka the archive */
-			?>
-
-			
-			<?php
-			if ( have_posts()) :
+				/* Past Events - aka the archive */
 				?>
-				<section id="past-events">
-					<h2><?php _e('Past Events and Exhibits', 'hamburger-cat'); ?></h2>
-					<div class="grid-x grid-padding-x small-up-1" id="archive-grid">
-						<?php
-						while ( have_posts() ) :
-							the_post();
-							?>
 
-							<div class="cell">
-								<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
-							</div>
-
-							<?php
-						endwhile;
-
-						$nav_type = get_field('archive_navigation_type', 'option');
-						if ($nav_type == 'infinite-scroll'):
-							echo '<span class="next-page" data-page="2"/>';
-						endif;
-						?>
-						<span class="next-page" data-page="2"/>
-					</div>
-
-					<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
-				</section>
+				
 				<?php
-			endif;
-			?>
+				if ( have_posts()) :
+					?>
+					<section id="past-events">
+						<h2><?php _e('Past Events and Exhibits', 'hamburger-cat'); ?></h2>
+						<div class="grid-x grid-padding-x small-up-1" id="archive-grid">
+							<?php
+							while ( have_posts() ) :
+								the_post();
+								?>
 
+								<div class="cell">
+									<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
+								</div>
+
+								<?php
+							endwhile;
+
+							$nav_type = get_field('archive_navigation_type', 'option');
+							if ($nav_type == 'infinite-scroll'):
+								echo '<span class="next-page" data-page="2"/>';
+							endif;
+							?>
+							<span class="next-page" data-page="2"/>
+						</div>
+
+						<?php get_template_part( 'template-parts/archive', 'nav' ); ?>
+					</section>
+					<?php
+				endif;
+				?>
+			</div>
 		</div>
 	</div>
 </main><!-- #main -->

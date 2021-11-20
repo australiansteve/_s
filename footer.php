@@ -14,7 +14,7 @@
 		<footer id="colophon" class="site-footer">
 			<div class="grid-container">
 				<div class="grid-x">
-					<div class="cell medium-3 text-center medium-text-left" id="footer-column-1">
+					<div class="cell medium-6 large-2 text-center medium-text-left small-order-2 large-order-1" id="footer-column-1">
 						<div id="social-menu">
 							<?php
 							if (has_nav_menu( 'social-menu' )):
@@ -30,7 +30,7 @@
 							?>
 						</div>
 					</div>
-					<div class="cell text-center medium-6" id="footer-column-2">
+					<div class="cell text-center large-8 small-order-1 large-order-2" id="footer-column-2">
 						<?php 
 						$image = get_field('footer_logo', 'options');
 						$size = 'footer-logo';
@@ -57,7 +57,7 @@
 
 						?>
 					</div>
-					<div class="cell medium-3 text-center medium-text-right" id="footer-column-3">
+					<div class="cell medium-6 large-2 text-center medium-text-right small-order-3" id="footer-column-3">
 						<div id="language-menu">
 							<?php
 							if (has_nav_menu( 'language-menu' )):
