@@ -75,6 +75,10 @@ body {
 		}
 	}
 
+	.hidden {
+		display: none !important;
+	}
+
 	figcaption {
 		text-align: right;
 		color: $teal;
@@ -90,7 +94,7 @@ a {
 	display: inline-block;
 }
 
-a.button,
+.button,
 a.wp-block-button__link {
 	background-color: $primary-color;
 	color: $white;
@@ -109,9 +113,9 @@ a.wp-block-button__link {
 	}
 }
 
-a.button:hover,
-a.button:focus,
-a.button:active,
+.button:hover,
+.button:focus,
+.button:active,
 a.wp-block-button__link:hover,
 a.wp-block-button__link:focus,
 a.wp-block-button__link:active {
@@ -120,7 +124,7 @@ a.wp-block-button__link:active {
 }
 
 
-a.button.reverse,
+.button.reverse,
 a.wp-block-button__link.reverse {
 	background-color: $moonshine;
 	color: $primary-color;
@@ -130,9 +134,9 @@ a.wp-block-button__link.reverse {
 	}
 }
 
-a.button.reverse:hover,
-a.button.reverse:focus,
-a.button.reverse:active,
+.button.reverse:hover,
+.button.reverse:focus,
+.button.reverse:active,
 a.wp-block-button__link.reverse:hover,
 a.wp-block-button__link.reverse:focus,
 a.wp-block-button__link.reverse:active {
@@ -292,7 +296,7 @@ h6 {
 		}
 	}
 
-	a.button,
+	.button,
 	a.wp-block-button__link {
 
 		span {

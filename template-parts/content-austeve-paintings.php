@@ -8,6 +8,7 @@
  */
 
 $caption = wp_get_attachment_caption(get_post_thumbnail_id());
+$contact_form_id = get_field('painting_inquiry_contact_form_id', 'options');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -61,6 +62,17 @@ $caption = wp_get_attachment_caption(get_post_thumbnail_id());
 
 				?>
 			</div>
+
+			<?php
+			if ($is_available) {
+				?>
+			<div class="purchase-inquiry">
+				<button data-open="purchase-inquiry-dialog" class="button"><?php _e('Contact to purchase', 'hamburger-cat');?></button>
+			</div>
+
+			<?php
+			}
+				?>
 		</div>
 	</div>
 	<footer class="entry-footer">
@@ -77,6 +89,16 @@ $caption = wp_get_attachment_caption(get_post_thumbnail_id());
 	<?php echo ($caption) ? "<figcaption class='caption'>".$caption."</figcaption>" : ""; ?>
 
 	<div>
+		<button class="close button" data-close aria-label="Close modal" type="button">
+			<?php _e('Close', 'hamburger-cat');?>
+		</button>
+	</div>
+</div>
+
+<div class="reveal text-left" id="purchase-inquiry-dialog" data-reveal>
+	<?php echo $contact_form_id ? do_shortcode('[ninja_forms id="'.$contact_form_id.'"]') : __('No painting_inquiry_contact_form_id saved') ; ?>
+
+	<div class="text-right">
 		<button class="close button" data-close aria-label="Close modal" type="button">
 			<?php _e('Close', 'hamburger-cat');?>
 		</button>

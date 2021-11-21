@@ -14,33 +14,39 @@
 		border-color: $turquoise !important;
 	}
 
-	.nf-form-content input[type="button"],
-	.nf-form-content input[type="submit"] {
-		background-color: $primary-color;
-		color: $white;
-		text-transform: uppercase;
-		font-weight: 400;
-		text-decoration: none;
-		margin: 0 0 1rem 0;
-		padding: 0.85em 1em;
-		font-size: 1em;
-		height: auto;
-
-		span {
-			display: block;
-			border: 1px solid $white;
-			margin: -8px -10px;
-			padding: 0.7rem;
-		}
-	}
-
 	.nf-form-content {
+
+		padding-left: 0;
+
+		input[type="button"],
+		input[type="submit"] {
+			background-color: $primary-color;
+			color: $white;
+			text-transform: uppercase;
+			font-weight: 400;
+			text-decoration: none;
+			margin: 0 0 1rem 0;
+			padding: 0.85em 1em;
+			font-size: 1em;
+			height: auto;
+
+			span {
+				display: block;
+				border: 1px solid $white;
+				margin: -8px -10px;
+				padding: 0.7rem;
+			}
+		}
 
 		input:not([type="button"]),
 		input:not([type="button"]):focus,
 		textarea,
 		textarea:focus {
 			color: $turquoise;
+		}
+
+		input[type="button"]:hover {
+			cursor: pointer;
 		}
 	}
 
