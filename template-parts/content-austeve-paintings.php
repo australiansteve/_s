@@ -8,6 +8,7 @@
  */
 
 $caption = wp_get_attachment_caption(get_post_thumbnail_id());
+$caption = $caption ? $caption : get_field('painting_copyright_text', 'options');
 $contact_form_id = get_field('painting_inquiry_contact_form_id', 'options');
 ?>
 

@@ -3,6 +3,11 @@
 $image_id = has_post_thumbnail() ? get_post_thumbnail_id() : get_field('default_placeholder_image', 'options');
 $thumbnail = wp_get_attachment_image_src( $image_id, 'archive-image')[0]; 
 $caption = wp_get_attachment_caption($image_id);
+$caption = wp_get_attachment_caption(get_post_thumbnail_id());
+
+if (get_post_type() == 'austeve-paintings') : 
+	$caption = $caption ? $caption : get_field('painting_copyright_text', 'options', true, true);
+endif;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

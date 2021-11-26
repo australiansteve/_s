@@ -14,6 +14,13 @@
 		<footer id="colophon" class="site-footer">
 			<div class="grid-container">
 				<div class="grid-x">
+					<div class="cell text-center">
+						<div class="copyright-message">
+							<?php the_field('footer_copyright_message', 'options'); ?>
+						</div>
+					</div>
+				</div>
+				<div class="grid-x">
 					<div class="cell medium-6 large-2 text-center medium-text-left small-order-2 large-order-1" id="footer-column-1">
 						<div id="social-menu">
 							<?php

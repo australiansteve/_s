@@ -37,6 +37,7 @@ body {
 	}
 
 	main {
+		min-height: calc(100vh - 350px);
 
 		.page-content {
 			margin: 3rem 0 2rem 0;
@@ -338,11 +339,6 @@ h6 {
 
 			.add-grid-container-padding-right {
 				padding-right: 120px;
-			}
-
-			.text-container {
-				max-width: 1530px;
-				margin: auto;
 			}
 		}
 	}

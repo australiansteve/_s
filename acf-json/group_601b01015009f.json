@@ -89,6 +89,25 @@
             "step": ""
         },
         {
+            "key": "field_619f83bff1dca",
+            "label": "Painting Copyright Text",
+            "name": "painting_copyright_text",
+            "type": "textarea",
+            "instructions": "Displayed under each image on the Paintings page, and on individual painting pages",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
             "key": "field_60772c198fa3b",
             "label": "Custom Javascript",
             "name": "",
@@ -224,5 +243,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1637456423
+    "modified": 1637844229
 }

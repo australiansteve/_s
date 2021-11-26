@@ -47,6 +47,7 @@
 
 	main .page-content {
 		margin-top: 0;
+		margin-bottom: 2rem;
 	}
 
 	#section-1 {
@@ -255,6 +256,18 @@
 		}
 	}
 
+
+	body.home,
+	body.page-template-contact-page {
+
+		main {
+
+			.page-content {
+				margin-bottom: 2rem;
+			}
+		}
+	}
+
 }
 
 
@@ -343,6 +356,13 @@
 		#section-2 {
 
 			#section-2-right {
+				height: calc(1920px * 0.4166 * 1.13); /* 925 / 820 = 1.13 */
+			}
+		}
+
+		#section-5 {
+
+			#section-5-left {
 				height: calc(1920px * 0.4166 * 1.13); /* 925 / 820 = 1.13 */
 			}
 		}
