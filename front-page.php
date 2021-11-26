@@ -112,19 +112,74 @@ get_header();
 						<h2 class="section-title"><?php echo $section_4_title; ?></h2>
 						<div class="posts-container" id="events-grid" data-equalizer="events-title" data-equalize-on="medium">
 							<div data-equalizer="events-location" data-equalize-on="medium">
+
+									<div class="grid-x small-up-1 medium-up-3 align-center">
 								<?php
+								/* Upcoming Events first */
+								$date_now = date('Y-m-d H:i:s');
+
 								$args = array(
 									'post_type'              => array( 'austeve-events' ),
 									'post_status'            => array( 'publish' ),
 									'posts_per_page'         => '3',
+									'meta_query' 		=> array(
+										'relation' 			=> 'AND',
+
+										array(
+											'key'			=> 'end_date',
+											'compare'		=> '>=',
+											'value'			=> $date_now,
+											'type'			=> 'DATETIME'
+										)
+									),
+									'order'				=> 'ASC',
+									'orderby'			=> 'meta_value',
+									'meta_key'			=> 'end_date',
+									'meta_type'			=> 'DATETIME'
 								);
+
+								$event_count = 0;
 
 								$postsquery = new WP_Query( $args );
 
 								if ( $postsquery->have_posts() ) {
-									?>
-									<div class="grid-x small-up-1 medium-up-3 align-center">
+									while ( $postsquery->have_posts() ) {
+										$postsquery->the_post();
+										?>
+										<div class="cell">
+											<?php get_template_part( 'template-parts/front-page', get_post_type() ); ?>
+										</div>
 										<?php
+										$event_count++;
+									}
+								}
+
+								if ($event_count < 3) {
+									wp_reset_postdata();
+									
+									$args = array(
+										'post_type'              => array( 'austeve-events' ),
+										'post_status'            => array( 'publish' ),
+										'posts_per_page'         => 3 - $event_count,
+										'meta_query' 		=> array(
+											'relation' 			=> 'AND',
+
+											array(
+												'key'			=> 'end_date',
+												'compare'		=> '<',
+												'value'			=> $date_now,
+												'type'			=> 'DATETIME'
+											)
+										),
+										'order'				=> 'DESC',
+										'orderby'			=> 'meta_value',
+										'meta_key'			=> 'end_date',
+										'meta_type'			=> 'DATETIME'
+									);
+
+									$postsquery = new WP_Query( $args );
+
+									if ( $postsquery->have_posts() ) {
 										while ( $postsquery->have_posts() ) {
 											$postsquery->the_post();
 											?>
@@ -132,15 +187,15 @@ get_header();
 												<?php get_template_part( 'template-parts/front-page', get_post_type() ); ?>
 											</div>
 											<?php
+											$event_count++;
 										}
-										?>
-									</div>
-									<?php
+									}
 								}
 
 								wp_reset_postdata();
 
 								?>
+								</div>
 							</div>
 						</div>
 						<a class="button" href="<?php echo $section_4_button_link; ?>"><?php echo $section_4_button_text; ?></a>
