@@ -46,41 +46,46 @@ get_header();
 						<section id="section-1">
 							<h2 class="section-title"><?php the_field('section_1_title');?></h2>
 							<?php the_field('section_1_text');?>
-							<?php
-							$buttonId = 'section_1_button_1';
-							$buttonText = get_field($buttonId.'_text');
-							$buttonUrl = get_field($buttonId.'_url');
-							$buttonInNewTab = get_field($buttonId.'_new_tab');
-							if($buttonText && $buttonUrl):
-								?>
-								<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+							<div class="button-container">
 								<?php
-							endif;
-							
-							$buttonId = 'section_1_button_2';
-							$buttonText = get_field($buttonId.'_text');
-							$buttonUrl = get_field($buttonId.'_url');
-							$buttonInNewTab = get_field($buttonId.'_new_tab');
-							if($buttonText && $buttonUrl):
+								$buttonId = 'section_1_button_1';
+								$buttonText = get_field($buttonId.'_text');
+								$buttonUrl = get_field($buttonId.'_url');
+								$buttonInNewTab = get_field($buttonId.'_new_tab');
+								if($buttonText && $buttonUrl):
+									?>
+									<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+									<?php
+								endif;
 								?>
-								<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
-								<?php
-							endif;
-
-							$buttonId = 'section_1_button_3';
-							$buttonText = get_field($buttonId.'_text');
-							$buttonUrl = get_field($buttonId.'_url');
-							$buttonInNewTab = get_field($buttonId.'_new_tab');
-							if($buttonText && $buttonUrl):
-								?>
-								<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
-								<?php
-							endif;
-							?>
+							</div>
 						</section>
 						<section id="section-2">
 							<h2 class="section-title"><?php the_field('section_2_title');?></h2>
 							<?php the_field('section_2_text');?>
+							<div class="button-container">
+								<?php
+								$buttonId = 'section_1_button_2';
+								$buttonText = get_field($buttonId.'_text');
+								$buttonUrl = get_field($buttonId.'_url');
+								$buttonInNewTab = get_field($buttonId.'_new_tab');
+								if($buttonText && $buttonUrl):
+									?>
+									<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+									<?php
+								endif;
+
+								$buttonId = 'section_1_button_3';
+								$buttonText = get_field($buttonId.'_text');
+								$buttonUrl = get_field($buttonId.'_url');
+								$buttonInNewTab = get_field($buttonId.'_new_tab');
+								if($buttonText && $buttonUrl):
+									?>
+									<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+									<?php
+								endif;
+								?>
+							</div>
 						</section>
 
 					</div>
