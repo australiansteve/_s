@@ -29,6 +29,12 @@
 			height: auto;
 		}
 
+		input[type="button"]:hover,
+		input[type="submit"]:hover {
+			background-color: scale-color($button-background, $lightness: -15%);
+			color: $button-color;
+		}
+
 		input:not([type="button"]),
 		input:not([type="button"]):focus,
 		textarea,
