@@ -7,5 +7,13 @@
  * @package Hamburger_Cat
  */
 
+if (has_category('testimonials')) :
+    ?>
+    <div class="excerpt"><?php the_content();?></div>
+    <?php
+else:
+    ?>
+    <div class="excerpt"><?php the_excerpt();?></div>
+    <?php
+endif;
 ?>
-<div class="excerpt"><?php the_excerpt();?></div>

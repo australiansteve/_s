@@ -43,6 +43,31 @@
             "mime_types": ""
         },
         {
+            "key": "field_61958ec2cdb1b",
+            "label": "Archive Navigation Type",
+            "name": "archive_navigation_type",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "paged": "Paged",
+                "infinite-scroll": "Infinite Scroll"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_6167746927080",
             "label": "Artwork Archive Hero Image",
             "name": "artwork_archive_hero_image",
@@ -67,11 +92,11 @@
             "mime_types": ""
         },
         {
-            "key": "field_61958ec2cdb1b",
-            "label": "Archive Navigation Type",
-            "name": "archive_navigation_type",
-            "type": "select",
-            "instructions": "",
+            "key": "field_61b00f68e3d5b",
+            "label": "Testimonials Archive Hero Image",
+            "name": "testimonials_archive_hero_image",
+            "type": "image",
+            "instructions": "Hero Image displayed on the Testimonials page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -79,17 +104,16 @@
                 "class": "",
                 "id": ""
             },
-             "choices": {
-                "paged": "Paged",
-                "infinite-scroll": "Infinite Scroll"
-            },
-            "default_value": false,
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_60772c198fa3b",
@@ -227,5 +251,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1637191670
+    "modified": 1638928296
 }

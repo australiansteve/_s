@@ -56,9 +56,18 @@ get_header();
 								<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
 								<?php
 							endif;
-							?>
-							<?php
+							
 							$buttonId = 'section_1_button_2';
+							$buttonText = get_field($buttonId.'_text');
+							$buttonUrl = get_field($buttonId.'_url');
+							$buttonInNewTab = get_field($buttonId.'_new_tab');
+							if($buttonText && $buttonUrl):
+								?>
+								<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+								<?php
+							endif;
+
+							$buttonId = 'section_1_button_3';
 							$buttonText = get_field($buttonId.'_text');
 							$buttonUrl = get_field($buttonId.'_url');
 							$buttonInNewTab = get_field($buttonId.'_new_tab');

@@ -211,6 +211,63 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_619aa69b781f2",
+            "label": "Button 3 Text",
+            "name": "section_1_button_3_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_619aa6a7781f3",
+            "label": "Button 3 Url",
+            "name": "section_1_button_3_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_619aa6b3781f4",
+            "label": "Button 3 Open in New Tab",
+            "name": "section_1_button_3_new_tab",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_6153684bab21c",
             "label": "Section 2",
             "name": "",
@@ -282,5 +339,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1632856839
+    "modified": 1637525195
 }

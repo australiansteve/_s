@@ -8,8 +8,11 @@ $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-i
 		<div class="container bling">
 			<img src='<?php echo $thumbnail; ?>' />
 		</div>
-		<h3 class="post-title" data-equalizer-watch="home-post-title"><?php the_title();?></h3>
-
-		<a class="button" href="<?php echo the_permalink();?>"><?php _e('Read More', 'hamburger-cat'); ?></a>
-		
+		<div class="quote-container">
+			<div class="quote" data-equalizer-watch="quote-text">
+				<?php the_excerpt();?>
+			</div>
+			<div class="attributed-to text-right">- <?php the_title();?></div>
+		</div>
+				
 </article><!-- #post-<?php the_ID(); ?> -->

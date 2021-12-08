@@ -72,6 +72,18 @@ button {
 	text-transform: uppercase;
 }
 
+.aqua-background {
+	background-color: $aqua;
+	color: $white;
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		color: $white;
+	}
+}
+
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 

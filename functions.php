@@ -109,7 +109,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'full-page-background', 1920, 1080, true);
 		add_image_size( 'hero-image', 1920, 775, true);
 		add_image_size( 'archive-image', 815, 475, true);
-		add_image_size( 'archive-image-square', 450, 450, true);
+		add_image_size( 'archive-image-square', 550, 550, true);
 		add_image_size( 'header-logo', 660, 214, false);
 		add_image_size( 'artwork-image', 770, 625, true);
 		add_image_size( 'artwork-image-large', 1000, 770, true);
@@ -236,6 +236,24 @@ function austeve_custom_js_in_head() {
 }
 add_action('wp_head','austeve_custom_js_in_head', 50);
 
+function filter_testimonials($query) {
+	//error_log("pre_get_posts': ".print_r($query, true));
+	if ( is_home() && $query->is_main_query() && !is_admin() ) {
+		error_log('filter_testimonials');
+		$tax_query = array(
+			array(
+				'taxonomy'         => 'category',
+				'terms'            => 'testimonials',
+				'field'            => 'slug',
+				'operator'         => 'NOT IN',
+			)
+		);
+
+		$query->set( 'tax_query', $tax_query);
+
+	}
+}
+add_action ('pre_get_posts', 'filter_testimonials', 20);
 
 add_filter( 'get_the_archive_title', function ($title) {
 	if ( is_post_type_archive() ) {
@@ -277,7 +295,8 @@ function get_more_archive() {
 	$page = $_REQUEST['page'];
 
 	if (wp_verify_nonce( $nonce, 'get-more')) {
-		//error_log("Get page ".$page. " of ".$post_type);
+		error_log("Get page ".$page. " of ".$post_type);
+		error_log("Get term_id ".$term_id. " of ".$post_type);
 
 		$args = array(
 			'post_type'		=> array( $post_type ),
