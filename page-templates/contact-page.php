@@ -18,15 +18,18 @@ get_header();
 
 		get_template_part( 'template-parts/hero-image', get_post_type() );
 		?>
+		<div class="page-content">
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<div class="grid-container">
 
-		<div class="grid-container">
-			<div class="page-content">
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<?php the_title('<h1 class="page-title">', '</h1>');?>  
+					<div class="grid-x">
+						<div class="cell medium-6 aqua-background">
+							<?php the_title('<h1 class="page-title">', '</h1>');?>  
+						</div>
+					</div>
 
 					<div class="grid-x grid-margin-x">
-						<div class="cell medium-6">
+						<div class="cell medium-6 aqua-background">
 							<?php
 							$ninja_form_id = get_field('ninja_form_id');
 							if($ninja_form_id) :
@@ -41,9 +44,8 @@ get_header();
 						</div>
 					</div>
 
-				</article><!-- #post-<?php the_ID(); ?> -->
-
-			</div>
+				</div>
+			</article><!-- #post-<?php the_ID(); ?> -->
 		</div>
 
 		<?php
