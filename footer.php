@@ -17,7 +17,7 @@
 					<div class="cell text-center">
 						<?php 
 						$image = get_field('footer_logo', 'options');
-						$size = 'full';
+						$size = 'footer-logo';
 						
 						if( $image ) {
 							?>

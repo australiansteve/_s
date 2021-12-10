@@ -5,7 +5,7 @@ header#masthead {
 	padding-bottom: 1rem;
 
 	img.size-header-logo {
-		max-width: 195px;
+		max-width: 60%;
 	}
 
 }
@@ -21,7 +21,11 @@ header#masthead {
 	header#masthead {
 
 		nav#site-navigation {
-			margin-top: 1.6rem;
+			margin-top: 0;
+		}
+
+		img.size-header-logo {
+			max-width: 195px;
 		}
 	}
 
@@ -52,6 +56,12 @@ header#masthead {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	header#masthead {
+
+		nav#site-navigation {
+			margin-top: 1rem;
+		}
+	}
 }
 
 /* Large only */
@@ -64,6 +74,14 @@ header#masthead {
 
 	header#masthead {
 		padding-top: 1.5rem;
+
+		nav#site-navigation {
+			margin-top: 1.6rem;
+		}
+
+		img.size-header-logo {
+			max-width: 315px;
+		}
 	}
 }
 

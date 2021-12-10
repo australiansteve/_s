@@ -111,6 +111,7 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'archive-image', 815, 475, true);
 		add_image_size( 'archive-image-square', 550, 550, true);
 		add_image_size( 'header-logo', 660, 214, false);
+		add_image_size( 'footer-logo', 334, 222, true);
 		add_image_size( 'artwork-image', 770, 625, true);
 		add_image_size( 'artwork-image-large', 1000, 770, true);
 		add_image_size( 'artwork-image-small', 385, 300, true);

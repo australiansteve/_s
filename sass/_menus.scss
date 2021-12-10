@@ -1,6 +1,8 @@
 nav {
 
 	.accordion-menu {
+		font-size: 1.15em;
+		margin-top: 0.5rem;
 
 		.fas.fa-bars,
 		.fas.fa-caret-up {
@@ -145,6 +147,21 @@ nav {
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
+	#primary-menu {
+
+		a {
+			margin-top: 0;
+			padding: 0 0.3rem 0.7rem 0.3rem;
+		}
+
+		li:nth-last-of-type(1) {
+
+			a {
+				padding-right: 0;
+			}
+		}
+	}
+
 	#social-menu {
 
 		a {
@@ -153,6 +170,10 @@ nav {
 
 		li:nth-of-type(1) a {
 			padding-left: 1rem;
+		}
+
+		li:nth-last-of-type(1) a {
+			padding-right: 0;
 		}
 	}
 
@@ -185,6 +206,16 @@ nav {
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	#menus {
+		font-size: 1.25em;
+
+		#primary-menu {
+
+			a {
+				padding: 0.7rem;
+			}
+		}
+	}
 }
 
 /* Large only */
@@ -194,6 +225,10 @@ nav {
 
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
+
+	#menus {
+		font-size: 1.5em;
+	}
 
 	.off-canvas {
 
@@ -221,6 +256,10 @@ nav {
 
 /* XXLarge and up (>1920px) */
 @media screen and (min-width: 120em) {
+
+	#menus {
+		font-size: 1.75em;
+	}
 
 	.off-canvas {
 
