@@ -98,41 +98,53 @@ get_header();
 				<div class="grid-container">
 					<div class="text-center"  data-equalizer="quote-text">
 						<h2 class="section-title"><?php the_field('section_4_title'); ?></h2>
-						<div class="grid-x grid-margin-x align-center small-up-1 medium-up-3" data-equalizer="home-post-title">
+						<div class="posts-container">
+							<div class="grid-x grid-margin-x align-center small-up-1 medium-up-3" data-equalizer="home-post-title">
 
-							<?php
-							$args = array(
-								'post_type'              => array( 'post' ),
-								'post_status'            => array( 'publish' ),
-								'posts_per_page'         => '3',
-								'tax_query' 			=> array(
-									array(
-										'taxonomy'         => 'category',
-										'terms'            => 'testimonials',
-										'field'            => 'slug',
-										'operator'         => 'IN',
-									)
-								),
-							);
+								<?php
+								$args = array(
+									'post_type'              => array( 'post' ),
+									'post_status'            => array( 'publish' ),
+									'posts_per_page'         => '3',
+									'tax_query' 			=> array(
+										array(
+											'taxonomy'         => 'category',
+											'terms'            => 'testimonials',
+											'field'            => 'slug',
+											'operator'         => 'IN',
+										)
+									),
+								);
 
-							$postsquery = new WP_Query( $args );
+								$postsquery = new WP_Query( $args );
 
-							if ( $postsquery->have_posts() ) {
-								while ( $postsquery->have_posts() ) {
-									$postsquery->the_post();
-									?>
-									<div class="cell">
-										<?php 
-										get_template_part( 'template-parts/front-page-testimonial', get_post_type() );
+								if ( $postsquery->have_posts() ) {
+									while ( $postsquery->have_posts() ) {
+										$postsquery->the_post();
 										?>
-									</div>
-									<?php
+										<div class="cell">
+											<?php 
+											get_template_part( 'template-parts/front-page-testimonial', get_post_type() );
+											?>
+										</div>
+										<?php
+									}
 								}
-							}
 
-							wp_reset_postdata();
-							?>
+								wp_reset_postdata();
+								?>
+							</div>
 						</div>
+						<?php 
+						$section_4_button_text = get_field('section_4_button_text'); 
+						$section_4_button_url = get_field('section_4_button_url'); 
+
+						if ($section_4_button_text && $section_4_button_url) :
+							?>
+							<a class="button" href="<?php echo $section_4_button_url;?>"><?php echo $section_4_button_text;?></a>
+							<?php
+						endif;
+						?>
 					</div>
 				</div>
 			</section>

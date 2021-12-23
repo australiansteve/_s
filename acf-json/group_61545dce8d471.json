@@ -310,6 +310,44 @@
             "step": ""
         },
         {
+            "key": "field_61c46bbf3f8b2",
+            "label": "Button Text",
+            "name": "section_4_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61c46bcb3f8b3",
+            "label": "Button Url",
+            "name": "section_4_button_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_61545e07d8012",
             "label": "Section 5 - Contact",
             "name": "",
@@ -402,5 +440,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1634252943
+    "modified": 1640262624
 }

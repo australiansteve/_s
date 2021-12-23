@@ -44,7 +44,7 @@
         },
         {
             "key": "field_615367b6ab214",
-            "label": "Section 1 - Artist Statement",
+            "label": "Biography",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -57,6 +57,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_61c46ee2b5ca2",
+            "label": "Display Section",
+            "name": "section_1_display_section",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_615367f2ab216",
@@ -155,7 +174,7 @@
         },
         {
             "key": "field_6153684bab21c",
-            "label": "Section 2",
+            "label": "Artist Statement",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -168,6 +187,25 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_61c46f27b5ca3",
+            "label": "Display Section",
+            "name": "section_2_display_section",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_6153685fab21d",
@@ -339,5 +377,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1639004541
+    "modified": 1640263508
 }
