@@ -42,52 +42,57 @@ get_header();
 						</div>
 					</div>
 					
-					<div class="entry-content">
-						<section id="section-1">
-							<h2 class="section-title"><?php the_field('section_1_title');?></h2>
-							<?php the_field('section_1_text');?>
-							<div class="button-container">
-								<?php
-								$buttonId = 'section_1_button_1';
-								$buttonText = get_field($buttonId.'_text');
-								$buttonUrl = get_field($buttonId.'_url');
-								$buttonInNewTab = get_field($buttonId.'_new_tab');
-								if($buttonText && $buttonUrl):
-									?>
-									<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
-									<?php
-								endif;
-								?>
-							</div>
-						</section>
-						<section id="section-2">
-							<h2 class="section-title"><?php the_field('section_2_title');?></h2>
-							<?php the_field('section_2_text');?>
-							<div class="button-container">
-								<?php
-								$buttonId = 'section_1_button_2';
-								$buttonText = get_field($buttonId.'_text');
-								$buttonUrl = get_field($buttonId.'_url');
-								$buttonInNewTab = get_field($buttonId.'_new_tab');
-								if($buttonText && $buttonUrl):
-									?>
-									<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
-									<?php
-								endif;
 
-								$buttonId = 'section_1_button_3';
-								$buttonText = get_field($buttonId.'_text');
-								$buttonUrl = get_field($buttonId.'_url');
-								$buttonInNewTab = get_field($buttonId.'_new_tab');
-								if($buttonText && $buttonUrl):
-									?>
-									<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
-									<?php
-								endif;
-								?>
-							</div>
-						</section>
+					<div class="grid-x">
+						<div class="medium-10 large-9 xlarge-8">
+							<div class="entry-content">
+								<section id="section-1">
+									<h2 class="section-title"><?php the_field('section_1_title');?></h2>
+									<?php the_field('section_1_text');?>
+									<div class="button-container">
+										<?php
+										$buttonId = 'section_1_button_1';
+										$buttonText = get_field($buttonId.'_text');
+										$buttonUrl = get_field($buttonId.'_url');
+										$buttonInNewTab = get_field($buttonId.'_new_tab');
+										if($buttonText && $buttonUrl):
+											?>
+											<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+											<?php
+										endif;
+										?>
+									</div>
+								</section>
+								<section id="section-2">
+									<h2 class="section-title"><?php the_field('section_2_title');?></h2>
+									<?php the_field('section_2_text');?>
+									<div class="button-container">
+										<?php
+										$buttonId = 'section_1_button_2';
+										$buttonText = get_field($buttonId.'_text');
+										$buttonUrl = get_field($buttonId.'_url');
+										$buttonInNewTab = get_field($buttonId.'_new_tab');
+										if($buttonText && $buttonUrl):
+											?>
+											<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+											<?php
+										endif;
 
+										$buttonId = 'section_1_button_3';
+										$buttonText = get_field($buttonId.'_text');
+										$buttonUrl = get_field($buttonId.'_url');
+										$buttonInNewTab = get_field($buttonId.'_new_tab');
+										if($buttonText && $buttonUrl):
+											?>
+											<a class="button" href="<?php echo $buttonUrl;?>" target="<?php echo $buttonInNewTab ? '_blank' : '';?>"><?php echo $buttonText;?></a>
+											<?php
+										endif;
+										?>
+									</div>
+								</section>
+
+							</div>
+						</div>
 					</div>
 
 				</article><!-- #post-<?php the_ID(); ?> -->
@@ -98,10 +103,13 @@ get_header();
 		</div>
 
 		<?php
-		endwhile; // End of the loop.
-		?>
+	endwhile;
+	?>
 
-	</main><!-- #main -->
+	<div class="yarn-bling yarn-bling-1"></div>
+	<div class="yarn-bling yarn-bling-2"></div>
 
-	<?php
-	get_footer();
+</main><!-- #main -->
+
+<?php
+get_footer();

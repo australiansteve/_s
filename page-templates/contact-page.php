@@ -49,10 +49,13 @@ get_header();
 		</div>
 
 		<?php
-		endwhile; // End of the loop.
-		?>
+	endwhile; 
+	?>
 
-	</main><!-- #main -->
+	<div class="yarn-bling yarn-bling-4"></div>
+	<div class="yarn-bling yarn-bling-5"></div>
 
-	<?php
-	get_footer();
+</main><!-- #main -->
+
+<?php
+get_footer();

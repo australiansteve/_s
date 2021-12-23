@@ -34,6 +34,10 @@ get_header();
 						</div>
 					</div>
 				</div>
+				
+				<div class="yarn-bling yarn-bling-1"></div>
+				<div class="yarn-bling yarn-bling-2"></div>
+				
 			</section>
 
 			<section id="section-3">
@@ -85,6 +89,9 @@ get_header();
 						?>
 					</div>
 				</div>
+
+				<div class="yarn-bling yarn-bling-3"></div>
+
 			</section>
 
 			<section id="section-4">
@@ -153,16 +160,20 @@ get_header();
 						</div>
 					</div>
 				</div>
+
+				<div class="yarn-bling yarn-bling-4"></div>
+				<div class="yarn-bling yarn-bling-5"></div>
+
 			</section>
 
 		</div>
 
 		<?php
-		endwhile; // End of the loop.
-		?>
+	endwhile; 
+	?>
 
-	</main><!-- #main -->
-	<?php
+</main><!-- #main -->
+<?php
 
-	get_footer();
+get_footer();
 ?>
