@@ -84,6 +84,8 @@
 													'items_wrap' => '%3$s'
 												)
 											);
+
+											if ( has_nav_menu( 'social-menu' ) ) :
 											?>
 											<div class="social-wrapper">
 												<?php
@@ -96,6 +98,9 @@
 												);
 												?>
 											</div>
+											<?php
+											endif;
+											?>
 										</ul>
 									</div>
 								</div>

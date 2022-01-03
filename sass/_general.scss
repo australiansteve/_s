@@ -36,6 +36,23 @@ body {
 		min-height: 100vh;
 	}
 
+	.iframe-container {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		padding-top: 56.25%;
+
+		iframe.responsive {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	main {
 
 		.page-content {
@@ -92,6 +109,7 @@ body {
 		}
 
 	}
+
 }
 
 h1,
@@ -125,6 +143,16 @@ a.read-more {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	body {
+
+		.reveal {
+			height: auto;
+			top: 1rem;
+			left: 1rem;
+			right: 1rem;
+			width: calc(100vw - 2rem);
+		}
+	}
 }
 
 /* Medium and up (640px) */
@@ -146,6 +174,10 @@ a.read-more {
 				margin-top: 2rem;
 			}
 
+		}
+
+		.reveal {
+			width: 98%;
 		}
 	}
 }
