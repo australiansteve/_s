@@ -19,14 +19,10 @@ endif;
 		<?php echo the_post_thumbnail('archive-image'); ?>
 		<div class="overlay"></div>
 		<i class="fas fa-play"></i>
-
 	</a>
 	<?php endif; ?>
 
 	<div class="date"><?php echo get_the_date('j M Y'); ?></div>
-	<h3 class="page-title"><?php the_title();?></h3>
-	<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
-	
-	<a class="read-more" href="<?php the_permalink(); ?>"><?php the_field('read_more_text', 'option'); ?></a>
-		
+	<h3 class="page-title"><a class="read-more" href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+			
 </article><!-- #post-<?php the_ID(); ?> -->

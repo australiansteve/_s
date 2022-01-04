@@ -9,7 +9,7 @@ get_header();
 	while ( have_posts() ) :
 		the_post();
 
-		get_template_part( 'template-parts/hero-image', get_post_type() );
+		get_template_part( 'template-parts/hero-image-front-page', get_post_type() );
 		?>
 
 		<div class="page-content">
@@ -22,23 +22,21 @@ get_header();
 
 
 		<?php
-		$date = new DateTime();
-		$date->sub(new DateInterval('P30D'));
-		error_log($date->format('Y-m-d'));
+
+		$tax_query = array(
+			array(
+				'taxonomy'         => 'category',
+				'terms'            => 'featured',
+				'field'            => 'slug',
+				'operator'         => 'IN',
+			),
+		);
 
 		// WP_Query arguments
 		$args = array(
-			'post_type'              => array( 'post' ),
-			'post_status'            => array( 'publish' ),
-			'date_query'             => array(
-				array(
-					'after' => array(
-						'year'  => $date->format('Y') ,
-						'month' => $date->format('m') ,
-						'day'   => $date->format('d') ,
-					),
-				),
-			),
+			'post_type'				=> array( 'post' ),
+			'post_status'			=> array( 'publish' ),
+			'tax_query'				=> $tax_query,
 		);
 
 		// The Query
@@ -46,40 +44,43 @@ get_header();
 
 		// The Loop
 		if ( $query->have_posts() ) {
+			$postCount = 1;
 			?>
 
-			<div id="news-ticker" class="marquee">
-				<div class="container">
+			<div class="grid-container">
+				<div id="featured-posts">
 					<?php
 					while ( $query->have_posts() ) {
 						$query->the_post();
 						?>
-						<span class="ticker-container">
-							<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_the_date('j M Y'); ?>: <?php echo get_the_excerpt(); ?> <?php the_field('read_more_text', 'option'); ?></a>
-						</span>
+						<?php get_template_part( 'template-parts/front-page', get_post_type(), array( 
+							'post_count' => $postCount++) ); ?>
 						<?php
 					}
 					?>
 				</div>
-			</div>
-			<div class="all-news-link">
-				<div class="grid-container">
-					<div class="entry-content">
-						<h3><a href="<?php the_permalink(get_option('page_for_posts')); ?>"><?php the_field('home_page_all_news_link_text', 'option'); ?></a></h3>
+
+				<div class="grid-x">
+					<div class="cell text-center">
+						<div class="entry-content all-posts-link">
+							<h3><a href="<?php the_permalink(get_option('page_for_posts')); ?>"><?php the_field('home_page_all_news_link_text', 'option'); ?></a></h3>
+						</div>
 					</div>
 				</div>
 			</div>
-			
+			<
 			<?php
 		} 
 		// Restore original Post Data
 		wp_reset_postdata();
 
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-	<?php
-
-	get_footer();
+	endwhile;
 	?>
+
+</main><!-- #main -->
+<?php  get_template_part( 'template-parts/reveal-video-modal', get_post_type() ); ?>
+
+<?php
+
+get_footer();
+?>

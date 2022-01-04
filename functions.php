@@ -317,7 +317,7 @@ add_filter ( 'pre_get_posts', function($query) {
 });
 
 function austeve_add_post_video_class($class){
-    if( is_home() ){
+    if( is_home() || is_front_page()){
     	if (get_field('video_id') && has_post_thumbnail())
         	$class[] = "has-video"; // in home page
     }

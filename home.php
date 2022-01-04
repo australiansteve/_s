@@ -44,24 +44,7 @@ get_header();
 
 </main><!-- #main -->
 
-<div class="reveal" id="video-modal" data-reveal>
-	<div class="iframe-container">
-	</div>
-	<div class="actions text-center">
-		<a href="" class="read-more-button button"><?php the_field('read_more_text', 'options')?></a>
-	</div>
-	<button class="close-button" data-close aria-label="Close modal" type="button">
-		<span aria-hidden="true">&times;</span>
-	</button>
-</div>
+<?php  get_template_part( 'template-parts/reveal-video-modal', get_post_type() ); ?>
 
-<script type="text/javascript">
-	function showVideo(el) {
-		html = jQuery(el).data('video-html');
-		console.log("Show this: " + html);
-		jQuery("#video-modal .iframe-container").html(html);
-		jQuery("#video-modal .read-more-button").attr("href", jQuery(el).data('post-link'));
-	}
-	</script>
 <?php
 get_footer();
