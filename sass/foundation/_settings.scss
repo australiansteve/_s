@@ -82,7 +82,7 @@ $foundation-palette: (
 );
 $body-background: $white;
 $body-font-color: $dark-gray;
-$body-font-family: "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+$body-font-family: "Helvetica", helvetica, roboto, arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -141,7 +141,7 @@ $block-grid-max: 8;
 // ------------------
 
 $header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: consolas, "Liberation Mono", courier, monospace;
 $header-color: $black;
@@ -191,7 +191,7 @@ $enable-code-inline: true;
 $anchor-color: $primary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
-$anchor-text-decoration-hover: none;
+$anchor-text-decoration-hover: underline;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;
 $hr-margin: rem-calc(20) auto;
