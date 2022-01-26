@@ -81,6 +81,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_61f098121e13a",
+            "label": "Back To Sessions Text",
+            "name": "back_to_sessions_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Back to all Sessions",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_609a943514ed4",
             "label": "Home Page All News Link Text",
             "name": "home_page_all_news_link_text",
@@ -236,5 +255,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1641138180
+    "modified": 1643157546
 }

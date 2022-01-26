@@ -53,6 +53,12 @@ body {
 		}
 	}
 
+
+	.iframe-container.season2-playlist {
+		padding-top: 1136px;
+
+	}
+
 	main {
 
 		.page-content {
@@ -66,14 +72,18 @@ body {
 			h3 {
 				margin-top: 0.5rem;
 				margin-bottom: 0.25rem;
+
+				a {
+					text-decoration: none;
+				}
 			}
 
-			a:not(.wp-block-button__link) {
+			a:not(.wp-block-button__link):not(.button) {
 				text-decoration: underline;
 				color: $dark-gray;
 			}
 
-			a:hover {
+			a:not(.wp-block-button__link):not(.button):hover {
 				color: scale-color($dark-gray, $lightness: -14%);
 			}
 
@@ -84,8 +94,14 @@ body {
 			h5,
 			h6 {
 
-				a:not(.wp-block-button__link) {
+				a:not(.wp-block-button__link):not(.button) {
+					text-decoration: none;
 					color: inherit;
+				}
+
+				a:not(.wp-block-button__link):not(.button):hover {
+					color: $black;
+					text-decoration: underline;
 				}
 			}
 
@@ -112,25 +128,16 @@ body {
 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: Abolition, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
-	font-weight: 400;
-
-	a {
-		color: inherit;
-	}
+#video-modal .read-more-button {
+	margin-top: 1rem;
+	margin-bottom: 0;
 }
 
 a {
 	display: inline-block;
 }
 
-a.read-more:hover {
+a.read-more:not(.button):hover {
 	text-decoration: underline;
 }
 
@@ -138,6 +145,10 @@ a.read-more:hover {
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 500ms linear;
+}
+
+:focus-visible {
+	outline-color: $medium-gray;
 }
 
 /* Small only */

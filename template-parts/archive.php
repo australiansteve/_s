@@ -10,19 +10,37 @@ if ($videoId) :
 		$videoHtml = "<iframe class='responsive' src='https://www.youtube.com/embed/".$videoId."?autoplay=1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope' allowfullscreen></iframe>";
 	endif;
 endif;
+
+$column_1_class = $args['post_count'] % 2 == 0 ? 'medium-order-2' : 'medium-order-1';
+$column_2_class = $args['post_count'] % 2 == 0 ? 'medium-order-1' : 'medium-order-2';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if (get_field('video_id') && has_post_thumbnail()) : ?>
-	<a class="watch-now" data-open="video-modal" data-video-html="<?php echo htmlentities($videoHtml, ENT_QUOTES);?>" onclick="showVideo(this)" data-post-link="<?php echo get_the_permalink(); ?>">
-		<?php echo the_post_thumbnail('archive-image'); ?>
-		<div class="overlay"></div>
-		<i class="fas fa-play"></i>
-	</a>
-	<?php endif; ?>
+	<div class="grid-x" data-equalizer="featured-post-<?php echo get_the_ID();?>">
+		<div class="medium-6 <?php echo $column_1_class;?>">
+			<?php if (get_field('video_id') && has_post_thumbnail()) : ?>
+				<a class="watch-now" data-open="video-modal" data-video-html="<?php echo htmlentities($videoHtml, ENT_QUOTES);?>" data-post-link="<?php echo get_the_permalink(); ?>"  data-equalizer-watch="featured-post-<?php echo get_the_ID();?>">
+					<?php echo the_post_thumbnail('archive-image'); ?>
+					<div class="overlay"></div>
+					<i class="fas fa-play"></i>
+				</a>
+			<?php endif; ?>
+		</div>
+		<div class="medium-6 <?php echo $column_2_class;?>">
+			<div class="grid-y align-center" data-equalizer-watch="featured-post-<?php echo get_the_ID();?>" >
+				<div class="cell text-center">
+					<div class="grid-x grid-padding-x">
+						<div class="cell">
+							<h3 class="page-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
+							<?php get_template_part('template-parts/excerpt', get_post_type());?>
 
-	<div class="date"><?php echo get_the_date('j M Y'); ?></div>
-	<h3 class="page-title"><a class="read-more" href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
-			
+							<a class="button read-more" href="<?php the_permalink(); ?>"><?php the_field('read_more_text', 'options');?></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </article><!-- #post-<?php the_ID(); ?> -->

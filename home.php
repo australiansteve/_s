@@ -24,13 +24,15 @@ get_header();
 				?>
 				</span></h2>
 
-				<div class="grid-x grid-margin-x small-up-1 medium-up-2">
+				<div class="grid-x grid-margin-x small-up-1">
 					<?php
+					$postCount = 1;
 					while ( have_posts() ) :
 						the_post();
 						?>
 							<div class="cell">
-								<?php get_template_part( 'template-parts/archive', get_post_type() ); ?>
+								<?php get_template_part( 'template-parts/archive', get_post_type(), array( 
+								'post_count' => $postCount++) ); ?>
 							</div>
 						<?php
 					endwhile;

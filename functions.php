@@ -265,59 +265,26 @@ add_filter( 'get_the_archive_title', function ($title) {
 	return $title;
 });
 
-function austeve_get_projects() {
+add_filter ( 'pre_get_posts', function($query) {
+	if ( !is_admin() && $query->is_main_query() && is_home() ) {
 
-	$nonce = $_REQUEST['security'];
-	if (wp_verify_nonce( $nonce, 'archive-page-projects')) {
-		$page = intval($_REQUEST['page']);
-		$style = $_REQUEST['style'];
-		
-		$args = array(
-			'post_type' => array('austeve-projects'),
-			'post_status' => array('publish'),
-			'nopaging' => false,
-			'paged' => $page
+		$tax_query = array(
+			array(
+				'taxonomy'         => 'category',
+				'terms'            => 'sessions',
+				'field'            => 'slug',
+				'operator'         => 'NOT IN',
+			)
 		);
 
-		error_log("AJAX args: ".print_r($args, true));
-		error_log("Style: ".$style);
-		$ajaxposts = new WP_Query( $args );
-
-		if ( $ajaxposts->have_posts()) {
-
-			while ( $ajaxposts->have_posts() ) {
-				$ajaxposts->the_post();
-
-				if ($style == 'list') {
-					include( locate_template('template-parts/archive-austeve-projects.php', false, false ));
-				}
-				else if ($style == 'hero' ) {
-					include( locate_template('template-parts/hero-austeve-project.php', false, false ));
-				}
-			}
-		}
-
-		wp_reset_query();
-	}
-
-	exit;
-}
-
-add_action('wp_ajax_austeve_get_projects', 'austeve_get_projects');
-add_action('wp_ajax_nopriv_austeve_get_projects', 'austeve_get_projects');
-
-add_filter ( 'pre_get_posts', function($query) {
-	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-projects') || (wp_doing_ajax() && in_array('austeve-projects', $query->get('post_type')))) {
-
-		//get 4 projects at a time so the layout is a bit more even
-	    $query->set( 'posts_per_page', '4' );
+		$query->set( 'tax_query', $tax_query);
 
 		return $query; 
     }
 });
 
 function austeve_add_post_video_class($class){
-    if( is_home() || is_front_page()){
+    if( is_home() || is_front_page() || is_category()){
     	if (get_field('video_id') && has_post_thumbnail())
         	$class[] = "has-video"; // in home page
     }

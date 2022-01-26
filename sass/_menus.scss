@@ -107,7 +107,8 @@ nav {
 }
 
 .menu {
-	font-family: Abolition, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+	font-family: helvetica, roboto, arial, sans-serif;
+	font-weight: 700;
 }
 
 #language-menu-small.menu {
@@ -157,6 +158,10 @@ nav {
 		}
 	}
 
+	#footer-menu {
+		justify-content: center;
+	}
+
 	.off-canvas {
 		opacity: 0.9;
 
@@ -168,7 +173,7 @@ nav {
 			}
 
 			.grid-y {
-				font-size: 2.6rem;
+				font-size: 2rem;
 
 				li {
 					margin-bottom: 1rem;
@@ -211,7 +216,7 @@ nav {
 			}
 
 			.grid-y {
-				font-size: 3.8rem;
+				font-size: 3rem;
 
 				li {
 					margin-bottom: 1.5rem;

@@ -6,18 +6,20 @@ import { OffCanvas } from 'foundation-sites/js/foundation.offcanvas'
 import { Reveal } from 'foundation-sites/js/foundation.reveal'
 
 function initFoundation() {
+
+  // Add jQuery to Foundation
+  Foundation.addToJquery(jQuery)
+
   // Include the Foundation Modules that we'll use in the app
   Foundation.plugin(AccordionMenu, 'AccordionMenu')
   Foundation.plugin(Sticky, 'Sticky')
   Foundation.plugin(Equalizer, 'Equalizer')
   Foundation.plugin(OffCanvas, 'OffCanvas')
   Foundation.plugin(Reveal, 'Reveal')
-  
-  // Add jQuery to Foundation
-  Foundation.addToJquery(jQuery)
 
   // Kick off foundation
-  jQuery(document).foundation()
+  jQuery(document).foundation();
+
 }
 
 // Start Foundation JS Modules

@@ -18,7 +18,7 @@ footer {
 	}
 
 	#footer-menu {
-		font-size: 1.5rem;
+		font-size: 1.15em;
 	}
 }
 
@@ -40,13 +40,17 @@ footer {
 	#page {
 		position: relative;
 		min-height: 100vh;
-		padding-bottom: 115px;
+		padding-bottom: 145px;
 
 		footer {
 			position: absolute;
 			right: 0;
 			left: 0;
 			bottom: 0;
+
+			#footer-menu {
+				font-size: 0.8em;
+			}
 		}
 	}
 }
@@ -69,10 +73,23 @@ footer {
 /* XLarge and up (>1600px) */
 @media screen and (min-width: 100em) {
 
+	#page {
+		padding-bottom: 145px;
+
+		footer {
+
+			font-size: 1.25em;
+
+			#footer-menu {
+				font-size: 1.25em;
+			}
+		}
+	}
 }
 
 /* XLarge only */
 @media screen and (min-width: 100em) and (max-width: 119.9375em) {
+
 
 }
 
