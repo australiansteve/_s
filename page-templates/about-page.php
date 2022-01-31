@@ -28,7 +28,16 @@ get_header();
 					<?php the_content(); ?>
 				</div>
 				<div class="custom-content">
+
+					<?php if (get_field('our_mission_section_title') && get_field('our_mission_section_text')): ?>
+						<h2 class="section-title"><span><?php the_field('our_mission_section_title');?></span></h2>
+						<div class="entry-content our-mission">
+							<?php the_field('our_mission_section_text');?>
+						</div>
+
 					<?php
+					endif;
+
 					if( have_rows('partners') ):
 						?>
 						<h2 class="page-title"><span><?php the_field('title_1');?></span></h2>

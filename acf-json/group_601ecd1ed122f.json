@@ -3,8 +3,78 @@
     "title": "About Page Customization",
     "fields": [
         {
+            "key": "field_61f873121ab8e",
+            "label": "Our Mission",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_61f8731f1ab8f",
+            "label": "Section Title",
+            "name": "our_mission_section_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Our Mission",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61f8732f1ab90",
+            "label": "Text",
+            "name": "our_mission_section_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_61f872f91ab8d",
+            "label": "Leadership",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_601ecd2d1e503",
-            "label": "Title 1",
+            "label": "Section Title",
             "name": "title_1",
             "type": "text",
             "instructions": "",
@@ -141,5 +211,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631552500
+    "modified": 1643672386
 }
