@@ -69,6 +69,10 @@ get_header();
 						</div>
 					</div>
 					<div class="grid-x" id="custom-content-3">
+						<?php
+						$seeAllButtonText = get_field('see_all_button_text');
+						$seeAllButtonLink = get_field('see_all_button_link');
+						?>
 						<div class="cell text-center">
 							<h2 class="section-title"><?php the_field("text_3"); ?></h2>
 						</div>
@@ -107,6 +111,13 @@ get_header();
 
 									wp_reset_postdata();
 									?>
+								</div>
+								<div class="grid-x">
+									<div class="cell text-center">
+										<div class="entry-content all-posts-link">
+											<h3><a class="button" href="<?php echo $seeAllButtonLink; ?>"><?php echo $seeAllButtonText; ?></a></h3>
+										</div>
+									</div>
 								</div>
 						</div>
 					</div>

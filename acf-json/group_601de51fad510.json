@@ -3,6 +3,22 @@
     "title": "Home Page Customization",
     "fields": [
         {
+            "key": "field_61f86cd03e0d1",
+            "label": "Intro Blocks",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_601de528f96f0",
             "label": "Image 1",
             "name": "image_1",
@@ -89,11 +105,65 @@
             "delay": 0
         },
         {
+            "key": "field_61f86ce03e0d2",
+            "label": "Blog Posts",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_601de622f96f5",
-            "label": "Text 3",
+            "label": "Section Title",
             "name": "text_3",
             "type": "text",
             "instructions": "Title of the Blog section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact us",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61f86caa3e0cf",
+            "label": "Button Text",
+            "name": "see_all_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact us",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61f86cc23e0d0",
+            "label": "Button Link",
+            "name": "see_all_button_link",
+            "type": "text",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -125,5 +195,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1631714302
+    "modified": 1643670780
 }
