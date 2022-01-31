@@ -121,6 +121,34 @@ get_header();
 								</div>
 						</div>
 					</div>
+
+					<?php
+					$sponsorSectionTitle = get_field('sponsors_section_title');
+					$sponsorSectionText = get_field('sponsors_section_text');
+					$sponsorsGallery = get_field('sponsors_gallery');
+
+					if ($sponsorsGallery) :
+						?>
+						<section id="sponsors" class="text-center">
+							<?php echo $sponsorSectionTitle ? "<h3 class='section-title'>".$sponsorSectionTitle."</h3>" : ""; ?>
+							<?php echo $sponsorSectionText ? $sponsorSectionText : ""; ?>
+
+							<div class="grid-x grid-margin-x small-up-2 medium-up-<?php echo count($sponsorsGallery);?> align-center">
+								<?php foreach( $sponsorsGallery as $image_id ): ?>
+									<div class="cell">
+										<div class="grid-y align-center" style="height: 100%">
+											<div class="cell">
+												<?php echo wp_get_attachment_image( $image_id, 'sponsor-logo' ); ?>
+											</div>
+										</div>
+									</div>
+								<?php endforeach; ?>
+							</div>
+						</section>
+						<?php
+					endif;
+					?>
+
 				</div>
 			</div>
 		</div>
