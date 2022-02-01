@@ -291,9 +291,13 @@ function austeve_exclude_categories( $query ) {
 
     /* Only modify the main query, on the home page */
 	if( $query->is_main_query() && $query->is_home() ) {
-		$exclude = '-'.get_cat_ID('Events').', -'.get_cat_ID('Perspectives');
+		//This will include ONLY the default category on the Blog page. 
+		$include_cat = get_option('default_category');
+		$query->set( 'cat', $include_cat );
 
-		$query->set( 'cat', $exclude );
+		//This would instead EXCLUDE certain categories
+		//$exclude = '-'.get_cat_ID('Events').', -'.get_cat_ID('Perspectives');
+		//$query->set( 'cat', $exclude );
 	}
 
 	if( $query->is_main_query() && !is_admin() ) {
