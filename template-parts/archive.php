@@ -18,13 +18,24 @@ $column_2_class = $args['post_count'] % 2 == 0 ? 'medium-order-1' : 'medium-orde
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="grid-x" data-equalizer="featured-post-<?php echo get_the_ID();?>">
-		<div class="medium-6 <?php echo $column_1_class;?>">
+		<div class="medium-6 <?php echo $column_1_class;?> text-center">
 			<?php if (get_field('video_id') && has_post_thumbnail()) : ?>
 				<a class="watch-now" data-open="video-modal" data-video-html="<?php echo htmlentities($videoHtml, ENT_QUOTES);?>" data-post-link="<?php echo get_the_permalink(); ?>"  data-equalizer-watch="featured-post-<?php echo get_the_ID();?>">
 					<?php echo the_post_thumbnail('archive-image'); ?>
 					<div class="overlay"></div>
 					<i class="fas fa-play"></i>
 				</a>
+			<?php elseif (has_post_thumbnail()) : ?>	
+				<div data-equalizer-watch="featured-post-<?php echo get_the_ID();?>">
+					<?php echo the_post_thumbnail('archive-image'); ?>		
+				</div>
+			<?php elseif (get_field('default_placeholder_image', 'option')): ?>	
+				<div data-equalizer-watch="featured-post-<?php echo get_the_ID();?>">
+					<?php 
+					$default_placeholder_image = wp_get_attachment_image_src(get_field('default_placeholder_image', 'option'), 'archive-image');
+					?>
+					<img src="<?php echo $default_placeholder_image[0]; ?>" width="<?php echo $default_placeholder_image[1]; ?>" height="<?php echo $default_placeholder_image[2]; ?>"/>		
+				</div>
 			<?php endif; ?>
 		</div>
 		<div class="medium-6 <?php echo $column_2_class;?>">
