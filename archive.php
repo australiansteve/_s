@@ -22,6 +22,10 @@ get_header();
 			the_archive_title( '<h1 class="page-title">', '</h1>' );
 			?>
 
+			<?php
+			get_template_part( 'template-parts/archive-description', get_post_type() );
+			?>
+
 			<div class="grid-x grid-margin-x small-up-1 medium-up-2" id="archive-grid">
 				<?php
 				while ( have_posts() ) :

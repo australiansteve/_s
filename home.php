@@ -20,7 +20,7 @@ get_header();
 
 			<div class="entry-content">
 
-				<h2 class="page-title"><?php echo get_the_title( get_option( 'page_for_posts' ) ); ?></h2>
+				<h1 class="page-title"><?php echo get_the_title( get_option( 'page_for_posts' ) ); ?></h1>
 
 				<div class="grid-x grid-margin-x small-up-1 medium-up-2" id="home-grid">
 					<?php

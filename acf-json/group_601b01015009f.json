@@ -68,8 +68,24 @@
             "placeholder": ""
         },
         {
+            "key": "field_626be19386c89",
+            "label": "Artwork Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_6167746927080",
-            "label": "Artwork Archive Hero Image",
+            "label": "Hero Image",
             "name": "artwork_archive_hero_image",
             "type": "image",
             "instructions": "Hero Image displayed on the Artwork page",
@@ -92,8 +108,43 @@
             "mime_types": ""
         },
         {
+            "key": "field_626be13be6a25",
+            "label": "Description",
+            "name": "archive_description_austeve-artwork",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_626be1b886c8a",
+            "label": "Testimonials Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_61b00f68e3d5b",
-            "label": "Testimonials Archive Hero Image",
+            "label": "Hero Image",
             "name": "testimonials_archive_hero_image",
             "type": "image",
             "instructions": "Hero Image displayed on the Testimonials page",
@@ -114,6 +165,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_626be1ca86c8b",
+            "label": "Description",
+            "name": "archive_description_category_testimonials",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_60772c198fa3b",
@@ -251,5 +321,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1638928296
+    "modified": 1651237652
 }
