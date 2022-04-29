@@ -24,18 +24,13 @@
 		<?php
 	}
 
-	$price = get_field('price'); 
 	$is_available = has_term( 'available', 'painting-category' );
-	if ($price && $is_available) {
-		?>
-		<div class="price"><span class="available"><?php _e('Available, ', 'hamburger-cat'); ?></span><?php echo $price;?></div>
-		<?php
-	}
-	else {
-		?>
-		<div class="price"><span class="sold"><?php _e('Unavailable', 'hamburger-cat'); ?></span></div>
-		<?php
-	}
+	$price = $is_available ? get_field('price') : '';
 
+	$status = get_field('current_status');
+	$status = $status ? $status : __('Available', 'hamburger-cat');
+	$status .= $price ? ', ' : '';
 	?>
+	<div class="price"><span class="status"><?php echo $status; ?></span><?php echo $price;?></div>
+	
 </div>
