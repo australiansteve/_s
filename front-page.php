@@ -37,9 +37,10 @@ get_header();
 				<div class="grid-x">
 					<div class="cell intro-text">
 						<?php 
+						$newWindow = $section['button_new_window'];
 						echo $section['intro_text'];
 						?>
-						<a href="<?php echo $section['button_link'];?>" class="button"><?php echo $section['button_text'];?></a>
+						<a href="<?php echo $section['button_link'];?>" class="button" target="<?php echo $newWindow ? '_blank': ''; ?>"><?php echo $section['button_text'];?></a>
 					</div>
 				</div>
 			</div>

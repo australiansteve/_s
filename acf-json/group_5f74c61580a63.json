@@ -98,6 +98,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_627bb958e085e",
+            "label": "Open in new window",
+            "name": "button_new_window",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -117,5 +136,5 @@
     "hide_on_screen": "",
     "active": false,
     "description": "",
-    "modified": 1601554923
+    "modified": 1652275722
 }
