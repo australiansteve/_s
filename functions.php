@@ -51,7 +51,8 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		register_nav_menus(
 			array(
 				'menu-1' => esc_html__( 'Primary', 'hamburger-cat' ),
-				'social-media' => esc_html__( 'Social Media', 'hamburger-cat' )
+				'social-media' => esc_html__( 'Social Media', 'hamburger-cat' ),
+				'footer-social-media' => esc_html__( 'Social Media (Footer)', 'hamburger-cat' )
 			)
 		);
 

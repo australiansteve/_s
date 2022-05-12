@@ -29,6 +29,13 @@
                 "operator": "==",
                 "value": "location\/social-media"
             }
+        ],
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/footer-social-media"
+            }
         ]
     ],
     "menu_order": 0,
@@ -39,5 +46,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601580237
+    "modified": 1652312566
 }

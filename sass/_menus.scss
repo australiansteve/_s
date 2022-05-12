@@ -60,3 +60,21 @@ ul.social-menu {
 		margin-right: 0;
 	}
 }
+
+footer #footer {
+
+	ul.social-menu {
+
+		li.button.menu-item {
+			padding: 0.5rem;
+			font-size: 1rem;
+			margin-bottom: 12px;
+			line-height: normal;
+
+			a {
+				color: $white;
+
+			}
+		}
+	}
+}

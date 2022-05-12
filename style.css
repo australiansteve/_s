@@ -5066,6 +5066,14 @@ ul.social-menu {
   ul.social-menu li:nth-last-of-type(1) {
     margin-right: 0; }
 
+footer #footer ul.social-menu li.button.menu-item {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  line-height: normal; }
+  footer #footer ul.social-menu li.button.menu-item a {
+    color: #fefefe; }
+
 .reveal {
   margin: auto;
   width: 96vw;
