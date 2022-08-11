@@ -1,5 +1,11 @@
 
 <?php
+
+/** This will display a 'View Wishlist' button for every wishlist a teacher has.
+ *  In future we may want to narrow this down to a single active wishlist, perhaps related to a 
+ *  Schools active Campaign 
+ */
+
 $teacher_id = get_the_ID();
 $args = array(
 	'post_type'              => array( 'austeve-wishlists' ),
@@ -19,10 +25,8 @@ $postsquery = new WP_Query( $args );
 if ( $postsquery->have_posts() ) {
 	while ( $postsquery->have_posts() ) {
 		$postsquery->the_post();
-		$categories = get_the_terms($post->ID, 'wishlist-category');
-		$category_name = is_array($categories) && count($categories) > 0 ? $categories[0]->name : "";
 		?>
-		<a class="button" data-teacher-id="<?php echo $teacher_id; ?>" data-wishlist-id="<?php echo get_the_ID(); ?>" data-open="wishlistModal" onclick="view_wishlist(event)" href="<?php the_field('wishlist_url');?>" target="_blank" ><?php echo sprintf(__('View %s Wishlist', 'hamburger-cat'), $category_name); ?></a>
+		<a class="button" href="<?php echo get_post_permalink($wishlist_id);?>" target="_blank"><?php echo sprintf(__('View Wishlist', 'hamburger-cat')); ?></a>
 		<?php
 	}
 
