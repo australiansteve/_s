@@ -103,27 +103,9 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 
 			</div>
 
+			<?php get_template_part('template-parts/js'); ?>
+
 			<script type="text/javascript">
-
-				// Set a Cookie
-				function setCookie(cName, cValue, expDays = 7) {
-					let date = new Date();
-					date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
-					const expires = "expires=" + date.toUTCString();
-					document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
-				}
-
-				// Get a cookie
-				function getCookie(cName) {
-					const name = cName + "=";
-					const cDecoded = decodeURIComponent(document.cookie); //to be careful
-					const cArr = cDecoded .split('; ');
-					let res;
-					cArr.forEach(val => {
-					  if (val.indexOf(name) === 0) res = val.substring(name.length);
-					})
-					return res;
-				}
 
 				function view_wishlist(wishlist_id) {
 					

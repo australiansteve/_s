@@ -417,12 +417,19 @@ function austeve_wc_ajax_add_to_cart() {
 	$variation_id  = intval( $_REQUEST['variation_id'] );
 	$teacher_id  = isset($_REQUEST['teacher_id']) ? intval( $_REQUEST['teacher_id'] ) : null;
 	$school_id  = isset($_REQUEST['school_id']) ? intval( $_REQUEST['school_id'] ) : null;
+	$wishlist_id  = isset($_REQUEST['wishlist_id']) ? intval( $_REQUEST['wishlist_id'] ) : null;
 
 	$nonce = $_REQUEST['security'];
 	$user_id = get_current_user_id();
 
 	if (wp_verify_nonce( $nonce, "add-to-cart" )) {
-		error_log("austeve_wc_ajax_add_to_cart is ok to go: ". $product_id.", ".$variation_id.", ".$teacher_id);
+
+		if ($wishlist_id) {
+			error_log("add for wishlist: ".$wishlist_id);
+			$teacher_id = get_field('teacher', $wishlist_id);
+		}
+
+		error_log("austeve_wc_ajax_add_to_cart is ok to go: ". $product_id.", ".$variation_id.", ".$teacher_id. "(wishlist: ".$wishlist_id.")");
 		$sgrades = get_field('grades', get_field('school', $teacher_id));
 
 		$custom_data = array();
