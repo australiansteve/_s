@@ -26,7 +26,7 @@ if ( $postsquery->have_posts() ) {
 	while ( $postsquery->have_posts() ) {
 		$postsquery->the_post();
 		?>
-		<a class="button" href="<?php echo get_post_permalink($wishlist_id);?>" target="_blank"><?php echo sprintf(__('View Wishlist', 'hamburger-cat')); ?></a>
+		<a class="button" href="<?php echo get_post_permalink($wishlist_id);?>" target="_blank" onclick="return view_wishlist(<?php echo get_the_ID();?>)"><?php echo sprintf(__('View Wishlist', 'hamburger-cat')); ?></a>
 		<?php
 	}
 

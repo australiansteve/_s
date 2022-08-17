@@ -340,35 +340,6 @@ function austeve_acf_load_school_grades( $field ) {
 
 add_filter('acf/load_field/key=field_61438a249523b', 'austeve_acf_load_school_grades');
 
-add_action( 'wp_ajax_austeve_get_view_wishlist', 'austeve_get_view_wishlist' );
-add_action( 'wp_ajax_nopriv_austeve_get_view_wishlist', 'austeve_get_view_wishlist' );
-
-function austeve_get_view_wishlist() {
-
-	$teacher_id  = intval( $_REQUEST['teacher_id'] );
-	$wishlist_id  = intval( $_REQUEST['wishlist_id'] );
-	error_log(print_r($wishlist_id, true));
-	$wishlist_category = get_the_terms( $wishlist_id, 'wishlist-category' );
-	error_log(print_r($wishlist_category, true));
-	$wishlist_category = is_array($wishlist_category) ? $wishlist_category[0] : $wishlist_category;
-
-	$nonce = $_REQUEST['security'];
-
-	if (wp_verify_nonce( $nonce, "get-wishlist" )) {
-
-		$custom_instructions = get_field('custom_instructions', 'term_'.$wishlist_category->term_id);
-		?>
-		<div>
-			<?php echo $custom_instructions;?>
-			<div class="text-center">
-				<a class="button" href="<?php the_field('wishlist_url', $wishlist_id);?>" target="_blank"><?php echo sprintf(__('View Wishlist', 'hamburger-cat')); ?></a>
-			</div>
-		</div>
-		<?php
-	}
-
-	die();				
-}
 add_action( 'wp_ajax_austeve_setup_donation', 'austeve_setup_donation' );
 add_action( 'wp_ajax_nopriv_austeve_setup_donation', 'austeve_setup_donation' );
 

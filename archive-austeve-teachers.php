@@ -103,57 +103,41 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 
 			</div>
 
-			<div class="reveal view-wishlist-modal" id="wishlistModal" data-reveal data-options="animationIn:slide-in-up; animationOut:slide-out-down;">
-				<div class="modal-container">
-					<div class="modal-html">
-						<div class="text-center"><i class="fas fa-circle-notch fa-spin"></i></div>
-					</div>
-
-					<button class="close-button" data-close aria-label="Close modal" type="button">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-
-			</div>
-
 			<script type="text/javascript">
 
-				function clear_view_viewlist() {
-					jQuery('.view-wishlist-modal .modal-html').html("<div class='text-center'><i class='fas fa-circle-notch fa-spin'></i></div>");
+				// Set a Cookie
+				function setCookie(cName, cValue, expDays = 7) {
+					let date = new Date();
+					date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
+					const expires = "expires=" + date.toUTCString();
+					document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
 				}
 
-				function view_wishlist(e) {
-					e.preventDefault();
+				// Get a cookie
+				function getCookie(cName) {
+					const name = cName + "=";
+					const cDecoded = decodeURIComponent(document.cookie); //to be careful
+					const cArr = cDecoded .split('; ');
+					let res;
+					cArr.forEach(val => {
+					  if (val.indexOf(name) === 0) res = val.substring(name.length);
+					})
+					return res;
+				}
 
-					clear_view_viewlist();
+				function view_wishlist(wishlist_id) {
+					
+					console.log("view_wishlist " + wishlist_id);
 
-					var teacher_id = jQuery(e.target).data('teacher-id');
-					var wishlist_id = jQuery(e.target).data('wishlist-id');
+					var wishlistCookie = getCookie('wishlist_id');
 
-					jQuery.ajax({
-		                type: 'POST',
-		                url: '<?php echo admin_url('admin-ajax.php');?>',
-		                dataType: "html",  
-		                data: { 
-		                    action : 'austeve_get_view_wishlist', 
-		                    security: '<?php echo $ajax_nonce_get_wishlist; ?>',
-		                    teacher_id: teacher_id,
-		                    wishlist_id: wishlist_id
-		                },
-		                error: function (xhr, status, error) {
-		                    console.log("Error: " + error);
-		                    
-		                },
-		                success: function( response ) {
-		                    if (response) {
-		                        jQuery('.view-wishlist-modal .modal-html').html(response);
-		                    }
-		                    else {
-		                        console.log("No response!");
-		                    }
-		                }
-		            });
-
+					if (wishlistCookie) {
+						//Clear current cookie value
+						document.cookie = "wishlist_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+					}
+					
+					//Set new cookie value
+					setCookie('wishlist_id', wishlist_id);
 				}
 
 				function setup_donation(e) {
