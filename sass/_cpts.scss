@@ -20,6 +20,21 @@
 	}
 }
 
+.austeve-wishlists {
+
+	.product {
+
+		select {
+			width: auto;
+		}
+
+		button.add-to-cart {
+			margin-bottom: 0;
+			font-size: 0.85em;
+		}
+	}
+}
+
 .post-type-archive-austeve-teachers {
 
 	.donation-container {

@@ -210,31 +210,6 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 		            });
 
 				}
-
-				jQuery(document).ready(function() {
-
-					jQuery.ajax({
-					    type: 'POST',
-					    url: '<?php echo admin_url('admin-ajax.php');?>',
-					    dataType: "html",  
-					    data: { 
-					        action : 'austeve_get_cart_count', 
-					        security: '<?php echo wp_create_nonce( "get-cart-count" ); ?>'
-					    },
-					    error: function (xhr, status, error) {
-					        console.log("Error: " + error);
-					        
-					    },
-					    success: function( response ) {
-					        if (response) {
-					            jQuery('header .fa-shopping-cart').after("<span class='header-cart-count'>"+response+"</span>");
-					        }
-					        else {
-					            console.log("No response!");
-					        }
-					    }
-					});
-				});
 			</script>
 
 		</div>

@@ -418,6 +418,7 @@ function austeve_wc_ajax_add_to_cart() {
 	$teacher_id  = isset($_REQUEST['teacher_id']) ? intval( $_REQUEST['teacher_id'] ) : null;
 	$school_id  = isset($_REQUEST['school_id']) ? intval( $_REQUEST['school_id'] ) : null;
 	$wishlist_id  = isset($_REQUEST['wishlist_id']) ? intval( $_REQUEST['wishlist_id'] ) : null;
+	$quantity = isset($_REQUEST['quantity']) ? intval( $_REQUEST['quantity'] ) : 1;
 
 	$nonce = $_REQUEST['security'];
 	$user_id = get_current_user_id();
@@ -442,7 +443,7 @@ function austeve_wc_ajax_add_to_cart() {
 			$custom_data['school_id'] = $school_id;
 		}
 		error_log("Adding custom data to cart item: ".print_r($custom_data, true));
-		WC()->cart->add_to_cart( $product_id, '1', $variation_id, array(), $custom_data );
+		WC()->cart->add_to_cart( $product_id, $quantity, $variation_id, array(), $custom_data );
 
 		echo WC()->cart->cart_contents_count;
 	}

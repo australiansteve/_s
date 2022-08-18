@@ -11,7 +11,6 @@ $categories = get_the_terms($post->ID, 'wishlist-category');
 $category_name = is_array($categories) && count($categories) > 0 ? $categories[0]->name : "";
 
 $ajax_nonce = wp_create_nonce( "add-to-cart" );
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -24,12 +23,13 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 			<?php
 			while( have_rows('wishlist_items') ) : the_row();
 				$product_id = get_sub_field('product');
+				$product_needs = array( 'wants' =>  get_sub_field('wants'), 'has' => get_sub_field('has'));
 				?>
 				<div class="cell" data-product-id="<?php echo $product_id;?>">
 					<?php 
 					$post = get_post($product_id);
     				setup_postdata($post);
-					get_template_part('template-parts/archive', get_post_type());
+					get_template_part('template-parts/archive', get_post_type(), $product_needs);
   					wp_reset_postdata();
 					?>
 				</div>
@@ -57,6 +57,8 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 		jQuery('header span.header-cart-count').html("<i class='fas fa-circle-notch fa-spin'></i>");
 		target.append("<i class='fas fa-circle-notch fa-spin button-spinner'></i>");
 
+		var quantity = jQuery('#add-to-cart-qty-'+product_id).val();
+
 		jQuery.ajax({
             type: 'POST',
             url: '<?php echo admin_url('admin-ajax.php');?>',
@@ -66,7 +68,8 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
                 security: '<?php echo $ajax_nonce; ?>',
                 product_id: product_id,
                 variation_id: variation_id,
-                wishlist_id: wishlist_id
+                wishlist_id: wishlist_id,
+                quantity: quantity
             },
             error: function (xhr, status, error) {
                 console.log("Error: " + error);
