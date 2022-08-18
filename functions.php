@@ -318,24 +318,24 @@ add_action('pre_get_posts', 'austeve_filter_teachers' );
 
 
 function austeve_acf_load_school_grades( $field ) {
-    
-    if (is_admin() && !is_ajax()) {
-	    global $post;
 
-	    $teacher_school = get_field('school', $post->ID);
-	    $school_grades = get_field('grades', $teacher_school);
+	if (is_admin() && !is_ajax()) {
+		global $post;
 
-	    if( is_array($school_grades) ) {
-		    foreach($school_grades as $grade) {
-		    	 $field['choices'][] = $grade['grade'];
-		    }
+		$teacher_school = get_field('school', $post->ID);
+		$school_grades = get_field('grades', $teacher_school);
+
+		if( is_array($school_grades) ) {
+			foreach($school_grades as $grade) {
+				$field['choices'][] = $grade['grade'];
+			}
 		}
-    	error_log("field ".print_r($field, true));
+		error_log("field ".print_r($field, true));
 	}
 
     // return the field
-    return $field;
-    
+	return $field;
+
 }
 
 add_filter('acf/load_field/key=field_61438a249523b', 'austeve_acf_load_school_grades');
@@ -376,7 +376,7 @@ function austeve_setup_donation() {
 				<input type="hidden" name="school_id" value="<?php echo $school_id;?>" />
 				<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)">Add to cart</button>
 			</div>
-		<?php	
+			<?php	
 		}
 		if($teacher_id) {
 			error_log("teacher_id:".$teacher_id);
@@ -401,7 +401,7 @@ function austeve_setup_donation() {
 				<input type="hidden" name="teacher_id" value="<?php echo $teacher_id;?>" />
 				<button class="button add-donation-to-cart" onclick="add_donation_to_cart(event)">Add to cart</button>
 			</div>
-		<?php
+			<?php
 
 		}
 	}
@@ -425,15 +425,17 @@ function austeve_wc_ajax_add_to_cart() {
 
 	if (wp_verify_nonce( $nonce, "add-to-cart" )) {
 
+		$custom_data = array();
+
 		if ($wishlist_id) {
 			error_log("add for wishlist: ".$wishlist_id);
 			$teacher_id = get_field('teacher', $wishlist_id);
+			$custom_data['wishlist_id'] = $wishlist_id;
 		}
 
 		error_log("austeve_wc_ajax_add_to_cart is ok to go: ". $product_id.", ".$variation_id.", ".$teacher_id. "(wishlist: ".$wishlist_id.")");
 		$sgrades = get_field('grades', get_field('school', $teacher_id));
 
-		$custom_data = array();
 		if ($teacher_id) {
 			$custom_data['teacher_id'] = $teacher_id;
 			$custom_data['teacher_grade'] = $sgrades[get_field('grade', $teacher_id)]['grade'];
@@ -454,52 +456,56 @@ function austeve_wc_ajax_add_to_cart() {
 // Display custom cart item meta data (in cart and checkout)
 add_filter( 'woocommerce_get_item_data', 'display_cart_item_custom_meta_data', 10, 2 );
 function display_cart_item_custom_meta_data( $item_data, $cart_item ) {
-    $meta_key = 'teacher_id';
-    if ( isset($cart_item[$meta_key]) ) {
-        $item_data[] = array(
-            'key'       => "For Teacher",
-            'value'     => get_the_title($cart_item[$meta_key]),
-        );
-    }
-    $meta_key = 'teacher_grade';
-    if ( isset($cart_item[$meta_key]) ) {
-        $item_data[] = array(
-            'key'       => "\nGrade",
-            'value'     => $cart_item[$meta_key],
-        );
-    }
-    $meta_key = 'school_id';
-    if ( isset($cart_item[$meta_key]) ) {
-        $item_data[] = array(
-            'key'       => "For School",
-            'value'     => get_the_title($cart_item[$meta_key]),
-        );
-    }
-    return $item_data;
+	$meta_key = 'teacher_id';
+	if ( isset($cart_item[$meta_key]) ) {
+		$item_data[] = array(
+			'key'       => "For Teacher",
+			'value'     => get_the_title($cart_item[$meta_key]),
+		);
+	}
+	$meta_key = 'teacher_grade';
+	if ( isset($cart_item[$meta_key]) ) {
+		$item_data[] = array(
+			'key'       => "\nGrade",
+			'value'     => $cart_item[$meta_key],
+		);
+	}
+	$meta_key = 'school_id';
+	if ( isset($cart_item[$meta_key]) ) {
+		$item_data[] = array(
+			'key'       => "For School",
+			'value'     => get_the_title($cart_item[$meta_key]),
+		);
+	}
+	return $item_data;
 }
 
 // Save cart item custom meta as order item meta data and display it everywhere on orders and email notifications.
 add_action( 'woocommerce_checkout_create_order_line_item', 'save_cart_item_custom_meta_as_order_item_meta', 10, 4 );
 function save_cart_item_custom_meta_as_order_item_meta( $item, $cart_item_key, $values, $order ) {
-    $meta_key = 'teacher_id';
-    error_log("woocommerce_checkout_create_order_line_item: ".print_r($values, true));
-    if ( isset($values[$meta_key]) ) {
-        $item->update_meta_data( "For Teacher", get_the_title($values[$meta_key]));
-        $item->update_meta_data( "Grade", get_field('grade', $values[$meta_key]));
-        $item->update_meta_data( "School", get_the_title(get_field('school', $values[$meta_key])));
-    }
-    $meta_key = 'teacher_grade';
-    if ( isset($values[$meta_key]) ) {
-        $item->update_meta_data( "Grade", $values[$meta_key]);
-    }
-    $meta_key = 'teacher_school';
-    if ( isset($values[$meta_key]) ) {
-        $item->update_meta_data( "School", $values[$meta_key]);
-    }
-    $meta_key = 'school_id';
-    if ( isset($values[$meta_key]) ) {
-        $item->update_meta_data( "For School", get_the_title($values[$meta_key]));
-    }
+	$meta_key = 'teacher_id';
+    //error_log("woocommerce_checkout_create_order_line_item: ".print_r($values, true));
+	if ( isset($values[$meta_key]) ) {
+		$item->update_meta_data( "For Teacher", get_the_title($values[$meta_key]));
+		$item->update_meta_data( "Grade", get_field('grade', $values[$meta_key]));
+		$item->update_meta_data( "School", get_the_title(get_field('school', $values[$meta_key])));
+	}
+	$meta_key = 'teacher_grade';
+	if ( isset($values[$meta_key]) ) {
+		$item->update_meta_data( "Grade", $values[$meta_key]);
+	}
+	$meta_key = 'teacher_school';
+	if ( isset($values[$meta_key]) ) {
+		$item->update_meta_data( "School", $values[$meta_key]);
+	}
+	$meta_key = 'school_id';
+	if ( isset($values[$meta_key]) ) {
+		$item->update_meta_data( "For School", get_the_title($values[$meta_key]));
+	}
+	$meta_key = 'wishlist_id';
+	if ( isset($values[$meta_key]) ) {
+		$item->update_meta_data( "wishlist_id", $values[$meta_key]);
+	}
 }
 
 add_action( 'wp_ajax_austeve_get_cart_count', 'austeve_get_cart_count' );
@@ -515,4 +521,79 @@ function austeve_get_cart_count() {
 	}
 	
 	die();
+}
+
+add_action('woocommerce_thankyou', 'austeve_order_placed', 10, 1);
+function austeve_order_placed( $order_id ) {
+	if ( ! $order_id )
+		return;
+
+    // Allow code execution only once 
+	if( ! get_post_meta( $order_id, '_thankyou_action_done', true ) ) {
+
+        // Get an instance of the WC_Order object
+		$order = wc_get_order( $order_id );
+
+        // Loop through order items
+		foreach ( $order->get_items() as $item_id => $item ) {
+
+			$item_meta_data = $item->get_formatted_meta_data();
+			$product_id = $item->get_product_id();
+			$quantity = $item->get_quantity();
+
+        	//if a wishlist_id is set on the cart item, reduce the wishlists item count by the quantity
+			foreach ($item_meta_data as $meta_data) {
+				if ($meta_data->key == 'wishlist_id') {
+					$wishlist_id = $meta_data->value;
+					$wishlist_items = get_field('wishlist_items', $wishlist_id);
+
+					foreach($wishlist_items as $key=>$wishlist_item) {
+						if ($wishlist_item['product'] == $product_id) {
+							error_log("ORDER placed: Updating product_id ".$product_id." 'has' quantity by +".$quantity." for wishlist_id ".$wishlist_id." (Order: ".$order_id.")");
+
+							$wishlist_items[$key]['has'] += $quantity;
+						}
+					}
+					update_field('wishlist_items', $wishlist_items, $wishlist_id);
+					break;
+				}
+			}
+		}
+
+        // Flag the action as done (to avoid repetitions on reload for example)
+		$order->update_meta_data( '_thankyou_action_done', true );
+		$order->save();
+	}
+}
+
+add_filter('woocommerce_order_status_changed','austeve_reset_item_qty', 10, 4);
+
+function austeve_reset_item_qty( $order_id, $old_status, $new_status, $order ) {
+	if ( $new_status === 'cancelled' || $new_status === 'refunded') {
+		// Loop through order items
+		foreach ( $order->get_items() as $item_id => $item ) {
+
+			$item_meta_data = $item->get_formatted_meta_data();
+			$product_id = $item->get_product_id();
+			$quantity = $item->get_quantity();
+
+	    	//if a wishlist_id is set on the cart item, add back to the wishlists item count by the quantity
+			foreach ($item_meta_data as $meta_data) {
+				if ($meta_data->key == 'wishlist_id') {
+					$wishlist_id = $meta_data->value;
+					$wishlist_items = get_field('wishlist_items', $wishlist_id);
+
+					foreach($wishlist_items as $key=>$wishlist_item) {
+						if ($wishlist_item['product'] == $product_id) {
+							error_log("ORDER ".$new_status.": Updating product_id ".$product_id." 'has' quantity by -".$quantity." for wishlist_id ".$wishlist_id." (Order: ".$order_id.")");
+
+							$wishlist_items[$key]['has'] -= $quantity;
+						}
+					}
+					update_field('wishlist_items', $wishlist_items, $wishlist_id);
+					break;
+				}
+			}
+		}
+	} 
 }
