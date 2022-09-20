@@ -28,7 +28,23 @@ jQuery( document ).ready(function() {
 		});
 	});
 
+	window.addEventListener('resize', fadeProductDescriptions);
+	fadeProductDescriptions();
 });
+
+
+var fadeProductDescriptions = _.debounce(function () {
+	/* Fade the short description if the text runs longer than the max height of the container */
+	jQuery('.product-short-description').each(function() {
+		var container = jQuery(this);
+		if ( container.find("span").height() > container.height() ) {
+			container.addClass('faded');
+		}	
+		else {
+			container.removeClass('faded');
+		}
+	});
+}, 250);
 
 var calculateSectionMinusHeaderHeight = _.debounce(function () {
 	jQuery(".full-height-minus-header").each(function() {

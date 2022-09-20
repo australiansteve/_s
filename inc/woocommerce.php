@@ -308,6 +308,63 @@ add_action('woocommerce_single_product_summary', 'austeve_woocommerce_my_single_
 add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_start', 15);
 add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_end', 70);
 
+add_action('woocommerce_before_shop_loop_item', 'austeve_woocommerce_start_archive_item', 5);
+add_action('woocommerce_before_shop_loop_item_title', 'austeve_woocommerce_archive_item_after_thumbnail', 20);
+add_action('woocommerce_shop_loop_item_title', 'austeve_woocommerce_archive_item_after_title', 20);
+add_action('woocommerce_after_shop_loop_item_title', 'austeve_woocommerce_archive_item_after_price', 12);
+add_action('woocommerce_after_shop_loop_item','austeve_woocommerce_end_archive_item_div', 7 );
+add_action('woocommerce_after_shop_loop_item', 'austeve_woocommerce_end_archive_item', 20);
+
+
+function austeve_woocommerce_start_archive_item() {
+?>
+	<div class="grid-x grid-margin-x medium-text-left">
+		<div class="cell medium-4 large-6 medium-text-right">
+	<?php
+}
+
+function austeve_woocommerce_archive_item_after_thumbnail() {
+?>
+		</div>
+		<div class="cell medium-8 large-6">
+			<div>
+<?php
+}
+
+function austeve_woocommerce_archive_item_after_title() {
+	global $product;
+
+	$author = $product->get_attribute( 'author' );
+	if ($author) {
+		?>
+		<div class="product-author"><?php echo sprintf(__('Author: %s', 'hamburger-cat'), $author); ?></div>
+		<?php
+	}
+}
+
+function austeve_woocommerce_archive_item_after_price() {
+	global $product;
+?>
+		<div class="product-short-description">
+			<div class="fade-bg"></div>
+			<span><?php echo $product->post->post_excerpt; ?></span>
+		</div>
+<?php
+}
+
+function austeve_woocommerce_end_archive_item_div() {
+?>
+			</div>
+<?php
+}
+
+function austeve_woocommerce_end_archive_item() {
+?>
+		</div>
+	</div>
+<?php
+}
+
 function austeve_checkout_before_customer_details() {
 	?>
 	<div class="grid-x grid-margin-x">
@@ -348,7 +405,7 @@ add_filter ( 'woocommerce_page_title', function($title) {
 
 add_filter ( 'woocommerce_product_loop_start', function($loopStart) {
 
-	$loopStart = "<ul class='products grid-x grid-margin-x small-up-1 medium-up-2 large-up-3'>";
+	$loopStart = "<ul class='products grid-x grid-margin-x small-up-1'>";
 	return $loopStart;
 
 });
@@ -362,7 +419,7 @@ add_filter ( 'woocommerce_product_loop_end', function($loopEnd) {
 
 add_filter('post_class', function($classes, $class, $product_id) {
 
-    if(is_product_category() || is_shop()) {
+    if(is_product_category() || is_shop() || is_page_template('page-templates/wishlist-edit-page.php')) {
         //only add these classes if we're on a product category page.
         $classes = array_merge(['cell'], $classes);
     }
@@ -376,7 +433,6 @@ add_filter( 'single_product_archive_thumbnail_size', function( $size ) {
 
 } );
 
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
 add_filter ( 'woocommerce_sale_flash', function( $sale ) {
 

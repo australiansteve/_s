@@ -12,7 +12,6 @@ get_header();
 $ajax_nonce_get_wishlist = wp_create_nonce( "get-wishlist" );
 $ajax_nonce_setup = wp_create_nonce( "setup-donation" );
 $ajax_nonce = wp_create_nonce( "add-to-cart" );
-
 ?>
 
 <main id="primary" class="site-main">

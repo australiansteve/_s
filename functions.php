@@ -274,3 +274,14 @@ add_filter( 'get_the_archive_title', function ($title) {
 	}
 	return $title;
 });
+
+
+add_action('wp_footer', function() {
+
+	echo get_template_part('template-parts/js');
+
+	if ( is_shop() || (is_single() && 'austeve-wishlists' == get_post_type() )) {
+		error_log("is_single('austeve-wishlists') or is_shop()!");
+		echo get_template_part('template-parts/js-ajax-add-to-cart');
+	}
+});

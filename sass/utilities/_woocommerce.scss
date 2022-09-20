@@ -103,11 +103,6 @@
 				}
 			}
 
-			h2.woocommerce-loop-product__title {
-				font-size: 1.5rem;
-				margin-bottom: 0.5rem;
-			}
-
 			ul.products {
 				list-style: none;
 
@@ -237,6 +232,55 @@
 	}
 }
 
+.woocommerce-page,
+.page-template-wishlist-edit-page {
+
+	ul.products {
+		list-style-type: none;
+
+		li {
+			margin-bottom: 2rem;
+
+			h2.woocommerce-loop-product__title {
+				font-size: 2rem;
+				margin-top: -1rem;
+			}
+
+
+			.product-author {
+				margin-bottom: 0.25rem;
+			}
+
+			.price {
+				line-height: 1.5;
+			}
+
+			.product-short-description {
+				max-height: 100px;
+				overflow-y: hidden;
+				position: relative;
+
+				.fade-bg {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					background: rgba(255, 255, 255, 0);
+				}
+			}
+
+			.product-short-description.faded {
+
+				.fade-bg {
+					background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
+
+				}
+			}
+		}
+	}
+
+}
 
 .woocommerce-cart {
 
@@ -347,8 +391,8 @@
 	}
 
 	/*
-Label the data
-*/
+	Label the data
+	*/
 	.woocommerce-page table.shop_table td.product-remove::before {
 		content: "DELETE";
 	}
@@ -425,6 +469,19 @@ Label the data
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
+	.woocommerce-page,
+	.page-template-wishlist-edit-page {
+
+		ul.products {
+
+			li {
+
+				.product-short-description {
+					max-height: 150px;
+				}
+			}
+		}
+	}
 }
 
 /* Large only */
