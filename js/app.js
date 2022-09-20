@@ -4,6 +4,14 @@ import { lodash } from 'lodash'
 import './navigation.js'
 import './foundation.js'
 
+function accordionUp(event) {
+	jQuery(event.target).find('i').addClass('fa-caret-down').removeClass('fa-caret-up');
+}
+
+function accordionDown(event) {
+	jQuery(event.target).find('i').addClass('fa-caret-up').removeClass('fa-caret-down');
+}
+
 jQuery( document ).ready(function() {
 	window.addEventListener('resize', calculateSectionMinusHeaderHeight);
 	window.addEventListener('resize', triggerFoundationEqualizer);
@@ -12,14 +20,14 @@ jQuery( document ).ready(function() {
 
 	var primaryMenu = jQuery('#primary-menu-accordion');
 	var accMenu = new Foundation.AccordionMenu(primaryMenu);
+	var wcNavMenu = jQuery('#wc-nav-menu-accoridan-small');
+	var wcNavAccMenu = new Foundation.AccordionMenu(wcNavMenu);
 
-	jQuery(primaryMenu).on('up.zf.accordionMenu', function() {
-		jQuery(this).find('i').addClass('fa-caret-down').removeClass('fa-caret-up');
-	});
+	jQuery(primaryMenu).on('up.zf.accordionMenu', accordionUp);
+	jQuery(primaryMenu).on('down.zf.accordionMenu', accordionDown);
 
-	jQuery(primaryMenu).on('down.zf.accordionMenu', function() {
-		jQuery(this).find('i').addClass('fa-caret-up').removeClass('fa-caret-down');
-	});
+	jQuery(wcNavMenu).on('up.zf.accordionMenu', accordionUp);
+	jQuery(wcNavMenu).on('down.zf.accordionMenu', accordionDown);
 
 	jQuery('.select2-single').each(function(){
 		var thisId = jQuery(this).attr('id');

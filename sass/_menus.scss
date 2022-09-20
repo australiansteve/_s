@@ -137,6 +137,35 @@ nav {
 /* Small only */
 @media screen and (max-width: 39.9375em) {
 
+	#small-menu-parent {
+		background-color: $off-white;
+		color: $inky-blue;
+
+		ul {
+			margin: 0;
+		}
+
+		a {
+			color: $inky-blue;
+		}
+
+		.is-active > a,
+		.current-menu-item > a {
+			background: $inky-blue;
+			color: $white;
+		}
+
+		.menu-header {
+			position: relative;
+
+			i.fa-caret-up,
+			i.fa-caret-down {
+				position: absolute;
+				right: 1.5rem;
+			}
+		}
+
+	}
 }
 
 /* Medium and up (640px) */

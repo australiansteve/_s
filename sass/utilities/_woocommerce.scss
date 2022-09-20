@@ -91,17 +91,6 @@
 
 		.page-content {
 
-
-			h1 {
-				margin-bottom: 2rem;
-
-				span {
-					border-bottom: 2px solid $black;
-					padding-bottom: 1rem;
-					line-height: 2;
-				}
-			}
-
 			ul.products {
 				list-style: none;
 
@@ -172,6 +161,10 @@
 			form.woocommerce-ResetPassword {
 				max-width: 350px;
 				margin: auto;
+			}
+
+			.woocommerce-MyAccount-navigation {
+				margin-bottom: 1rem;
 			}
 		}
 	}

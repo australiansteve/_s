@@ -108,26 +108,6 @@ header#masthead {
 			max-width: 50%;
 		}
 
-		#small-menu-parent {
-			background-color: $off-white;
-			color: $inky-blue;
-
-			a {
-				color: $inky-blue;
-			}
-
-			.menu-header {
-				position: relative;
-
-				i.fa-caret-up,
-				i.fa-caret-down {
-					position: absolute;
-					right: 1.5rem;
-				}
-			}
-
-		}
-
 		#umbrella-decoration {
 
 			> .cell:nth-of-type(odd) {
