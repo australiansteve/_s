@@ -167,8 +167,19 @@
 					}
 				}
 			}
+
+			form.woocommerce-form-login,
+			form.woocommerce-ResetPassword {
+				max-width: 350px;
+				margin: auto;
+			}
 		}
 	}
+}
+
+/* Force enter alignment of woocmmerce pages with .wc-align-center class*/
+.woocommerce-page.wc-align-center .entry-content .woocommerce {
+	text-align: center;
 }
 
 .woocommerce-checkout {

@@ -275,7 +275,7 @@ add_filter( 'get_the_archive_title', function ($title) {
 	return $title;
 });
 
-
+/* Add scripts to footer under certain situations */
 add_action('wp_footer', function() {
 
 	echo get_template_part('template-parts/js');
@@ -286,7 +286,7 @@ add_action('wp_footer', function() {
 	}
 });
 
-
+/* Load custom scripts for the default WP login pages */
 add_action( 'login_enqueue_scripts', function() { 
 	?>
     <style type="text/css">
@@ -302,8 +302,15 @@ add_action( 'login_enqueue_scripts', function() {
 	<?php 
 });
 
- 
+/* Load custom styles for the default WP login pages */
 add_action( 'login_enqueue_scripts', function() {
     wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
-    wp_enqueue_script( 'custom-login', get_stylesheet_directory_uri() . '/style-login.js' );
 } );
+
+/* Add classes to body under certain situations */
+add_filter('body_class', function($classes) {
+	if ( is_account_page() && !is_user_logged_in() ) { // User is on my account pages but not logged in
+	    $classes[] = 'wc-align-center'; // this class helps center the page content & restrict form width
+	}
+    return $classes;
+});
