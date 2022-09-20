@@ -18,11 +18,11 @@ get_header();
 
 			<div class="entry-content">
 
-				<h2 class="page-title">
+				<h1 class="page-title">
 				<?php
 				echo get_the_title( get_option( 'page_for_posts' ) );
 				?>
-				</h2>
+				</h1>
 
 				<div class="grid-x grid-padding-x small-up-1 medium-up-2 xlarge-up-3">
 					<?php

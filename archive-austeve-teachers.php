@@ -25,13 +25,13 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 				<?php
 				$school_id = intval(get_query_var('school'), 10);
 				if($school_id) :
-					echo '<h2 class="page-title">'.get_the_title($school_id).'</h2>';
+					echo '<h1 class="page-title">'.get_the_title($school_id).'</h1>';
 					?>
 					<a class="button" data-school-id="<?php echo $school_id; ?>" data-open="schoolDonateModal" onclick="setup_donation(event)"><?php _e('Buy Gift Card for school', 'hamburger-cat'); ?></a>
 
 					<?php
 				else: 
-					the_archive_title( '<h2 class="page-title">', '</h2>' );
+					the_archive_title( '<h1 class="page-title">', '</h1>' );
 				endif;
 
 				get_template_part('template-parts/school-search');

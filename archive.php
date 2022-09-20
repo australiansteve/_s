@@ -18,7 +18,7 @@ get_header();
 
 			<div class="entry-content">
 				<?php
-				the_archive_title( '<h2 class="page-title">', '</h2>' );
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				?>
 
 				<div class="grid-x grid-padding-x small-up-1 archive-grid-<?php echo get_queried_object()->name; ?>" >
