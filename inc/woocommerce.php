@@ -309,6 +309,7 @@ add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_bo
 add_action('woocommerce_single_product_summary', 'austeve_woocommerce_content_box_end', 70);
 
 add_action('woocommerce_before_shop_loop_item', 'austeve_woocommerce_start_archive_item', 5);
+add_action('woocommerce_before_shop_loop_item_title', 'austeve_woocommerce_archive_item_before_thumbnail', 5);
 add_action('woocommerce_before_shop_loop_item_title', 'austeve_woocommerce_archive_item_after_thumbnail', 20);
 add_action('woocommerce_shop_loop_item_title', 'austeve_woocommerce_archive_item_after_title', 20);
 add_action('woocommerce_after_shop_loop_item_title', 'austeve_woocommerce_archive_item_after_price', 12);
@@ -323,8 +324,15 @@ function austeve_woocommerce_start_archive_item() {
 	<?php
 }
 
+function austeve_woocommerce_archive_item_before_thumbnail() {
+?>
+		<div class="thumbnail-container">
+<?php
+}
+
 function austeve_woocommerce_archive_item_after_thumbnail() {
 ?>
+			</div>
 		</div>
 		<div class="cell medium-8">
 			<div>
@@ -470,14 +478,17 @@ function austeve_woocommerce_sold_out_notice() {
 
 	global $post, $product;
 
-	if ( !$product->is_in_stock() ) : 
+	if ( !$product->is_in_stock() ) {
+		echo '<span class="sold-out"><img src="'.get_stylesheet_directory_uri().'/media/sold-out.png" alt="" width="" height="" /></span>';
 
-	echo '<span class="sold-out"><img src="'.get_stylesheet_directory_uri().'/media/sold-out.png" alt="" width="" height="" /></span>';
+		//echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
 
-	//echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+		<?php
+	}
 
-	<?php
-endif;
+	if ( has_term( 'inky-suggests', 'product_cat' )) {
+		echo '<span class="inky-suggests"><img src="'.get_stylesheet_directory_uri().'/media/inky-umbrella-suggests.png" alt="inky umbrella suggests" title="inky umbrella suggests" width="" height="" /></span>';
+	}
 
 }
 add_action ( 'woocommerce_before_shop_loop_item_title', 'austeve_woocommerce_sold_out_notice', 11);

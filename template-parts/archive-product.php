@@ -1,6 +1,6 @@
 <?php
 global $post;
-$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-image') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
+$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'full') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
 global $product;
 $author = $product->get_attribute( 'author' );
 ?>
@@ -9,7 +9,16 @@ $author = $product->get_attribute( 'author' );
 
 	<div class="grid-x grid-margin-x">
 		<div class="cell medium-4 text-right">
-			<a href="<?php echo get_the_permalink();?>" title="<?php echo get_the_title();?>"><img src='<?php echo $thumbnail; ?>' /></a>
+			<a href="<?php echo get_the_permalink();?>" title="<?php echo get_the_title();?>">
+				<div class="thumbnail-container">
+					<img src='<?php echo $thumbnail; ?>' />
+					<?php
+					if ( has_term( 'inky-suggests', 'product_cat' )) {
+						echo '<span class="inky-suggests"><img src="'.get_stylesheet_directory_uri().'/media/inky-umbrella-suggests.png" alt="inky umbrella suggests" title="inky umbrella suggests" width="" height="" /></span>';
+					}
+					?>
+				</div>
+			</a>
 		</div>
 		<div class="cell medium-8">
 			<a href="<?php echo get_the_permalink();?>" title="<?php echo get_the_title();?>">

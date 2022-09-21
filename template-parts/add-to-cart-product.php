@@ -1,7 +1,7 @@
 <?php
 $identifier = substr(str_shuffle(MD5(microtime())), 0, 10);
 
-if ($args['can_add_to_wishlist'] && $args['wishlist_id']) {
+if (isset($args['can_add_to_wishlist']) && $args['can_add_to_wishlist'] && isset($args['wishlist_id']) && !empty($args['wishlist_id'])) {
 
 	if ($args['viewing_own_wishlist']) {
 		/* Teacher looking at their own wishlist */
@@ -26,9 +26,8 @@ if ($args['can_add_to_wishlist'] && $args['wishlist_id']) {
 }
 else {
 	//wishlist_id should come from calling page-template, or will fall back to cookie value, which should be set, and if it's not the add to cart will just be generic (associated with no wishlist)
-	//$args['wishlist_id'] = null;
 
-	if (isset($args['wishlist_id'])) {
+	if (isset($args['wishlist_id']) && !empty($args['wishlist_id'])) {
 		?>
 		<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['wishlist_id'];?>);">
 	 		<?php _e('Buy for class', 'hamburger-cat'); ?>

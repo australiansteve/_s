@@ -7,6 +7,7 @@
  * @package Hamburger_Cat
  */
 
+$user_can_add_to_wishlist = false;
 $wishlist_id = get_query_var('wishlist_id');
 
 if ($wishlist_id && current_user_can('add_to_wishlists')) {
@@ -24,13 +25,14 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 	if( have_rows('products') ):
 		global $post;
 		?>
-		<div class="grid-x grid-margin-x small-up-2 medium-up-3 xlarge-up-4">
+		<ul class="grid-x grid-margin-x small-up-2 medium-up-3 xlarge-up-4 products">
 			<?php
 			while( have_rows('products') ) : the_row();
 				$product_id = get_sub_field('product');
-				$product_needs = array( 'wishlist_id' => $wishlist_id, 'wants' =>  get_sub_field('wants'), 'has' => get_sub_field('has'), 'can_add_to_wishlist' => $user_can_add_to_wishlist);
+				$product_needs = array( 'wishlist_id' => $wishlist_id, 'can_add_to_wishlist' => $user_can_add_to_wishlist);
+				error_log("PRODUCT NEEDS: ".print_r($product_needs, true));
 				?>
-				<div class="cell" data-product-id="<?php echo $product_id;?>">
+				<li class="cell" data-product-id="<?php echo $product_id;?>">
 					<?php 
 					$post = get_post($product_id);
 
@@ -38,12 +40,12 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 					get_template_part('template-parts/archive-grid', get_post_type(), $product_needs);
   					wp_reset_postdata();
 					?>
-				</div>
+				</li>
 				<?php
 
 			endwhile;
 			?>
-		</div>
+		</ul>
 		<?php
 	else :
 		_e('Wishlist contains no products', 'hamburger-cat');

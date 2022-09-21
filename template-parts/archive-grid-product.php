@@ -1,5 +1,5 @@
 <?php
-$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-image') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
+$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'full') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
 
 global $product;
 ?>
@@ -8,7 +8,14 @@ global $product;
 
 	<div class="grid-x grid-margin-x">
 		<div class="cell">
-			<img src='<?php echo $thumbnail; ?>' onclick="return quick_view_product(jQuery(this), <?php echo get_the_ID();?>);" title="<?php _e('Quick View'); ?>" data-open="quickViewModal"/>
+			<div class="thumbnail-container">
+				<img src='<?php echo $thumbnail; ?>' onclick="return quick_view_product(jQuery(this), <?php echo get_the_ID();?>);" title="<?php _e('Quick View'); ?>" data-open="quickViewModal"/>
+				<?php
+				if ( has_term( 'inky-suggests', 'product_cat' )) {
+					echo '<span class="inky-suggests"><img src="'.get_stylesheet_directory_uri().'/media/inky-umbrella-suggests.png" alt="inky umbrella suggests" title="inky umbrella suggests" width="" height="" /></span>';
+				}
+				?>
+			</div>
 		</div>
 		<div class="cell">
 			<h3 class="product-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>

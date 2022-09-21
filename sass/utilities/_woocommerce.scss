@@ -101,13 +101,6 @@
 				}
 			}
 
-			.onsale,
-			.sold-out {
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
-
 			ul.woocommerce-error[role="alert"] {
 				border: 1px solid $alert-color;
 				list-style: none;
@@ -241,7 +234,8 @@
 
 .woocommerce-page,
 .page-template-wishlist-edit-page,
-.single-austeve-wishlists {
+.single-austeve-wishlists,
+.single-austeve-campaigns {
 
 	ul.products {
 		list-style-type: none;
@@ -252,6 +246,22 @@
 			h2.woocommerce-loop-product__title {
 				font-size: 2rem;
 				margin-top: -1rem;
+			}
+
+			.thumbnail-container {
+				position: relative;
+
+				.onsale,
+				.sold-out,
+				.inky-suggests {
+					position: absolute;
+					top: 0;
+					right: 0;
+
+					img {
+						max-width: 80px;
+					}
+				}
 			}
 
 			.product-author {
