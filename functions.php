@@ -280,7 +280,10 @@ add_action('wp_footer', function() {
 
 	echo get_template_part('template-parts/js');
 
-	if ( is_shop() || (is_single() && 'austeve-wishlists' == get_post_type() ) || (is_single() && 'austeve-campaigns' == get_post_type() )) {
+	if ( is_shop() || 
+		(is_single() && 'austeve-wishlists' == get_post_type() ) || 
+		(is_single() && 'austeve-campaigns' == get_post_type() ) || 
+		(is_single() && 'product' == get_post_type() ) ) {
 		echo get_template_part('template-parts/js-ajax-add-to-cart');
 	}
 });

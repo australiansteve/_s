@@ -105,6 +105,27 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 		}
 
 	</script>
+
+	<script type="text/javascript">
+		
+		jQuery( document ).ready(function() {
+
+			var wishlist_id = <?php echo $wishlist_id; ?>;
+			
+			if (wishlist_id) {
+				var wishlistCookie = getCookie('wishlist_id');
+
+				if (wishlistCookie) {
+					//Clear current cookie value
+					document.cookie = "wishlist_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+				}
+				
+				//Set new cookie value
+				setCookie('wishlist_id', wishlist_id);
+			}
+		});
+	</script>
+
 	<footer class="entry-footer">
 		<?php hamburger_cat_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
