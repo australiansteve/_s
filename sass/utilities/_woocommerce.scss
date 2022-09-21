@@ -166,6 +166,10 @@
 			.woocommerce-MyAccount-navigation {
 				margin-bottom: 1rem;
 			}
+
+			.hide-for-no-wishlist-cookie {
+				display: none;
+			}
 		}
 	}
 }
@@ -236,7 +240,8 @@
 }
 
 .woocommerce-page,
-.page-template-wishlist-edit-page {
+.page-template-wishlist-edit-page,
+.single-austeve-wishlists {
 
 	ul.products {
 		list-style-type: none;
@@ -248,7 +253,6 @@
 				font-size: 2rem;
 				margin-top: -1rem;
 			}
-
 
 			.product-author {
 				margin-bottom: 0.25rem;

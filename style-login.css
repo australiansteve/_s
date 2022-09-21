@@ -1,5 +1,8 @@
 body.login {}
 body.login div#login {}
+body.login div#login p.message {
+	border-left: 4px solid #052040;
+}
 body.login div#login h1 {}
 body.login div#login h1 a {}
 body.login div#login form#loginform {}

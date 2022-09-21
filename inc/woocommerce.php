@@ -319,14 +319,14 @@ add_action('woocommerce_after_shop_loop_item', 'austeve_woocommerce_end_archive_
 function austeve_woocommerce_start_archive_item() {
 ?>
 	<div class="grid-x grid-margin-x medium-text-left">
-		<div class="cell medium-4 large-6 medium-text-right">
+		<div class="cell medium-4 medium-text-right">
 	<?php
 }
 
 function austeve_woocommerce_archive_item_after_thumbnail() {
 ?>
 		</div>
-		<div class="cell medium-8 large-6">
+		<div class="cell medium-8">
 			<div>
 <?php
 }

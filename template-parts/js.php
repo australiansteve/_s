@@ -2,6 +2,7 @@
 
 	// Set a Cookie
 	function setCookie(cName, cValue, expDays = 7) {
+		console.log("Setting "+ cName + "("+cValue+")");
 		let date = new Date();
 		date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
 		const expires = "expires=" + date.toUTCString();
@@ -42,6 +43,11 @@
 		        }
 		    }
 		});
+
+		/* Show 'Buy for class' buttons if wishlist_id cookie is present */
+		if (getCookie('wishlist_id')) {
+			jQuery('.hide-for-no-wishlist-cookie').removeClass('hide-for-no-wishlist-cookie');
+		}
 	});
 
 </script>

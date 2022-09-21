@@ -280,8 +280,7 @@ add_action('wp_footer', function() {
 
 	echo get_template_part('template-parts/js');
 
-	if ( is_shop() || (is_single() && 'austeve-wishlists' == get_post_type() )) {
-		error_log("is_single('austeve-wishlists') or is_shop()!");
+	if ( is_shop() || (is_single() && 'austeve-wishlists' == get_post_type() ) || (is_single() && 'austeve-campaigns' == get_post_type() )) {
 		echo get_template_part('template-parts/js-ajax-add-to-cart');
 	}
 });
@@ -314,3 +313,9 @@ add_filter('body_class', function($classes) {
 	}
     return $classes;
 });
+
+/* Custom query variables */
+add_filter( 'query_vars', function($vars) {
+    $vars[] = "wishlist_id";
+    return $vars;
+} );

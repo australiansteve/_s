@@ -62,6 +62,22 @@ body {
 		}
 
 	}
+
+	select.add-to-wishlist-qty {
+		width: auto;
+		height: 34px;
+		vertical-align: middle;
+		border-radius: 1rem;
+		text-align: right;
+	}
+
+	.qty-requested,
+	.qty-purchased {
+
+		span {
+			font-weight: 700;
+		}
+	}
 }
 
 a {

@@ -1,54 +1,32 @@
 <?php
+global $post;
 $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-image') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
-
 global $product;
+$author = $product->get_attribute( 'author' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div class="grid-x grid-margin-x">
-		<div class="cell medium-4 large-6 text-right">
-			<img src='<?php echo $thumbnail; ?>' />
+		<div class="cell medium-4 text-right">
+			<a href="<?php echo get_the_permalink();?>" title="<?php echo get_the_title();?>"><img src='<?php echo $thumbnail; ?>' /></a>
 		</div>
-		<div class="cell medium-8 large-6">
-			<h3 class="page-title"><?php the_title();?></h3>
+		<div class="cell medium-8">
+			<a href="<?php echo get_the_permalink();?>" title="<?php echo get_the_title();?>">
+				<h3 class="page-title"><?php the_title();?></h3>
 
-			<div class="product-short-description">
-				<div class="fade-bg"></div>
-				<span><?php the_excerpt(); ?></span>
-			</div>
+				<div class="product-author"><?php echo sprintf(__('Author: %s', 'hamburger-cat'), $author); ?></div>
 
-			<div class="grid-x grid padding-x">
-				<div class="cell">
-					<?php
-					if ($args['wants'] - $args['has'] > 1) {
-						?>
-						<?php _e('Qty:', 'hamburger-cat');?> <select id="add-to-cart-qty-<?php echo get_the_ID();?>">
-							<?php
-							for ($i = 1; $i <= ($args['wants'] - $args['has']); $i++) {
-								echo "<option value='".$i."'>".$i."</option>";
-							}
-						?>
-						</select>
-						<?php
-					}
-					else {
-						?>
-						<input type="hidden" id="add-to-cart-qty-<?php echo get_the_ID();?>" value="1"/>
-						<?php
-					}
-					if ($args['wants'] - $args['has'] > 0) {
-					?>
-					<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, getCookie('wishlist_id'));">
-						<?php _e('Add to cart', 'hamburger-cat'); ?>
-					</button>
-					<?php
-					}
-					else {
-						_e('No more needed!', 'hamburger-cat');
-					}
-					?>
+				<div class="product-short-description">
+					<div class="fade-bg"></div>
+					<span><?php the_excerpt(); ?></span>
 				</div>
+			</a>
+
+			<div>
+				<?php
+				get_template_part('template-parts/add-to-cart', get_post_type(), $args);
+				?>
 			</div>
 		</div>
 	</div>
