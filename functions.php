@@ -320,5 +320,7 @@ add_filter('body_class', function($classes) {
 /* Custom query variables */
 add_filter( 'query_vars', function($vars) {
     $vars[] = "wishlist_id";
+    $vars[] = "product_cat";
     return $vars;
 } );
+
