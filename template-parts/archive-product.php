@@ -26,6 +26,8 @@ $author = $product->get_attribute( 'author' );
 
 				<div class="product-author"><?php echo sprintf(__('Author: %s', 'hamburger-cat'), $author); ?></div>
 
+				<div class="product-price <?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></div>
+
 				<div class="product-short-description">
 					<div class="fade-bg"></div>
 					<span><?php the_excerpt(); ?></span>

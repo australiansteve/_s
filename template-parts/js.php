@@ -48,6 +48,12 @@
 		if (getCookie('wishlist_id')) {
 			jQuery('.hide-for-no-wishlist-cookie').removeClass('hide-for-no-wishlist-cookie');
 		}
+
+		if (getCookie('wishlist_url')) {
+			jQuery('.hide-for-no-wishlist-url.back-to-wishlist-link').each(function() {
+				jQuery(this).attr('href', getCookie('wishlist_url')).removeClass('hide-for-no-wishlist-url');
+			});
+		}
 	});
 
 </script>

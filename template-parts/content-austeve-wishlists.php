@@ -67,6 +67,7 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 			
 			//Set new cookie value
 			setCookie('wishlist_id', wishlist_id);
+			setCookie('wishlist_url', '<?php the_permalink(get_the_ID());?>');
 		});
 	</script>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -2,6 +2,8 @@
 $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'full') : wp_get_attachment_image_src( get_field('default_placeholder_image', 'options'), 'archive-image')[0]; 
 
 global $product;
+$author = $product->get_attribute( 'author' );
+$price = $product->get_attribute( 'author' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,6 +21,10 @@ global $product;
 		</div>
 		<div class="cell">
 			<h3 class="product-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+
+			<div class="product-author"><?php echo sprintf(__('Author: %s', 'hamburger-cat'), $author); ?></div>
+
+			<div class="product-price <?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></div>
 
 			<div class="grid-x grid padding-x">
 				<div class="cell">
