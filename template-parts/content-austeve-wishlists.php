@@ -7,7 +7,6 @@
  * @package Hamburger_Cat
  */
 
-
 $wishlist_id = get_the_ID();
 
 if ($wishlist_id && current_user_can('add_to_wishlists')) {
@@ -17,8 +16,9 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 
 	$viewing_own_wishlist = is_single() && $user_can_add_to_wishlist;
 }
-
 ?>
+
+<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
@@ -50,10 +50,8 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 	else :
 		_e('Wishlist contains no products', 'hamburger-cat');
 	endif;
+
 	?>
-	<footer class="entry-footer">
-		<?php hamburger_cat_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 	
 	<script type="text/javascript">
 		
