@@ -25,7 +25,7 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 	if( have_rows('products') ):
 		global $post;
 		?>
-		<ul class="grid-x grid-margin-x small-up-2 medium-up-3 xlarge-up-4 products">
+		<ul class="grid-x grid-margin-x small-up-2 medium-up-3 xlarge-up-4 products product-grid">
 			<?php
 			while( have_rows('products') ) : the_row();
 				$product_id = get_sub_field('product');
@@ -84,7 +84,7 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
                     security: '<?php echo $ajax_nonce_product; ?>',
                     product_id: product_id,
                     campaign_id: <?php echo get_the_ID(); ?>,
-                    wishlist_id: <?php echo $user_can_add_to_wishlist ? $wishlist_id: '-1'; ?>
+                    wishlist_id: <?php echo $user_can_add_to_wishlist ? $wishlist_id: 'false'; ?>
                 },
                 error: function (xhr, status, error) {
                     console.log("Error: " + error);
@@ -110,7 +110,7 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 		
 		jQuery( document ).ready(function() {
 
-			var wishlist_id = <?php echo $wishlist_id; ?>;
+			var wishlist_id = <?php echo $wishlist_id ? $wishlist_id : 'false'; ?>;
 			
 			if (wishlist_id) {
 				var wishlistCookie = getCookie('wishlist_id');

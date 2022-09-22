@@ -236,7 +236,8 @@
 .woocommerce-page,
 .page-template-wishlist-edit-page,
 .single-austeve-wishlists,
-.single-austeve-campaigns {
+.single-austeve-campaigns,
+.reveal.quick-view-product {
 
 	ul.products {
 		list-style-type: none;
@@ -247,30 +248,6 @@
 			h2.woocommerce-loop-product__title {
 				font-size: 2rem;
 				margin-top: -1rem;
-			}
-
-			.thumbnail-container {
-				position: relative;
-
-				.onsale,
-				.sold-out,
-				.inky-suggests {
-					position: absolute;
-					top: 0;
-					right: 0;
-
-					img {
-						max-width: 80px;
-					}
-				}
-			}
-
-			.product-author {
-				margin-bottom: 0.25rem;
-			}
-
-			.price {
-				line-height: 1.5;
 			}
 
 			.product-short-description {
@@ -293,6 +270,67 @@
 				.fade-bg {
 					background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1));
 
+				}
+			}
+		}
+	}
+
+	.thumbnail-container {
+		position: relative;
+
+		.onsale,
+		.sold-out,
+		.inky-suggests {
+			position: absolute;
+			top: 0;
+			right: 0;
+
+			img {
+				max-width: 80px;
+			}
+		}
+	}
+
+	.product-author {
+		margin-bottom: 0.25rem;
+	}
+
+	.price {
+		line-height: 1.5;
+	}
+
+	.product-grid {
+
+		.thumbnail-container {
+
+			.quick-view-overlay {
+				position: absolute;
+				bottom: 0;
+				top: 0;
+				left: 0;
+				right: 0;
+				background: rgba(255, 255, 255, 0);
+
+				.text-container {
+					position: absolute;
+					bottom: 0;
+					top: calc(50% - 0.5rem);
+					left: 0;
+					right: 0;
+					font-size: 0;
+				}
+			}
+		}
+
+		.thumbnail-container:hover {
+			cursor: pointer;
+
+			.quick-view-overlay {
+
+				background: rgba(255, 255, 255, 0.75);
+
+				.text-container {
+					font-size: 1rem;
 				}
 			}
 		}

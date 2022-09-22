@@ -26,7 +26,7 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 	if( have_rows('wishlist_items') ):
 		global $post;
 		?>
-		<ul class="grid-x text-left products">
+		<ul class="grid-x text-left products product-list">
 			<?php
 			while( have_rows('wishlist_items') ) : the_row();
 				$product_id = get_sub_field('product');

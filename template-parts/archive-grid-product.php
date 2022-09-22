@@ -11,12 +11,17 @@ $price = $product->get_attribute( 'author' );
 	<div class="grid-x grid-margin-x">
 		<div class="cell">
 			<div class="thumbnail-container">
-				<img src='<?php echo $thumbnail; ?>' onclick="return quick_view_product(jQuery(this), <?php echo get_the_ID();?>);" title="<?php _e('Quick View'); ?>" data-open="quickViewModal"/>
+				<img src='<?php echo $thumbnail; ?>'/>
 				<?php
 				if ( has_term( 'inky-suggests', 'product_cat' )) {
 					echo '<span class="inky-suggests"><img src="'.get_stylesheet_directory_uri().'/media/inky-umbrella-suggests.png" alt="inky umbrella suggests" title="inky umbrella suggests" width="" height="" /></span>';
 				}
 				?>
+				<div class="quick-view-overlay text-center align-center" onclick="return quick_view_product(jQuery(this), <?php echo get_the_ID();?>);"  title="<?php _e('Quick View'); ?>" data-open="quickViewModal">
+					<div class="text-container">
+						Quick view
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="cell">
