@@ -18,8 +18,6 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 }
 ?>
 
-<?php get_template_part( 'template-parts/breadcrumbs', get_post_type() ); ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php

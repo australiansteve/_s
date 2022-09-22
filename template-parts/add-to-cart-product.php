@@ -6,8 +6,15 @@ if (isset($args['can_add_to_wishlist']) && $args['can_add_to_wishlist'] && isset
 	if ($args['viewing_own_wishlist']) {
 		/* Teacher looking at their own wishlist */
 		?>
-		<div class='qty-requested'><?php echo sprintf(__('Quantity requested: <span>%s</span>'), $args['wants']);?></div>
-		<div class='qty-purchased'><?php echo sprintf(__('Quantity purchased: <span>%s</span>'), $args['has']);?></div>
+		<p class='qty-requested'><?php echo __('Quantity requested: ');?>
+			<select id='qty-requested-<?php echo get_the_ID();?>' onchange="return update_wishlist(jQuery(this), <?php echo $args['wishlist_id'];?>, <?php echo get_the_ID();?>);">
+				<?php for($q = 0; $q <= 10; $q++) {
+					$selected_text = $q == $args['wants'] ? 'selected' : '';
+					echo "<option value='$q' ".$selected_text.">$q</option>";
+				}?>
+			</select>
+		</p>
+		<p class='qty-purchased'><?php echo sprintf(__('Quantity purchased: <span>%s</span>'), $args['has']);?></p>
 		<?php
 	}
 	else {

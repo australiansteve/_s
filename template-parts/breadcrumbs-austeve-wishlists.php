@@ -1,4 +1,4 @@
-<div class="breadcrumbs">
+<div class="">
 	<?php 
 	$wishlist_id = get_the_ID();
 
@@ -10,8 +10,8 @@
 		if ($user_can_add_to_wishlist) {
 			$campaign_id = get_field('campaign');
 
-			echo "<a href='".get_permalink($campaign_id)."?wishlist_id=".get_the_ID()."'>";
-			echo __('Add to wishlist', 'austeve-hamburgercat');
+			echo "<a class='button' href='".get_permalink($campaign_id)."?wishlist_id=".get_the_ID()."'>";
+			echo __('Select more books', 'austeve-hamburgercat');
 			echo "</a>";
 		}
 	}

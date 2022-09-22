@@ -89,6 +89,7 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 
 				function filter_by_category(element) {
 					reloadWithQueryStringVars({"product_cat": element.val()});
+        			element.after("<i class='fas fa-circle-notch fa-spin update-state margin-top button-spinner'></i>");
 				}
 			</script>
 		</div>
