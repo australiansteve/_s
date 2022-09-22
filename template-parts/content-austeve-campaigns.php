@@ -48,8 +48,11 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 					echo ">".__('All categories', 'austeve-hamburgercat')."</option>";
 
 					foreach ($product_categories as $key => $category) {
-						$selected_text = $current_product_category == $category->slug ? 'selected' : '';
-						echo '<option value="'.$category->slug.'" '.$selected_text.'>'.$category->name.'</option>';
+						//skip ever displaying the giftcard category here
+						if ($category->slug != 'gift-cards') {
+							$selected_text = $current_product_category == $category->slug ? 'selected' : '';
+							echo '<option value="'.$category->slug.'" '.$selected_text.'>'.$category->name.'</option>';
+						}
 					}
 					echo "</select>";
 				}
