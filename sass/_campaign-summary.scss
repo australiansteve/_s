@@ -1,0 +1,13 @@
+#campaign-summary {
+
+	> .cell {
+		padding: 0.25rem 0;
+		border-top: 1px solid $inky-blue;
+		border-left: 1px solid $inky-blue;
+		border-right: 1px solid $inky-blue;
+	}
+
+	> .cell:nth-last-of-type(1) {
+		border-bottom: 1px solid $inky-blue;
+	}
+}

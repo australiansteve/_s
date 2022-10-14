@@ -74,7 +74,7 @@ $ajax_nonce_wishlist_update = wp_create_nonce( "update-wishlist" );
                 }
                 else {
                     target.find('.button-spinner').remove();
-                    target.after("<div class='message'>Failed to addd to wishlist. Contact support.</div>");
+                    target.after("<div class='message'>Failed to add to wishlist. Contact support.</div>");
                 }
             }
         });
