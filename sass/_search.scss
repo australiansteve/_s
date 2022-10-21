@@ -1,5 +1,5 @@
-#teacher-search-form,
-#school-search-form {
+#wishlist-search-form,
+#campaign-search-form {
 
 	input[type="text"] {
 		border-radius: 1.5rem;
@@ -19,8 +19,8 @@
 /* Medium and up (640px) */
 @media screen and (min-width: 40em) {
 
-	#teacher-search-form,
-	#school-search-form {
+	#wishlist-search-form,
+	#campaign-search-form {
 		max-width: 75%;
 		margin: auto;
 	}
@@ -34,8 +34,8 @@
 /* Large and up (>1024px) */
 @media screen and (min-width: 64em) {
 
-	#teacher-search-form,
-	#school-search-form {
+	#wishlist-search-form,
+	#campaign-search-form {
 		max-width: 50%;
 	}
 }

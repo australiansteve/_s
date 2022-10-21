@@ -23,18 +23,18 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 			<div class="entry-content">
 
 				<?php
-				$school_id = intval(get_query_var('school'), 10);
-				if($school_id) :
-					echo '<h1 class="page-title">'.get_the_title($school_id).'</h1>';
+				$campaign_id = intval(get_query_var('campaign_id'), 10);
+				if($campaign_id) :
+					echo '<h1 class="page-title">'.get_the_title($campaign_id).'</h1>';
 					?>
-					<a class="button" data-school-id="<?php echo $school_id; ?>" data-open="schoolDonateModal" onclick="setup_donation(event)"><?php _e('Buy Gift Card for school', 'hamburger-cat'); ?></a>
+					<a class="button" data-campaign-id="<?php echo $campaign_id; ?>" data-open="campaignDonateModal" onclick="setup_donation(event)"><?php _e('Buy Gift Card for school', 'hamburger-cat'); ?></a>
 
 					<?php
 				else: 
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 				endif;
 
-				get_template_part('template-parts/school-search');
+				get_template_part('template-parts/campaign-search');
 				?>
 
 				<div class="grid-x grid-padding-x small-up-1 archive-grid-<?php echo get_queried_object()->name; ?>" >
@@ -64,7 +64,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 				
 			</div>
 
-			<div class="reveal make-donation-modal teacher" id="donateModal" data-reveal data-options="animationIn:slide-in-up; animationOut:slide-out-down;">
+			<div class="reveal make-donation-modal wishlist" id="donateModal" data-reveal data-options="animationIn:slide-in-up; animationOut:slide-out-down;">
 
 				<div class="modal-container">
 
@@ -83,7 +83,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 
 			</div>
 
-			<div class="reveal make-donation-modal school" id="schoolDonateModal" data-reveal data-options="animationIn:slide-in-up; animationOut:slide-out-down;">
+			<div class="reveal make-donation-modal campaign" id="campaignDonateModal" data-reveal data-options="animationIn:slide-in-up; animationOut:slide-out-down;">
 
 				<div class="modal-container">
 
@@ -125,9 +125,9 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 					e.preventDefault();
 					jQuery('.make-donation-modal .donation-html').html("<div class='text-center'><i class='fas fa-circle-notch fa-spin'></i></div>");
 
-					var teacher_id = jQuery(e.target).data('teacher-id');
-					var school_id = jQuery(e.target).data('school-id');
-					var class_name = teacher_id === undefined ? 'school' : 'teacher';
+					var wishlist_id = jQuery(e.target).data('wishlist-id');
+					var campaign_id = jQuery(e.target).data('campaign-id');
+					var class_name = wishlist_id === undefined ? 'campaign' : 'wishlist';
 
 					jQuery.ajax({
 		                type: 'POST',
@@ -136,8 +136,8 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 		                data: { 
 		                    action : 'austeve_setup_donation', 
 		                    security: '<?php echo $ajax_nonce_setup; ?>',
-		                    teacher_id: teacher_id,
-		                    school_id: school_id
+		                    wishlist_id: wishlist_id,
+		                    campaign_id: campaign_id
 		                },
 		                error: function (xhr, status, error) {
 		                    console.log("Error: " + error);
@@ -145,12 +145,10 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 		                },
 		                success: function( response ) {
 		                    if (response) {
-		                        jQuery('.make-donation-modal .donation-html').html(response);
-
-
+		                        jQuery('.make-donation-modal.'+class_name+' .donation-html').html(response);
 		                        jQuery('.make-donation-modal.'+class_name+' #variation_id').select2({
-			                        	minimumResultsForSearch: -1
-			                        }
+			                      	minimumResultsForSearch: -1
+			                      }
 		                        );
 		                    }
 		                    else {
@@ -167,8 +165,8 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 					var target = jQuery(e.target);
 					var product_id = jQuery('.make-donation-modal input[name=product_id]').val();
 					var variation_id = jQuery('.make-donation-modal select[name=variation_id]').val();
-					var teacher_id = jQuery('.make-donation-modal input[name=teacher_id]').val();
-					var school_id = jQuery('.make-donation-modal input[name=school_id]').val();
+					var wishlist_id = jQuery('.make-donation-modal input[name=wishlist_id]').val();
+					var campaign_id = jQuery('.make-donation-modal input[name=campaign_id]').val();
 
 					jQuery('header span.header-cart-count').html("<i class='fas fa-circle-notch fa-spin'></i>");
 					target.append("<i class='fas fa-circle-notch fa-spin button-spinner'></i>");
@@ -182,8 +180,8 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 		                    security: '<?php echo $ajax_nonce; ?>',
 		                    product_id: variation_id,
 		                    variation_id: variation_id,
-		                    teacher_id: teacher_id,
-		                    school_id: school_id
+		                    wishlist_id: wishlist_id,
+		                    campaign_id: campaign_id
 		                },
 		                error: function (xhr, status, error) {
 		                    console.log("Error: " + error);

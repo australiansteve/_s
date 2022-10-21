@@ -1,6 +1,7 @@
 <?php
 /**
- * Template part for displaying posts
+ * 
+ * Template part for displaying teacher pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -13,7 +14,7 @@
 	
 	<?php the_content();?>
 
-	<?php get_template_part( 'template-parts/wishlists', get_post_type() ); ?>
+	<?php // We could maybe use this to display active campaign wishlists?? ?>
 
 	<footer class="entry-footer">
 		<?php hamburger_cat_entry_footer(); ?>

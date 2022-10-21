@@ -319,6 +319,7 @@ add_filter('body_class', function($classes) {
 
 /* Custom query variables */
 add_filter( 'query_vars', function($vars) {
+    $vars[] = "campaign_id";
     $vars[] = "wishlist_id";
     $vars[] = "product_cat";
     return $vars;

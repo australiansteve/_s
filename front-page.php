@@ -16,7 +16,7 @@ get_header();
 			<div class="page-content text-center">
 				<div class="entry-content">
 					<?php 
-					get_template_part('template-parts/school-search');
+					get_template_part('template-parts/campaign-search');
 					?>
 				</div>
 			</div>
