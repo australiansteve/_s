@@ -1,4 +1,7 @@
-#campaign-summary {
+#campaign-summary,
+#campaign-summary-by-book {
+
+	margin-bottom: 3rem;
 
 	> .cell {
 		padding: 0.25rem 0;
@@ -9,5 +12,9 @@
 
 	> .cell:nth-last-of-type(1) {
 		border-bottom: 1px solid $inky-blue;
+	}
+
+	.header-row {
+		font-weight: 700;
 	}
 }
