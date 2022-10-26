@@ -1,12 +1,11 @@
 .woocommerce-account {
 
 	.dashboard-section {
-		margin-bottom: 3rem;
+		margin-top: 2rem;
 
 		.data-row {
-			border: 1px solid $inky-blue;
-			border-bottom: none;
-			padding: 0.25em 0;
+			border-bottom: 1px solid $inky-blue;
+			padding: 0.5em 0;
 
 			.font-small {
 				font-size: 0.8em;
@@ -14,7 +13,11 @@
 		}
 
 		.data-row:nth-last-of-type(1) {
-			border-bottom: 1px solid $inky-blue;
+			border-bottom: none;
 		}
+	}
+
+	.dashboard-section:nth-last-of-type(1) {
+		margin-bottom: 3rem;
 	}
 }
