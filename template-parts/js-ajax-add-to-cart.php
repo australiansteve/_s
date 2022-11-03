@@ -31,7 +31,7 @@ $ajax_nonce_wishlist_update = wp_create_nonce( "update-wishlist" );
                 if (response) {
                 	console.log('austeve_add_to_cart response: ' + response);
             		target.find('.button-spinner').remove();
-            		target.after("<div class='message'><?php _e('Added to cart.', 'hamburger-cat'); ?><br/><?php echo sprintf(__('<a href=\'%s\'><strong>View Cart</strong>.</a>', 'hamburger-cat'), wc_get_cart_url()); ?></div>");
+            		target.after("<div class='message add-to-cart-response'><?php _e('Added to cart.', 'hamburger-cat'); ?><br/><?php echo sprintf(__('<a href=\'%s\'><strong>View Cart</strong>.</a>', 'hamburger-cat'), wc_get_cart_url()); ?></div>");
                     setTimeout(function() {
                     	jQuery('header span.header-cart-count').html(response);
                     }, 1500);                    

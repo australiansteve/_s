@@ -34,18 +34,26 @@ if (isset($args['can_add_to_wishlist']) && $args['can_add_to_wishlist'] && isset
 else {
 	//wishlist_id should come from calling page-template, or will fall back to cookie value, which should be set, and if it's not the add to cart will just be generic (associated with no wishlist)
 
-	if (isset($args['wishlist_id']) && !empty($args['wishlist_id'])) {
-		?>
-		<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['wishlist_id'];?>);">
-	 		<?php _e('Buy for class', 'hamburger-cat'); ?>
-		</button>
-		<?php
-	}
-
 	?>
-	<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, null);">
- 		<?php _e('Buy for home', 'hamburger-cat'); ?>
-	</button>
+	<div class="grid-x grid-margin-x">
+		<?php
+		if (isset($args['wishlist_id']) && !empty($args['wishlist_id'])) {
+			?>
+			<div class="cell shrink">
+				<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['wishlist_id'];?>);">
+			 		<?php _e('Buy for class', 'hamburger-cat'); ?>
+				</button>
+			</div>
+			<?php
+		}
+
+		?>
+		<div class="cell shrink">
+			<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, null);">
+		 		<?php _e('Buy for home', 'hamburger-cat'); ?>
+			</button>
+		</div>
+	</div>
 	<?php
 }
 ?>
