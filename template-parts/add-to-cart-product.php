@@ -38,18 +38,22 @@ else {
 	<div class="grid-x grid-margin-x">
 		<?php
 		if (isset($args['wishlist_id']) && !empty($args['wishlist_id'])) {
-			?>
-			<div class="cell shrink">
-				<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['wishlist_id'];?>);">
-			 		<?php _e('Buy for class', 'hamburger-cat'); ?>
-				</button>
-			</div>
-			<?php
+			//if wishlist still has items left to be purchased
+			$wishlist_needs = $args['has'] < $args['wants'];
+
+				?>
+				<div class="cell shrink">
+					<button class="button add-to-cart <?php echo $wishlist_needs ? '' : 'disabled';?>" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['wishlist_id'];?>);" title="<?php echo $wishlist_needs ? __('Buy for class', 'austeve-inky') : __('Wishlist item already purchased', 'austeve-inky'); ?>">
+				 		<?php _e('Buy for class', 'hamburger-cat'); ?>
+					</button>
+				</div>
+				<?php
+			
 		}
 
 		?>
 		<div class="cell shrink">
-			<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, null);">
+			<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, null);" title="<?php _e('Buy for home', 'austeve-inky');?>">
 		 		<?php _e('Buy for home', 'hamburger-cat'); ?>
 			</button>
 		</div>
