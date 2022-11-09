@@ -4,7 +4,7 @@ $ajax_nonce_wishlist = wp_create_nonce( "add-to-wishlist" );
 $ajax_nonce_wishlist_update = wp_create_nonce( "update-wishlist" );
 ?>
 <script type="text/javascript">
-	function add_to_cart(target, product_id, variation_id, wishlist_id) {
+	function add_to_cart(target, product_id, variation_id, campaign_id, wishlist_id) {
 
 		jQuery('header span.header-cart-count').html("<i class='fas fa-circle-notch fa-spin'></i>");
 		target.append("<i class='fas fa-circle-notch fa-spin button-spinner'></i>");
@@ -20,6 +20,7 @@ $ajax_nonce_wishlist_update = wp_create_nonce( "update-wishlist" );
                 security: '<?php echo $ajax_nonce; ?>',
                 product_id: product_id,
                 variation_id: variation_id,
+                campaign_id: campaign_id,
                 wishlist_id: wishlist_id,
                 quantity: quantity
             },

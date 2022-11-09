@@ -178,7 +178,7 @@ $ajax_nonce = wp_create_nonce( "add-to-cart" );
 		                data: { 
 		                    action : 'austeve_add_to_cart', 
 		                    security: '<?php echo $ajax_nonce; ?>',
-		                    product_id: variation_id,
+		                    product_id: product_id,
 		                    variation_id: variation_id,
 		                    wishlist_id: wishlist_id,
 		                    campaign_id: campaign_id

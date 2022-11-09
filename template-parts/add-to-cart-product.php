@@ -43,7 +43,7 @@ else {
 
 				?>
 				<div class="cell shrink">
-					<button class="button add-to-cart <?php echo $wishlist_needs ? '' : 'disabled';?>" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['wishlist_id'];?>);" title="<?php echo $wishlist_needs ? __('Buy for class', 'austeve-inky') : __('Wishlist item already purchased', 'austeve-inky'); ?>">
+					<button class="button add-to-cart <?php echo $wishlist_needs ? '' : 'disabled';?>" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['campaign_id'];?>, <?php echo $args['wishlist_id'];?>);" title="<?php echo $wishlist_needs ? __('Buy for class', 'austeve-inky') : __('Wishlist item already purchased', 'austeve-inky'); ?>">
 				 		<?php _e('Buy for class', 'hamburger-cat'); ?>
 					</button>
 				</div>
@@ -53,7 +53,7 @@ else {
 
 		?>
 		<div class="cell shrink">
-			<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, null);" title="<?php _e('Buy for home', 'austeve-inky');?>">
+			<button class="button add-to-cart" onclick="return add_to_cart(jQuery(this), <?php echo get_the_ID();?>, null, <?php echo $args['campaign_id'];?>, null);" title="<?php _e('Buy for home', 'austeve-inky');?>">
 		 		<?php _e('Buy for home', 'hamburger-cat'); ?>
 			</button>
 		</div>

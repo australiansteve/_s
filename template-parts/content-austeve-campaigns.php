@@ -211,6 +211,8 @@ $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
 				//Set new cookie value
 				setCookie('wishlist_id', wishlist_id);
 			}
+
+			setCookie('campaign_id', <?php echo get_the_ID(); ?>);
 		});
 	</script>
 

@@ -28,7 +28,7 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 			<?php
 			while( have_rows('wishlist_items') ) : the_row();
 				$product_id = get_sub_field('product');
-				$product_needs = array( 'wants' =>  get_sub_field('wants'), 'has' => get_sub_field('has'), 'wishlist_id' => $wishlist_id, 'can_add_to_wishlist' => $user_can_add_to_wishlist, 'viewing_own_wishlist' => $viewing_own_wishlist);
+				$product_needs = array( 'wants' =>  get_sub_field('wants'), 'has' => get_sub_field('has'), 'campaign_id' => get_field('campaign', $wishlist_id), 'wishlist_id' => $wishlist_id, 'can_add_to_wishlist' => $user_can_add_to_wishlist, 'viewing_own_wishlist' => $viewing_own_wishlist);
 				?>
 				<li class="cell" data-product-id="<?php echo $product_id;?>">
 					<?php 
@@ -55,7 +55,8 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 		
 		jQuery( document ).ready(function() {
 			wishlist_id = <?php echo get_the_ID();?>;
-			
+			campaign_id = <?php echo get_field('campaign');?>;
+
 			var wishlistCookie = getCookie('wishlist_id');
 
 			if (wishlistCookie) {
@@ -63,9 +64,10 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 				document.cookie = "wishlist_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 			}
 			
-			//Set new cookie value
+			//Set new cookie values
 			setCookie('wishlist_id', wishlist_id);
 			setCookie('wishlist_url', '<?php the_permalink(get_the_ID());?>');
+			setCookie('campaign_id', campaign_id);
 		});
 	</script>
 </article><!-- #post-<?php the_ID(); ?> -->
