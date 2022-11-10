@@ -8,6 +8,8 @@
  */
 
 $wishlist_id = get_the_ID();
+$user_can_add_to_wishlist = false;
+$viewing_own_wishlist = false;
 
 if ($wishlist_id && current_user_can('add_to_wishlists')) {
 	//If current user is a teacher, double check that the wishlist_id belongs to them
