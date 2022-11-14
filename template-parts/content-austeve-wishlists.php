@@ -8,6 +8,7 @@
  */
 
 $wishlist_id = get_the_ID();
+$campaign_id = get_field('campaign');
 $user_can_add_to_wishlist = false;
 $viewing_own_wishlist = false;
 
@@ -23,6 +24,13 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php
+	if($campaign_id) :
+		?>
+		<a class="button" data-wishlist-id="<?php echo get_the_ID(); ?>" data-open="donateModal" onclick="setup_donation(event)"><?php _e('Buy a Gift Card', 'hamburger-cat'); ?></a>
+		<?php
+	endif;
+
+
 	if( have_rows('wishlist_items') ):
 		global $post;
 		?>
@@ -72,4 +80,7 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 			setCookie('campaign_id', campaign_id);
 		});
 	</script>
+
+	<?php get_template_part('template-parts/donation-setup'); ?>
+
 </article><!-- #post-<?php the_ID(); ?> -->
