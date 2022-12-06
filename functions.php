@@ -236,7 +236,7 @@ function austeve_clean_string($string) {
 }
 
 add_filter ( 'pre_get_posts', function($query) {
-	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-funds') || (wp_doing_ajax() && in_array('austeve-funds', $query->get('post_type')))) {
+	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-funds') || (wp_doing_ajax() && in_array($query->get('post_type'), array('austeve-funds')))) {
 
 	    $query->set( 'posts_per_page', '20' );
 	    $query->set( 'meta_key', 'stripped_name' );
