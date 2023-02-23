@@ -59,7 +59,17 @@ get_header();
 									$fundId = get_field('canada_helps_default_fund', 'option');
 								}
 
-								$iFrameSrc = get_field('canada_helps_form_url', 'option')."?fundID=".$fundId;
+								// Get the base URL from the theme settings
+								$base_form_url = get_field('canada_helps_form_url', 'option');
+								$url_parts = parse_url($base_form_url);
+
+								// Add the fundID part to the query if query is present
+								$fund_id_part = "fundID=".$fundId;
+								$url_query = array_key_exists('query', $url_parts) ? $url_parts['query']."&".$fund_id_part : $fund_id_part;
+
+								// put the URL back together for display
+								$iFrameSrc = $url_parts['scheme']."://".$url_parts['host'].$url_parts['path']."?".$url_query;
+								error_log("iFrameSrc: ".$iFrameSrc);
 								?>
 								<iframe width="100%" height="1000px" src="<?php echo $iFrameSrc; ?>"></iframe>
 								<?php
