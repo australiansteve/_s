@@ -63,6 +63,24 @@
 			}
 		}
 	}
+
+	#custom-content-staff {
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+
+		.staff {
+
+			h3 {
+				margin-top: 1rem;
+				margin-bottom: 0.5rem;
+			}
+
+			.staff-title {
+				font-size: 1.15em;
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
 }
 
 .single-austeve-projects {
@@ -97,6 +115,14 @@
 		#custom-content-1 {
 
 			.partner {
+
+				margin-bottom: 3rem;
+			}
+		}
+
+		#custom-content-staff {
+
+			.staff {
 
 				margin-bottom: 3rem;
 			}

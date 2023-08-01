@@ -60,6 +60,42 @@ get_header();
 						endif;
 						?>
 					</div>
+
+
+					<?php
+					if( have_rows('staff') ):
+					?>
+					<h2 class="page-title"><span><?php the_field('title_2');?></span></h2>
+					<div class="grid-x medium-up-3 grid-margin-x" id="custom-content-staff">
+						<?php
+						while( have_rows('staff') ) : the_row();
+
+							$staffImageId = get_sub_field('image');
+							$staffName = get_sub_field('name');
+							$staffTitle = get_sub_field('title');
+							$staffBio = get_sub_field('biography');
+							?>
+							<div class="cell ">
+								<div class="container staff">
+									<?php								
+									if( $partnerImageId ) {
+										echo wp_get_attachment_image( $staffImageId, 'archive-image' );
+									}
+									?>
+									<h3><?php echo $staffName;?></h3>
+									<div class="staff-title"><?php echo $staffTitle;?></div>
+									<div class="staff-bio"><?php echo $staffBio;?></div>
+									
+								</div>
+							</div>
+							<?php
+
+						endwhile;
+						?>
+					</div>
+					<?php
+					endif;
+					?>
 				</div>
 			</div>
 		</div>
