@@ -1,7 +1,7 @@
 <?php
 $wteacher = get_field('teacher');
-$tschool = get_field('school', $wteacher);
-$tgrade = get_field('grade', $wteacher);
+$tschool = get_field('school', 'user_'.$wteacher);
+$tgrade = get_field('grade', 'user_'.$wteacher);
 $sgrades = get_field('grades', $tschool);
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -10,7 +10,7 @@ $sgrades = get_field('grades', $tschool);
 	<?php $austeve_gradehelper = new AUSteve_GradeHelper(); ?>
 	<div class="grid-x grid-margin-x text-left wishlists-grid" >
 		<div class="cell medium-5 xlarge-4">
-			<h3 class="post-title"><a href="<?php the_permalink();?>"><?php echo get_the_title($wteacher);?></a></h3>
+			<h3 class="post-title"><a href="<?php the_permalink();?>"><?php echo get_userdata($wteacher)->display_name;?></a></h3>
 			<?php 
 			echo $sgrades[$tgrade]['grade']; 
 			?>

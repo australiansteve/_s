@@ -13,7 +13,7 @@ $wishlist_id = get_query_var('wishlist_id');
 if ($wishlist_id && current_user_can('add_to_wishlists')) {
 	//If current user is a teacher, double check that the wishlist_id belongs to them
 	$wishlist_teacher = get_field('teacher', $wishlist_id);
-	$user_can_add_to_wishlist = ($wishlist_teacher == get_field('teacher_id', 'user_'.get_current_user_id()));
+	$user_can_add_to_wishlist = ($wishlist_teacher == get_current_user_id());
 }
 
 $ajax_nonce_product =  wp_create_nonce( "quick-view-product" );
