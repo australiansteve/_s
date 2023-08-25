@@ -26,7 +26,9 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 	<?php
 	if($campaign_id && get_field('status', $campaign_id)['value'] == 'active') :
 		?>
-		<a class="button" data-wishlist-id="<?php echo get_the_ID(); ?>" data-open="donateModal" onclick="setup_donation(event)"><?php _e('Buy a Gift Card', 'hamburger-cat'); ?></a>
+		<div>
+			<a class="button" data-wishlist-id="<?php echo get_the_ID(); ?>" data-open="donateModal" onclick="setup_donation(event)"><?php _e('Buy a Gift Card', 'hamburger-cat'); ?></a>
+		</div>
 		<?php
 	endif;
 
