@@ -1,7 +1,7 @@
 .woocommerce-account {
 
 	.dashboard-section {
-		margin-top: 2rem;
+		margin-bottom: 2rem;
 
 		.data-row {
 			border-bottom: 1px solid $inky-blue;
@@ -15,9 +15,5 @@
 		.data-row:nth-last-of-type(1) {
 			border-bottom: none;
 		}
-	}
-
-	.dashboard-section:nth-last-of-type(1) {
-		margin-bottom: 3rem;
 	}
 }

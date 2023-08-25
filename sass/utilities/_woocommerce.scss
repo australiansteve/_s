@@ -150,10 +150,18 @@
 				}
 			}
 
+
 			form.woocommerce-form-login,
-			form.woocommerce-ResetPassword {
+			form.woocommerce-ResetPassword,
+			form.woocommerce-form-register {
 				max-width: 350px;
 				margin: auto;
+			}
+
+			form.woocommerce-form-login {
+				margin-bottom: 2rem;
+				padding-bottom: 2rem;
+				border-bottom: 1px solid $inky-blue;
 			}
 
 			.woocommerce-MyAccount-navigation {
