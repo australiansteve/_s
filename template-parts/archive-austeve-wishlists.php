@@ -1,5 +1,5 @@
 <?php
-$wteacher = get_field('teacher');
+$wteacher = get_field('user_id');
 $tschool = get_field('school', 'user_'.$wteacher);
 $tgrade = get_field('grade', 'user_'.$wteacher);
 $sgrades = get_field('grades', $tschool);

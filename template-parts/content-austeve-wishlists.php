@@ -14,7 +14,7 @@ $viewing_own_wishlist = false;
 
 if ($wishlist_id && current_user_can('add_to_wishlists')) {
 	//If current user is a teacher, double check that the wishlist_id belongs to them
-	$wishlist_teacher = get_field('teacher', $wishlist_id);
+	$wishlist_teacher = get_field('user_id', $wishlist_id);
 	$user_can_add_to_wishlist = ($wishlist_teacher == get_current_user_id());
 
 	$viewing_own_wishlist = is_single() && $user_can_add_to_wishlist;
@@ -24,7 +24,7 @@ if ($wishlist_id && current_user_can('add_to_wishlists')) {
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 	<?php
-	if($campaign_id) :
+	if($campaign_id && get_field('status', $campaign_id)['value'] == 'active') :
 		?>
 		<a class="button" data-wishlist-id="<?php echo get_the_ID(); ?>" data-open="donateModal" onclick="setup_donation(event)"><?php _e('Buy a Gift Card', 'hamburger-cat'); ?></a>
 		<?php
