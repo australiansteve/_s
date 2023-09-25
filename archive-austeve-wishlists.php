@@ -49,7 +49,7 @@ $ajax_nonce_get_wishlist = wp_create_nonce( "get-wishlist" );
 							<?php
 						endwhile;
 					else :?>
-
+						
 						<div class="cell">
 							<?php get_template_part( 'template-parts/empty-archive', get_queried_object()->name ); ?>
 						</div>

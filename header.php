@@ -30,9 +30,7 @@
 
 		if( have_rows('custom_js', 'option') ):
 			while( have_rows('custom_js', 'option') ) : the_row();
-				error_log("custom_js");
-
-	        // Loop over sub repeater rows.
+				// Loop over sub repeater rows.
 				if( have_rows('js_script') ):
 					while( have_rows('js_script') ) : the_row();
 
