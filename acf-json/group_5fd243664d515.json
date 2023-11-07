@@ -6,6 +6,7 @@
             "key": "field_5fd2438422b39",
             "label": "Logo",
             "name": "header_logo",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -15,8 +16,8 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "return_format": "id",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -24,12 +25,14 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_60365bcb6740c",
             "label": "Make Header Sticky",
             "name": "use_sticky_header",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -39,6 +42,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 1,
             "message": "Have the menu stick to the top of the page on bigger screens",
             "default_value": 0,
             "ui": 0,
@@ -49,6 +53,7 @@
             "key": "field_6092e3f67442c",
             "label": "Primary Menu Type",
             "name": "primary_menu_type",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -58,16 +63,17 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 1,
             "choices": {
                 "top-right": "Top Right",
                 "off-canvas-top": "Off Canvas (top)",
                 "top-bar": "Full Width Bar (centered below logo)"
             },
             "default_value": "top-right",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         }
@@ -89,5 +95,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626695846
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1699315294
 }

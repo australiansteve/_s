@@ -1,7 +1,10 @@
 <?php
 ?>
 <section id="section-1">
-	<?php $slider_gallery = get_field('section_1_slider_images');?>
+	<?php 
+	$slider_gallery = get_field('section_1_slider_images');
+	if ($slider_gallery) {
+		?>
 	<div class="slider-container">
 		<div class="slider" id="front-page-slider" data-slider-time="5000" data-focus="1" data-max-count="<?php echo count($slider_gallery);?>">
 			<?php foreach( $slider_gallery as $image_id ):
@@ -23,4 +26,7 @@
 			</div>
 		</div>
 	</div>
+	<?php
+	}
+	?>
 </section>

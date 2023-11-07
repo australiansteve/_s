@@ -6,6 +6,7 @@
             "key": "field_5fd243ad74774",
             "label": "Logo",
             "name": "footer_logo",
+            "aria-label": "",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -15,8 +16,8 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "return_format": "id",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -24,12 +25,14 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_5fd24c7ac6bc6",
             "label": "Site Info Text",
             "name": "footer_site_info_text",
+            "aria-label": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -39,6 +42,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 3,
             "default_value": "<a href=\"https:\/\/weavercrawford.com\" target=\"_blank\"><i class=\"far fa-copyright\"><\/i> Weaver Crawford Creative <script>document.write(new Date().getFullYear())<\/script><\/a>",
             "tabs": "all",
             "toolbar": "full",
@@ -63,5 +67,7 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1607617731
+    "show_in_rest": 0,
+    "acfml_field_group_mode": "advanced",
+    "modified": 1699315426
 }
