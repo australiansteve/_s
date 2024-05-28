@@ -20,7 +20,7 @@
   "devDependencies": {
     "@wordpress/scripts": "^19.2.2",
     "dir-archiver": "^1.1.1",
-    "node-sass": "^7.0.1",
+    "foundation-sites": "^6.8.1",
     "rtlcss": "^3.5.0"
   },
   "rtlcssConfig": {
@@ -37,8 +37,8 @@
     "map": false
   },
   "scripts": {
-    "watch": "node-sass sass/style.scss dist/style.css --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "stylelint 'sass/**/*.scss' --fix && node-sass sass/style.scss dist/style.css && node-sass --output-style compressed --source-map dist/style.min.css.map sass/style.scss dist/style.min.css",
+    "watch": "sass sass/style.scss dist/style.css --style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "stylelint 'sass/**/*.scss' --fix && sass sass/style.scss dist/style.css && sass --style compressed sass/style.scss dist/style.min.css",
     "compile:rtl": "rtlcss dist/style.min.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
