@@ -129,9 +129,8 @@
 		color: $green-color;
 	}
 
-	.ui-state-active .ui-icon,
-	.ui-button:active .ui-icon {
-		background-image: url(../img/ui-icons_454545_256x240.png);
+	.ui-icon {
+		background-image: url(../dist/media/ui-icons_444444_256x240.png);
 	}
 
 }

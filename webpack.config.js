@@ -19,6 +19,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "fonts", to: "fonts" },
+        { from: "media", to: "media" },
       ],
     }),
   ],

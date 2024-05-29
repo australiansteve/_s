@@ -41,7 +41,7 @@ body {
 		.page-content {
 			margin: 1rem 0 1rem 0;
 
-			h2 {
+			h2:not(.ui-accordion-header) {
 				margin-bottom: 2rem;
 				font-weight: 700;
 				line-height: 1.9;

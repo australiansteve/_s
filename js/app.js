@@ -17,13 +17,13 @@ jQuery( document ).ready(function($) {
       activeHeader: "ui-icon-circle-minus"
     };
 
-    $( "#report-types" ).accordion({
+    jQuery( "#report-types" ).accordion({
 		icons : icons,
 		collapsible: true,
 		heightStyle: "content",
 	});
 
-	$( "#report-types" ).accordion( "option", "icons", icons );
+	jQuery( "#report-types" ).accordion( "option", "icons", icons );
 
 
 	$("a.change-faqs").on('click', function(e){
