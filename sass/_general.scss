@@ -147,6 +147,9 @@ iframe {
 	border: solid 1px $light-gray;
 }
 
+.sticky {
+	z-index: 5;
+}
 
 #page-content {
 	display: grid; /* Added after updating to WP5.3, which threw out some things on the homepage */

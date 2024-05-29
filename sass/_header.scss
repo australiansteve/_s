@@ -52,8 +52,24 @@ header#masthead {
 			#primary-menu {
 
 				a {
-					padding: 0.7rem 0.2rem 0.7rem 1.8rem;
 					color: $black;
+				}
+
+				a:hover {
+					background-color: $pink-color;
+					color: $white;
+				}
+
+				li.is-dropdown-submenu-parent:hover > a::after {
+					display: none;
+				}
+
+				.is-dropdown-submenu {
+					text-align: left;
+
+					a {
+						text-wrap: nowrap;
+					}
 				}
 			}
 

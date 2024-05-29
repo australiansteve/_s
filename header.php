@@ -125,7 +125,7 @@
 											array(
 												'theme_location'	=> 'primary-menu',
 												'container'		=> false,
-												'items_wrap' => '%3$s'
+												'items_wrap' => '%3$s',
 											)
 										);
 										?>
@@ -147,14 +147,17 @@
 
 							<div id="menus">
 								<?php
-								wp_nav_menu(
-									array(
-										'theme_location'	=> 'primary-menu',
-										'menu_id'		=> 'primary-menu',
-										'menu_class'	=> 'horizontal menu show-for-medium text-right',
-										'container'		=> false
-									)
-								);
+									wp_nav_menu(
+										array(
+											'theme_location'	=> 'primary-menu',
+											'menu_id'	=> 'primary-menu',
+											'container'		=> false,
+											'items_wrap' => '<ul class="%2$s dropdown show-for-medium text-right" data-dropdown-menu id="%1$s">%3$s</ul>',
+											'walker' => new Top_Bar_Walker(),
+										)
+									);
+								?>
+								<?php
 
 								if ( has_nav_menu( 'language-menu' ) ) :
 									wp_nav_menu(

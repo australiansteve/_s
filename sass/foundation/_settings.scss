@@ -507,7 +507,7 @@ $menu-items-padding: $global-menu-padding;
 $menu-simple-margin: 1rem;
 $menu-item-color-active: $white;
 $menu-item-color-alt-active: $black;
-$menu-item-background-active: get-color(primary);
+$menu-item-background-active: $white;
 $menu-icon-spacing: 0.25rem;
 $menu-state-back-compat: true;
 $menu-centered-back-compat: true;

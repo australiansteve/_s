@@ -105,7 +105,6 @@ if ( ! function_exists( 'hamburger_cat_setup' ) ) :
 		add_image_size( 'header-logo', 600, 260, false);
 		add_image_size( 'bio-pic-size', 250, 250, array( 'center', 'center' ) ); // Hard crop center
 		add_image_size( 'feature-pic-size', 600, 350, array( 'center', 'center' ) ); // Hard crop center
-
 	}
 endif;
 add_action( 'after_setup_theme', 'hamburger_cat_setup' );
@@ -137,8 +136,6 @@ function hamburger_cat_scripts() {
 
 	wp_enqueue_script( 'hamburger-cat-js', get_template_directory_uri() . '/dist/main.js', array( 'jquery'), HAMBURGER_CAT_VERSION, true );
 
-	wp_enqueue_script( 'hamburger-cat-navigation', get_template_directory_uri() . '/js/navigation.js', array(), HAMBURGER_CAT_VERSION, true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -149,6 +146,11 @@ add_action( 'wp_enqueue_scripts', 'hamburger_cat_scripts' );
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Include custom Walker for top nav and offcanvas compatibility
+ */
+require_once (get_template_directory() . '/inc/custom-walker.php');
 
 /**
  * Custom template tags for this theme.
