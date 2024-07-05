@@ -103,17 +103,17 @@ nav {
 }
 
 .menu {
-	font-family: Shrikhand, Roboto, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
+	font-family: Anton, Roboto, "Helvetica Neue", helvetica, roboto, arial, sans-serif;
 
 	a {
 
-		color: $orange-light;
+		color: $yellow;
 	}
 
 	a:hover,
 	a.active,
 	a.focus {
-		color: $orange;
+		color: $yellow-dark;
 	}
 }
 
