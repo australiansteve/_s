@@ -18,13 +18,12 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^12.1.0",
-    "copy-webpack-plugin": "^8.1.1",
+    "@wordpress/scripts": "^19.2.2",
+    "copy-webpack-plugin": "^12.0.2",
     "dir-archiver": "^1.1.1",
-    "node-sass": "^4.14.1",
-    "rtlcss": "^2.5.0",
-    "terser-webpack-plugin": "^3.1.0",
-    "webpack-cli": "^4.6.0"
+    "foundation-sites": "^6.8.1",
+    "rtlcss": "^3.5.0",
+    "stylelint-config-wordpress": "^17.0.0"
   },
   "rtlcssConfig": {
     "options": {
@@ -40,21 +39,12 @@
     "map": false
   },
   "scripts": {
-    "watch": "node-sass sass/style.scss dist/style.css --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
-    "compile:css": "stylelint 'sass/**/*.scss' --fix && node-sass sass/style.scss dist/style.css && node-sass --output-style compressed --source-map dist/style.min.css.map sass/style.scss dist/style.min.css",
+    "watch": "sass sass/style.scss dist/style.css --style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "stylelint 'sass/**/*.scss' --fix && sass sass/style.scss dist/style.css && sass --style compressed sass/style.scss dist/style.min.css",
     "compile:rtl": "rtlcss dist/style.min.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "build": "webpack",
-    "build:prod": "webpack --mode production",
-    "bundle": "dir-archiver --src . --dest ../hamburger-cat.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
-  },
-  "dependencies": {
-    "foundation-sites": "^6.6.3",
-    "jquery": "^3.5.1",
-    "lodash": "^4.17.21",
-    "puppeteer": "^2.1.1",
-    "typescript": "^4.0.3",
-    "what-input": "^5.2.10"
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   }
 }
