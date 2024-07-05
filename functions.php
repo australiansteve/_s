@@ -307,7 +307,7 @@ add_action('wp_ajax_austeve_get_projects', 'austeve_get_projects');
 add_action('wp_ajax_nopriv_austeve_get_projects', 'austeve_get_projects');
 
 add_filter ( 'pre_get_posts', function($query) {
-	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-projects') || (wp_doing_ajax() && in_array('austeve-projects', $query->get('post_type')))) {
+	if ( !is_admin() && $query->is_main_query() && is_post_type_archive('austeve-projects') || (wp_doing_ajax() && in_array('austeve-projects', [$query->get('post_type')]))) {
 
 		//get 4 projects at a time so the layout is a bit more even
 	    $query->set( 'posts_per_page', '4' );
