@@ -27,7 +27,7 @@ get_header();
 					<?php the_content(); ?>
 				</div>
 				<div class="custom-content">
-					<h2 class="page-title"><span><?php the_field('title_1');?></span></h2>
+					<h2 class="page-title"><span><?php echo get_field('title_1');?></span></h2>
 					<div class="grid-x medium-up-2 grid-margin-x" id="custom-content-1">
 
 						<?php

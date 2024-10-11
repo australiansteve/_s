@@ -15,7 +15,7 @@ get_header();
 		<div class="grid-container">
 			<h2 class="page-title"><span><?php esc_html_e( get_field('404_page_title', 'options'), 'hamburger-cat' ); ?></span></h2>  
 			<div class="entry-content">
-				<?php the_field('404_page_content', 'options'); ?>
+				<?php echo get_field('404_page_content', 'options'); ?>
 			</div>
 		</div>
 	</div>

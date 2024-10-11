@@ -73,7 +73,7 @@
 				</div><!-- .site-info -->
 				<div class="grid-x site-info">
 					<div class="cell text-center medium-text-right">
-						<?php the_field('footer_site_info_text', 'options'); ?>
+						<?php echo get_field('footer_site_info_text', 'options'); ?>
 					</div>
 				</div><!-- .site-info -->
 			</div>

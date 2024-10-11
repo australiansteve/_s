@@ -36,7 +36,7 @@ get_header();
 							<div class="cell">
 								<div class="container text_1">
 									<div class="inner-container">
-										<?php the_field("text_1"); ?>
+										<?php echo get_field("text_1"); ?>
 									</div>
 								</div>
 							</div>
@@ -61,7 +61,7 @@ get_header();
 								<div class="cell">
 									<div class="container text_2">
 										<div class="inner-container">
-											<?php the_field("text_2"); ?>
+											<?php echo get_field("text_2"); ?>
 										</div>
 									</div>
 								</div>
@@ -72,7 +72,7 @@ get_header();
 						<div class="cell">
 							<div class="grid-x grid-padding-x">
 								<div class="cell">
-									<h2 class="section-title"><?php the_field("text_3"); ?></h2>
+									<h2 class="section-title"><?php echo get_field("text_3"); ?></h2>
 								</div>
 							</div>
 						</div>
@@ -91,7 +91,7 @@ get_header();
 								<div class="cell">
 									<div class="container text_4">
 										<div class="inner-container">
-											<?php the_field("text_4"); ?>
+											<?php echo get_field("text_4"); ?>
 										</div>
 									</div>
 								</div>

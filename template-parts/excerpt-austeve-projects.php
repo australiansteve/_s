@@ -8,4 +8,4 @@
  */
 
 ?>
-<div class="excerpt"><?php the_field('project_subtitle');?></div>
+<div class="excerpt"><?php echo get_field('project_subtitle');?></div>
