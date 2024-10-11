@@ -175,7 +175,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "field_601ecd581e506",
-            "button_label": "Add Partner",
+            "button_label": "Add Staff",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -292,5 +292,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690905629
+    "modified": 1690906323
 }
