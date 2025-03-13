@@ -7,7 +7,7 @@ $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-i
 	<a href="<?php echo the_permalink();?>">
 		<img src='<?php echo $thumbnail; ?>' />
 		<h5 class="page-title"><?php the_title();?></h5>
-		<div class="excerpt date"><?php the_field('event_date');?></div>
+		<div class="excerpt date"><?php echo get_field('event_date');?></div>
 	</a>
 	
 </article><!-- #post-<?php the_ID(); ?> -->

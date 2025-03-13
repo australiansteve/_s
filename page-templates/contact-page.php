@@ -44,7 +44,7 @@ get_header();
 								<div class="cell">
 									<div class="container text_1">
 										<div class="inner-container">
-											<?php the_field("text_1"); ?>
+											<?php echo get_field("text_1"); ?>
 										</div>
 									</div>
 								</div>

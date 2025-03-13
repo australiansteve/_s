@@ -32,7 +32,7 @@ get_header();
 					<?php if (get_field('our_mission_section_title') && get_field('our_mission_section_text')): ?>
 						<h2 class="section-title"><span><?php the_field('our_mission_section_title');?></span></h2>
 						<div class="entry-content our-mission">
-							<?php the_field('our_mission_section_text');?>
+							<?php echo get_field('our_mission_section_text');?>
 						</div>
 
 					<?php
@@ -40,7 +40,7 @@ get_header();
 
 					if( have_rows('partners') ):
 						?>
-						<h2 class="page-title"><span><?php the_field('title_1');?></span></h2>
+						<h2 class="page-title"><span><?php echo get_field('title_1');?></span></h2>
 						<div class="grid-x small-up-1 medium-up-4 grid-margin-x align-center" id="custom-content-1">
 							<?php
 

@@ -9,7 +9,7 @@ $thumbnail = has_post_thumbnail() ? get_the_post_thumbnail_url($post, 'archive-i
 		<h5 class="page-title"><?php the_title();?></h5>
 		
 		<?php if (has_category('Events')):?>
-			<div class="excerpt date"><?php the_field('event_date');?></div>
+			<div class="excerpt date"><?php echo get_field('event_date');?></div>
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/excerpt', get_post_type() ); ?>
 		<?php endif; ?>
